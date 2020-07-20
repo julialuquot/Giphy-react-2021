@@ -7,10 +7,9 @@ module.exports = withSass({
     },
     webpack(config, options) {
         // config.module.rules.push({ test: /\.tsx?$/, loader: 'ts-loader' });
-        config.resolve = {
-            extensions: ['.tsx', '.ts', '.js'],
-        };
-        console.log(config);
+        // config.resolve = {
+        //     extensions: ['.tsx', '.ts', '.js'],
+        // };
 
         return config;
     },
