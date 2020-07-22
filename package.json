@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "NODE_ENV=development NODE_OPTIONS='--inspect' node ./src/server.ts",
+    "dev-win": "set NODE_ENV=development&& set NODE_OPTIONS='--inspect'&& node ./src/server.ts",
     "build": "next build",
     "start": "next start",
     "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix"
