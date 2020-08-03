@@ -3,11 +3,11 @@ import css from './index.scss';
 import Button from '@components/Button/Button';
 import { withTranslation } from '@i18n';
 
-interface Props {
+interface HomeProps {
     t: (string) => string;
 }
 
-const Home = ({ t }: Props) => {
+const Home = ({ t }: HomeProps) => {
     return (
         <div className={css.home}>
             home page
