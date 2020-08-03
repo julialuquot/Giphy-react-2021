@@ -27,18 +27,6 @@
         "react",
         "@typescript-eslint"
     ],
-    "overrides": [
-        {
-            "files": [
-                "**/*.tsx"
-            ],
-            "rules": {
-                "react/prop-types": "off"
-                // ignore prop-types for tsx files
-            }
-        }
-    ],
     "rules": {
-        "useTabs": false
     }
 }
