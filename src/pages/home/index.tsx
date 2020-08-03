@@ -1,15 +1,19 @@
 import React from 'react';
 import css from './index.scss';
-import Button from '@components/button';
+import Button from '@components/Button/Button';
 import { withTranslation } from '@i18n';
 
-const Home = ({ t }) => {
+interface Props {
+    t: (string) => string;
+}
 
+const Home = ({ t }: Props) => {
     return (
         <div className={css.home}>
             home page
             <div>{t('common:test')} </div>
-            <Button> </Button>
+            <Button>Hello word </Button>
+            <div>hello</div>
         </div>
     );
 };
