@@ -12,7 +12,12 @@ const Home = ({ t }: HomeProps) => {
         <div className={css.home}>
             home page
             <div>{t('common:test')} </div>
-            <Button>Hello word </Button>
+            <Button variant="primary" onClick={() => console.log('je click')}>
+                Hello word{' '}
+            </Button>
+            <Button variant="secondary" onClick={() => console.log('je click')}>
+                Hello word{' '}
+            </Button>
             <div>hello</div>
         </div>
     );

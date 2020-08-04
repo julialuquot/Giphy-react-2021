@@ -1,0 +1,47 @@
+@mixin media($size) {
+  @if $size == xs-device {
+    @media (max-width: 340px) {
+      @content;
+    }
+  } @else if $size == s-device {
+    @media (max-width: 600px) {
+      @content;
+    }
+  } @else if $size == m-device {
+    @media (max-width: 874px) {
+      @content;
+    }
+  } @else if $size == l-device {
+    @media (min-width: 875px) {
+      @content;
+    }
+  } @else if $size == xl-device {
+    @media (min-width: 1200px) {
+      @content;
+    }
+  } @else if $size == ie {
+    @media only screen and (min-width: 0 \0
+    ) {
+      @content
+    }
+  }
+}
+
+@mixin border-radius($radius) {
+  border-radius: $radius;
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+}
+
+@mixin transition {
+  transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+}
+
+@mixin transform($value1, $value2) {
+  transform: translate($value1, $value2);
+  -webkit-transform: translate($value1, $value2);
+  -moz-transform: translate($value1, $value2);
+  -ms-transform: translate($value1, $value2);
+}

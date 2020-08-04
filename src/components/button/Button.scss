@@ -1,0 +1,22 @@
+.button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 50px;
+  border-radius: 6px;
+  cursor: pointer;
+
+  &__primary {
+    background-color: red;
+  }
+
+  &__secondary {
+    background-color: green;
+  }
+
+  &__disabled {
+    cursor: not-allowed;
+  }
+}
