@@ -1,18 +1,26 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
-import { Button } from '@storybook/react/demo';
+import Button from '../src/components/Button/Button';
 
 export default {
     title: 'Button',
     component: Button,
 };
 
-export const Text = () => <Button onClick={action('clicked')}>Hello Button</Button>;
+const divStyle = {
+    display: 'flex',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    height: '100vh',
+};
 
-export const Emoji = () => (
-    <Button onClick={action('clicked')}>
-        <span role="img" aria-label="so cool">
-            😀 😎 👍 💯
-        </span>
-    </Button>
+export const Default = () => (
+    <div style={divStyle}>
+        <Button variant="primary" onClick={action('clicked')}>
+            Primary
+        </Button>
+        <Button variant="secondary" onClick={action('clicked')}>
+            Secondary
+        </Button>
+    </div>
 );
