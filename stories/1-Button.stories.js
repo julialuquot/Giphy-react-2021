@@ -17,7 +17,6 @@ const styles = {
     row: {
         display: 'flex',
         alignItems: 'space-around',
-        justifyContent: 'space-around',
         width: '90vw',
         marginBottom: '20px',
     },
@@ -26,25 +25,25 @@ const styles = {
 export const Default = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
-            <Button type={'button'} variant={'primary'} onClick={action('clicked')}>
-                Primary
+            <Button style={styles.item} variant="primary" size="small" onClick={action('clicked')}>
+                Primary Small
             </Button>
-            <Button type={'button'} variant={'primary'} isLoading onClick={action('clicked')}>
-                Loading
+            <Button variant="primary" size="medium" onClick={action('clicked')}>
+                Primary Medium
             </Button>
-            <Button variant={'primary'} isDisabled onClick={action('clicked')}>
-                Disabled
+            <Button variant="primary" size="large" onClick={action('clicked')}>
+                Primary Medium
             </Button>
         </div>
         <div style={styles.row}>
-            <Button type={'button'} variant={'secondary'} onClick={action('clicked')}>
+            <Button variant="secondary" size="small" onClick={action('clicked')}>
                 Secondary
             </Button>
-            <Button type={'button'} variant={'secondary'} isDisabled onClick={action('clicked')}>
-                Disabled
-            </Button>{' '}
-            <Button type={'button'} variant={'secondary'} isLoading onClick={action('clicked')}>
-                Disabled
+            <Button variant="secondary" size="medium" onClick={action('clicked')}>
+                Secondary Small
+            </Button>
+            <Button variant="secondary" size="large" onClick={action('clicked')}>
+                Secondary Large
             </Button>
         </div>
     </div>
