@@ -2,9 +2,14 @@ const path = require('path');
 
 module.exports = {
     stories: ['../stories/**/*.stories.js'],
-    addons: ['@storybook/addon-actions', '@storybook/addon-links', '@storybook/preset-typescript'],
+    addons: [
+        '@storybook/addon-actions',
+        '@storybook/addon-links',
+        '@storybook/preset-typescript',
+        '@storybook/addon-docs',
+    ],
 
-    webpackFinal: async (config, { configType }) => {
+    webpackFinal: async (config, {configType}) => {
         config.module.rules.push({
             test: /\.scss$/,
             use: [

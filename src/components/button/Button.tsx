@@ -1,26 +1,30 @@
 import React from 'react';
+import Spinner from '../Spinner/Spinner';
 import css from './Button.scss';
 
 interface ButtonProps {
     children: string;
-    onClick: (event: React.MouseEvent<HTMLElement>) => void;
+    type: 'button' | 'submit' | 'reset';
     variant: string;
-    disabled?: boolean;
+    isDisabled?: boolean;
+    isLoading?: boolean;
+    onClick: (event: React.MouseEvent<HTMLElement>) => void;
 }
 
-const Button = ({ children, variant, disabled, onClick }: ButtonProps) => {
+const Button = ({ children, type, variant, isDisabled, isLoading, onClick }: ButtonProps) => {
     const style = () => {
-        let className = css.button;
-        variant === 'primary' && (className += ' ' + css.button__primary);
-        variant === 'secondary' && (className += ' ' + css.button__secondary);
-        disabled && (className += ' ' + css.button__disabled);
+        let className = css.default;
+        variant === 'primary' && (className += ' ' + css.primary);
+        variant === 'secondary' && (className += ' ' + css.secondary);
+        isDisabled && (className += ' ' + css.disabled);
 
         return className;
     };
 
     return (
-        <button className={style()} onClick={onClick}>
+        <button type={type} className={style()} onClick={onClick}>
             {children}
+            {isLoading && <Spinner />}
         </button>
     );
 };

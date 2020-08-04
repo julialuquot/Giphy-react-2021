@@ -7,20 +7,45 @@ export default {
     component: Button,
 };
 
-const divStyle = {
-    display: 'flex',
-    justifyContent: 'space-around',
-    alignItems: 'center',
-    height: '100vh',
+const styles = {
+    wrapper: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        paddingTop: '20px',
+    },
+    row: {
+        display: 'flex',
+        alignItems: 'space-around',
+        justifyContent: 'space-around',
+        width: '90vw',
+        marginBottom: '20px',
+    },
 };
 
 export const Default = () => (
-    <div style={divStyle}>
-        <Button variant="primary" onClick={action('clicked')}>
-            Primary
-        </Button>
-        <Button variant="secondary" onClick={action('clicked')}>
-            Secondary
-        </Button>
+    <div style={styles.wrapper}>
+        <div style={styles.row}>
+            <Button type={'button'} variant={'primary'} onClick={action('clicked')}>
+                Primary
+            </Button>
+            <Button type={'button'} variant={'primary'} isLoading onClick={action('clicked')}>
+                Loading
+            </Button>
+            <Button variant={'primary'} isDisabled onClick={action('clicked')}>
+                Disabled
+            </Button>
+        </div>
+        <div style={styles.row}>
+            <Button type={'button'} variant={'secondary'} onClick={action('clicked')}>
+                Secondary
+            </Button>
+            <Button type={'button'} variant={'secondary'} isDisabled onClick={action('clicked')}>
+                Disabled
+            </Button>{' '}
+            <Button type={'button'} variant={'secondary'} isLoading onClick={action('clicked')}>
+                Disabled
+            </Button>
+        </div>
     </div>
 );

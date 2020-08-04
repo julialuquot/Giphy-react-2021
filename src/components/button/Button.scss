@@ -1,22 +1,30 @@
-.button {
+%button-shared {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 250px;
-  height: 50px;
-  border-radius: 6px;
+  min-width: 150px;
+  height: 40px;
+  border-radius: 8px;
   cursor: pointer;
-
-  &__primary {
-    background-color: red;
-  }
-
-  &__secondary {
-    background-color: green;
-  }
-
-  &__disabled {
-    cursor: not-allowed;
-  }
 }
+
+.default {
+  @extend %button-shared;
+}
+
+.primary {
+  @extend %button-shared;
+  background-color: red;
+}
+
+.secondary {
+  @extend %button-shared;
+  background-color: green;
+}
+
+.disabled {
+  @extend %button-shared;
+  cursor: default;
+}
+
