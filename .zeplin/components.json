@@ -1,0 +1,21 @@
+{
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin"
+        }
+    ],
+    "projects": [
+        "5f1eeaf421192238a39eb563"
+    ],
+    "styleguides": [
+        "5f1eeaf421192238a39eb563"
+    ],
+    "components": [
+        {
+            "path": "src/components/Button/Button.tsx",
+            "zeplinNames": [
+                "button / primary / large / hover"
+            ]
+        }
+    ]
+}

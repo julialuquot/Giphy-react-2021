@@ -41,6 +41,7 @@
     "@types/react": "^16.9.43",
     "@typescript-eslint/eslint-plugin": "^3.6.1",
     "@typescript-eslint/parser": "^3.6.1",
+    "@zeplin/cli": "^1.0.4",
     "babel-loader": "^8.1.0",
     "eslint": "^7.4.0",
     "eslint-config-prettier": "^6.11.0",
