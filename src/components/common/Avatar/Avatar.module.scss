@@ -44,11 +44,11 @@
   @extend %circle-shared;
 
   &__primary {
-    @include circle-color($primary)
+    @include circle-color($brand-primary)
   }
 
   &__secondary {
-    @include circle-color($secondary)
+    @include circle-color($brand-secondary)
   }
 }
 
@@ -57,11 +57,11 @@
   @extend %label-shared;
 
   &__primary {
-    @include label-color($primary)
+    @include label-color($brand-primary)
   }
 
   &__secondary {
-    @include label-color($secondary)
+    @include label-color($brand-secondary)
   }
 
 }

@@ -27,12 +27,12 @@
 
 .primary {
   @extend %button-shared;
-  background-color: $primary;
+  background-color: $brand-primary;
 }
 
 .secondary {
   @extend %button-shared;
-  background-color: $secondary;
+  background-color: $brand-secondary;
 }
 
 .disabled {
