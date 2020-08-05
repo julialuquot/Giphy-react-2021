@@ -13,8 +13,6 @@ interface ButtonProps {
 }
 
 const Button = ({ children, type, variant, size, isDisabled, isLoading, onClick }: ButtonProps) => {
-    console.log('-> variant', variant);
-
     const style = () => {
         let className = '';
         className += ' ' + css[variant];
