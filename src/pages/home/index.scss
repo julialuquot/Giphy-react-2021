@@ -1,9 +1,21 @@
 .home {
-    min-height: 100vh;
-    padding: 0 0.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: black;
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+
+
+.wrapper {
+  width: 100px;
+  height: 100px;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+  display: block;
 }

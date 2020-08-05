@@ -1,0 +1,70 @@
+@import '../../../assets/styles/colors';
+
+@mixin label-color($color) {
+  background-color: $color;
+}
+
+@mixin circle-color($color) {
+  border: 2px solid $color;
+}
+
+
+%circle-shared {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 76px;
+  height: 76px;
+  border-radius: 50%;
+
+  .image {
+    width: 85%;
+    height: 85%;
+    border-radius: 50%;
+  }
+}
+
+%label-shared {
+  position: absolute;
+  top: 2%;
+  left: 76%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 126%;
+  height: 30%;
+  border-radius: 8px;
+  color: $white;
+  font-size: 0.625rem;
+}
+
+
+.circle {
+  @extend %circle-shared;
+
+  &__primary {
+    @include circle-color($primary)
+  }
+
+  &__secondary {
+    @include circle-color($secondary)
+  }
+}
+
+
+.label {
+  @extend %label-shared;
+
+  &__primary {
+    @include label-color($primary)
+  }
+
+  &__secondary {
+    @include label-color($secondary)
+  }
+
+}
+
+
+

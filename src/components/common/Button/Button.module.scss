@@ -1,5 +1,4 @@
-@import './src/assets/styles/colors';
-
+@import '../../../assets/styles/colors';
 
 %button-shared {
   position: relative;
@@ -9,29 +8,8 @@
   height: 48px;
   border: none;
   border-radius: 24px;
-  color: $white-color;
+  color: $white;
   cursor: pointer;
-}
-
-
-.default {
-  @extend %button-shared;
-}
-
-
-.primary {
-  @extend %button-shared;
-  background-color: $primary-color;
-}
-
-.secondary {
-  @extend %button-shared;
-  background-color: $secondary-color;
-}
-
-.disabled {
-  @extend %button-shared;
-  cursor: default;
 }
 
 .small {
@@ -45,4 +23,21 @@
 .large {
   width: 250px;
 }
+
+
+.primary {
+  @extend %button-shared;
+  background-color: $primary;
+}
+
+.secondary {
+  @extend %button-shared;
+  background-color: $secondary;
+}
+
+.disabled {
+  @extend %button-shared;
+  cursor: default;
+}
+
 

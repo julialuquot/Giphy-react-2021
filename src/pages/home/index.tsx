@@ -1,7 +1,8 @@
 import React from 'react';
 import css from './index.scss';
-import Button from '@components/Button/Button';
+import Button from '@components/common/Button/Button';
 import { withTranslation } from '@i18n';
+import Avatar from '@components/common/Avatar/Avatar';
 
 interface HomeProps {
     t: (string) => string;
@@ -10,12 +11,13 @@ interface HomeProps {
 const Home = ({ t }: HomeProps) => {
     return (
         <div className={css.home}>
+            <Avatar imageSrc={'images/no-avatar.png'} />
             home page
             <div>{t('common:test')} </div>
-            <Button type={'button'} variant="primary" size={'small'} onClick={() => console.log('je click')}>
+            <Button type="button" variant="primary" size="medium" onClick={() => console.log('je click')}>
                 Hello word11
             </Button>
-            <Button type={'button'} variant="secondary" size={'large'} onClick={() => console.log('je click')}>
+            <Button type="button" variant="secondary" size="medium" isLoading onClick={() => console.log('je click')}>
                 Hello word
             </Button>
             <div>hello</div>

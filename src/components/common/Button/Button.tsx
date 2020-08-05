@@ -1,10 +1,10 @@
 import React from 'react';
 import Spinner from '../Spinner/Spinner';
-import css from './Button.scss';
+import css from './Button.module.scss';
 
 interface ButtonProps {
     children: React.ReactNode;
-    type?: 'button' | 'submit' | 'reset';
+    type?: 'button' | 'submit';
     variant: string;
     size: string;
     isDisabled?: boolean;
@@ -28,7 +28,7 @@ const Button = ({ children, type, variant, size, isDisabled, isLoading, onClick 
     return (
         <button type={type} className={style()} onClick={onClick}>
             {children}
-            {isLoading && <Spinner />}
+            <Spinner isLoading={isLoading} />
         </button>
     );
 };
