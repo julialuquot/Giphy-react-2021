@@ -9,7 +9,7 @@
 }
 
 
-%circle-shared {
+.circle {
   position: relative;
   display: flex;
   justify-content: center;
@@ -23,9 +23,11 @@
     height: 85%;
     border-radius: 50%;
   }
+
+
 }
 
-%label-shared {
+.label {
   position: absolute;
   top: 2%;
   left: 76%;
@@ -39,32 +41,23 @@
   font-size: 0.625rem;
 }
 
+.circle__brand-primary {
+  @include circle-color($brand-primary)
+}
 
-.circle {
-  @extend %circle-shared;
-
-  &__primary {
-    @include circle-color($brand-primary)
-  }
-
-  &__secondary {
-    @include circle-color($brand-secondary)
-  }
+.circle__brand-secondary {
+  @include circle-color($brand-secondary)
 }
 
 
-.label {
-  @extend %label-shared;
-
-  &__primary {
-    @include label-color($brand-primary)
-  }
-
-  &__secondary {
-    @include label-color($brand-secondary)
-  }
-
+.label__brand-primary {
+  @include label-color($brand-primary)
 }
+
+.label__brand-secondary {
+  @include label-color($brand-secondary)
+}
+
 
 
 

@@ -11,15 +11,13 @@ interface AvatarProps {
 const Avatar = ({ imageSrc, color, label }: AvatarProps) => {
     const circleColor = () => {
         let className = css.circle;
-        color === 'brand-primary' && (className += ' ' + css.circle__primary);
-        color === 'brand-secondary' && (className += ' ' + css.circle__secondary);
+        className += ' ' + css['circle__' + color];
 
         return className;
     };
     const labelColor = () => {
         let className = css.label;
-        color === 'brand-primary' && (className += ' ' + css.label__primary);
-        color === 'brand-secondary' && (className += ' ' + css.label__secondary);
+        className += ' ' + css['label__' + color];
 
         return className;
     };

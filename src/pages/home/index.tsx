@@ -15,11 +15,17 @@ const Home = ({ t }: HomeProps) => {
             <h3>Titre H3</h3>
             <h4>Titre H4</h4>
             <div>{t('common:test')} </div>
-            <Button type="button" variant="primary" size="medium" onClick={() => console.log('je click')}>
-                Hello word11
+            <Button type="button" variant="brand-primary" size="medium" onClick={() => console.log('je click')}>
+                Home
             </Button>
-            <Button type="button" variant="secondary" size="medium" isLoading onClick={() => console.log('je click')}>
-                Hello word
+            <Button
+                type="button"
+                variant="brand-secondary"
+                size="large"
+                isLoading
+                onClick={() => console.log('je click')}
+            >
+                Loading
             </Button>
             <div>hello</div>
         </div>

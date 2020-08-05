@@ -29,12 +29,12 @@
 }
 
 
-.primary {
+.brand-primary {
   @extend %button-shared;
   background-color: $brand-primary;
 }
 
-.secondary {
+.brand-secondary {
   @extend %button-shared;
   background-color: $brand-secondary;
 }

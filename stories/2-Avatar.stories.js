@@ -25,7 +25,10 @@ const styles = {
 export const Simple = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
-            <Avatar imageSrc={avatarImage} color="brand-primary" label="John Doe" />
+            <Avatar imageSrc={avatarImage} color="brand-primary" label="Daniel Negreanu" />
+        </div>{' '}
+        <div style={styles.row}>
+            <Avatar imageSrc={avatarImage} color="brand-secondary" label="Gus Hansen" />
         </div>
     </div>
 );
