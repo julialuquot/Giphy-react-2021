@@ -14,7 +14,6 @@ const Home = ({ t }: HomeProps) => {
             <h2>Titre H2</h2>
             <h3>Titre H3</h3>
             <h4>Titre H4</h4>
-            home page
             <div>{t('common:test')} </div>
             <Button type="button" variant="primary" size="medium" onClick={() => console.log('je click')}>
                 Hello word11

@@ -2,6 +2,10 @@
 @import "fonts";
 @import "mixins";
 
+* {
+  font-size: 16px;
+}
+
 h1 {
   font-family: $primary-bold;
   font-size: 4.5rem;
