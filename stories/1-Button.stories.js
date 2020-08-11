@@ -1,7 +1,6 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Button from '../src/components/common/Button/Button';
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/agate';
 
 export default {
     title: 'Button',
