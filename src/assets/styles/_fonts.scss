@@ -1,0 +1,65 @@
+$primary-reg: 'Poppins-Regular', sans-serif;
+$primary-reg-i: 'Poppins-Italic', sans-serif;
+$primary-bold: 'Poppins-Bold', sans-serif;
+$primary-bold-i: 'Poppins-BoldItalic', sans-serif;
+$primary-medium: 'Poppins-Medium', sans-serif;
+$primary-medium-i: 'Poppins-MediumItalic', sans-serif;
+$primary-SemiBold: 'Poppins-SemiBold', sans-serif;
+$primary-SemiBold-i: 'Poppins-SemiBoldItalic', sans-serif;
+
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/Poppins-regular.woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-Italic';
+  font-style: italic;
+  font-weight: normal;
+  src: url('/fonts/Poppins-Italic.woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-Bold';
+  font-style: normal;
+  font-weight: bold;
+  src: url('/fonts/Poppins-Bold.woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-BoldItalic';
+  font-style: italic;
+  font-weight: bold;
+  src: url('/fonts/Poppins-BoldItalic.woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-Medium';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/fonts/Poppins-Medium.woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-MediumItalic';
+  font-style: italic;
+  font-weight: 500;
+  src: url('/fonts/Poppins-MediumItalic.woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBold';
+  font-style: normal;
+  font-weight: 600;
+  src: url('/fonts/Poppins-SemiBold.woff2');
+}
+
+@font-face {
+  font-family: 'Poppins-SemiBoldItalic';
+  font-style: italic;
+  font-weight: 600;
+  src: url('/fonts/Poppins-SemiBoldItalic.woff2');
+}

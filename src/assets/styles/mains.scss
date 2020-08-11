@@ -1,0 +1,28 @@
+@import "reset";
+@import "colors";
+@import "fonts";
+@import "mixins";
+
+* {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: $primary-bold;
+  font-size: 4.5rem;
+}
+
+h2 {
+  font-family: $primary-bold;
+  font-size: 3.5rem;
+}
+
+h3 {
+  font-family: $primary-bold;
+  font-size: 2rem;
+}
+
+h4 {
+  font-family: $primary-SemiBold;
+  font-size: 1.5rem;
+}
