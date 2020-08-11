@@ -65,3 +65,22 @@
     }
   }
 }
+
+@mixin render-color {
+  $colors: "brand-primary" #E22B76,
+  "brand-secondary" #00A5E2,
+  "brand-accent" #FAC700,
+  "brand-primary-muted" #FCE9F1,
+  "brand-secondary-muted" #E0F5FF,
+  "ui-primary" #111E3D,
+  "ui-secondary" #A3AFC2,
+  "ui-tertiary" #E1E5EB,
+  "ui-quaternary" #EFF4FA;
+
+
+  @each $i in $colors {
+    .#{nth($i, 1)} {
+      color: nth($i, 2);
+    }
+  }
+}

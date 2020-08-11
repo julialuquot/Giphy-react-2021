@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './Card.module.scss';
+import Text from '../Text/Text';
 
 type CardProps = {
     cardImg: string;
@@ -17,10 +18,12 @@ const Card = ({ cardImg, cardColor, cardTitle, cardSubtitle, cardText }: CardPro
             </div>
             <div className={css.card__footer}>
                 <div className={css.card__footer__top}>
-                    <span className={css.card__footer__top__title}>{cardTitle}</span>
-                    <span className={css.card__footer__top__subtitle}>{cardSubtitle}</span>
+                    <h5>{cardTitle}</h5>
+                    <h6>{cardSubtitle}</h6>
                 </div>
-                <span className={css.card__footer__text}>{cardText}</span>
+                <Text variant={'body_00'} color={'ui-primary'} customClass={css.card__footer__text}>
+                    {cardText}
+                </Text>
             </div>
         </div>
     );

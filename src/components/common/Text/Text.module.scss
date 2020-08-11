@@ -1,0 +1,49 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/mixins';
+
+
+@include render-color;
+
+.body_00 {
+  font-family: $primary-reg;
+  font-size: $level3;
+}
+
+.body_01 {
+  font-family: $primary-medium;
+  font-size: $level6;
+}
+
+.body_02 {
+  font-family: $primary-medium;
+  font-size: $level3;
+}
+
+.button {
+  font-family: $primary-SemiBold;
+  font-size: $level4;
+}
+
+.label {
+  font-family: $primary-SemiBold;
+  font-size: $level3;
+}
+
+.tagline {
+  font-family: $primary-bold;
+  font-size: $level3;
+  text-transform: uppercase;
+}
+
+.caption {
+  font-family: $primary-SemiBold;
+  font-size: $level2;
+}
+
+.hint {
+  font-family: $primary-SemiBold;
+  font-size: $level1;
+}
+
