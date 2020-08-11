@@ -1,0 +1,9 @@
+@import "colors";
+@import "fonts";
+
+@for $i from 1 through 4 {
+  $fontsize: 10px * $i;
+  .font-#{$i} {
+    font-size: $fontsize;
+  }
+}

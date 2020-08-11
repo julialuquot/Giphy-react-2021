@@ -38,8 +38,17 @@
                 "checkbox / off / default",
                 "checkbox / off / hover",
                 "checkbox / off / disabled",
-                "checkbox / off / error"
+                "checkbox / off / error"]
+        },
+        {
+            "path": "src/components/common/Card/Card.tsx",
+            "zeplinNames": [
+                "cards / partner / default",
+                "cards / partner / hover"
             ]
+
         }
+          
+    
     ]
 }

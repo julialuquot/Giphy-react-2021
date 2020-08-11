@@ -1,7 +1,11 @@
 import React from 'react';
 import css from './index.scss';
+<<<<<<< HEAD
 
+=======
+>>>>>>> c52b2a0... Add card component with stories
 import { withTranslation } from '@i18n';
+import Card from '@components/common/Card/Card';
 
 const namespacesRequired = ['common'];
 
@@ -12,9 +16,15 @@ interface HomeProps {
 const Home = ({ t }: HomeProps) => {
     return (
         <div className={css.home}>
-            <h1>{t('common:test')}</h1>
+            <p>{t('common:test')}</p>
+            <Card
+                cardImg={'images/lpc.png'}
+                cardColor="brand-primary"
+                cardTitle="Zalando"
+                cardSubtitle="Prêt à porter"
+                cardText="Créez un chèque-cadeau Amazon du montant de votre choix utilisable parmi des millions de produits en stock. Livres, jeux vidéos, high-tech, jouets, chaussures, vêtements, sport et plus encore ! sport et plus encore !sport et plus encore !"
+            />
         </div>
     );
 };
-
 export default withTranslation(namespacesRequired)(Home);
