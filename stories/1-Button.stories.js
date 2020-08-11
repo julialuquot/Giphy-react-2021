@@ -1,6 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Button from '../src/components/common/Button/Button';
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/agate';
 
 export default {
     title: 'Button',
@@ -16,9 +17,17 @@ const styles = {
     },
     row: {
         display: 'flex',
-        alignItems: 'space-around',
-        width: '90vw',
+        justifyContent: 'space-around',
+        width: '100%',
         marginBottom: '20px',
+        alignItems: 'center',
+        height: '150px',
+    },
+    column: {
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'space-between',
+        alignItems: 'center',
     },
 };
 
@@ -72,6 +81,22 @@ export const withLoading = () => (
             <Button variant="brand-secondary" size="large" isLoading onClick={action('clicked')}>
                 Secondary Large
             </Button>
+        </div>
+    </div>
+);
+
+export const ghost = () => (
+    <div style={styles.wrapper}>
+        <div style={styles.row}>
+            <Button style={styles.item} variant="brand-primary-ghost" onClick={action('clicked')}>
+                Envoyer
+            </Button>
+            <div style={styles.column}>
+                <div>disabled</div>
+                <Button style={styles.item} isDisabled variant="brand-primary-ghost" onClick={action('clicked')}>
+                    Envoyer
+                </Button>
+            </div>
         </div>
     </div>
 );

@@ -2,7 +2,7 @@ import React from 'react';
 import Spinner from '../Spinner/Spinner';
 import css from './Button.module.scss';
 
-interface ButtonProps {
+type ButtonProps = {
     children: React.ReactNode;
     type?: 'button' | 'submit';
     variant: string;
@@ -10,7 +10,7 @@ interface ButtonProps {
     isDisabled?: boolean;
     isLoading?: boolean;
     onClick: (event: React.MouseEvent<HTMLElement>) => void;
-}
+};
 
 const Button = ({ children, type, variant, size, isDisabled, isLoading, onClick }: ButtonProps) => {
     const style = () => {
@@ -23,7 +23,7 @@ const Button = ({ children, type, variant, size, isDisabled, isLoading, onClick 
     };
 
     return (
-        <button type={type} className={style()} onClick={onClick}>
+        <button type={type} disabled={isDisabled} className={style()} onClick={onClick}>
             {children}
             <Spinner isLoading={isLoading} />
         </button>
