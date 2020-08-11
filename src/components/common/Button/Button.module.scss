@@ -1,6 +1,6 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
-@import '../../../assets/styles//mixins';
+@import '../../../assets/styles/mixins';
 
 
 %button-shared {
@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   height: 48px;
-  padding:12px 24px;
+  padding: 12px 24px;
   border: none;
   @include border-radius(24px);
   font-family: $primary-reg;
@@ -35,28 +35,34 @@
 .brand-primary {
   @extend %button-shared;
   background-color: $brand-primary;
-  &:hover{
+
+  &:hover {
     background-color: lighten($color: $brand-primary, $amount: 10%);
   }
-  &:active{
+
+  &:active {
     background-color: darken($color: $brand-primary, $amount: 10%);
   }
-  &:disabled{
+
+  &:disabled {
     background-color: lighten($color: $brand-primary, $amount: 15%);
   }
 }
 
-.brand-primary-ghost{
+.brand-primary-ghost {
   @extend %button-shared;
   background-color: $ui-transparent;
-  color:$brand-primary;
-  &:hover{
+  color: $brand-primary;
+
+  &:hover {
     background-color: lighten($color: $brand-primary, $amount: 40%);
   }
-  &:active{
+
+  &:active {
     background-color: lighten($color: $brand-primary, $amount: 30%);
   }
-  &:disabled{
+
+  &:disabled {
     color: lighten($color: $brand-primary, $amount: 40%);
     background-color: $ui-transparent;
 
