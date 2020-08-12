@@ -1,0 +1,123 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+
+
+/* Customize the label (the container) */
+.container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding-left: 35px;
+  user-select: none;
+  font-family: $primary-reg;
+  font-size: 1rem;
+  height: 25px;
+
+
+  /* Hide the browser's default checkbox */
+  > input {
+    position: absolute;
+    opacity: 0;
+    height: 0;
+    width: 0;
+
+  }
+
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    border: 2px solid $ui-secondary;
+    cursor: pointer;
+
+    @include border-radius(4px);
+
+    &:hover {
+      border: 2px solid darken($color: $ui-secondary, $amount: 10%);
+    }
+
+    &__error {
+      border: 2px solid $ui-error;
+
+      &:hover {
+        border: 2px solid darken($color: $ui-error, $amount: 10%);
+      }
+    }
+
+    /* Style the checkmark/indicator */
+    &:after {
+      content: "";
+      position: absolute;
+      display: none;
+      left: 7px;
+      top: 4px;
+      width: 4px;
+      height: 8px;
+      border: solid white;
+      border-width: 0 3px 3px 0;
+      -webkit-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+      transform: rotate(45deg);
+
+    }
+
+
+    &__checked {
+      background-color: $brand-primary;
+      border: 2px solid $brand-primary;
+      @include border-radius(4px);
+
+      &:hover {
+        border: 2px solid lighten($color: $brand-primary, $amount: 10%);
+        background-color: lighten($color: $brand-primary, $amount: 10%);
+      }
+
+      &__success {
+        background-color: $ui-success;
+        border: 2px solid $ui-success;
+        @include border-radius(4px);
+
+        &:hover {
+          border: 2px solid lighten($color: $ui-success, $amount: 10%);
+          background-color: lighten($color: $ui-success, $amount: 10%);
+        }
+      }
+
+      &__error {
+        background-color: $ui-error;
+        border: 2px solid $ui-error;
+        @include border-radius(4px);
+
+        &:hover {
+          border: 2px solid lighten($color: $ui-error, $amount: 10%);
+          background-color: lighten($color: $ui-error, $amount: 10%);
+        }
+      }
+    }
+
+
+    &__disabled {
+      opacity: 33%;
+      cursor: default;
+
+      &:hover {
+        border: 2px solid $ui-secondary;
+      }
+    }
+
+  }
+
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+
+

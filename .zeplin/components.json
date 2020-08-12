@@ -27,6 +27,19 @@
                 "buttons / text / pressed",
                 "buttons / text / inactive"
             ]
+        },
+        {
+            "path": "src/components/common/Checkbox/Checkbox.tsx",
+            "zeplinNames": [
+                "checkbox / on / default",
+                "checkbox / on / hover",
+                "checkbox / on / disabled",
+                "checkbox / on / error",
+                "checkbox / off / default",
+                "checkbox / off / hover",
+                "checkbox / off / disabled",
+                "checkbox / off / error"
+            ]
         }
     ]
 }
