@@ -34,9 +34,9 @@
 }
 
 @mixin transition {
-  transition: all 0.4s ease;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
 }
 
 @mixin transform($value1, $value2) {
@@ -65,3 +65,5 @@
     }
   }
 }
+
+

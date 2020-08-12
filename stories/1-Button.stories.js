@@ -30,28 +30,39 @@ const styles = {
     },
 };
 
-export const Default = () => (
+export const Primary = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
-            <Button style={styles.item} variant="brand-primary" size="small" onClick={action('clicked')}>
-                Primary Small
+            <Button variant="primary" size="small" onClick={action('clicked')}>
+                Small
             </Button>
-            <Button variant="brand-primary" size="medium" onClick={action('clicked')}>
-                Primary Medium
+            <Button variant="primary" size="medium" onClick={action('clicked')}>
+                Medium
             </Button>
-            <Button variant="brand-primary" size="large" onClick={action('clicked')}>
-                Primary Medium
+            <Button variant="primary" size="large" onClick={action('clicked')}>
+                Large
+            </Button>
+            <Button variant="primary" size="large" isDisabled onClick={action('clicked')}>
+                Disabled
             </Button>
         </div>
+    </div>
+);
+
+export const Secondary = () => (
+    <div style={styles.wrapper}>
         <div style={styles.row}>
-            <Button variant="brand-secondary" size="small" onClick={action('clicked')}>
-                Secondary
+            <Button variant="secondary" size="small" onClick={action('clicked')}>
+                Small
             </Button>
-            <Button variant="brand-secondary" size="medium" onClick={action('clicked')}>
-                Secondary Small
+            <Button variant="secondary" size="medium" onClick={action('clicked')}>
+                Medium
             </Button>
-            <Button variant="brand-secondary" size="large" onClick={action('clicked')}>
-                Secondary Large
+            <Button variant="secondary" size="large" onClick={action('clicked')}>
+                Large
+            </Button>
+            <Button size="large" isDisabled variant="secondary" onClick={action('clicked')}>
+                Disabled
             </Button>
         </div>
     </div>
@@ -60,42 +71,26 @@ export const Default = () => (
 export const withLoading = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
-            <Button style={styles.item} variant="brand-primary" size="small" isLoading onClick={action('clicked')}>
+            <Button variant="primary" size="small" isLoading onClick={action('clicked')}>
                 Primary Small
             </Button>
-            <Button variant="brand-primary" size="medium" isLoading onClick={action('clicked')}>
+            <Button variant="primary" size="medium" isLoading onClick={action('clicked')}>
                 Primary Medium
             </Button>
-            <Button variant="brand-primary" size="large" isLoading onClick={action('clicked')}>
+            <Button variant="primary" size="large" isLoading onClick={action('clicked')}>
                 Primary Medium
             </Button>
         </div>
         <div style={styles.row}>
-            <Button variant="brand-secondary" size="small" isLoading onClick={action('clicked')}>
+            <Button variant="secondary" size="small" isLoading onClick={action('clicked')}>
                 Secondary
             </Button>
-            <Button variant="brand-secondary" size="medium" isLoading onClick={action('clicked')}>
+            <Button variant="secondary" size="medium" isLoading onClick={action('clicked')}>
                 Secondary Small
             </Button>
-            <Button variant="brand-secondary" size="large" isLoading onClick={action('clicked')}>
+            <Button variant="secondary" size="large" isLoading onClick={action('clicked')}>
                 Secondary Large
             </Button>
-        </div>
-    </div>
-);
-
-export const ghost = () => (
-    <div style={styles.wrapper}>
-        <div style={styles.row}>
-            <Button style={styles.item} variant="brand-primary-ghost" onClick={action('clicked')}>
-                Envoyer
-            </Button>
-            <div style={styles.column}>
-                <div>disabled</div>
-                <Button style={styles.item} isDisabled variant="brand-primary-ghost" onClick={action('clicked')}>
-                    Envoyer
-                </Button>
-            </div>
         </div>
     </div>
 );

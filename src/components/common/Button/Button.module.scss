@@ -1,6 +1,7 @@
 @import '../../../assets/styles/colors';
 @import '../../../assets/styles/fonts';
 @import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
 
 
 %button-shared {
@@ -24,17 +25,19 @@
 }
 
 .medium {
-  width: 162px;
+  width: 166px;
 }
 
 .large {
-  width: 250px;
+  width: 360px;
 }
 
 
-.brand-primary {
+.primary {
   @extend %button-shared;
+  @include transition;
   background-color: $brand-primary;
+
 
   &:hover {
     background-color: lighten($color: $brand-primary, $amount: 10%);
@@ -49,8 +52,9 @@
   }
 }
 
-.brand-primary-ghost {
+.secondary {
   @extend %button-shared;
+  @include transition;
   background-color: $ui-transparent;
   color: $brand-primary;
 
@@ -69,10 +73,6 @@
   }
 }
 
-.brand-secondary {
-  @extend %button-shared;
-  background-color: $brand-secondary;
-}
 
 .disabled {
   @extend %button-shared;

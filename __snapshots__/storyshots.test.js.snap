@@ -65,7 +65,7 @@ exports[`Storyshots Avatar Simple 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Default 1`] = `
+exports[`Storyshots Button Primary 1`] = `
 <div
   style={
     Object {
@@ -89,10 +89,10 @@ exports[`Storyshots Button Default 1`] = `
     }
   >
     <button
-      className=" brand-primary small"
+      className=" primary small "
       onClick={[Function]}
     >
-      Primary Small
+      Small
       <div
         className="button_spinner_container "
       >
@@ -107,10 +107,10 @@ exports[`Storyshots Button Default 1`] = `
       </div>
     </button>
     <button
-      className=" brand-primary medium"
+      className=" primary medium "
       onClick={[Function]}
     >
-      Primary Medium
+      Medium
       <div
         className="button_spinner_container "
       >
@@ -125,41 +125,10 @@ exports[`Storyshots Button Default 1`] = `
       </div>
     </button>
     <button
-      className=" brand-primary large"
+      className=" primary large "
       onClick={[Function]}
     >
-      Primary Medium
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
-    </button>
-  </div>
-  <div
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "height": "150px",
-        "justifyContent": "space-around",
-        "marginBottom": "20px",
-        "width": "100%",
-      }
-    }
-  >
-    <button
-      className=" brand-secondary small"
-      onClick={[Function]}
-    >
-      Secondary
+      Large
       <div
         className="button_spinner_container "
       >
@@ -174,28 +143,11 @@ exports[`Storyshots Button Default 1`] = `
       </div>
     </button>
     <button
-      className=" brand-secondary medium"
+      className=" primary large disabled "
+      disabled={true}
       onClick={[Function]}
     >
-      Secondary Small
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
-    </button>
-    <button
-      className=" brand-secondary large"
-      onClick={[Function]}
-    >
-      Secondary Large
+      Disabled
       <div
         className="button_spinner_container "
       >
@@ -213,7 +165,7 @@ exports[`Storyshots Button Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Button Ghost 1`] = `
+exports[`Storyshots Button Secondary 1`] = `
 <div
   style={
     Object {
@@ -237,10 +189,10 @@ exports[`Storyshots Button Ghost 1`] = `
     }
   >
     <button
-      className=" brand-primary-ghost undefined"
+      className=" secondary small "
       onClick={[Function]}
     >
-      Envoyer
+      Small
       <div
         className="button_spinner_container "
       >
@@ -254,39 +206,61 @@ exports[`Storyshots Button Ghost 1`] = `
         </div>
       </div>
     </button>
-    <div
-      style={
-        Object {
-          "alignItems": "center",
-          "display": "flex",
-          "flexDirection": "column",
-          "justifyContent": "space-between",
-        }
-      }
+    <button
+      className=" secondary medium "
+      onClick={[Function]}
     >
-      <div>
-        disabled
-      </div>
-      <button
-        className=" brand-primary-ghost undefined disabled"
-        disabled={true}
-        onClick={[Function]}
+      Medium
+      <div
+        className="button_spinner_container "
       >
-        Envoyer
         <div
-          className="button_spinner_container "
+          className="button_spinner"
         >
-          <div
-            className="button_spinner"
-          >
-            <div />
-            <div />
-            <div />
-            <div />
-          </div>
+          <div />
+          <div />
+          <div />
+          <div />
         </div>
-      </button>
-    </div>
+      </div>
+    </button>
+    <button
+      className=" secondary large "
+      onClick={[Function]}
+    >
+      Large
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" secondary large disabled "
+      disabled={true}
+      onClick={[Function]}
+    >
+      Disabled
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
   </div>
 </div>
 `;
@@ -315,7 +289,7 @@ exports[`Storyshots Button With Loading 1`] = `
     }
   >
     <button
-      className=" brand-primary small"
+      className=" primary small "
       onClick={[Function]}
     >
       Primary Small
@@ -333,7 +307,7 @@ exports[`Storyshots Button With Loading 1`] = `
       </div>
     </button>
     <button
-      className=" brand-primary medium"
+      className=" primary medium "
       onClick={[Function]}
     >
       Primary Medium
@@ -351,7 +325,7 @@ exports[`Storyshots Button With Loading 1`] = `
       </div>
     </button>
     <button
-      className=" brand-primary large"
+      className=" primary large "
       onClick={[Function]}
     >
       Primary Medium
@@ -382,7 +356,7 @@ exports[`Storyshots Button With Loading 1`] = `
     }
   >
     <button
-      className=" brand-secondary small"
+      className=" secondary small "
       onClick={[Function]}
     >
       Secondary
@@ -400,7 +374,7 @@ exports[`Storyshots Button With Loading 1`] = `
       </div>
     </button>
     <button
-      className=" brand-secondary medium"
+      className=" secondary medium "
       onClick={[Function]}
     >
       Secondary Small
@@ -418,7 +392,7 @@ exports[`Storyshots Button With Loading 1`] = `
       </div>
     </button>
     <button
-      className=" brand-secondary large"
+      className=" secondary large "
       onClick={[Function]}
     >
       Secondary Large
@@ -435,6 +409,155 @@ exports[`Storyshots Button With Loading 1`] = `
         </div>
       </div>
     </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card Partner 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "marginBottom": "20px",
+        "width": "90vw",
+      }
+    }
+  >
+    <div
+      className="card"
+    >
+      <div
+        className="card__header brand-primary"
+      >
+        <img
+          alt="Zalando"
+          className="card__header__img"
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        className="card__footer"
+      >
+        <div
+          className="card__footer__top"
+        >
+          <span
+            className="card__footer__top__title"
+          >
+            Zalando
+          </span>
+          <span
+            className="card__footer__top__subtitle"
+          >
+            Prêt à porter
+          </span>
+        </div>
+        <span
+          className="card__footer__text"
+        >
+          Créez un chèque-cadeau Amazon du montant de votre choix utilisable parmi des millions de produits en stock. Livres, jeux vidéos, high-tech, jouets, chaussures, vêtements, sport et plus encore ! sport et plus encore !sport et plus encore !
+        </span>
+      </div>
+    </div>
+  </div>
+   
+</div>
+`;
+
+exports[`Storyshots Checkbox Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <label
+      className="container"
+    >
+      <input
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="checkmark"
+      />
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="checkmark"
+      />
+      With Label
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        disabled={true}
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="checkmark checkmark__disabled"
+      />
+      Disabled
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="checkmark"
+      />
+      Success
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <span
+        className="checkmark checkmark__error"
+      />
+      Error
+    </label>
   </div>
 </div>
 `;

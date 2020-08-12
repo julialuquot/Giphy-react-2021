@@ -1,9 +1,5 @@
 import React from 'react';
 import css from './index.scss';
-<<<<<<< HEAD
-
-=======
->>>>>>> c52b2a0... Add card component with stories
 import { withTranslation } from '@i18n';
 import Card from '@components/common/Card/Card';
 
