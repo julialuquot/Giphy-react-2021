@@ -452,22 +452,18 @@ exports[`Storyshots Card Partner 1`] = `
         <div
           className="card__footer__top"
         >
-          <span
-            className="card__footer__top__title"
-          >
+          <h5>
             Zalando
-          </span>
-          <span
-            className="card__footer__top__subtitle"
-          >
+          </h5>
+          <h6>
             Prêt à porter
-          </span>
+          </h6>
         </div>
-        <span
-          className="card__footer__text"
+        <p
+          className=" ui-primary body_00 card__footer__text"
         >
           Créez un chèque-cadeau Amazon du montant de votre choix utilisable parmi des millions de produits en stock. Livres, jeux vidéos, high-tech, jouets, chaussures, vêtements, sport et plus encore ! sport et plus encore !sport et plus encore !
-        </span>
+        </p>
       </div>
     </div>
   </div>
@@ -559,6 +555,62 @@ exports[`Storyshots Checkbox Default 1`] = `
       Error
     </label>
   </div>
+</div>
+`;
+
+exports[`Storyshots Text Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "padding": "30px",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <p
+    className=" ui-primary body_01 "
+  >
+    Body 01
+  </p>
+  <br />
+  <p
+    className=" ui-secondary body_02 "
+  >
+    Body 02
+  </p>
+  <br />
+  <p
+    className=" brand-secondary button "
+  >
+    Button
+  </p>
+  <br />
+  <p
+    className=" undefined label "
+  >
+    Label
+  </p>
+  <br />
+  <p
+    className=" undefined tagline "
+  >
+    Tagline
+  </p>
+  <br />
+  <p
+    className=" undefined caption "
+  >
+    Caption
+  </p>
+  <br />
+  <p
+    className=" undefined hint "
+  >
+    Hint
+  </p>
 </div>
 `;
 

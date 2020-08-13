@@ -1,9 +1,12 @@
-@import "colors";
-@import "fonts";
-
-@for $i from 1 through 4 {
-  $fontsize: 10px * $i;
-  .font-#{$i} {
-    font-size: $fontsize;
-  }
-}
+$level1: 0.625rem;
+$level2: 0.75rem;
+$level3: 1rem;
+$level4: 1.125rem;
+$level5: 1.25rem;
+$level6: 1.5rem;
+$level7: 1.75rem;
+$level8: 2rem;
+$level9: 2.5rem;
+$level10: 3rem;
+$level11: 3.5rem;
+$level12: 4.5rem;

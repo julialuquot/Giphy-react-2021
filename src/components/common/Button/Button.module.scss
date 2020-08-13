@@ -13,8 +13,8 @@
   padding: 12px 24px;
   border: none;
   @include border-radius(24px);
-  font-family: $primary-reg;
-  font-size: 1.125rem;
+  font-family: $primary-SemiBold;
+  font-size: $level3;
   color: $white;
   cursor: pointer;
   outline: none;
