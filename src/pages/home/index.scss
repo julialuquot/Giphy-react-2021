@@ -3,23 +3,6 @@
 
 
 .home {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 0 150px 0 150px;
-  color: black;
+  max-width: 100vw;
   background-color: $background-2;
-
-
-  ul {
-    font-family: $primary-reg;
-    padding: 50px;
-
-    li {
-      padding: 5px
-    }
-
-  }
 }
