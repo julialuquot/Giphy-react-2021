@@ -22,17 +22,21 @@ exports[`Storyshots Avatar Simple 1`] = `
     }
   >
     <div
-      className="circle circle__brand-primary"
+      className=""
     >
-      <img
-        alt="avatar_img"
-        className="image"
-        src="test-file-stub"
-      />
       <div
-        className="label label__brand-primary"
+        className="circle circle__brand-primary"
       >
-        Daniel Negreanu
+        <img
+          alt="avatar_img"
+          className="image"
+          src="test-file-stub"
+        />
+        <div
+          className="label label__brand-primary"
+        >
+          Daniel Negreanu
+        </div>
       </div>
     </div>
   </div>
@@ -48,19 +52,63 @@ exports[`Storyshots Avatar Simple 1`] = `
     }
   >
     <div
-      className="circle circle__brand-secondary"
+      className=""
     >
-      <img
-        alt="avatar_img"
-        className="image"
-        src="test-file-stub"
-      />
       <div
-        className="label label__brand-secondary"
+        className="circle circle__brand-secondary"
       >
-        Gus Hansen
+        <img
+          alt="avatar_img"
+          className="image"
+          src="test-file-stub"
+        />
+        <div
+          className="label label__brand-secondary"
+        >
+          Gus Hansen
+        </div>
       </div>
     </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Control 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <button
+      className="button "
+      onClick={[Function]}
+    >
+      Anniversaire
+    </button>
+    <button
+      className="button disabled "
+      disabled={true}
+      onClick={[Function]}
+    >
+      Disabled
+    </button>
   </div>
 </div>
 `;

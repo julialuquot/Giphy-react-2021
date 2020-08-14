@@ -1,6 +1,7 @@
 import React from 'react';
 import { action } from '@storybook/addon-actions';
 import Button from '../src/components/common/Button/Button';
+import ButtonControl from '../src/components/common/ButtonControl/ButtonControl';
 
 export default {
     title: 'Button',
@@ -64,6 +65,17 @@ export const Secondary = () => (
             <Button size="large" isDisabled variant="secondary" onClick={action('clicked')}>
                 Disabled
             </Button>
+        </div>
+    </div>
+);
+
+export const Control = () => (
+    <div style={styles.wrapper}>
+        <div style={styles.row}>
+            <ButtonControl onClick={action('clicked')}>Anniversaire</ButtonControl>
+            <ButtonControl isDisabled onClick={action('clicked')}>
+                Disabled
+            </ButtonControl>
         </div>
     </div>
 );
