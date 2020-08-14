@@ -9,7 +9,7 @@ module.exports = {
         '@storybook/addon-docs',
     ],
 
-    webpackFinal: async (config, { configType }) => {
+    webpackFinal: async (config, {configType}) => {
         config.module.rules.push({
             test: /\.scss$/,
             use: [

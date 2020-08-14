@@ -1,0 +1,111 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+%shared-select {
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: right 20px top 22px;
+  font-family: $primary-SemiBold;
+  color: $ui-primary;
+  font-size: $level3;
+  line-height: 1.5;
+  cursor: pointer;
+  @include border-radius(8px);
+  @include transition;
+
+}
+
+.select {
+  @extend %shared-select;
+
+  &__arrow {
+    position: absolute;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px;
+    right: 24px;
+    top: 24px;
+
+    &__default {
+      background-image: url("/icons/chevron-down-black.svg");
+    }
+
+    &__option_selected {
+      background-image: url("/icons/chevron-down-white.svg");
+    }
+  }
+
+  &__placeholder {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px;
+  }
+
+  &__control {
+    width: 438px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid $ui-tertiary;
+    @include border-radius(8px);
+    @include transition;
+
+    &:hover {
+      border: 2px solid $ui-secondary;
+    }
+
+    &__option_selected {
+      background-color: $brand-primary;
+      color: white;
+    }
+  }
+
+  &__menu {
+    width: 100%;
+    margin-top: 20px;
+    background-color: $background-1;
+    box-shadow: 4px 6px 40px 0 rgba(0, 0, 0, 0.1);
+    max-height: 270px;
+    overflow-y: auto;
+    cursor: pointer;
+    @include border-radius(8px);
+
+    &::-webkit-scrollbar-thumb {
+      @include border-radius(8px);
+      background-color: $ui-tertiary;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      margin-right: 5px;
+    }
+  }
+
+
+}
+
+:global {
+
+  .Dropdown-option {
+    padding: 15px;
+    @include transition;
+    @include border-radius(8px);
+
+    &:hover {
+      background-color: $ui-quaternary;
+    }
+
+    &.is-selected {
+      background-color: $brand-primary;
+      color: $white;
+
+      &:hover {
+        background-color: lighten($color: $brand-primary, $amount: 10%);
+      }
+    }
+  }
+}
