@@ -558,6 +558,178 @@ exports[`Storyshots Checkbox Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Input field Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input"
+          onChange={[Function]}
+          placeholder="name"
+        />
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__error"
+          onChange={[Function]}
+          placeholder="name"
+        />
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__valid"
+          onChange={[Function]}
+          placeholder="name"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__iconRight"
+          onChange={[Function]}
+          placeholder="name"
+        />
+        <div
+          className="input__icon input__icon__right"
+        >
+          <img
+            alt="input icon"
+            src="/icons/eye-outline.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__iconLeft"
+          onChange={[Function]}
+          placeholder="name"
+        />
+        <div
+          className="input__icon input__icon__left"
+        >
+          <img
+            alt="input icon"
+            src="/icons/eye-outline.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__iconLeft input__custom1"
+          onChange={[Function]}
+          placeholder="name"
+        />
+        <div
+          className="input__icon input__icon__left"
+        >
+          <img
+            alt="input icon"
+            src="/icons/search.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Text Default 1`] = `
 <div
   style={
