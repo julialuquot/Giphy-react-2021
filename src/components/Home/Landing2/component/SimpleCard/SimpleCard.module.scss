@@ -1,0 +1,32 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
+
+
+.card {
+  width: 750px;
+  height: 422px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+
+
+  &__title {
+    padding: 24px;
+    line-height: 1.19;
+
+    > h3 {
+      max-width: 460px;
+      margin-bottom: 8px;
+      color: $white
+    }
+
+    > h6 {
+      color: $white
+    }
+  }
+
+
+}
+

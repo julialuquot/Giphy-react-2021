@@ -6,9 +6,10 @@ interface AvatarProps {
     imageSrc: string;
     color: string;
     label: string;
+    customClass: string;
 }
 
-const Avatar = ({ imageSrc, color, label }: AvatarProps) => {
+const Avatar = ({ imageSrc, color, label, customClass }: AvatarProps) => {
     const circleColor = () => {
         let className = css.circle;
         className += ' ' + css['circle__' + color];
@@ -22,9 +23,11 @@ const Avatar = ({ imageSrc, color, label }: AvatarProps) => {
         return className;
     };
     return (
-        <div className={circleColor()}>
-            <img className={css.image} src={imageSrc} alt="avatar_img" />
-            <div className={labelColor()}>{label}</div>
+        <div className={customClass || ''}>
+            <div className={circleColor()}>
+                <img className={css.image} src={imageSrc} alt="avatar_img" />
+                <div className={labelColor()}>{label}</div>
+            </div>
         </div>
     );
 };

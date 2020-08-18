@@ -1,4 +1,6 @@
 @import '../../../assets/styles/colors';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/fonts';
 
 @mixin label-color($color) {
   background-color: $color;
@@ -34,28 +36,40 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 126%;
+  min-width: 100px;
+  padding: 0 8px 0 8px;
   height: 30%;
   border-radius: 8px;
   color: $white;
-  font-size: 0.625rem;
+  font-family: $primary-reg;
+  font-weight: 600;
+  font-size: $level2;
 }
 
-.circle__brand-primary {
-  @include circle-color($brand-primary)
-}
 
 .circle__brand-secondary {
   @include circle-color($brand-secondary)
 }
 
+.circle__brand-accent {
+  @include circle-color($brand-accent)
+}
 
-.label__brand-primary {
-  @include label-color($brand-primary)
+.circle__ui-success {
+  @include circle-color($ui-success)
+}
+
+
+.label__brand-accent {
+  @include label-color($brand-accent)
 }
 
 .label__brand-secondary {
   @include label-color($brand-secondary)
+}
+
+.label__ui-success {
+  @include label-color($ui-success)
 }
 
 

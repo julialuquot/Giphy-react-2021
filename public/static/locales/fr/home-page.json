@@ -2,5 +2,38 @@
     "landing": {
         "main-title": "Créer un pot commun",
         "button--create-pot": "Créer mon pot"
+    },
+    "landing-2": {
+        "main-title-1": "Plaisir d'offir",
+        "main-title-2": "joie de recevoir",
+        "subTitle": " Offrez lui à plusieurs le cadeau de ses rêves !",
+        "avatar": {
+            "label-1": "Julie Marchand",
+            "label-2": "Thomas Koper",
+            "label-3": "Nicolas Roussel"
+        },
+        "label": {
+            "txt-1": "Bon anniversaire \uD83D\uDE09 \uD83D\uDE09\n",
+            "txt-2": "Joyeux anniversaire l'ami",
+            "txt-3": " Un an de plus ! \uD83C\uDF89 \uD83C\uDF89",
+            "txt-4": "Le cap de la trentaine!"
+        },
+        "cardInfo": {
+            "tab-0": {
+                "label": "Anniversaire",
+                "title": "Petit pot pour l’anniversaire de notre Nico !",
+                "text": "34 personnes ont participé"
+            },
+            "tab-1": {
+                "label": "Pot de départ",
+                "title": "Lorem ipsum dolor sit amet!",
+                "text": "999 personnes ont participé"
+            },
+            "tab-2": {
+                "label": "Et Bien dautres",
+                "title": "Lorem ipsum dolor sit amet, consectetur adipiscing!",
+                "text": "12 personnes ont participé"
+            }
+        }
     }
 }

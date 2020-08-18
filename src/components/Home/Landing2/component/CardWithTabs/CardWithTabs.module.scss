@@ -1,0 +1,65 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
+
+
+.tabs {
+  width: 490px;
+  position: relative;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  top: 450px;
+
+
+  &__list {
+    width: 490px;
+    position: absolute;
+    z-index: 9;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 56px;
+    @include border-radius(28px);
+    box-shadow: 0 0 32px 0 rgba(163, 175, 194, 0.24);
+    background-color: $white;
+
+    &__tab {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 152px;
+      height: 48px;
+      border: none;
+      @include border-radius(24px);
+      font-family: $primary-SemiBold;
+      font-size: $level3;
+      cursor: pointer;
+      @include transition;
+
+      &__selected {
+        background-color: $brand-primary;
+        color: $white;
+        font-family: $primary-SemiBold;
+        font-size: $level3;
+      }
+    }
+  }
+
+  &__panel {
+    position: absolute;
+    left: -130px;
+    margin: 0 auto;
+    top: -394px;
+    width: 750px;
+    height: 422px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+}
+
+
+

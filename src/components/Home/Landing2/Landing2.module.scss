@@ -1,0 +1,106 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+%avatar-shared {
+  width: fit-content;
+  position: absolute;
+}
+
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  padding: 0 150px 0 150px;
+  box-sizing: border-box;
+  background-color: $background-1;
+
+  .label {
+    &__success {
+      position: absolute;
+      top: 400px;
+      left: 125px;
+      transform: rotate(8deg)
+    }
+
+    &__primary_left {
+      position: absolute;
+      top: 750px;
+      left: 52px;
+      transform: rotate(-6deg)
+
+
+    }
+
+    &__secondary {
+      position: absolute;
+      top: 215px;
+      right: 150px;
+      transform: rotate(5deg)
+
+
+    }
+
+    &__primary_right {
+      position: absolute;
+      top: 530px;
+      right: 120px;
+
+      transform: rotate(-6deg)
+
+
+    }
+  }
+
+  .avatar {
+
+    &__accent {
+      @extend %avatar-shared;
+      top: 180px;
+      left: 116px;
+      transform: rotate(-6deg)
+    }
+
+    &__secondary {
+      @extend %avatar-shared;
+      top: 580px;
+      left: 128px;
+      transform: rotate(3deg)
+
+    }
+
+    &__success {
+      @extend %avatar-shared;
+      top: 670px;
+      right: 116px;
+      transform: rotate(3deg)
+
+    }
+  }
+
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 100px auto 0 auto;
+    width: 563px;
+
+    &__primary {
+      color: $brand-primary;
+      margin-bottom: 20px
+    }
+
+    &__text {
+      margin-top: 20px;
+    }
+
+  }
+
+}
+
+

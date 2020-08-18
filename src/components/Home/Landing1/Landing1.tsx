@@ -1,5 +1,5 @@
 import React from 'react';
-import css from './Landing.module.scss';
+import css from './Landing1.module.scss';
 import { withTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
 import Select from '@components/common/Select/Select';
@@ -20,7 +20,7 @@ const options = [
     { value: 'Un week-end vacances entre amis', label: 'Un week-end vacances entre amis' },
 ];
 
-const Landing = ({ t }: LandingProps) => {
+const Landing1 = ({ t }: LandingProps) => {
     const handleClick = () => {};
     return (
         <div className={css.wrapper}>
@@ -48,4 +48,4 @@ const Landing = ({ t }: LandingProps) => {
     );
 };
 
-export default withTranslation(namespacesRequired)(Landing);
+export default withTranslation(namespacesRequired)(Landing1);
