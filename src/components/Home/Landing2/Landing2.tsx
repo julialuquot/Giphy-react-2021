@@ -17,19 +17,19 @@ const Landing2 = ({ t }: Landing2Props) => {
         <div className={css.wrapper}>
             <Avatar
                 customClass={css.avatar__accent}
-                imageSrc={'images/no-avatar.png/'}
+                imageSrc={'images/profile-picture-1.jpg'}
                 color="brand-accent"
                 label={t('home-page:landing-2.avatar.label-1')}
             />
             <Avatar
                 customClass={css.avatar__secondary}
-                imageSrc={'images/no-avatar.png/'}
+                imageSrc={'images/profile-picture-2.jpg'}
                 color="brand-secondary"
                 label={t('home-page:landing-2.avatar.label-2')}
             />
             <Avatar
                 customClass={css.avatar__success}
-                imageSrc={'images/no-avatar.png/'}
+                imageSrc={'images/profile-picture-3.jpg'}
                 color="ui-success"
                 label={t('home-page:landing-2.avatar.label-3')}
             />
