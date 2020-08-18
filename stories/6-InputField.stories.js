@@ -32,32 +32,19 @@ const styles = {
 export const Default = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
-            <InputField label="Name" placeholder="name" onChange={() => console.log('typing')} />
-            <InputField error={true} label="Name" placeholder="name" onChange={() => console.log('typing')} />
-            <InputField valid={true} label="Name" placeholder="name" onChange={() => console.log('typing')} />
+            <InputField label="Name" placeholder="name" />
+            <InputField error={true} label="Name" placeholder="name" />
+            <InputField valid={true} label="Name" placeholder="name" />
         </div>
 
         <div style={styles.row}>
-            <InputField
-                label="Name"
-                placeholder="name"
-                icon="/icons/eye-outline.svg"
-                iconPosition="right"
-                onChange={() => console.log('typing')}
-            />
-            <InputField
-                label="Name"
-                placeholder="name"
-                icon="/icons/eye-outline.svg"
-                iconPosition="left"
-                onChange={() => console.log('typing')}
-            />
+            <InputField label="Name" placeholder="name" icon="/icons/eye-outline.svg" iconPosition="right" />
+            <InputField label="Name" placeholder="name" icon="/icons/eye-outline.svg" iconPosition="left" />
             <InputField
                 label="Name"
                 placeholder="name"
                 icon="/icons/search.svg"
                 iconPosition="left"
-                onChange={() => console.log('typing')}
                 customStyle="custom1"
             />
         </div>

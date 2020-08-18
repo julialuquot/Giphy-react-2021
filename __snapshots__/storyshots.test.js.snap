@@ -498,61 +498,75 @@ exports[`Storyshots Checkbox Default 1`] = `
       className="container"
     >
       <input
-        onChange={[Function]}
         type="checkbox"
       />
       <span
         className="checkmark"
+      />
+      <p
+        className=" body_02 "
       />
     </label>
     <label
       className="container"
     >
       <input
-        onChange={[Function]}
         type="checkbox"
       />
       <span
         className="checkmark"
       />
-      With Label
+      <p
+        className=" body_02 "
+      >
+        With Label
+      </p>
     </label>
     <label
       className="container"
     >
       <input
         disabled={true}
-        onChange={[Function]}
         type="checkbox"
       />
       <span
         className="checkmark checkmark__disabled"
       />
-      Disabled
+      <p
+        className=" body_02 "
+      >
+        Disabled
+      </p>
     </label>
     <label
       className="container"
     >
       <input
-        onChange={[Function]}
         type="checkbox"
       />
       <span
         className="checkmark"
       />
-      Success
+      <p
+        className=" body_02 "
+      >
+        Success
+      </p>
     </label>
     <label
       className="container"
     >
       <input
-        onChange={[Function]}
         type="checkbox"
       />
       <span
         className="checkmark checkmark__error"
       />
-      Error
+      <p
+        className=" body_02 "
+      >
+        Error
+      </p>
     </label>
   </div>
 </div>
@@ -594,7 +608,6 @@ exports[`Storyshots Input field Default 1`] = `
       >
         <input
           className="input"
-          onChange={[Function]}
           placeholder="name"
         />
       </div>
@@ -612,7 +625,6 @@ exports[`Storyshots Input field Default 1`] = `
       >
         <input
           className="input input__error"
-          onChange={[Function]}
           placeholder="name"
         />
       </div>
@@ -630,7 +642,6 @@ exports[`Storyshots Input field Default 1`] = `
       >
         <input
           className="input input__valid"
-          onChange={[Function]}
           placeholder="name"
         />
       </div>
@@ -661,7 +672,6 @@ exports[`Storyshots Input field Default 1`] = `
       >
         <input
           className="input input__iconRight"
-          onChange={[Function]}
           placeholder="name"
         />
         <div
@@ -687,7 +697,6 @@ exports[`Storyshots Input field Default 1`] = `
       >
         <input
           className="input input__iconLeft"
-          onChange={[Function]}
           placeholder="name"
         />
         <div
@@ -713,7 +722,6 @@ exports[`Storyshots Input field Default 1`] = `
       >
         <input
           className="input input__iconLeft input__custom1"
-          onChange={[Function]}
           placeholder="name"
         />
         <div
@@ -861,25 +869,25 @@ exports[`Storyshots Text Default 1`] = `
   </p>
   <br />
   <p
-    className=" undefined label "
+    className=" label "
   >
     Label
   </p>
   <br />
   <p
-    className=" undefined tagline "
+    className=" tagline "
   >
     Tagline
   </p>
   <br />
   <p
-    className=" undefined caption "
+    className=" caption "
   >
     Caption
   </p>
   <br />
   <p
-    className=" undefined hint "
+    className=" hint "
   >
     Hint
   </p>
@@ -1058,4 +1066,47 @@ exports[`Storyshots Welcome to Storybook 1`] = `
      to add webpack loaders and plugins you are using in this project.
   </p>
 </article>
+`;
+
+exports[`Storyshots Xconnect Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "padding": "30px",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="apple"
+    >
+      <img
+        alt="apple logo"
+        src="icons/apple-logo.svg"
+      />
+    </div>
+    <div
+      className="google"
+    >
+      <img
+        alt="google logo"
+        src="icons/google-logo.svg"
+      />
+    </div>
+    <div
+      className="facebook"
+    >
+      <img
+        alt="facebook logo"
+        src="icons/facebook-logo.svg"
+      />
+    </div>
+  </div>
+</div>
 `;

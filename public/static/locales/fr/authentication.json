@@ -1,0 +1,18 @@
+{
+    "login":{
+        "title":"Connexion",
+        "email":"Email",
+        "email-label":"adressemail@gmail.com",
+        "password":"Mot de passe",
+        "password-label":"Entrer mot de passe",
+        "connect-button":"se connecter",
+        "remember-me":"Se souvenir de moi",
+        "create-account-text":"Vous n'avez pas encore de compte ?",
+        "create-account-button":"Inscrivez-vous",
+        "right":{
+        "title_1":"Offrez votre pot avec",
+        "title_2":"une carte de voeux",
+        "description":"Invitez les participants de votre cagnotte à laisser un petit mot sur votre carte de voeux digitale ! Vous pouvez ensuite la télécharger et l’imprimer."
+        }
+    }
+}

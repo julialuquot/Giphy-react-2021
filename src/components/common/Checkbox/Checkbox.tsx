@@ -1,20 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import css from './Checkbox.module.scss';
+import Text from '../Text/Text';
 
 interface CheckboxProps {
     children?: React.ReactNode;
     disabled?: boolean;
     error?: boolean;
     success?: boolean;
+    onChange: Function;
+    value: boolean;
+    name: string;
 }
 
-const Checkbox = ({ children, disabled, error, success }: CheckboxProps) => {
-    const [checked, setChecked] = useState(false);
-
-    const handleChange = (event) => {
-        setChecked(event.target.checked);
-    };
-
+const Checkbox = ({ children, disabled, error, success, onChange, value, name }: CheckboxProps) => {
+    const checked = value;
     const checkmarkStyle = () => {
         let className = css.checkmark;
         checked && (className += ' ' + css.checkmark__checked);
@@ -28,9 +27,9 @@ const Checkbox = ({ children, disabled, error, success }: CheckboxProps) => {
 
     return (
         <label className={css.container}>
-            <input onChange={handleChange} type="checkbox" disabled={disabled} />
+            <input onChange={onChange} name={name} type="checkbox" disabled={disabled} />
             <span className={checkmarkStyle()} />
-            {children}
+            <Text variant="body_02">{children}</Text>
         </label>
     );
 };

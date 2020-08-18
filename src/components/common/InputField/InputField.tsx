@@ -14,6 +14,7 @@ type InputFieldProps = {
     icon?: string;
     iconPosition: 'left' | 'right';
     onChange: React.FormEventHandler<HTMLInputElement>;
+    onBlur: React.FormEventHandler<HTMLInputElement>;
     customStyle?: string;
 };
 
@@ -30,6 +31,7 @@ const InputField = ({
     icon,
     iconPosition,
     onChange,
+    onBlur,
     customStyle,
 }: InputFieldProps) => {
     const getClassName = () => {
@@ -70,6 +72,7 @@ const InputField = ({
                     className={getClassName()}
                     value={value}
                     onChange={onChange}
+                    onBlur={onBlur}
                     disabled={disabled}
                 />
                 {icon && (

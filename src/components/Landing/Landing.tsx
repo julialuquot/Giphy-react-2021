@@ -21,9 +21,7 @@ const options = [
 ];
 
 const Landing = ({ t }: LandingProps) => {
-    const handleClick = () => {
-        console.log('-----> click');
-    };
+    const handleClick = () => {};
     return (
         <div className={css.wrapper}>
             <img className={css.sphere_blue_left} src="/images/sphere-blue.png" alt={'sphere'} />

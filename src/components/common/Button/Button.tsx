@@ -3,22 +3,34 @@ import Spinner from '../Spinner/Spinner';
 import css from './Button.module.scss';
 
 type ButtonProps = {
-    onClick: (event: React.MouseEvent<HTMLElement>) => void;
+    onClick?: (event: React.MouseEvent<HTMLElement>) => void;
     children: React.ReactNode;
     type?: 'button' | 'submit';
     isDisabled?: boolean;
     isLoading?: boolean;
     customClass?: string;
-    variant: string;
+    variant?: string;
     size: string;
+    mobileFullWidth?: boolean;
 };
 
-const Button = ({ children, type, variant, size, isDisabled, isLoading, onClick, customClass }: ButtonProps) => {
+const Button = ({
+    children,
+    type,
+    variant,
+    size,
+    isDisabled,
+    isLoading,
+    onClick,
+    customClass,
+    mobileFullWidth,
+}: ButtonProps) => {
     const buttonStyle = () => {
         let className = '';
         className += ' ' + css[variant];
         className += ' ' + css[size];
         isDisabled && (className += ' ' + css.disabled);
+        mobileFullWidth && (className += ' ' + css.mobile_full_width);
 
         return className;
     };

@@ -3,7 +3,7 @@ import css from './Text.module.scss';
 
 type TextProps = {
     children: React.ReactNode;
-    variant: string;
+    variant?: string;
     color?: string;
     customClass?: string;
 };
@@ -11,7 +11,7 @@ type TextProps = {
 const Text = ({ variant, children, color, customClass }: TextProps) => {
     const textStyle = () => {
         let className = '';
-        className += ' ' + css[color];
+        color && (className += ' ' + css[color]);
         variant === 'body_00' && (className += ' ' + css.body_00);
         variant === 'body_01' && (className += ' ' + css.body_01);
         variant === 'body_02' && (className += ' ' + css.body_02);

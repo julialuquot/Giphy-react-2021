@@ -36,6 +36,7 @@
                 "ignoreRestSiblings": true,
                 "varsIgnorePattern": "^_|^next$"
             }
-        ]
+        ],
+         "no-console": 2
     }
 }

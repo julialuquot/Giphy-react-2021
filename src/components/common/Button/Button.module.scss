@@ -32,6 +32,10 @@
   width: 360px;
 }
 
+.mobile_full_width{
+  width: 100%;
+}
+
 
 .primary {
   @extend %button-shared;

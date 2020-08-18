@@ -11,14 +11,19 @@
         "lint-win": "eslint */**/*.{js,ts,tsx} --quiet --fix",
         "storybook": "start-storybook -s ./public -p 6006",
         "build-storybook": "build-storybook",
-        "test": "jest"
+        "test": "jest",
+        "analyze": "cross-env ANALYZE=true next build",
+        "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
+        "analyze:browser": "cross-env BUNDLE_ANALYZE=browser next build"
     },
     "dependencies": {
         "@babel/preset-env": "^7.11.0",
+        "@next/bundle-analyzer": "^9.5.2",
         "@types/next": "^9.0.0",
         "@types/yup": "^0.29.3",
         "@zeit/next-sass": "^1.0.1",
         "body-parser": "^1.19.0",
+        "cross-env": "^7.0.2",
         "express": "^4.17.1",
         "formik": "^2.1.5",
         "moment": "^2.27.0",
