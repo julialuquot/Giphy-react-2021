@@ -35,15 +35,11 @@ const CardWithTabs = ({ t }: CardWithTabsProps) => {
     return (
         <Tabs className={css.tabs}>
             <TabList className={css.tabs__list}>
-                <Tab className={css.tabs__list__tab} selectedClassName={css.tabs__list__tab__selected}>
-                    {cardInfo[0].tabLabel}
-                </Tab>
-                <Tab className={css.tabs__list__tab} selectedClassName={css.tabs__list__tab__selected}>
-                    {cardInfo[1].tabLabel}
-                </Tab>
-                <Tab className={css.tabs__list__tab} selectedClassName={css.tabs__list__tab__selected}>
-                    {cardInfo[2].tabLabel}
-                </Tab>
+                {cardInfo.map((card, index) => (
+                    <Tab key={index} className={css.tabs__list__tab} selectedClassName={css.tabs__list__tab__selected}>
+                        {card.tabLabel}
+                    </Tab>
+                ))}
             </TabList>
 
             {cardInfo.map((card, i) => (
