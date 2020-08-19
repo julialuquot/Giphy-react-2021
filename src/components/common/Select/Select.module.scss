@@ -4,6 +4,9 @@
 @import '../../../assets/styles/typography';
 
 %shared-select {
+  z-index: 99;
+  position: relative;
+  width: 438px;
   padding: 0;
   background-repeat: no-repeat;
   background-position: right 20px top 22px;
@@ -15,10 +18,15 @@
   @include border-radius(8px);
   @include transition;
 
+  @include media(m-device) {
+    width: 264px;
+  }
+
 }
 
 
 .select {
+
   @extend %shared-select;
 
   &__arrow {
@@ -52,6 +60,10 @@
     @include border-radius(8px);
     @include transition;
 
+    @include media(m-device) {
+      width: 100%;
+    }
+
     &:hover {
       border: 2px solid $ui-secondary;
     }
@@ -63,6 +75,7 @@
   }
 
   &__menu {
+    position: absolute;
     width: 100%;
     margin-top: 20px;
     padding: 8px;
@@ -72,6 +85,10 @@
     overflow-y: auto;
     cursor: pointer;
     @include border-radius(8px);
+
+    @include media(m-device) {
+      width: 100%;
+    }
 
     &::-webkit-scrollbar-thumb {
       @include border-radius(8px);

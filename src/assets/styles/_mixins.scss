@@ -27,6 +27,12 @@
   }
 }
 
+@mixin hide-on-m-device {
+  @include media(m-device) {
+    display: none;
+  }
+}
+
 @mixin border-radius($radius) {
   border-radius: $radius;
   -webkit-border-radius: $radius;
@@ -106,3 +112,5 @@
     }
   }
 }
+
+

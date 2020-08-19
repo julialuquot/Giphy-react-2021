@@ -11,6 +11,9 @@
 h1 {
   font-family: $primary-bold;
   font-size: $level12;
+  @include media(m-device) {
+    font-size: $level12-mobile;
+  }
 }
 
 h2 {
