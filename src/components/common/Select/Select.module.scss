@@ -17,26 +17,24 @@
 
 }
 
+
 .select {
   @extend %shared-select;
 
   &__arrow {
-    position: absolute;
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-position: center;
-    width: 20px;
-    height: 20px;
-    right: 24px;
-    top: 24px;
 
-    &__default {
-      background-image: url("/icons/chevron-down-black.svg");
+    &_closed {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
 
-    &__option_selected {
-      background-image: url("/icons/chevron-down-white.svg");
+    &_open {
+      position: absolute;
+      top: 20px;
+      right: 20px;
     }
+
   }
 
   &__placeholder {
@@ -58,7 +56,7 @@
       border: 2px solid $ui-secondary;
     }
 
-    &__option_selected {
+    &__is_open {
       background-color: $brand-primary;
       color: white;
     }
@@ -67,6 +65,7 @@
   &__menu {
     width: 100%;
     margin-top: 20px;
+    padding: 8px;
     background-color: $background-1;
     box-shadow: 4px 6px 40px 0 rgba(0, 0, 0, 0.1);
     max-height: 270px;
@@ -90,10 +89,12 @@
 
 :global {
 
+
   .Dropdown-option {
     padding: 15px;
     @include transition;
     @include border-radius(8px);
+
 
     &:hover {
       background-color: $ui-quaternary;
@@ -107,5 +108,7 @@
         background-color: lighten($color: $brand-primary, $amount: 10%);
       }
     }
+
   }
+
 }
