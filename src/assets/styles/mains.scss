@@ -19,6 +19,9 @@ h1 {
 h2 {
   font-family: $primary-bold;
   font-size: $level11;
+  @include media(m-device) {
+    font-size: $level7;
+  }
 }
 
 h3 {
@@ -29,6 +32,7 @@ h3 {
 h4 {
   font-family: $primary-SemiBold;
   font-size: $level7;
+
 }
 
 h5 {

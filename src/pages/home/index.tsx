@@ -4,6 +4,7 @@ import { resetIdCounter } from 'react-tabs';
 import { withTranslation } from '@i18n';
 import Landing1 from '@components/Home/Landing1/Landing1';
 import Landing2 from '@components/Home/Landing2/Landing2';
+import Landing4 from '@components/Home/Landing4/Landing4';
 
 const namespacesRequired = ['common'];
 
@@ -12,6 +13,7 @@ const Home = () => {
         <div className={css.home}>
             <Landing1 />
             <Landing2 />
+            <Landing4 />
         </div>
     );
 };
