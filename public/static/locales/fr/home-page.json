@@ -35,5 +35,18 @@
                 "text": "12 personnes ont participé"
             }
         }
+    },
+    "landing-3": {
+        "main-title-1": "Des moyens",
+        "main-title-2": "dépenses variés",
+        "of": "de ",
+        "subTitle": "Qui s’adaptent à vos choix de cadeaux et à vos événements !",
+        "spending-way": {
+            "title-1": "Grauit pour toujours",
+            "title-2": "commission de 1,9% à 4%",
+            "cta-1": "Carte cadeau",
+            "cta-2": "Nos partenaires",
+            "cta-3": "carte cadeau"
+        }
     }
 }

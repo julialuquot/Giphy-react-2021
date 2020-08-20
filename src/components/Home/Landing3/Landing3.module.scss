@@ -1,0 +1,91 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 0 150px 0 150px;
+  box-sizing: border-box;
+
+  @include media(m-device) {
+    flex-direction: column;
+  }
+
+  .icon {
+    @include media(m-device) {
+      display: none;
+    }
+
+    &__torus {
+      position: absolute;
+      left: 5%;
+      top: 170px;
+      width: 45px;
+    }
+
+    &__wallet_left {
+      position: absolute;
+      left: 27%;
+      bottom: 25%;
+      width: 42px;
+      @media screen and (max-width: 1230px) {
+        bottom: 15%;
+      }
+
+    }
+
+    &__wallet_right {
+      position: absolute;
+      right: 13%;
+      top: 13%;
+      width: 38px;
+    }
+
+    &__sphere {
+      position: absolute;
+      right: 6%;
+      bottom: 13%;
+      width: 24px;
+    }
+  }
+
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 488px;
+    max-width: 100vw;
+
+    &__inline {
+      & > h1 {
+        display: inline;
+      }
+
+      &__primary {
+        color: $brand-primary;
+      }
+
+    }
+
+
+    &__text {
+      margin-top: 20px;
+    }
+
+  }
+
+
+}
+
+
+
+
+
