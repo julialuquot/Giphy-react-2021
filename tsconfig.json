@@ -29,7 +29,7 @@
                 "assets/*"
             ],
             "@i18n": [
-                "./i18n.ts"
+                "./i18n.js"
             ]
         }
     },
@@ -40,6 +40,6 @@
         "next-env.d.ts",
         "**/*.ts",
         "**/*.tsx",
-        "src/pages/index.js", "stories/6-Xconnect.stories.js"
+        "src/pages/index.js", "stories/6-Xconnect.stories.js", "src/i18n.js"
     ]
 }

@@ -5,10 +5,14 @@ import InputErrorMessage from '@components/common/Formik/InputErrorMessage/Input
 const valid = (touched, errors, name) => touched[name] && !errors[name];
 const error = (touched, errors, name) => touched[name] && errors[name];
 type FormikInputFieldProps = {
+    id?: string;
     name: string;
     type: string;
-    label: string;
-    placeholder: string;
+    label?: string;
+    placeholder?: string;
+    key?: string;
+    customStyle?: string;
+    disabled?: boolean;
 };
 
 const FormikInputField: React.FC<FormikInputFieldProps> = ({ name, ...props }: FormikInputFieldProps) => {

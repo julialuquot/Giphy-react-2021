@@ -72,6 +72,29 @@
             border-color: $ui-tertiary;
         }
     }
+    &__authentication-code{
+        height: 64px;
+        width: 48px;
+        font-size: 1.5rem;
+        padding: 12px;
+        text-align: center;
+        caret-color: $brand-primary;
+        border-color: $ui-quaternary!important;
+         @include media(s-device){
+        
+        }
+        &:disabled{
+            background-color: $ui-quaternary !important;
+        }
+        &__valid{
+            border-color: $ui-quaternary!important;
+        
+        }
+        &__error{
+            border-color: $ui-quaternary !important;
+        }
+        
+    }
 
     &__wrapper{
         position: relative;

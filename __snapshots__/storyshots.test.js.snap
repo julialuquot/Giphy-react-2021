@@ -1,5 +1,159 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Storyshots AuthenticationCode Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "padding": "30px",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <form
+    action="#"
+    id="codeForm"
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="wrapper"
+    >
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={false}
+              id="number_0"
+              name="number_0"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_1"
+              name="number_1"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_2"
+              name="number_2"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_3"
+              name="number_3"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_4"
+              name="number_4"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_5"
+              name="number_5"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="feedback false false"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </form>
+</div>
+`;
+
 exports[`Storyshots Avatar Simple 1`] = `
 <div
   style={

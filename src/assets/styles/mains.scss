@@ -21,6 +21,10 @@ h2 {
 h3 {
   font-family: $primary-bold;
   font-size: $level8;
+   @include media(s-device){
+     font-size: $level5;
+  
+  }
 }
 
 h4 {
