@@ -18,6 +18,14 @@
   box-sizing: border-box;
   background-color: $background-1;
 
+  @include media(m-device) {
+    padding: 24px 24px 24px 24px;
+  }
+
+  .icon {
+    @include hide-on-m-device
+  }
+
   .label {
     &__success {
       position: absolute;
@@ -89,6 +97,14 @@
     justify-content: center;
     margin: 100px auto 0 auto;
     width: 563px;
+    @include media(m-device) {
+      max-width: 360px;
+      margin: 0;
+    }
+
+    > p {
+      text-align: center;
+    }
 
     &__primary {
       color: $brand-primary;

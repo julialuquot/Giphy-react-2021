@@ -979,7 +979,7 @@ exports[`Storyshots Select Default 1`] = `
           onTouchEnd={[Function]}
         >
           <div
-            className="Dropdown-placeholder select__placeholder"
+            className="Dropdown-placeholder select__placeholder false"
           >
             Un anniversaire
           </div>
@@ -987,8 +987,13 @@ exports[`Storyshots Select Default 1`] = `
             className="Dropdown-arrow-wrapper"
           >
             <span
-              className="Dropdown-arrow select__arrow select__arrow__default "
-            />
+              className="select__arrow_closed"
+            >
+              <img
+                alt="chevron_down"
+                src="/icons/chevron-down-grey.svg"
+              />
+            </span>
           </div>
         </div>
       </div>
@@ -1022,7 +1027,7 @@ exports[`Storyshots Select Default 1`] = `
           onTouchEnd={[Function]}
         >
           <div
-            className="Dropdown-placeholder select__placeholder"
+            className="Dropdown-placeholder select__placeholder false"
           >
             With placeholder
           </div>
@@ -1030,8 +1035,13 @@ exports[`Storyshots Select Default 1`] = `
             className="Dropdown-arrow-wrapper"
           >
             <span
-              className="Dropdown-arrow select__arrow select__arrow__default "
-            />
+              className="select__arrow_closed"
+            >
+              <img
+                alt="chevron_down"
+                src="/icons/chevron-down-grey.svg"
+              />
+            </span>
           </div>
         </div>
       </div>
