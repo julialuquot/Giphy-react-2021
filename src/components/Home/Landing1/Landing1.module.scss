@@ -16,6 +16,7 @@
 
 
   .banner {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -28,6 +29,7 @@
 
     @include media(m-device) {
       height: 100%;
+
     }
 
     .icons__container {
@@ -81,6 +83,34 @@
       left: -50px;
       width: 126px;
       height: 122px;
+      @include hide-on-m-device
+
+    }
+
+    &__gift_left_mobile {
+      position: absolute;
+
+      width: 60px;
+      height: 91px;
+      top: 0;
+      left: 0;
+    }
+
+    &__gift_right {
+      position: absolute;
+      top: 374px;
+      right: -70px;
+      width: 152px;
+      height: 147px;
+      @include hide-on-m-device
+    }
+
+    &__gift_right_mobile {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 53px;
+      height: 73px;
     }
 
     &__gift_small {
@@ -93,13 +123,6 @@
 
     }
 
-    &__gift_right {
-      position: absolute;
-      top: 374px;
-      right: -70px;
-      width: 152px;
-      height: 147px;
-    }
 
     &__sphere_green {
       position: absolute;
