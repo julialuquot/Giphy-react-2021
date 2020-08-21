@@ -3,6 +3,9 @@ import css from './SlideOne.module.scss';
 import Text from '@components/common/Text/Text';
 import useWindowSize from '@components/Hooks/useWindowSize';
 import { withTranslation } from '@i18n';
+import { M_DEVICE } from '@components/Constants';
+
+export * from '@components/Constants';
 
 type SlideOneProps = {
     t: (string) => string;
@@ -23,12 +26,12 @@ const SlideOne = ({ t }: SlideOneProps) => {
             <img className={css.slide_one__torus_yellow} src="/images/torus-yellow.png" alt={'torus'} />
             <img
                 className={css.slide_one__sphere_green}
-                src={size.width > 875 ? '/images/sphere-half-green.png' : '/images/sphere-green-mobile.png'}
+                src={size.width > M_DEVICE ? '/images/sphere-half-green.png' : '/images/sphere-green-mobile.png'}
                 alt={'sphere'}
             />
             <img
                 className={css.slide_one__torus_red}
-                src={size.width > 875 ? '/images/torus-red.png' : '/images/torus-red-mobile.png'}
+                src={size.width > M_DEVICE ? '/images/torus-red.png' : '/images/torus-red-mobile.png'}
                 alt={'torus'}
             />
         </div>
