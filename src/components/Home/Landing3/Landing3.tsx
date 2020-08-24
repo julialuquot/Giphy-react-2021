@@ -30,7 +30,6 @@ const Landing3 = ({ t }: Landing3Props) => {
                     {t('home-page:landing-3.subTitle')}
                 </Text>
             </div>
-
             <SpendingWay />
         </div>
     );
