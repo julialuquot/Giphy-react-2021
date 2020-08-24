@@ -52,6 +52,12 @@ const InputField = ({
 
         if (customStyle) {
             className += ' ' + css[`input__${customStyle}`];
+            if (valid) {
+                className += ' ' + css[`input__${customStyle}__valid`];
+            }
+            if (error) {
+                className += ' ' + css[`input__${customStyle}__error`];
+            }
         }
         return className;
     };

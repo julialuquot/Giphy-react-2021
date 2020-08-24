@@ -1,0 +1,40 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+.wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    width: 360px;
+     @include media(s-device){
+        width: 100%;
+    }
+}
+.feedback{
+    width: 360px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $ui-quaternary;
+    margin-top: 25px;
+    border-radius: 8px;
+     @include media(s-device){
+        width: 100%;
+       
+    }
+    img{
+        display: block;
+        top: unset;
+        left: unset;
+        height: 24px;
+        width: 24px;
+    }
+    &_success{
+        background-color: lighten($color:$ui-success, $amount: 40%);
+    }
+    &_failure{
+        background-color: lighten($color:$ui-error, $amount: 30%);
+    }
+
+}

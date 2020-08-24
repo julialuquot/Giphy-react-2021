@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import css from '../Login.scss';
+import css from '../Authentication.scss';
 
 type LeftSideProps = {
     children: React.ReactNode;

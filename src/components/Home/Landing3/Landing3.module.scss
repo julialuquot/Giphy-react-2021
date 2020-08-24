@@ -10,11 +10,15 @@
   align-items: center;
   justify-content: space-between;
   height: 100vh;
+  width: 100%;
   padding: 0 150px 0 150px;
   box-sizing: border-box;
 
   @include media(m-device) {
     flex-direction: column;
+    justify-content: space-around;
+    padding: 24px;
+
   }
 
   .icon {

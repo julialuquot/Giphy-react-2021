@@ -15,37 +15,39 @@ const namespacesRequired = ['home-page'];
 const Landing2 = ({ t }: Landing2Props) => {
     return (
         <div className={css.wrapper}>
-            <Avatar
-                customClass={css.avatar__accent}
-                imageSrc={'images/profile-picture-1.jpg'}
-                color="brand-accent"
-                label={t('home-page:landing-2.avatar.label-1')}
-            />
-            <Avatar
-                customClass={css.avatar__secondary}
-                imageSrc={'images/profile-picture-2.jpg'}
-                color="brand-secondary"
-                label={t('home-page:landing-2.avatar.label-2')}
-            />
-            <Avatar
-                customClass={css.avatar__success}
-                imageSrc={'images/profile-picture-3.jpg'}
-                color="ui-success"
-                label={t('home-page:landing-2.avatar.label-3')}
-            />
+            <div className={css.icon}>
+                <Avatar
+                    customClass={css.avatar__accent}
+                    imageSrc={'images/profile-picture-1.jpg'}
+                    color="brand-accent"
+                    label={t('home-page:landing-2.avatar.label-1')}
+                />
+                <Avatar
+                    customClass={css.avatar__secondary}
+                    imageSrc={'images/profile-picture-2.jpg'}
+                    color="brand-secondary"
+                    label={t('home-page:landing-2.avatar.label-2')}
+                />
+                <Avatar
+                    customClass={css.avatar__success}
+                    imageSrc={'images/profile-picture-3.jpg'}
+                    color="ui-success"
+                    label={t('home-page:landing-2.avatar.label-3')}
+                />
 
-            <Label customClass={css.label__success} color={'ui-success'}>
-                {t('home-page:landing-2.label.txt-1')}
-            </Label>
-            <Label customClass={css.label__primary_left} color={'brand-primary'}>
-                {t('home-page:landing-2.label.txt-2')}
-            </Label>
-            <Label customClass={css.label__secondary} color={'brand-secondary'}>
-                {t('home-page:landing-2.label.txt-3')}
-            </Label>
-            <Label customClass={css.label__primary_right} color={'brand-primary'}>
-                {t('home-page:landing-2.label.txt-4')}
-            </Label>
+                <Label customClass={css.label__success} color={'ui-success'}>
+                    {t('home-page:landing-2.label.txt-1')}
+                </Label>
+                <Label customClass={css.label__primary_left} color={'brand-primary'}>
+                    {t('home-page:landing-2.label.txt-2')}
+                </Label>
+                <Label customClass={css.label__secondary} color={'brand-secondary'}>
+                    {t('home-page:landing-2.label.txt-3')}
+                </Label>
+                <Label customClass={css.label__primary_right} color={'brand-primary'}>
+                    {t('home-page:landing-2.label.txt-4')}
+                </Label>
+            </div>
 
             <div className={css.title}>
                 <h1 className={css.title__primary}>{t('home-page:landing-2.main-title-1')}</h1>

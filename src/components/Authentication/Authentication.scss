@@ -1,5 +1,6 @@
-@import '../../../assets/styles/colors';
-@import '../../../assets/styles/mixins';
+@import '../../assets/styles/colors';
+@import '../../assets/styles/mixins';
+
 
 .left_side_wrapper{
     position: relative;
@@ -63,10 +64,41 @@
             justify-content: space-between;
         }
     }
+    .login-confirmation__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 360px;
+         @include media(s-device){
+            width: 100%;
+        }
+
+
+        .details{
+            padding: 10px;
+            text-align: center;
+        }
+        .divider{
+            width: 360px;
+            height: 1px;
+            background-color: $ui-quaternary;
+            margin: 20px 0 30px 0;
+             @include media(s-device){
+                background-color: white;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+        form{
+            width: 100%;
+        }
+
+
+    }
 }
 
 .right_side_wrapper{
-
     background-image: url('/images/authentication/login/background/login.jpg');
     background-repeat: no-repeat;
     background-position: center;
@@ -84,17 +116,19 @@
         background-color: white;
         border-radius: 16px;
 
+
         img{
-            height: 200px
+            height: 200px;
+            border-radius:16px 16px 0 0;
         }
         .title{
             padding: 16px;
             line-height: 1.14;
             border-bottom: 1px solid $ui-quaternary;
-
-            :nth-child(2){
+            .text-brand-color{
                 color: $brand-primary;
             }
+            
         }
         .description{
             padding: 16px;

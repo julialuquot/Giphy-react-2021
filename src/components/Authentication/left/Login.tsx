@@ -5,7 +5,7 @@ import Button from '@components/common/Button/Button';
 import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Text from '@components/common/Text/Text';
 import { signin } from '@validations/user';
-import css from '../Login.scss';
+import css from '../Authentication.scss';
 import { withTranslation } from '@i18n';
 import Xconnect from '@components/common/Xconnect/Xconnect';
 

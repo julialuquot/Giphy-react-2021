@@ -1,5 +1,5 @@
 import React from 'react';
-import css from '../Login.scss';
+import css from '../Authentication.scss';
 
 type RightSideProps = {
     children: React.ReactNode;

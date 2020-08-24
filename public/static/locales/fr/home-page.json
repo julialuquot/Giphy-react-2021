@@ -49,6 +49,16 @@
             "cta-3": "carte cadeau"
         }
     },
+    "landing-4": {
+        "main-title": "Un service",
+        "subtitle": "simple et efficace",
+        "swiper": {
+            "slide-1": {
+                "title": "Créez",
+                "text": "Et configurez votre pot selon vos envies et besoins."
+            }
+        }
+    },
     "landing-5": {
         "main-title-1": "Disponible",
         "main-title-2": "où que vous soyez !",

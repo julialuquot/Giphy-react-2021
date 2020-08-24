@@ -14,6 +14,9 @@
 .body_01 {
   font-family: $primary-medium;
   font-size: $level6;
+  @include media(m-device) {
+    font-size: $level3;
+  }
 }
 
 .body_02 {
