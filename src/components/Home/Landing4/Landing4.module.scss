@@ -9,10 +9,10 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
-  padding: 0 150px 0 150px;
-  @include media(m-device) {
-    padding: 24px 24px 24px 24px;
-  }
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  
 
   .title {
     display: flex;

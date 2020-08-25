@@ -5,8 +5,6 @@ import useWindowSize from '@components/Hooks/useWindowSize';
 import { withTranslation } from '@i18n';
 import { M_DEVICE } from '@components/Constants';
 
-export * from '@components/Constants';
-
 type SlideOneProps = {
     t: (string) => string;
 };

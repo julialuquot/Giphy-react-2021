@@ -14,12 +14,13 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  padding: 0 150px 0 150px;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
   box-sizing: border-box;
-  background-color: $background-1;
 
   @include media(m-device) {
-    padding: 24px 24px 24px 24px;
+    padding: 24px;
   }
 
   .icon {
@@ -30,14 +31,14 @@
     &__success {
       position: absolute;
       top: 400px;
-      left: 125px;
+      left: -3%;
       transform: rotate(8deg)
     }
 
     &__primary_left {
       position: absolute;
       top: 750px;
-      left: 52px;
+      left: -5%;
       transform: rotate(-6deg)
 
 
@@ -46,7 +47,7 @@
     &__secondary {
       position: absolute;
       top: 215px;
-      right: 150px;
+      right: -3%;
       transform: rotate(5deg)
 
 
@@ -55,7 +56,7 @@
     &__primary_right {
       position: absolute;
       top: 530px;
-      right: 120px;
+      right: -6%;
 
       transform: rotate(-6deg)
 
@@ -68,14 +69,14 @@
     &__accent {
       @extend %avatar-shared;
       top: 180px;
-      left: 116px;
+      left: -3%;
       transform: rotate(-6deg)
     }
 
     &__secondary {
       @extend %avatar-shared;
       top: 580px;
-      left: 128px;
+      left: -2%;
       transform: rotate(3deg)
 
     }
@@ -83,7 +84,7 @@
     &__success {
       @extend %avatar-shared;
       top: 670px;
-      right: 116px;
+      right: -2%;
       transform: rotate(3deg)
 
     }
@@ -99,7 +100,7 @@
     width: 563px;
     @include media(m-device) {
       max-width: 360px;
-      margin: 0;
+      margin: 0 auto;
     }
 
     > p {
@@ -108,7 +109,6 @@
 
     &__primary {
       color: $brand-primary;
-      margin-bottom: 20px
     }
 
     &__text {

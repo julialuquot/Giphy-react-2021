@@ -1,0 +1,144 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+
+.wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+  @include media(m-device) {
+    flex-direction: column-reverse;
+    justify-content: space-around;
+    padding: 24px;
+  }
+
+  .left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 374px;
+    width: 374px;
+    height: 374px;
+    background-color: $brand-secondary-muted;
+    @include border-radius(100%);
+    @include media(m-device) {
+      flex-direction: column;
+      width: 269px;
+      height: 269px;
+      min-width: 0;
+
+    }
+
+
+    &__mockup {
+      width: 299px;
+      height: 562px;
+      @include media(m-device) {
+        width: 200px;
+        height: 384px;
+
+      }
+    }
+  }
+
+  .icon {
+    @include media(m-device) {
+      display: none;
+    }
+
+
+    &__torus {
+      position: absolute;
+      right: -6%;
+      bottom: 20%;
+      width: 29px;
+      height: 28px;
+    }
+
+    &__sphere_blue {
+      position: absolute;
+      left: -6%;
+      top: 35%;
+      width: 24px;
+      height: 24px;
+    }
+
+    &__sphere_green {
+      position: absolute;
+      right: 2%;
+      top: 15%;
+      width: 42px;
+      height: 42px;
+    }
+  }
+
+}
+
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 488px;
+  max-width: 100vw;
+  @include media(m-device) {
+    padding: 24px;
+  }
+
+
+  &__inline {
+
+    &__primary {
+      color: $brand-primary;
+    }
+
+  }
+
+  &__text {
+    margin-top: 20px;
+    @include media(m-device) {
+      max-width: 100%;
+    }
+  }
+
+}
+
+.store {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 32px;
+  @include media(m-device) {
+    width: 360px;
+    max-width: 100vw;
+    justify-content: space-around;
+  }
+
+
+  > img {
+    @include media(m-device) {
+      width: 153px;
+      height: 47px;
+    }
+  }
+
+
+}
+
+
+
+
+
+
+
+
