@@ -7,6 +7,7 @@ import Landing2 from '@components/Home/Landing2/Landing2';
 import Landing3 from '@components/Home/Landing3/Landing3';
 import Landing4 from '@components/Home/Landing4/Landing4';
 import Landing5 from '@components/Home/Landing5/Landing5';
+import Footer from '@components/Footer/Footer';
 
 const namespacesRequired = ['home-page'];
 
@@ -18,6 +19,7 @@ const Home = () => {
             <Landing3 />
             <Landing4 />
             <Landing5 />
+            <Footer />
         </div>
     );
 };
