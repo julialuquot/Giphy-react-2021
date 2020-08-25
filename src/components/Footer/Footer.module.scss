@@ -1,7 +1,9 @@
+
 .footer {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
   max-width: 1140px;
+  height: 869px;
   margin: 0 auto;
 }

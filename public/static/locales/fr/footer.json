@@ -4,5 +4,34 @@
         "text": "Cagnotte sur mesure en marque blanche, paiement à plusieurs sur votre site e-commerce ou affiliation partenaires : découvrez nos différentes solutions !",
         "text-mobile": "Paiement à plusieurs, achat groupé, réservation de groupe, \nNous mettons notre savoir-faire au service de vos clients.",
         "btn": "Nos solutions"
+    },
+    "categories": {
+        "col-1": {
+            "title": "À propos",
+            "row-1": "Foire aux questions",
+            "row-2": "Nous contacter",
+            "row-3": "Espace presse",
+            "row-4": "Jobs"
+        },
+        "col-2": {
+            "title": "Nos services",
+            "row-1": "Le Pot Commun",
+            "row-2": "Les petites Listes",
+            "row-3": "Cityvent",
+            "row-4": "Pour les entreprises"
+        },
+        "col-3": {
+            "title": "Social",
+            "row-1": "Facebook",
+            "row-2": "Instagram",
+            "row-3": "Twitter",
+            "row-4": "LinkedIn"
+        },
+        "col-4": {
+            "title": "Légal",
+            "row-1": "Politique des cookies",
+            "row-2": "CGU & Mentions légales",
+            "row-3": "Sécurité"
+        }
     }
 }
