@@ -48,11 +48,7 @@ const SelectSmall = ({ options, customClass, label, placeholder, icon }: SelectS
     return (
         <div ref={ref} className={`${css.input__wrapper}  ${customClass || ''}}`}>
             <label className={css.label}>{label}</label>
-            {icon && (
-                <div className={css.select__icon}>
-                    <img src={icon} alt="input icon" />
-                </div>
-            )}
+            {icon && <img className={css.icon_left} src={icon} alt="input icon" />}
 
             <Dropdown
                 className={`${css.select}`}

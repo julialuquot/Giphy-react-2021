@@ -5,7 +5,6 @@
 
 %shared-select {
   position: relative;
-  z-index: 99;
   width: 113px;
   padding: 0;
   font-family: $primary-SemiBold;
@@ -14,23 +13,13 @@
   cursor: pointer;
   @include border-radius(4px);
   @include transition;
+  background-color: #00A5E2;
 }
 
 .select {
 
   @extend %shared-select;
 
-  &__icon {
-    z-index: 999;
-    position: absolute;
-    bottom: 24px;
-    left: 12px;
-
-    & > img {
-      width: 16px;
-      height: 16px;
-    }
-  }
 
   &__arrow {
 
@@ -53,10 +42,13 @@
   }
 
   &__placeholder {
+    position: relative;
     display: flex;
     align-items: center;
     height: 38px;
     padding-left: 34px;
+
+
   }
 
   &__control {
@@ -112,4 +104,16 @@
 
 
 }
+
+.icon_left {
+  z-index: 1;
+  margin: auto;
+  position: absolute;
+  top: 5%;
+  left: 12px;
+  bottom: 0;
+  width: 16px;
+  height: 16px;
+}
+
 

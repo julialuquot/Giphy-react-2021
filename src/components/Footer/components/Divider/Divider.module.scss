@@ -13,9 +13,8 @@
   height: 72px;
   margin-top: 32px;
   margin-bottom: 50px;
-
   @include media(m-device) {
-    margin-top: -10px;
+    margin-top: 0;
 
   }
 
@@ -25,6 +24,10 @@
     content: '';
     border-top: 1px solid $background-2;
     margin-bottom: 84px;
+    @include media(m-device) {
+      display: none;
+
+    }
   }
 
 
