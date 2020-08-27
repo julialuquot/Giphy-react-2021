@@ -1,6 +1,8 @@
 import React from 'react';
 import Select from '@components/common/Dropdowns/Select/Select';
 import SelectSmall from '@components/common/Dropdowns/SelectSmall/SelectSmall';
+import CustomCollapsible from '@components/common/Collapsible/Collapsible';
+import icon from '../public/icons/globe-outline.svg';
 
 export default {
     title: 'Dropdowns',
@@ -11,13 +13,14 @@ const styles = {
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
+        alignItems: 'center',
         paddingTop: '20px',
     },
     row: {
         display: 'flex',
-        justifyContent: 'space-around',
+        justifyContent: 'center',
         alignItems: 'center',
-        width: '100%',
+        width: '300px',
         marginBottom: '20px',
         height: '100%',
     },
@@ -34,15 +37,29 @@ const language = [
     { value: 'Anglais', label: 'Anglais' },
 ];
 
+const rows = [
+    {
+        row: 'Item 1',
+        link: '#',
+    },
+    {
+        row: 'Item 2',
+        link: '#',
+    },
+    {
+        row: 'Item 3',
+        link: '#',
+    },
+    {
+        row: 'Item 4',
+        link: '#',
+    },
+];
+
 export const Default = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
-            <Select options={options}>With Label</Select>
-        </div>
-        <div style={styles.row}>
-            <Select placeholder={'With placeholder'} options={options}>
-                With Label
-            </Select>
+            <Select options={options} />
         </div>
     </div>
 );
@@ -50,7 +67,15 @@ export const Default = () => (
 export const WithIcon = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
-            <SelectSmall options={language} />
+            <SelectSmall options={language} icon={icon} />
+        </div>
+    </div>
+);
+
+export const Collapsible = () => (
+    <div style={styles.wrapper}>
+        <div style={styles.row}>
+            <CustomCollapsible content={rows} trigger={'Mon titre'} />
         </div>
     </div>
 );

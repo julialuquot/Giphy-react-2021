@@ -774,10 +774,11 @@ exports[`Storyshots Checkbox Default 1`] = `
 </div>
 `;
 
-exports[`Storyshots Dropdowns Default 1`] = `
+exports[`Storyshots Dropdowns Collapsible 1`] = `
 <div
   style={
     Object {
+      "alignItems": "center",
       "display": "flex",
       "flexDirection": "column",
       "justifyContent": "center",
@@ -791,9 +792,100 @@ exports[`Storyshots Dropdowns Default 1`] = `
         "alignItems": "center",
         "display": "flex",
         "height": "100%",
-        "justifyContent": "space-around",
+        "justifyContent": "center",
         "marginBottom": "20px",
-        "width": "100%",
+        "width": "300px",
+      }
+    }
+  >
+    <div
+      className="collapsible"
+    >
+      <div
+        className="collapsible__trigger is-closed  trigger"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        style={null}
+        tabIndex={null}
+      >
+        Mon titre
+      </div>
+      <div
+        className="collapsible__contentOuter content__outer"
+        onTransitionEnd={[Function]}
+        style={
+          Object {
+            "WebkitTransition": "height 400ms ease-in-out",
+            "height": 0,
+            "msTransition": "height 400ms ease-in-out",
+            "overflow": "hidden",
+            "transition": "height 400ms ease-in-out",
+          }
+        }
+      >
+        <div
+          className="collapsible__contentInner content__inner"
+        >
+          <a
+            className="content__inner"
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 1
+          </a>
+          <a
+            className="content__inner"
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 2
+          </a>
+          <a
+            className="content__inner"
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 3
+          </a>
+          <a
+            className="content__inner"
+            href="#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 4
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdowns Default 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100%",
+        "justifyContent": "center",
+        "marginBottom": "20px",
+        "width": "300px",
       }
     }
   >
@@ -840,6 +932,7 @@ exports[`Storyshots Dropdowns With Icon 1`] = `
 <div
   style={
     Object {
+      "alignItems": "center",
       "display": "flex",
       "flexDirection": "column",
       "justifyContent": "center",
@@ -853,9 +946,9 @@ exports[`Storyshots Dropdowns With Icon 1`] = `
         "alignItems": "center",
         "display": "flex",
         "height": "100%",
-        "justifyContent": "space-around",
+        "justifyContent": "center",
         "marginBottom": "20px",
-        "width": "100%",
+        "width": "300px",
       }
     }
   >
