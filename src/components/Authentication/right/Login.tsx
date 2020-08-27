@@ -1,12 +1,10 @@
 import React from 'react';
 import css from '../Authentication.scss';
-import { withTranslation } from '@i18n';
+import { withTranslation, useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
 
-type PropsType = {
-    t: Function;
-};
-const Login: React.FC<PropsType> = ({ t }: PropsType) => {
+const Login: React.FC = () => {
+    const { t } = useTranslation('autthentication');
     return (
         <div className={css.wrapper}>
             <img src="/images/logo.svg" alt="test image" />
@@ -21,4 +19,4 @@ const Login: React.FC<PropsType> = ({ t }: PropsType) => {
     );
 };
 
-export default withTranslation('autthentication')(Login);
+export default Login;

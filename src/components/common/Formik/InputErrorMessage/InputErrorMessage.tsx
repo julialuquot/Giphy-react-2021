@@ -1,15 +1,15 @@
 import React from 'react';
 import css from './InputErrorMessage.scss';
-import { withTranslation } from '@i18n';
+import { withTranslation, useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
 
 type PropsType = {
     messageCode: string;
-    t: Function;
     name: string;
 };
 
-const InputErrorMessage: React.FC<PropsType> = ({ messageCode, t, name }: PropsType) => {
+const InputErrorMessage: React.FC<PropsType> = ({ messageCode, name }: PropsType) => {
+    const { t } = useTranslation('common');
     return (
         <div className={css.wrapper}>
             <Text variant="caption" color="ui-error">
@@ -21,4 +21,4 @@ const InputErrorMessage: React.FC<PropsType> = ({ messageCode, t, name }: PropsT
     );
 };
 
-export default withTranslation('common')(InputErrorMessage);
+export default InputErrorMessage;

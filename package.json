@@ -1,12 +1,14 @@
 {
     "name": "lpc_frontend",
     "version": "0.1.0",
-    "private": true,
+    "publishConfig": {
+        "registry": "https://nexus.lepotcommuntest.fr/repository/npm-private/"
+      },
     "scripts": {
-        "dev": "NODE_ENV=development NODE_OPTIONS='--inspect' node ./src/server.ts",
-        "dev-win": "set NODE_ENV=development&& set NODE_OPTIONS='--inspect'&& node ./src/server.ts",
+        "dev": "NODE_ENV=development NODE_OPTIONS='--inspect' node ./src/server.js",
+        "dev-win": "set NODE_ENV=development&& set NODE_OPTIONS='--inspect'&& node ./src/server.js",
         "build": "next build",
-        "start": "next start",
+        "start": "NODE_ENV=production node ./src/server.js",
         "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
         "lint-win": "eslint */**/*.{js,ts,tsx} --quiet --fix",
         "storybook": "start-storybook -s ./public -p 6006",

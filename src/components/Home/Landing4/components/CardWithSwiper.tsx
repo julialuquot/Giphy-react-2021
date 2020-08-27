@@ -7,9 +7,12 @@ import SlideThree from '@components/Home/Landing4/components/SlideThree/SlideThr
 
 const CardWithSwiper = () => {
     const [index, setIndex] = useState(0);
+    interface CustomArrowProps {
+        onClick?: React.MouseEventHandler<any>;
+    }
 
     // eslint-disable-next-line react/prop-types
-    const SamplePrevArrow = ({ onClick }) => {
+    const SamplePrevArrow = ({ onClick }: CustomArrowProps) => {
         return (
             index !== 0 && (
                 <div className={css.slider__prev_arrow} onClick={onClick}>
@@ -20,7 +23,7 @@ const CardWithSwiper = () => {
     };
 
     // eslint-disable-next-line react/prop-types
-    const SampleNextArrow = ({ onClick }) => {
+    const SampleNextArrow = ({ onClick }: CustomArrowProps) => {
         return (
             index !== 2 && (
                 <div className={css.slider__next_arrow} onClick={onClick}>
