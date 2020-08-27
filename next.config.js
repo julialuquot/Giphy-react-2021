@@ -1,5 +1,6 @@
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
+const path = require('path');
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
@@ -17,6 +18,11 @@ module.exports = withBundleAnalyzer(
                 // config.resolve = {
                 //     extensions: ['.tsx', '.ts', '.js'],
                 // };
+
+                config.resolve.alias['@components'] = path.join(__dirname, '/src/components');
+                config.resolve.alias['@assets'] = path.join(__dirname, '/src/assets');
+                config.resolve.alias['@validations'] = path.join(__dirname, '/src/validations');
+                config.resolve.alias['@i18n'] = path.join(__dirname, '/src/i18n.js');
 
                 return config;
             },

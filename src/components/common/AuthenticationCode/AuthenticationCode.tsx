@@ -53,7 +53,7 @@ const FeedBack: React.FC<FeedBackPropsType> = ({ submissionState, t }: FeedBackP
 };
 
 type AuthenticationCode = {
-    t: Function;
+    t: (string) => string;
 };
 const AuthenticationCode: React.FC<AuthenticationCode> = ({ t }: AuthenticationCode) => {
     const disabledTabInit = [false, true, true, true, true, true];

@@ -10,10 +10,10 @@ import { withTranslation } from '@i18n';
 import Xconnect from '@components/common/Xconnect/Xconnect';
 
 type LoginProps = {
-    t: Function;
+    t: (string) => string;
 };
 
-const LoginForm: React.FC<LoginProps> = ({ t }: LoginProps) => {
+const LoginForm = ({ t }: LoginProps) => {
     const [isLoading, setIsLoading] = useState(false);
     return (
         <Formik

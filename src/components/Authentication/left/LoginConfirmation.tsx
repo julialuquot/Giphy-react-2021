@@ -1,15 +1,15 @@
 import React from 'react';
 import Text from '@components/common/Text/Text';
 import css from '../Authentication.scss';
-import { withTranslation } from '@i18n';
+import { useTranslation } from '@i18n';
 import AuthenticationCode from '@components/common/AuthenticationCode/AuthenticationCode';
 
 type PropsType = {
-    t: Function;
     phoneNumber: string;
 };
 
-const LoginConfirmation: React.FC<PropsType> = ({ t, phoneNumber }: PropsType) => {
+const LoginConfirmation = ({ phoneNumber }: PropsType) => {
+    const { t } = useTranslation('authentication');
     return (
         <div className={css['login-confirmation__wrapper']}>
             <h3>{t('authentication:login-confirmation.title')}</h3>
@@ -22,4 +22,4 @@ const LoginConfirmation: React.FC<PropsType> = ({ t, phoneNumber }: PropsType) =
     );
 };
 
-export default withTranslation('authentication')(LoginConfirmation);
+export default LoginConfirmation;

@@ -9,5 +9,4 @@ const routes = require('next-routes')()
         pattern: '/connexion',
         page: 'authentication',
     });
-
 module.exports = routes;
