@@ -1,6 +1,6 @@
 import React from 'react';
 import Navbar from '../navbar/Navbar';
-import Footer from '../footer/Footer';
+import Footer from '@components/Footer/Footer';
 import css from './Layout.scss';
 
 type LayoutProps = {

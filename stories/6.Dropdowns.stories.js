@@ -1,9 +1,9 @@
 import React from 'react';
-import Select from '../src/components/common/Select/Select';
+import Select from '@components/common/Dropdowns/Select/Select';
+import SelectSmall from '@components/common/Dropdowns/SelectSmall/SelectSmall';
 
 export default {
-    title: 'Select',
-    component: Select,
+    title: 'Dropdowns',
 };
 
 const styles = {
@@ -29,6 +29,11 @@ const options = [
     { value: 'Un cadeau commun', label: 'Un cadeau commun' },
 ];
 
+const language = [
+    { value: 'Français', label: 'Français' },
+    { value: 'Anglais', label: 'Anglais' },
+];
+
 export const Default = () => (
     <div style={styles.wrapper}>
         <div style={styles.row}>
@@ -38,6 +43,14 @@ export const Default = () => (
             <Select placeholder={'With placeholder'} options={options}>
                 With Label
             </Select>
+        </div>
+    </div>
+);
+
+export const WithIcon = () => (
+    <div style={styles.wrapper}>
+        <div style={styles.row}>
+            <SelectSmall options={language} />
         </div>
     </div>
 );

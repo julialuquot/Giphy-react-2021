@@ -2,7 +2,7 @@ import React from 'react';
 import css from './Landing1.module.scss';
 import { withTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
-import Select from '@components/common/Select/Select';
+import Select from '@components/common/Dropdowns/Select/Select';
 import useWindowSize from '@components/Hooks/useWindowSize';
 
 const namespacesRequired = ['home-page'];

@@ -1,16 +1,17 @@
 import React, { useState, useRef } from 'react';
-import css from './Select.module.scss';
+import css from './SelectSmall.module.scss';
 import Dropdown from 'react-dropdown';
-import useOnClickOutside from '../../Hooks/useOnClickOutside';
+import useOnClickOutside from '../../../Hooks/useOnClickOutside';
 
-type DropdownProps = {
+type SelectSmallProps = {
     options: { value: string; label: string }[];
     label?: string;
     customClass?: string;
     placeholder?: string;
+    icon?: string;
 };
 
-const Select = ({ options, customClass, label, placeholder }: DropdownProps) => {
+const SelectSmall = ({ options, customClass, label, placeholder, icon }: SelectSmallProps) => {
     const [selectedOption, setSelectedOption] = useState('');
     const [isOptionSelected, setIsOptionSelected] = useState(false);
     const [isOpen, setIsOpen] = useState(false);
@@ -30,16 +31,16 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
 
     const arrowClosed = (
         <span className={css.select__arrow_closed}>
-            <img src="/icons/chevron-down-grey.svg" alt="chevron_down" />
+            <img src="/icons/chevron-down-grey-small.svg" alt="chevron_up" />
         </span>
     );
 
     const arrowOpen = (
         <span className={css.select__arrow_open}>
             {isOptionSelected ? (
-                <img src="/icons/chevron-up-white.svg" alt="chevron_up" />
+                <img src="/icons/chevron-down-black-small.svg" alt="chevron_up" />
             ) : (
-                <img src="/icons/chevron-down-grey.svg" alt="chevron_up" />
+                <img src="/icons/chevron-down-grey-small.svg" alt="chevron_up" />
             )}
         </span>
     );
@@ -47,21 +48,23 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
     return (
         <div ref={ref} className={`${css.input__wrapper}  ${customClass || ''}}`}>
             <label className={css.label}>{label}</label>
+            {icon && (
+                <div className={css.select__icon}>
+                    <img src={icon} alt="input icon" />
+                </div>
+            )}
+
             <Dropdown
+                className={`${css.select}`}
                 options={options}
                 onFocus={handleFocus}
                 onChange={handleChange}
                 value={selectedOption}
                 placeholder={placeholder || options[0].label}
-                className={`${css.select}`}
-                controlClassName={`${css.select__control} ${
-                    isOpen && isOptionSelected && css.select__control__is_open
-                }`}
-                placeholderClassName={`${css.select__placeholder} ${
-                    isOptionSelected && css.select__placeholder__option_selected
-                }`}
+                controlClassName={`${css.select__control} ${isOpen && css.select__control__is_open}`}
+                placeholderClassName={`${css.select__placeholder} `}
                 menuClassName={css.select__menu}
-                arrowClassName={`${css.select__arrow}`}
+                arrowClassName={css.select__arrow}
                 arrowClosed={arrowClosed}
                 arrowOpen={arrowOpen}
             />
@@ -69,4 +72,4 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
     );
 };
 
-export default Select;
+export default SelectSmall;

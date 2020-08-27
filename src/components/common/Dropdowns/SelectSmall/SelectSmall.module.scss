@@ -1,0 +1,115 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+
+%shared-select {
+  position: relative;
+  z-index: 99;
+  width: 113px;
+  padding: 0;
+  font-family: $primary-SemiBold;
+  color: $ui-secondary;
+  font-size: $level2;
+  cursor: pointer;
+  @include border-radius(4px);
+  @include transition;
+}
+
+.select {
+
+  @extend %shared-select;
+
+  &__icon {
+    z-index: 999;
+    position: absolute;
+    bottom: 24px;
+    left: 12px;
+
+    & > img {
+      width: 16px;
+      height: 16px;
+    }
+  }
+
+  &__arrow {
+
+    &_closed {
+      position: absolute;
+      top: 11px;
+      right: 3px;
+      @include transition;
+
+    }
+
+    &_open {
+      position: absolute;
+      top: 11px;
+      right: 3px;
+      transform: rotate(180deg);
+      @include transition;
+    }
+
+  }
+
+  &__placeholder {
+    display: flex;
+    align-items: center;
+    height: 38px;
+    padding-left: 34px;
+  }
+
+  &__control {
+    width: 113px;
+    height: 38px;
+    background-color: $white;
+    border: 2px solid $ui-quaternary;
+    @include border-radius(4px);
+    @include transition;
+
+    &:hover {
+      border: 2px solid $ui-tertiary;
+    }
+
+    &__is_open {
+      background-color: $ui-quaternary;
+      color: $black;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-height: 270px;
+    height: 92px;
+    width: 113px;
+    margin-top: 8px;
+    background-color: $background-1;
+    box-shadow: 4px 6px 40px 0 rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    cursor: pointer;
+    @include border-radius(4px);
+
+    & > div {
+      display: flex;
+      align-items: center;
+      width: 97px;
+      height: 38px;
+      padding-left: 12px;
+      color: $black;
+      @include border-radius(4px);
+
+      &:hover {
+        background-color: $ui-quaternary;
+        color: $black;
+      }
+    }
+
+  }
+
+
+}
+

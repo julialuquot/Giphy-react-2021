@@ -774,6 +774,178 @@ exports[`Storyshots Checkbox Default 1`] = `
 </div>
 `;
 
+exports[`Storyshots Dropdowns Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100%",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="input__wrapper  }"
+    >
+      <label
+        className="label"
+      />
+      <div
+        className="Dropdown-root select"
+      >
+        <div
+          aria-haspopup="listbox"
+          className="Dropdown-control select__control false"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className="Dropdown-placeholder select__placeholder"
+          >
+            Un anniversaire
+          </div>
+          <div
+            className="Dropdown-arrow-wrapper"
+          >
+            <span
+              className="select__arrow_closed"
+            >
+              <img
+                alt="chevron_down"
+                src="/icons/chevron-down-grey.svg"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100%",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="input__wrapper  }"
+    >
+      <label
+        className="label"
+      />
+      <div
+        className="Dropdown-root select"
+      >
+        <div
+          aria-haspopup="listbox"
+          className="Dropdown-control select__control false"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className="Dropdown-placeholder select__placeholder"
+          >
+            With placeholder
+          </div>
+          <div
+            className="Dropdown-arrow-wrapper"
+          >
+            <span
+              className="select__arrow_closed"
+            >
+              <img
+                alt="chevron_down"
+                src="/icons/chevron-down-grey.svg"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdowns With Icon 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100%",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="input__wrapper  }"
+    >
+      <label
+        className="label"
+      />
+      <div
+        className="Dropdown-root select"
+      >
+        <div
+          aria-haspopup="listbox"
+          className="Dropdown-control select__control false"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className="Dropdown-placeholder select__placeholder "
+          >
+            Français
+          </div>
+          <div
+            className="Dropdown-arrow-wrapper"
+          >
+            <span
+              className="select__arrow_closed"
+            >
+              <img
+                alt="chevron_up"
+                src="/icons/chevron-down-grey-small.svg"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Input field Default 1`] = `
 <div
   style={
@@ -933,116 +1105,6 @@ exports[`Storyshots Input field Default 1`] = `
             alt="input icon"
             src="/icons/search.svg"
           />
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-`;
-
-exports[`Storyshots Select Default 1`] = `
-<div
-  style={
-    Object {
-      "display": "flex",
-      "flexDirection": "column",
-      "justifyContent": "center",
-      "paddingTop": "20px",
-    }
-  }
->
-  <div
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "height": "100%",
-        "justifyContent": "space-around",
-        "marginBottom": "20px",
-        "width": "100%",
-      }
-    }
-  >
-    <div
-      className="input__wrapper  }"
-    >
-      <label
-        className="label"
-      />
-      <div
-        className="Dropdown-root select"
-      >
-        <div
-          aria-haspopup="listbox"
-          className="Dropdown-control select__control false"
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-        >
-          <div
-            className="Dropdown-placeholder select__placeholder false"
-          >
-            Un anniversaire
-          </div>
-          <div
-            className="Dropdown-arrow-wrapper"
-          >
-            <span
-              className="select__arrow_closed"
-            >
-              <img
-                alt="chevron_down"
-                src="/icons/chevron-down-grey.svg"
-              />
-            </span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div
-    style={
-      Object {
-        "alignItems": "center",
-        "display": "flex",
-        "height": "100%",
-        "justifyContent": "space-around",
-        "marginBottom": "20px",
-        "width": "100%",
-      }
-    }
-  >
-    <div
-      className="input__wrapper  }"
-    >
-      <label
-        className="label"
-      />
-      <div
-        className="Dropdown-root select"
-      >
-        <div
-          aria-haspopup="listbox"
-          className="Dropdown-control select__control false"
-          onMouseDown={[Function]}
-          onTouchEnd={[Function]}
-        >
-          <div
-            className="Dropdown-placeholder select__placeholder false"
-          >
-            With placeholder
-          </div>
-          <div
-            className="Dropdown-arrow-wrapper"
-          >
-            <span
-              className="select__arrow_closed"
-            >
-              <img
-                alt="chevron_down"
-                src="/icons/chevron-down-grey.svg"
-              />
-            </span>
-          </div>
         </div>
       </div>
     </div>

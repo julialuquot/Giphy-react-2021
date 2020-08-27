@@ -1,8 +1,7 @@
 @import '../../assets/styles/mixins';
 
-.layout{
-
-     @include media(s-device){
-        padding: 20px;
-    }
+.layout {
+  @include media(m-device) {
+    padding: 24px;
+  }
 }

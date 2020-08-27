@@ -3,10 +3,13 @@ import css from './Categories.module.scss';
 import Text from '@components/common/Text/Text';
 import { withTranslation } from '@i18n';
 import Link from 'next/link';
+import CustomCollapsible from '@components/common/Collapsible/Collapsible';
+import useWindowSize from '../../../Hooks/useWindowSize';
+import { M_DEVICE } from '@components/Constants';
 
 const namespacesRequired = ['footer'];
 
-type GridProps = {};
+type GridProps = { t: (string) => string };
 
 const Categories = ({ t }: GridProps) => {
     const categories = [
@@ -91,24 +94,33 @@ const Categories = ({ t }: GridProps) => {
             ],
         },
     ];
+    const { width } = useWindowSize();
 
     return (
-        <div className={css.container}>
-            {categories.map((category, index) => (
-                <div key={index} className={css.container__col}>
-                    <h6>{category.title}</h6>
-                    {category.rows.map((row, index) => (
-                        <Link key={index} href={row.link}>
-                            <a>
-                                <Text variant={'body_02'} color={'ui-primary'}>
-                                    {row.row}
-                                </Text>
-                            </a>
-                        </Link>
+        <>
+            {width > M_DEVICE ? (
+                <div className={css.container}>
+                    {categories.map((category, index) => (
+                        <div key={index} className={css.container__col}>
+                            <h6>{category.title}</h6>
+                            {category.rows.map((row, index) => (
+                                <Link key={index} href={row.link}>
+                                    <a>
+                                        <Text variant={'body_02'} color={'ui-primary'}>
+                                            {row.row}
+                                        </Text>
+                                    </a>
+                                </Link>
+                            ))}
+                        </div>
                     ))}
                 </div>
-            ))}
-        </div>
+            ) : (
+                categories.map((category, index) => (
+                    <CustomCollapsible key={index} trigger={category.title} content={category.rows.map((row) => row)} />
+                ))
+            )}
+        </>
     );
 };
 
