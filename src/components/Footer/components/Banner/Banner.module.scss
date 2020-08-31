@@ -1,0 +1,83 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+
+
+.banner {
+  position: relative;
+  height: 222px;
+  width: 100%;
+  padding: 67px 96px;
+  background-color: $ui-primary;
+  margin-bottom: 76px;
+  @include border-radius(12px);
+  @include media(m-device) {
+    height: 264px;
+    padding: 32px;
+  }
+
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+
+    @include media(m-device) {
+      flex-direction: column;
+    }
+
+
+    .text {
+      display: flex;
+      flex-direction: column;
+
+      > h5 {
+        color: $white;
+        margin-bottom: 8px;
+      }
+
+      > p {
+        max-width: 640px;
+      }
+    }
+
+    .btn {
+      @include media(m-device) {
+        width: 156px;
+        padding: 0;
+      }
+    }
+
+  }
+
+  .icon {
+    @include hide-on-m-device;
+
+    &__sphere_left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 59px;
+      height: 73px;
+
+    }
+
+    &__sphere_mid {
+      position: absolute;
+
+      top: 84%;
+      left: 70%;
+      width: 24px;
+      height: 24px;
+    }
+
+    &__sphere_right {
+      position: absolute;
+      top: 10%;
+      left: 95%;
+      width: 14px;
+      height: 14px;
+    }
+  }
+}

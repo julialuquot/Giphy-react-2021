@@ -22,6 +22,9 @@
 .body_02 {
   font-family: $primary-medium;
   font-size: $level3;
+  @include media(m-device) {
+    font-size: $level3-mobile;
+  }
 }
 
 .button {
@@ -46,7 +49,7 @@
 }
 
 .hint {
-  font-family: $primary-SemiBold;
-  font-size: $level1;
+  font-family: $primary-medium;
+  font-size: $level2;
 }
 

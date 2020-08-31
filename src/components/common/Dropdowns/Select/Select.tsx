@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import css from './Select.module.scss';
 import Dropdown from 'react-dropdown';
-import useOnClickOutside from '../../Hooks/useOnClickOutside';
+import useOnClickOutside from '../../../Hooks/useOnClickOutside';
 
 type DropdownProps = {
     options: { value: string; label: string }[];
@@ -12,7 +12,7 @@ type DropdownProps = {
 
 const Select = ({ options, customClass, label, placeholder }: DropdownProps) => {
     const [selectedOption, setSelectedOption] = useState('');
-    const [isOptionSelected, setIsOptionSelected] = useState(false);
+    const [isOptionSelected, setIsOptionSelected] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
 
     const ref = useRef();
@@ -30,16 +30,20 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
 
     const arrowClosed = (
         <span className={css.select__arrow_closed}>
-            <img src="/icons/chevron-down-grey.svg" alt="chevron_down" />
+            {isOpen ? (
+                <img src="/icons/chevron-down-white.svg" alt="chevron_down" />
+            ) : (
+                <img src="/icons/chevron-down-grey.svg" alt="chevron_down" />
+            )}
         </span>
     );
 
     const arrowOpen = (
         <span className={css.select__arrow_open}>
             {isOptionSelected ? (
-                <img src="/icons/chevron-up-white.svg" alt="chevron_up" />
+                <img src="/icons/chevron-down-white.svg" alt="chevron_down" />
             ) : (
-                <img src="/icons/chevron-down-grey.svg" alt="chevron_up" />
+                <img src="/icons/chevron-down-white.svg" alt="chevron_down" />
             )}
         </span>
     );
@@ -53,15 +57,13 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
                 onChange={handleChange}
                 value={selectedOption}
                 placeholder={placeholder || options[0].label}
-                className={`${css.select}`}
+                className={css.select}
                 controlClassName={`${css.select__control} ${
                     isOpen && isOptionSelected && css.select__control__is_open
                 }`}
-                placeholderClassName={`${css.select__placeholder} ${
-                    isOptionSelected && css.select__placeholder__option_selected
-                }`}
+                placeholderClassName={css.select__placeholder}
                 menuClassName={css.select__menu}
-                arrowClassName={`${css.select__arrow}`}
+                arrowClassName={css.select__arrow}
                 arrowClosed={arrowClosed}
                 arrowOpen={arrowOpen}
             />
