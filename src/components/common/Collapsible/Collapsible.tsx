@@ -20,8 +20,8 @@ const CustomCollapsible = ({ trigger, content }: CustomCollapsibleProps) => {
             trigger={trigger}
             easing={'ease-in-out'}
         >
-            {content.map((item, index) => (
-                <Link key={index} href={item.link}>
+            {content.map((item) => (
+                <Link key={item.row} href={item.link}>
                     <a className={css.content__inner}>{item.row}</a>
                 </Link>
             ))}

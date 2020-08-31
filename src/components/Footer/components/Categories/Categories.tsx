@@ -100,8 +100,8 @@ const Categories = ({ t }: GridProps) => {
         <>
             {width > M_DEVICE ? (
                 <div className={css.container}>
-                    {categories.map((category, index) => (
-                        <div key={index} className={css.container__col}>
+                    {categories.map((category) => (
+                        <div key={category.title} className={css.container__col}>
                             <h6>{category.title}</h6>
                             {category.rows.map((row, index) => (
                                 <Link key={index} href={row.link}>
@@ -116,8 +116,12 @@ const Categories = ({ t }: GridProps) => {
                     ))}
                 </div>
             ) : (
-                categories.map((category, index) => (
-                    <CustomCollapsible key={index} trigger={category.title} content={category.rows.map((row) => row)} />
+                categories.map((category) => (
+                    <CustomCollapsible
+                        key={category.title}
+                        trigger={category.title}
+                        content={category.rows.map((row) => row)}
+                    />
                 ))
             )}
         </>
