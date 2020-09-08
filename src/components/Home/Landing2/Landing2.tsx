@@ -1,10 +1,13 @@
 import React from 'react';
-import CardWithTabs from '@components/Home/Landing2/component/CardWithTabs/CardWithTabs';
+import { withTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
 import Avatar from '@components/common/Avatar/Avatar';
 import Label from '@components/common/Label/Label';
 import css from './Landing2.module.scss';
-import { withTranslation } from '@i18n';
+import { M_DEVICE } from '@components/Constants';
+import useWindowSize from '@components/Hooks/useWindowSize';
+import CardWithTabs from './component/CardWithTabs/ViewDesktop/CardWithTabsDesktop';
+import CardWithTabsMobile from './component/CardWithTabs/ViewMobile/CardWithTabsMobile';
 
 type Landing2Props = {
     t: (string) => string;
@@ -13,6 +16,32 @@ type Landing2Props = {
 const namespacesRequired = ['home-page'];
 
 const Landing2 = ({ t }: Landing2Props) => {
+    const cardInfo = [
+        {
+            tabId: 0,
+            tabLabel: t('home-page:landing-2.cardInfo.tab-0.label'),
+            title: t('home-page:landing-2.cardInfo.tab-0.title'),
+            text: t('home-page:landing-2.cardInfo.tab-0.text'),
+            cardImg: '/images/bg-birthday.png',
+        },
+        {
+            tabId: 1,
+            tabLabel: t('home-page:landing-2.cardInfo.tab-1.label'),
+            title: t('home-page:landing-2.cardInfo.tab-1.title'),
+            text: t('home-page:landing-2.cardInfo.tab-1.text'),
+            cardImg: '/images/bg-birthday.png',
+        },
+        {
+            tabId: 2,
+            tabLabel: t('home-page:landing-2.cardInfo.tab-2.label'),
+            title: t('home-page:landing-2.cardInfo.tab-2.title'),
+            text: t('home-page:landing-2.cardInfo.tab-2.text'),
+            cardImg: '/images/bg-birthday.png',
+        },
+    ];
+
+    const { width } = useWindowSize();
+
     return (
         <div className={css.container}>
             <div className={css.wrapper}>
@@ -57,7 +86,8 @@ const Landing2 = ({ t }: Landing2Props) => {
                         {t('home-page:landing-2.subTitle')}
                     </Text>
                 </div>
-                <CardWithTabs />
+
+                {width > M_DEVICE ? <CardWithTabs cardInfo={cardInfo} /> : <CardWithTabsMobile cardInfo={cardInfo} />}
             </div>
         </div>
     );

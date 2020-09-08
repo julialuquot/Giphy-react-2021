@@ -14,7 +14,6 @@
   width: 100%;
 
   @include media(m-device) {
-    width: 312px !important;
     height: 374px;
   }
 
@@ -52,7 +51,7 @@
     @include media(m-device) {
       width: 64px;
       height: 73px;
-      right: 2px;
+      right: 0;
       top: 0;
     }
   }

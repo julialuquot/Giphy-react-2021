@@ -13,15 +13,13 @@
   position: relative;
   display: flex;
   flex-direction: column;
+  align-items: center;
   height: 100vh;
   max-width: 1140px;
   width: 100%;
   margin: 0 auto;
   box-sizing: border-box;
 
-  @include media(m-device) {
-    padding: 24px;
-  }
 
   .icon {
     @include hide-on-m-device
@@ -96,11 +94,11 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 100px auto 0 auto;
     width: 563px;
+    margin: 100px 0 56px 0;
+
     @include media(m-device) {
-      max-width: 360px;
-      margin: 0 auto;
+      max-width: 100%;
     }
 
     > p {

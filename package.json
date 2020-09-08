@@ -39,7 +39,6 @@
         "react-dropdown": "^1.7.0",
         "react-i18next": "^11.7.0",
         "react-slick": "^0.27.9",
-        "react-tabs": "^3.1.1",
         "slick-carousel": "^1.8.1",
         "ts-loader": "^8.0.1",
         "yup": "^0.29.1"
