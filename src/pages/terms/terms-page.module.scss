@@ -1,0 +1,15 @@
+@import '../../assets/styles/colors';
+@import '../../assets/styles/fonts';
+@import '../../assets/styles/mixins';
+
+
+.terms {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 113px 11% 0 11%;
+
+  @include media(m-device) {
+    padding: 113px 0 0 0;
+  }
+}
+
