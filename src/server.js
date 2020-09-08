@@ -2,7 +2,7 @@ const express = require('express');
 const next = require('next');
 const nextI18NextMiddleware = require('next-i18next/middleware').default;
 const nextI18next = require('./i18n.js');
-const routes = require('./routes');
+const routes = require('./routes/index.js');
 const port = process.env.PORT || 3000;
 const app = next({ dev: process.env.NODE_ENV === 'development' });
 const handle = routes.getRequestHandler(app);
