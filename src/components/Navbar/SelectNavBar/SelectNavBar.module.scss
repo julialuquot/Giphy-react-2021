@@ -1,0 +1,17 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+
+.customLabel {
+  display: flex;
+  flex-direction: column;
+  color: $brand-primary;
+
+  &__filter {
+    // to avoid change color issue onHover
+    filter: invert(0%) sepia(0%) saturate(0%) hue-rotate(199deg) brightness(100%) contrast(200%);
+  }
+
+}

@@ -1,0 +1,11 @@
+{
+    "sign-in": "Connexion",
+    "create-pot": "Créer un pot",
+    "select": {
+        "free": "Gratuit",
+        "partners": "Nos partenaires",
+        "gift-card": "Carte cadeau",
+        "bank-transfer": "Virement bancaire",
+        "commission": "Commission de 1,9 à 4%"
+    }
+}
