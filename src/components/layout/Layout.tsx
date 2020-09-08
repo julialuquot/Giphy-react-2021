@@ -1,6 +1,6 @@
 import React from 'react';
-import Navbar from '@components/navbar/Navbar';
-import Footer from '@components/footer/Footer';
+// import Navbar from '@components/navbar/Navbar';
+// import Footer from '@components/footer/Footer';
 import css from './Layout.scss';
 
 type LayoutProps = {
@@ -11,9 +11,9 @@ type LayoutProps = {
 const Layout: React.FC<LayoutProps> = ({ hideNavbar, children }: LayoutProps) => {
     return (
         <div className={css.layout}>
-            {!hideNavbar && <Navbar />}
+            {/* {!hideNavbar && <Navbar />} */}
             <main>{children}</main>
-            <Footer />
+            {/* <Footer /> */}
         </div>
     );
 };
