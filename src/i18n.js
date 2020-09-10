@@ -15,6 +15,7 @@ module.exports = new NextI18Next({
     interpolation: { escapeValue: false },
 
     missingKeyHandler: function () {
+        // eslint-disable-next-line no-console
         console.log(arguments);
     },
 });

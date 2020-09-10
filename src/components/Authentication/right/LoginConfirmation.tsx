@@ -1,7 +1,7 @@
 import React from 'react';
 import css from '../Authentication.scss';
 import Text from '@components/common/Text/Text';
-import { withTranslation, useTranslation } from '@i18n';
+import { useTranslation } from '@i18n';
 
 const LoginConfirmation: React.FC = () => {
     const { t } = useTranslation('autthentication');

@@ -1,6 +1,6 @@
 import React from 'react';
 import css from './InputErrorMessage.scss';
-import { withTranslation, useTranslation } from '@i18n';
+import { useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
 
 type PropsType = {
