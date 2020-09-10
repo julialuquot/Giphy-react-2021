@@ -1,13 +1,10 @@
 import React from 'react';
 import css from './Slide.module.scss';
 import Text from '@components/common/Text/Text';
-import { withTranslation } from '@i18n';
 
 type SlideOneProps = {
     card: { title: string; text: string; cardImg: string };
 };
-
-const namespacesRequired = ['home-page'];
 
 const SlideOne = ({ card }: SlideOneProps) => {
     const slideStyle = {
@@ -23,4 +20,4 @@ const SlideOne = ({ card }: SlideOneProps) => {
         </div>
     );
 };
-export default withTranslation(namespacesRequired)(SlideOne);
+export default SlideOne;

@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import SimpleCard from '@components/Home/Landing2/component/SimpleCard/SimpleCard';
 
 import css from './CardWithTabsDesktop.module.scss';
-import { withTranslation } from '@i18n';
-
-const namespacesRequired = ['home-page'];
 
 type CardWithTabsProps = {
     cardInfo: any[];
@@ -44,4 +41,4 @@ const CardWithTabsDesktop = ({ cardInfo }: CardWithTabsProps) => {
     );
 };
 
-export default withTranslation(namespacesRequired)(CardWithTabsDesktop);
+export default CardWithTabsDesktop;
