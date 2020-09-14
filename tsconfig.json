@@ -37,13 +37,9 @@
     "node_modules"
   ],
   "include": [
-    "next-env.d.ts",
     "**/*.ts",
-     "**/*.tsx",
-    "src/pages/index.js",
-    "stories/6-Xconnect.stories.js",
-    "src/i18n.js",
-    "**/*.tsx", "src/routes/index.js"
+    "**/*.tsx",    
+   
 
   ]
 }

@@ -4,12 +4,16 @@ import css from './TermsArticles.module.scss';
 
 const TermsArticles = () => {
     const { t } = useTranslation('terms');
+    let articles = [];
+    articles = Array.from(
+        t('terms:articles', {
+            returnObjects: true,
+        }),
+    );
 
     return (
         <>
-            {t('terms:articles', {
-                returnObjects: true,
-            }).map((article) => {
+            {articles.map((article) => {
                 return (
                     <div className={css.article} key={article.id}>
                         <h5>{article.title}</h5>
