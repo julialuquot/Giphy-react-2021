@@ -1,10 +1,10 @@
 import React from 'react';
 import css from './index.scss';
 import Layout from '@components/Layout/Layout';
-import LeftSide from '@components/Authentication/left/LeftSide';
-import RightSide from '@components/Authentication/right/RightSide';
-import LoginConfirmation from '@components/Authentication/left/LoginConfirmation';
-import LoginConfirmationRight from '@components/Authentication/right/LoginConfirmation';
+import LeftSide from '@components/Authentication/Left/LeftSide';
+import RightSide from '@components/Authentication/Right/RightSide';
+import LoginConfirmation from '@components/Authentication/Left/LoginConfirmation';
+import LoginConfirmationRight from '@components/Authentication/Right/LoginConfirmation';
 
 const Authentication: React.FC = () => {
     return (
