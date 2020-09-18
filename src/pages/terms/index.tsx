@@ -1,5 +1,5 @@
 import React from 'react';
-import Layout from '@components/Layout/Layout';
+import Layout from '@components/layout/Layout';
 import Terms from '@components/Terms/Terms';
 import css from './terms-page.module.scss';
 

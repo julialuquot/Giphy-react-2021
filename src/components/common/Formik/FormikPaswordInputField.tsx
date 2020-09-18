@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { Field, ErrorMessage } from 'formik';
 import InputField from '@components/common/InputField/InputField';
 import InputErrorMessage from '@components/common/Formik/InputErrorMessage/InputErrorMessage';
 const valid = (touched, errors, name) => touched[name] && !errors[name];
 const error = (touched, errors, name) => touched[name] && errors[name];
-type FormikInputFieldProps = {
+type FormikPaswordInputFieldProps = {
     id?: string;
     name: string;
     type: string;
@@ -17,7 +17,25 @@ type FormikInputFieldProps = {
     icon?: string;
 };
 
-const FormikInputField: React.FC<FormikInputFieldProps> = ({ name, ...props }: FormikInputFieldProps) => {
+const FormikPaswordInputField: React.FC<FormikPaswordInputFieldProps> = ({
+    name,
+    ...props
+}: FormikPaswordInputFieldProps) => {
+    const [visible, setVisible] = useState(false);
+    const iconRef = useRef<HTMLDivElement>(null);
+
+    const iconClickHandler = () => {
+        setVisible((visible) => !visible);
+    };
+
+    useEffect(() => {
+        iconRef.current.addEventListener('click', iconClickHandler);
+        iconRef.current.style.cursor = 'pointer';
+
+        return () => {
+            iconRef.current.removeEventListener('click', iconClickHandler);
+        };
+    }, []);
     return (
         <Field name={name}>
             {({ field, form: { touched, errors } }) => {
@@ -28,6 +46,9 @@ const FormikInputField: React.FC<FormikInputFieldProps> = ({ name, ...props }: F
                             valid={valid(touched, errors, name)}
                             {...props}
                             {...field}
+                            iconRef={iconRef}
+                            icon={visible ? '/icons/eye-off-outline.svg' : 'icons/eye-outline.svg'}
+                            type={visible ? 'text' : 'password'}
                         />
 
                         <ErrorMessage
@@ -41,4 +62,4 @@ const FormikInputField: React.FC<FormikInputFieldProps> = ({ name, ...props }: F
     );
 };
 
-export default FormikInputField;
+export default FormikPaswordInputField;

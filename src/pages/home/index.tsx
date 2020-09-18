@@ -6,7 +6,7 @@ import Landing2 from '@components/Home/Landing2/Landing2';
 import Landing3 from '@components/Home/Landing3/Landing3';
 import Landing4 from '@components/Home/Landing4/Landing4';
 import Landing5 from '@components/Home/Landing5/Landing5';
-import Layout from '@components/Layout/Layout';
+import Layout from '@components/layout/Layout';
 
 const namespacesRequired = ['home-page'];
 

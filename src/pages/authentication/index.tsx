@@ -1,10 +1,10 @@
 import React from 'react';
 import css from './index.scss';
-import Layout from '@components/Layout/Layout';
-import LeftSide from '@components/Authentication/Left/LeftSide';
-import RightSide from '@components/Authentication/Right/RightSide';
-import LoginConfirmation from '@components/Authentication/Left/LoginConfirmation';
-import LoginConfirmationRight from '@components/Authentication/Right/LoginConfirmation';
+import Layout from '@components/layout/Layout';
+import LeftSide from '@components/Authentication/left/LeftSide';
+import RightSide from '@components/Authentication/right/RightSide';
+import LoginLeft from '@components/Authentication/left/Login';
+import LoginRight from '@components/Authentication/right/Login';
 
 const Authentication: React.FC = () => {
     return (
@@ -12,14 +12,14 @@ const Authentication: React.FC = () => {
             <div className={css.pageWrapper}>
                 <div className={css.leftSide}>
                     <LeftSide>
-                        <LoginConfirmation phoneNumber="10" />
-                        {/* <LoginLeft /> */}
+                        {/* <LoginConfirmation phoneNumber="10" /> */}
+                        <LoginLeft />
                     </LeftSide>
                 </div>
                 <div className={css.rightSide}>
                     <RightSide>
-                        {/* <LoginRight /> */}
-                        <LoginConfirmationRight />
+                        <LoginRight />
+                        {/* <LoginConfirmationRight /> */}
                     </RightSide>
                 </div>
             </div>

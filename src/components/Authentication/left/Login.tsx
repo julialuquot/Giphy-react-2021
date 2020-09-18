@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Formik, Form } from 'formik';
 import Input from '@components/common/Formik/FormikInputField';
+import PasswordInput from '@components/common/Formik/FormikPaswordInputField';
 import Button from '@components/common/Button/Button';
 import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Text from '@components/common/Text/Text';
@@ -8,6 +9,7 @@ import { signin } from '@validations/user';
 import css from '../Authentication.scss';
 import { withTranslation } from '@i18n';
 import Xconnect from '@components/common/Xconnect/Xconnect';
+import { login } from '@services/User';
 
 type LoginProps = {
     t: (string) => string;
@@ -18,8 +20,16 @@ const LoginForm = ({ t }: LoginProps) => {
     return (
         <Formik
             validationSchema={signin}
-            initialValues={{ email: '', password: '', remember: false }}
-            onSubmit={() => {
+            initialValues={{ email: 'a@a.com', password: '123234', stayConnected: false }}
+            onSubmit={async (values) => {
+                try {
+                    const token = await login(values);
+                    // eslint-disable-next-line no-console
+                    console.log(token);
+                } catch (e) {
+                    // eslint-disable-next-line no-console
+                    console.log(e);
+                }
                 setIsLoading(true);
                 setIsLoading(false);
             }}
@@ -34,15 +44,17 @@ const LoginForm = ({ t }: LoginProps) => {
                         />
                     </div>
                     <div className={css.input}>
-                        <Input
+                        <PasswordInput
                             name="password"
                             type="password"
                             label={t('authentication:login.password')}
                             placeholder={t('authentication:login.password-label')}
+                            iconPosition="right"
+                            icon="/icons/eye-outline.svg"
                         />
                     </div>
                     <div className={css.input}>
-                        <Checkbox name="remember">{t('authentication:login.remember-me')} </Checkbox>
+                        <Checkbox name="stayConnected">{t('authentication:login.remember-me')} </Checkbox>
                     </div>
 
                     <Button mobileFullWidth={true} variant="primary" size="large" type="submit" isLoading={isLoading}>

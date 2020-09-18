@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 import css from './Navbar.module.scss';
 import Button from '@components/common/Button/Button';
 import SelectNavBar from './SelectNavBar/SelectNavBar';
@@ -20,9 +21,12 @@ const Navbar = ({ t }: NavBarProps) => {
                 <SelectNavBar />
             </div>
             <div className={css.navbar__right}>
-                <Button variant={'secondary'} size={'medium'}>
-                    {t('navbar:sign-in')}
-                </Button>
+                <Link href="/connexion">
+                    <Button variant={'secondary'} size={'medium'}>
+                        {t('navbar:sign-in')}
+                    </Button>
+                </Link>
+
                 <Button variant={'primary'} size={'medium'}>
                     {t('navbar:create-pot')}
                 </Button>

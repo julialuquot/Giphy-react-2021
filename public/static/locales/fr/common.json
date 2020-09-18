@@ -2,7 +2,10 @@
     "test": "Home page !",
     "errors":{
         "REQUIRED": "Ce champs est obligatoire",
-        "INVALID_email": "Adresse invalide"
+        "INVALID_email": "Email invalide",
+        "MIN_LENGTH_email": "Minimum 2 caratères",
+        "MAX_LENGTH_email":"Le nombre de caractères est dépassé"
+
 
     }
 }

@@ -12,10 +12,11 @@ type InputFieldProps = {
     valid: boolean;
     value: string | number;
     icon?: string;
-    iconPosition: 'left' | 'right';
+    iconPosition?: 'left' | 'right';
     onChange: React.FormEventHandler<HTMLInputElement>;
     onBlur: React.FormEventHandler<HTMLInputElement>;
     customStyle?: string;
+    iconRef?: React.RefObject<HTMLInputElement>;
 };
 
 const InputField = ({
@@ -33,6 +34,7 @@ const InputField = ({
     onChange,
     onBlur,
     customStyle,
+    iconRef,
 }: InputFieldProps) => {
     const getClassName = () => {
         let className = css.input;
@@ -83,6 +85,7 @@ const InputField = ({
                 />
                 {icon && (
                     <div
+                        ref={iconRef}
                         className={`${css.input__icon} ${
                             iconPosition === 'right' ? css[`input__icon__${iconPosition}`] : css.input__icon__left
                         }`}

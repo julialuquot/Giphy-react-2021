@@ -1,5 +1,9 @@
 const withSass = require('@zeit/next-sass');
 const withCSS = require('@zeit/next-css');
+const path = require('path');
+const webpack = require('webpack');
+
+const { parsed: environment } = require('dotenv').config({ path: path.resolve('env', `.env.${process.env.NODE_ENV}`) });
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
     enabled: process.env.ANALYZE === 'true',
@@ -13,15 +17,17 @@ module.exports = withBundleAnalyzer(
                 localIdentName: '[local]___[hash:base64:5]',
             },
             webpack(config) {
-                // config.module.rules.push({ test: /\.tsx?$/, loader: 'ts-loader' });
-                // config.resolve = {
-                //     extensions: ['.tsx', '.ts', '.js'],
-                // };
+                const envKeys = Object.keys(environment).reduce((prev, next) => {
+                    prev[`process.env.${next}`] = JSON.stringify(environment[next]);
+                    return prev;
+                }, {});
 
-                // config.resolve.alias['@components'] = path.join(__dirname, '/src/components');
-                // config.resolve.alias['@assets'] = path.join(__dirname, '/src/assets');
-                // config.resolve.alias['@validations'] = path.join(__dirname, '/src/validations');
-                // config.resolve.alias['@i18n'] = path.join(__dirname, '/src/i18n.js');
+                config.plugins.push(new webpack.DefinePlugin(envKeys));
+
+                config.resolve.alias['@components'] = path.join(__dirname, '/src/components');
+                config.resolve.alias['@assets'] = path.join(__dirname, '/src/assets');
+                config.resolve.alias['@validations'] = path.join(__dirname, '/src/validations');
+                config.resolve.alias['@i18n'] = path.join(__dirname, '/src/i18n.js');
 
                 return config;
             },

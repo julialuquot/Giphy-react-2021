@@ -6,9 +6,25 @@ const routes = require('./routes/index.js');
 const port = process.env.PORT || 3000;
 const app = next({ dev: process.env.NODE_ENV === 'development' });
 const handle = routes.getRequestHandler(app);
+const dev = process.env.NODE_ENV === 'development';
+
 (async () => {
     await app.prepare();
     const server = express();
+
+    if (dev) {
+        const devProxy = {
+            '/api': {
+                target: process.env.BACKEND_BASE_URL,
+                pathRewrite: { '^/api': '/' },
+                changeOrigin: true,
+            },
+        };
+        const { createProxyMiddleware } = require('http-proxy-middleware');
+        Object.keys(devProxy).forEach(function (context) {
+            server.use(context, createProxyMiddleware(devProxy[context]));
+        });
+    }
 
     await nextI18next.initPromise;
     server.use(nextI18NextMiddleware(nextI18next));
