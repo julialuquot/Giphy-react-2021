@@ -14,7 +14,6 @@ type FormikPaswordInputFieldProps = {
     customStyle?: string;
     disabled?: boolean;
     iconPosition?: 'left' | 'right';
-    icon?: string;
 };
 
 const FormikPaswordInputField: React.FC<FormikPaswordInputFieldProps> = ({

@@ -4,8 +4,10 @@
         "REQUIRED": "Ce champs est obligatoire",
         "INVALID_email": "Email invalide",
         "MIN_LENGTH_email": "Minimum 2 caratères",
-        "MAX_LENGTH_email":"Le nombre de caractères est dépassé"
-
+        "MAX_LENGTH_email":"Le nombre de caractères est dépassé",
+        "MIN_LENGTH_password":"minimum 8 caractères",
+        "MAX_LENGTH_password": "Maximum 60 caractères",
+        "DOES_NOT_MATCH_passwordConfirmation":"Il faut tapper le même mot de passe"
 
     }
 }

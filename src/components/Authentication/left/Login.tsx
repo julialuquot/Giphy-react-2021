@@ -7,23 +7,36 @@ import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Text from '@components/common/Text/Text';
 import { signin } from '@validations/user';
 import css from '../Authentication.scss';
-import { withTranslation } from '@i18n';
+import { useTranslation } from '@i18n';
 import Xconnect from '@components/common/Xconnect/Xconnect';
-import { login } from '@services/User';
+import User from '@services/User';
+import AuthenticationPageContext from '@components/Authentication/AuthenticationPageContext';
 
-type LoginProps = {
-    t: (string) => string;
+const LostPasswordLink: React.FC = () => {
+    const { t } = useTranslation('authentication');
+    return (
+        <AuthenticationPageContext.Consumer>
+            {({ setPage, pages }) => (
+                <div className={css['lost-password']} onClick={() => setPage(pages.lostPassword)}>
+                    <Text variant="caption" color="ui-secondary">
+                        {t('authentication:login.lost-password')}
+                    </Text>
+                </div>
+            )}
+        </AuthenticationPageContext.Consumer>
+    );
 };
 
-const LoginForm = ({ t }: LoginProps) => {
+const LoginForm: React.FC = () => {
     const [isLoading, setIsLoading] = useState(false);
+    const { t } = useTranslation('authentication');
     return (
         <Formik
             validationSchema={signin}
             initialValues={{ email: 'a@a.com', password: '123234', stayConnected: false }}
             onSubmit={async (values) => {
                 try {
-                    const token = await login(values);
+                    const token = await User.login(values);
                     // eslint-disable-next-line no-console
                     console.log(token);
                 } catch (e) {
@@ -50,8 +63,8 @@ const LoginForm = ({ t }: LoginProps) => {
                             label={t('authentication:login.password')}
                             placeholder={t('authentication:login.password-label')}
                             iconPosition="right"
-                            icon="/icons/eye-outline.svg"
                         />
+                        <LostPasswordLink />
                     </div>
                     <div className={css.input}>
                         <Checkbox name="stayConnected">{t('authentication:login.remember-me')} </Checkbox>
@@ -66,18 +79,19 @@ const LoginForm = ({ t }: LoginProps) => {
     );
 };
 
-const Login: React.FC<LoginProps> = ({ t }: LoginProps) => {
+const Login: React.FC = () => {
+    const { t } = useTranslation('authentication');
     return (
         <div className={css.login}>
             <h3>{t('authentication:login.title')}</h3>
             <div className={css.divider} />
             <Xconnect />
-            <LoginForm t={t} />
+            <LoginForm />
             <div className={css.create_account}>
                 <Text variant="body_02" color="ui-secondary">
                     {t('authentication:login.create-account-text')}
                 </Text>
-                <Button size="large" variant="secondary">
+                <Button size="large" variant="tertiary">
                     {t('authentication:login.create-account-button')}
                 </Button>
             </div>
@@ -85,4 +99,4 @@ const Login: React.FC<LoginProps> = ({ t }: LoginProps) => {
     );
 };
 
-export default withTranslation('authentication')(Login);
+export default Login;

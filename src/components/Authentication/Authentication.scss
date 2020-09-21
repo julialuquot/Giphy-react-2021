@@ -15,7 +15,7 @@
         padding-top: 35px;
     }
     
-    img{
+    .logo{
         position:absolute;
         top: 40px;
         left: 35px;
@@ -52,6 +52,14 @@
             width: 100%;
             .input{
                 margin-bottom: 30px;
+                position: relative;
+                .lost-password{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    cursor: pointer;
+
+                }
             }
         }
 
@@ -96,6 +104,118 @@
 
 
     }
+    .lost-password__wrapper{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 360px;
+         @include media(s-device){
+            width: 100%;
+        }
+        .details{
+            padding: 10px;
+            text-align: center;
+        }
+        .divider{
+            width: 360px;
+            height: 1px;
+            background-color: $ui-quaternary;
+            margin: 20px 0 30px 0;
+             @include media(s-device){
+                background-color: white;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+        form{
+            width: 100%;
+
+            .actions{
+                margin-top: 30px;
+                display: flex;
+                flex-direction: column;
+                height: 120px;
+                justify-content: space-between;
+            }
+        }
+        .feedback{
+            width: 360px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: lighten($color:$ui-error, $amount: 30%);
+            border-radius: 8px;
+            margin-bottom: 25px;
+             @include media(s-device){
+                width: 100%;
+               
+            }        
+        }
+    }
+    .email-sent-confirmation{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 360px;
+         @include media(s-device){
+            width: 100%;
+        }
+        img{
+            position: static;
+        }
+        .details{
+            padding: 10px;
+            text-align: center;
+        }
+        .divider{
+            width: 360px;
+            height: 1px;
+            background-color: $ui-quaternary;
+            margin: 30px  0 15px 0;
+             @include media(s-device){
+                background-color: white;
+                width: 100%;
+                margin: 10px 0;
+            }
+        }
+    }
+    .change-password{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        width: 360px;
+         @include media(s-device){
+             width: 100%;
+        
+        }
+        img{
+            display: static;
+        }
+        .divider{
+            width: 360px;
+            height: 1px;
+            background-color: $ui-quaternary;
+            margin: 30px 0;
+             @include media(s-device){
+                background-color: white;
+            }
+
+        }
+        .form{
+           
+            width: 100%;
+            text-align: left;
+            .input{
+                margin-bottom: 30px;
+            }
+        }
+    }
+    
 }
 
 .right_side_wrapper{

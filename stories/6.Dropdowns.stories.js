@@ -1,7 +1,7 @@
 import React from 'react';
-import Select from '@components/common/Dropdowns/Select/Select';
-import SelectSmall from '@components/common/Dropdowns/SelectSmall/SelectSmall';
-import CustomCollapsible from '@components/common/Collapsible/Collapsible';
+import Select from '../src/components/common/Dropdowns/Select/Select';
+import SelectSmall from '../src/components/common/Dropdowns/SelectSmall/SelectSmall';
+import CustomCollapsible from '../src/components/common/Collapsible/Collapsible';
 import icon from '../public/icons/globe-outline.svg';
 
 export default {

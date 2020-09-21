@@ -13,7 +13,9 @@
         "title_1":"Offrez votre pot avec",
         "title_2":"une carte de voeux",
         "description":"Invitez les participants de votre cagnotte à laisser un petit mot sur votre carte de voeux digitale ! Vous pouvez ensuite la télécharger et l’imprimer."
-        }
+        },
+        "lost-password": "Mot de passe oublié ?"
+
     },
     "login-confirmation":{
         "title":"Code de confirmation",
@@ -25,5 +27,28 @@
             "title_2":"disponible",
             "description":"Argumentum conclusionemque rationis et harum quidem se repellere, idque facere nondum depravatum ipsa iudicari ea quid."
             }
+    },
+    "lost-password":{
+        "title": "Mot de passe oublié",
+        "details": "Un email vous sera envoyé pour réinitialiser votre mot de passe",
+        "send": "Envoyer",
+        "back": "Retour",
+        "email": "Email",
+        "email-label":"adressemail@gmail.com",
+        "email-not-found":"Cet email n'est rattaché à aucun compte"
+    },
+    "email-sent-confirmation":{
+        "title":"Email envoyé",
+        "details":"Vous pouvez cliquer sur le lien que nous vous avons envoyé à l’adresse mail suivante :",
+        "no-email-received":"Je n’ai pas reçu d'email"
+    },
+    "change-password":{
+        "title":"Changement de mot de passe",
+        "details": "Un email vous sera envoyé pour réinitialiser votre mot de passe",
+        "new-password-label":"Nouveau mot de passe",
+        "confirm-new-password-label":"Confirmation nouveau mot de passe",
+        "modify":"Modifier",
+        "back": "Retour"
     }
+
 }

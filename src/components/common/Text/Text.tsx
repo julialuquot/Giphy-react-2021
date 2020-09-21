@@ -6,9 +6,10 @@ type TextProps = {
     variant?: string;
     color?: string;
     customClass?: string;
+    tag?: string;
 };
 
-const Text = ({ variant, children, color, customClass }: TextProps) => {
+const Text = ({ variant, children, color, customClass, tag }: TextProps) => {
     const textStyle = () => {
         let className = '';
         color && (className += ' ' + css[color]);
@@ -22,6 +23,9 @@ const Text = ({ variant, children, color, customClass }: TextProps) => {
         variant === 'hint' && (className += ' ' + css.hint);
         return className;
     };
+    if (tag && tag === 'span') {
+        return <span className={`${textStyle()} ${customClass || ''}`}>{children}</span>;
+    }
 
     return <p className={`${textStyle()} ${customClass || ''}`}>{children}</p>;
 };
