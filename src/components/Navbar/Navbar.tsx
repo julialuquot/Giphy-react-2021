@@ -22,9 +22,11 @@ const Navbar = ({ t }: NavBarProps) => {
             </div>
             <div className={css.navbar__right}>
                 <Link href="/connexion">
-                    <Button variant={'secondary'} size={'medium'}>
-                        {t('navbar:sign-in')}
-                    </Button>
+                    <a>
+                        <Button variant={'secondary'} size={'medium'}>
+                            {t('navbar:sign-in')}
+                        </Button>
+                    </a>
                 </Link>
 
                 <Button variant={'primary'} size={'medium'}>
