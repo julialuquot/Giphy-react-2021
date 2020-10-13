@@ -1,0 +1,37 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+
+.scene {
+  position: relative;
+  z-index: 50;
+  height: 100vh;
+  background-image: url("/icons/odvp/christmas_scene_balls.svg");
+  background-size: 1165px 100vh;
+  background-repeat: no-repeat;
+  background-position: bottom -60px right -220px;
+
+  &__text {
+    display: flex;
+    width: 800px;
+    height: 192px;
+    padding: 10% 0 0 10%;
+    font-size: 32px;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 2;
+    color: $odvp-strawberry;
+
+    &__bold {
+      font-weight: bold;
+    }
+
+  }
+
+
+}
+
+
+

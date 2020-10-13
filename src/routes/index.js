@@ -13,5 +13,11 @@ const routes = require('next-routes')()
         name: 'terms',
         pattern: '/conditions-generales-utilisation',
         page: 'terms',
+    })
+    .add({
+        name: 'odvp',
+        pattern: '/on-double-votre-pot-2020',
+        page: 'odvp',
     });
+
 module.exports = routes;

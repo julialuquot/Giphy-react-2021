@@ -1,0 +1,48 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+.container {
+  height: 130vh;
+}
+
+.leftBall {
+  z-index: 25;
+  position: absolute;
+  display: block;
+  width: 200px;
+  left: 10%;
+  bottom: 5%;
+}
+
+
+.middleBall {
+  z-index: 24;
+  position: absolute;
+  display: block;
+  width: 250px;
+  left: 20%;
+  bottom: 230%;
+}
+
+
+.rightBall {
+  z-index: 25;
+  position: absolute;
+  display: block;
+  width: 200px;
+  left: 33%;
+  bottom: 90%;
+}
+
+.txt {
+  position: relative;
+  left: 40%;
+  top: 60%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 200px;
+  height: 200px;
+}
