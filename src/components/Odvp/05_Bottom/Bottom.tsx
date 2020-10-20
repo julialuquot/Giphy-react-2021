@@ -8,13 +8,18 @@ const Bottom = () => {
     const snowflakeRight = useRef(null);
 
     useScrollPosition(({ currPos }) => {
-        console.log('----->', -currPos.y * 20000);
         titleRef.current.style.transform = `translateX(${-currPos.y * 0.2}px)`;
         const scaleAmt = 0.11 + -currPos.y / 4000;
-        console.log('-> scaleAmt', scaleAmt);
         snowflakeRight.current.style.transform = `scale(${scaleAmt})`;
-        console.log('-> -currPos.y', -currPos.y);
     }, []);
+
+    const scrollToRef = () => {
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth',
+        });
+    };
 
     return (
         <div className={css.container}>
@@ -42,7 +47,7 @@ const Bottom = () => {
                 />
                 <img className={css.snowflake_left} src="/icons/odvp/snowflake_2.svg" alt="snowflake" />
 
-                <div className={css.scroll}>
+                <div onClick={() => scrollToRef()} className={css.scroll}>
                     <img
                         className={css.scroll__txt}
                         src="/icons/odvp/scroll-text-up.svg"
