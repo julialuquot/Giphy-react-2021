@@ -27,7 +27,7 @@
 
 .title {
   font-size: 14px;
-  font-weight: bold;
+  font-family: $odvp-primary-bold;
   color: $odvp-strawberry;
 }
 
@@ -109,10 +109,13 @@
 
   &__rocket {
     position: absolute;
-    right: 82px;
-    bottom: 47px;
-    width: 31px;
-    height: 96px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    width: 57px;
+    height: 65px;
 
 
   }

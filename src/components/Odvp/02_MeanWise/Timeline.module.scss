@@ -19,7 +19,7 @@
     position: relative;
 
     &__bold {
-      font-weight: bold !important;
+      font-family: $odvp-primary-bold;
     }
 
     & > p {
@@ -41,7 +41,7 @@
       width: 56px;
       margin-bottom: 10px;
       font-size: 24px;
-      font-weight: bold;
+      font-family: $odvp-primary-bold;
       line-height: 1.25;
       letter-spacing: normal;
       text-align: center;

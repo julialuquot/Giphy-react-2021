@@ -7,6 +7,7 @@ $primary-medium-i: 'Poppins-MediumItalic', sans-serif;
 $primary-SemiBold: 'Poppins-SemiBold', sans-serif;
 $primary-SemiBold-i: 'Poppins-SemiBoldItalic', sans-serif;
 $odvp-primary-reg: 'Montserrat-Regular', sans-serif;
+$odvp-primary-bold: 'Montserrat-Bold', sans-serif;
 $odvp-secondary-reg: 'Poplar-Standart', sans-serif;
 
 @font-face {
@@ -14,6 +15,13 @@ $odvp-secondary-reg: 'Poplar-Standart', sans-serif;
   font-style: normal;
   font-weight: normal;
   src: url('/fonts/Montserrat-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Montserrat-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: url('/fonts/Montserrat-Bold.ttf');
 }
 
 @font-face {
