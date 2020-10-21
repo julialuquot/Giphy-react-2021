@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './MeanWise.module.scss';
 import Timeline from '@components/Odvp/02_MeanWise/Timeline';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
@@ -9,9 +9,21 @@ import starsRight from '../../../../public/icons/odvp/lottie/Doublant - Stars_ri
 import wise from '../../../../public/icons/odvp/lottie/wording - sage V2.json';
 
 const MeanWise = () => {
+    const [showLottie, setShowLottie] = useState(false);
+    console.log('-> showLottie', showLottie);
+
     const [ref, inView] = useInView({
-        threshold: 0,
+        threshold: 1,
+        delay: 250,
+        triggerOnce: true,
     });
+
+    useEffect(() => {
+        inView &&
+            setTimeout(function () {
+                setShowLottie(true);
+            }, 500);
+    }, [inView]);
 
     useScrollPosition(({ currPos }) => {
         const item = document.getElementById('title');
@@ -49,11 +61,12 @@ const MeanWise = () => {
             </div>
             <div className={css.content}>
                 <div className={css.content__text}>
-                    <div></div>
-                    <Lottie options={wiseOptions} width={211} height={127} />
+                    <div className={!showLottie ? css.hide : ''}>
+                        <Lottie options={wiseOptions} width={211} height={127} />
+                    </div>
                     <p>
-                        Parce que vous avez été très{' '}
-                        <span ref={ref} className={`${css.content__bold} ${css.strike}`}>
+                        Parce que vous avez été très
+                        <span ref={ref} className={`${css.content__bold} ${inView ? css.strike : ''}`}>
                             méchant
                         </span>
                         cette année
