@@ -2,6 +2,11 @@ import React, { useEffect, useRef } from 'react';
 import css from './Reindeer.module.scss';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
 import useWindowSize from '@components/Hooks/useWindowSize';
+import Lottie from 'react-lottie';
+import star1 from '../../../../public/icons/odvp/lottie/Logo - Star 1.json';
+import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
+import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
+import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
 
 type ScreenOneProps = {
     onShowNavBar: (boolean) => boolean;
@@ -10,6 +15,39 @@ type ScreenOneProps = {
 const Reindeer = ({ onShowNavBar }: ScreenOneProps) => {
     const { height } = useWindowSize();
     const btnRef = useRef(null);
+
+    const star1Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star1,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+    const star2Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star2,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+    const star3Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star3,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
+    const star4Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star4,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
+    };
 
     const handleMouseMove = (event, element) => {
         const item = document.getElementById(element);
@@ -73,11 +111,26 @@ const Reindeer = ({ onShowNavBar }: ScreenOneProps) => {
 
     return (
         <div className={css.container}>
-            <img
-                className={css.logo_odvp}
-                src="/icons/odvp/Logo%20OdVp%20-%20No%20star.svg"
-                alt="On double votre pot"
-            />
+            <div className={css.logo}>
+                <img
+                    className={css.logo__odvp}
+                    src="/icons/odvp/Logo%20OdVp%20-%20No%20star.svg"
+                    alt="On double votre pot"
+                />
+                <figure className={css.logo__star1}>
+                    <Lottie options={star1Options} />
+                </figure>
+                <figure className={css.logo__star2}>
+                    <Lottie options={star2Options} />
+                </figure>
+                <figure className={css.logo__star3}>
+                    <Lottie options={star3Options} />
+                </figure>
+                <figure className={css.logo__star4}>
+                    <Lottie options={star4Options} />
+                </figure>
+            </div>
+
             <p className={css.title}>Du 4 au 14 décembre</p>
             <div className={css.cta} ref={btnRef}>
                 <OdvpButton width={200} height={47}>
