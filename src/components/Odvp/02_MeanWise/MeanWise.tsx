@@ -3,11 +3,16 @@ import css from './MeanWise.module.scss';
 import Timeline from '@components/Odvp/02_MeanWise/Timeline';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import Lottie from 'react-lottie';
+import { useInView } from 'react-intersection-observer';
 import starsLeft from '../../../../public/icons/odvp/lottie/Doublant - Stars_leftside.json';
 import starsRight from '../../../../public/icons/odvp/lottie/Doublant - Stars_rightside.json';
 import wise from '../../../../public/icons/odvp/lottie/wording - sage V2.json';
 
 const MeanWise = () => {
+    const [ref, inView] = useInView({
+        threshold: 0,
+    });
+
     useScrollPosition(({ currPos }) => {
         const item = document.getElementById('title');
         item.style.transform = `translateX(${-currPos.y * 0.2}px)`;
@@ -44,10 +49,13 @@ const MeanWise = () => {
             </div>
             <div className={css.content}>
                 <div className={css.content__text}>
+                    <div></div>
                     <Lottie options={wiseOptions} width={211} height={127} />
                     <p>
                         Parce que vous avez été très{' '}
-                        <span className={`${css.content__bold} ${css.strike}`}>méchant </span>
+                        <span ref={ref} className={`${css.content__bold} ${css.strike}`}>
+                            méchant
+                        </span>
                         cette année
                     </p>
                     <p>
