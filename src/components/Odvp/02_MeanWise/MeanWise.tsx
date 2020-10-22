@@ -10,7 +10,6 @@ import wise from '../../../../public/icons/odvp/lottie/wording - sage V2.json';
 
 const MeanWise = () => {
     const [showLottie, setShowLottie] = useState(false);
-    console.log('-> showLottie', showLottie);
 
     const [ref, inView] = useInView({
         threshold: 1,

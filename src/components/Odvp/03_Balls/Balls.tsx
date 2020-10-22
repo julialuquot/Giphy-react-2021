@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import css from './Balls.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import useWindowSize from '@components/Hooks/useWindowSize';

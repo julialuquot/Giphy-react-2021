@@ -28,8 +28,8 @@ const Bottom = () => {
             </div>
 
             <div className={css.content}>
-                <p>Alors n'hésitez plus,</p>
-                <p>vous n'avez rien à perdre,</p>
+                <p>Alors nhésitez plus,</p>
+                <p>vous navez rien à perdre,</p>
                 <p>
                     <span className={css.content__bold}>tout à y gagner !</span>
                 </p>

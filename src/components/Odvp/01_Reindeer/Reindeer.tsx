@@ -8,11 +8,7 @@ import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
 
-type ScreenOneProps = {
-    onShowNavBar: (boolean) => boolean;
-};
-
-const Reindeer = ({ onShowNavBar }: ScreenOneProps) => {
+const Reindeer = () => {
     const { height } = useWindowSize();
     const btnRef = useRef(null);
 
@@ -80,26 +76,26 @@ const Reindeer = ({ onShowNavBar }: ScreenOneProps) => {
         };
     }, []);
 
-    const handleScroll = () => {
-        const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-
-        const getDistanceFromTop = (element) => {
-            const rect = element.getBoundingClientRect();
-            return rect.top + scrollY;
-        };
-
-        const elementHeight = btnRef.current.offsetHeight;
-        const distanceFromTop = getDistanceFromTop(btnRef.current);
-
-        scrollY - distanceFromTop - elementHeight >= 0 ? onShowNavBar(true) : onShowNavBar(false);
-    };
-
-    useEffect(() => {
-        window.addEventListener('scroll', handleScroll);
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
+    // const handleScroll = () => {
+    //     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    //
+    //     const getDistanceFromTop = (element) => {
+    //         const rect = element.getBoundingClientRect();
+    //         return rect.top + scrollY;
+    //     };
+    //
+    //     const elementHeight = btnRef.current.offsetHeight;
+    //     const distanceFromTop = getDistanceFromTop(btnRef.current);
+    //
+    //     scrollY - distanceFromTop - elementHeight >= 0 ? onShowNavBar(true) : onShowNavBar(false);
+    // };
+    //
+    // useEffect(() => {
+    //     window.addEventListener('scroll', handleScroll);
+    //     return () => {
+    //         window.removeEventListener('scroll', handleScroll);
+    //     };
+    // }, []);
 
     const scrollToRef = () => {
         window.scrollTo({

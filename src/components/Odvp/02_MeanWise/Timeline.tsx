@@ -16,7 +16,7 @@ const Timeline = () => {
             </div>{' '}
             <div className={css.timeline__step}>
                 <span className={css.timeline__step__number}>3</span>
-                <p className={css.timeline__step__bold}>Collecter un max d'argent</p>
+                <p className={css.timeline__step__bold}>Collecter un max dargent</p>
                 <p>(Si vous gagnez, on doublera la mise)</p>
             </div>
         </div>
