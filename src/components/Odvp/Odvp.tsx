@@ -9,14 +9,13 @@ import OdvbButton from '@components/Odvp/OdvbButton/OdvpButton';
 
 const Odvp = () => {
     const [isUserScrolling, setIsUserScrolling] = useState(false);
+    const [isButtonInView, setIsButtonInView] = useState(true);
 
     let isScrolling;
 
     const handleScroll = () => {
         setIsUserScrolling(true);
-        // Clear our timeout throughout the scroll
         window.clearTimeout(isScrolling);
-        // Set a timeout to run after scrolling ends
         isScrolling = setTimeout(function () {
             setIsUserScrolling(false);
         }, 1000);
@@ -24,25 +23,23 @@ const Odvp = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', handleScroll);
-
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, [handleScroll]);
+    }, []);
 
     return (
         <>
-            {/* <Nav isVisible={showNavOnScroll} /> */}
-            <div className={`${css.button} ${isUserScrolling && css.button__hide}`}>
+            <div className={`${css.button} ${(isButtonInView || isUserScrolling) && css.button__hide}`}>
                 <OdvbButton width={200} height={47}>
                     Créer un pot commun
                 </OdvbButton>
             </div>
-            <Reindeer />
+            <Reindeer onSetIsButtonInView={(value) => setIsButtonInView(value)} />
             <MeanWise />
             <Balls />
             <Scene />
-            <Bottom />
+            <Bottom onSetIsButtonInView={(value) => setIsButtonInView(value)} />
         </>
     );
 };

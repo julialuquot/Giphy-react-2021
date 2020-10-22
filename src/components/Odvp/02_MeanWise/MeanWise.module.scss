@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: $odvp-strawberry;
+  background-image: url("/icons/odvp/Background/BG - pattern 100x100.png");
 }
 
 
@@ -19,23 +19,34 @@
   height: 200px;
   white-space: nowrap;
   margin: 70px 20% 70px 0;
+  @include media(s-device) {
+    margin: 32px 20% 32px 0;
+  }
 
   & > h1 {
     font-family: $odvp-secondary-reg;
     color: $odvp-very-light-pink;
     font-size: 246px;
     line-height: 0.39;
+    @include media(s-device) {
+      font-size: 80px;
+    }
   }
 
 }
 
 .content {
+  text-align: center;
+
   height: 100vh;
   width: 80vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
+  @include media(s-device) {
+    height: auto;
+  }
 
 
   &__text {
@@ -47,7 +58,13 @@
     color: $odvp-very-light-pink;
     font-size: 32px;
     line-height: 2;
+    @include media(s-device) {
+      font-size: 16px;
+    }
 
+    &__mean {
+      margin: 10px;
+    }
 
     &__bold {
       font-family: $odvp-primary-bold;
@@ -60,8 +77,16 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    width: 80%;
+    min-width: 800px;
     margin-top: 10px;
+    @include media(m-device) {
+      min-width: 100vw;
+      margin-bottom: 85px;
+    }
+
+    &__icon {
+      transform: scale(0.5);
+    }
   }
 
 }
@@ -78,25 +103,41 @@
 
 .strike {
   position: relative;
-
 }
 
 .strike::after {
   content: '';
   position: absolute;
-  top: calc(50% + 1.5px);
-  right: 0px;
+  top: 50%;
+  left: 0px;
   width: 100%;
-  height: 5px;
+  height: 8px;
   background: $odvp-very-light-pink;
   animation-name: strike;
   animation-duration: 500ms;
   animation-timing-function: ease-in-out;
+  @include media(s-device) {
+    height: 6px;
+
+    top: calc(50% - 3px);
+
+  }
+
 }
 
-.hide {
-  visibility: hidden;
+.lottie {
+
+  &__hide {
+    visibility: hidden;
+  }
+
+
+  @include media(s-device) {
+    transform: scale(0.7);
+  }
 }
+
+
 
 
 

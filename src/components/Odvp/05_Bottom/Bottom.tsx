@@ -1,11 +1,19 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import css from './Bottom.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
+import { useInView } from 'react-intersection-observer';
 
-const Bottom = () => {
+type BottomProps = {
+    onSetIsButtonInView: (boolean) => void;
+};
+
+const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
     const titleRef = useRef(null);
     const snowflakeRight = useRef(null);
+    const [btnRef, inView] = useInView({
+        threshold: 1,
+    });
 
     useScrollPosition(({ currPos }) => {
         titleRef.current.style.transform = `translateX(${-currPos.y * 0.2}px)`;
@@ -13,13 +21,17 @@ const Bottom = () => {
         snowflakeRight.current.style.transform = `scale(${scaleAmt})`;
     }, []);
 
-    const scrollToRef = () => {
+    const scrollToTop = () => {
         window.scrollTo({
             top: 0,
             left: 0,
             behavior: 'smooth',
         });
     };
+
+    useEffect(() => {
+        inView ? onSetIsButtonInView(true) : onSetIsButtonInView(false);
+    }, [inView]);
 
     return (
         <div className={css.container}>
@@ -33,7 +45,7 @@ const Bottom = () => {
                 <p>
                     <span className={css.content__bold}>tout à y gagner !</span>
                 </p>
-                <div className={css.cta}>
+                <div ref={btnRef} className={css.cta}>
                     <OdvpButton width={200} height={47}>
                         Créer un pot commun
                     </OdvpButton>
@@ -47,7 +59,7 @@ const Bottom = () => {
                 />
                 <img className={css.snowflake_left} src="/icons/odvp/snowflake_2.svg" alt="snowflake" />
 
-                <div onClick={() => scrollToRef()} className={css.scroll}>
+                <div onClick={() => scrollToTop()} className={css.scroll}>
                     <img
                         className={css.scroll__txt}
                         src="/icons/odvp/scroll-text-up.svg"

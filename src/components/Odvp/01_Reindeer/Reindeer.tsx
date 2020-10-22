@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect } from 'react';
 import css from './Reindeer.module.scss';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
 import useWindowSize from '@components/Hooks/useWindowSize';
@@ -7,10 +7,18 @@ import star1 from '../../../../public/icons/odvp/lottie/Logo - Star 1.json';
 import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
+import { useInView } from 'react-intersection-observer';
 
-const Reindeer = () => {
+type ReindeerProps = {
+    onSetIsButtonInView: (boolean) => void;
+};
+
+const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
     const { height } = useWindowSize();
-    const btnRef = useRef(null);
+
+    const [btnRef, inView] = useInView({
+        threshold: 1,
+    });
 
     const star1Options = {
         loop: true,
@@ -96,6 +104,10 @@ const Reindeer = () => {
     //         window.removeEventListener('scroll', handleScroll);
     //     };
     // }, []);
+
+    useEffect(() => {
+        inView ? onSetIsButtonInView(true) : onSetIsButtonInView(false);
+    }, [inView]);
 
     const scrollToRef = () => {
         window.scrollTo({

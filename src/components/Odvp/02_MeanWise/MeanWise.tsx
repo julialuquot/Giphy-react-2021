@@ -21,7 +21,7 @@ const MeanWise = () => {
         inView &&
             setTimeout(function () {
                 setShowLottie(true);
-            }, 500);
+            }, 800);
     }, [inView]);
 
     useScrollPosition(({ currPos }) => {
@@ -60,12 +60,18 @@ const MeanWise = () => {
             </div>
             <div className={css.content}>
                 <div className={css.content__text}>
-                    <div className={!showLottie ? css.hide : ''}>
+                    <div className={`${css.lottie} ${!showLottie ? css.lottie__hide : ''}`}>
                         <Lottie options={wiseOptions} width={211} height={127} />
                     </div>
+
                     <p>
                         Parce que vous avez été très
-                        <span ref={ref} className={`${css.content__bold} ${inView ? css.strike : ''}`}>
+                        <span
+                            ref={ref}
+                            className={`${css.content__text__bold} ${css.content__text__mean} ${
+                                inView ? css.strike : ''
+                            }`}
+                        >
                             méchant
                         </span>
                         cette année
@@ -74,10 +80,15 @@ const MeanWise = () => {
                         <span className={css.content__text__bold}>Le Pot Commun et Virgin Radio</span> ont décidé de
                         vous gâter en
                     </p>
+
                     <div className={css.content__stars}>
-                        <Lottie options={starsLeftOptions} width={100} height={100} />
+                        <div className={css.content__stars__icon}>
+                            <Lottie options={starsLeftOptions} width={100} height={100} />
+                        </div>
                         <p className={css.content__text__bold}>DOUBLANT VOS CAGNOTTES !</p>
-                        <Lottie options={starsRightOptions} width={100} height={100} />
+                        <div className={css.content__stars__icon}>
+                            <Lottie options={starsRightOptions} width={100} height={100} />{' '}
+                        </div>
                     </div>
                 </div>
 

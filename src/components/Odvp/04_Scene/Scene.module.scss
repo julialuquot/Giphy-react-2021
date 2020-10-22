@@ -6,12 +6,12 @@
 
 .scene {
   position: relative;
-  z-index: 50;
+  z-index: 51;
   height: 100vh;
   background-image: url("/icons/odvp/christmas_scene_balls.svg");
   background-size: 1165px 100vh;
   background-repeat: no-repeat;
-  background-position: bottom -60px right -220px;
+  background-position: bottom -70px right -220px;
 
   &__text {
     display: flex;
