@@ -60,18 +60,6 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
         const radianDegrees = Math.atan2(event.pageX - mouseX, event.pageY - mouseY);
         const rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 180;
         item.style.transform = `rotate(${rotationDegrees}deg)`;
-
-        // item.animate(
-        //     [
-        //         // keyframes
-        //         { transform: `rotate(${rotationDegrees}deg)` },
-        //     ],
-        //     {
-        //         // timing options
-        //         duration: 800,
-        //         easing: 'linear',
-        //     },
-        // );
     };
 
     useEffect(() => {
@@ -83,27 +71,6 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
             window.removeEventListener('mousemove', () => handleMouseMove);
         };
     }, []);
-
-    // const handleScroll = () => {
-    //     const scrollY = window.pageYOffset || document.documentElement.scrollTop;
-    //
-    //     const getDistanceFromTop = (element) => {
-    //         const rect = element.getBoundingClientRect();
-    //         return rect.top + scrollY;
-    //     };
-    //
-    //     const elementHeight = btnRef.current.offsetHeight;
-    //     const distanceFromTop = getDistanceFromTop(btnRef.current);
-    //
-    //     scrollY - distanceFromTop - elementHeight >= 0 ? onShowNavBar(true) : onShowNavBar(false);
-    // };
-    //
-    // useEffect(() => {
-    //     window.addEventListener('scroll', handleScroll);
-    //     return () => {
-    //         window.removeEventListener('scroll', handleScroll);
-    //     };
-    // }, []);
 
     useEffect(() => {
         inView ? onSetIsButtonInView(true) : onSetIsButtonInView(false);

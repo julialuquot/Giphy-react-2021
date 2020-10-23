@@ -30,7 +30,7 @@ const Odvp = () => {
 
     return (
         <>
-            <div className={`${css.button} ${(isButtonInView || isUserScrolling) && css.button__hide}`}>
+            <div className={`${css.button} ${isButtonInView || isUserScrolling ? css.button__hide : css.button__show}`}>
                 <OdvbButton width={200} height={47}>
                     Créer un pot commun
                 </OdvbButton>
