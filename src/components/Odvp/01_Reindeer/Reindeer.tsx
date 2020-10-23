@@ -2,12 +2,12 @@ import React, { useEffect } from 'react';
 import css from './Reindeer.module.scss';
 import useWindowSize from '@components/Hooks/useWindowSize';
 import { useInView } from 'react-intersection-observer';
-import Lottie from 'react-lottie';
+// import Lottie from 'react-lottie';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
-import star1 from '../../../../public/icons/odvp/lottie/Logo - Star 1.json';
-import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
-import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
-import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
+// import star1 from '../../../../public/icons/odvp/lottie/Logo - Star 1.json';
+// import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
+// import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
+// import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
 
 type ReindeerProps = {
     onSetIsButtonInView: (boolean) => void;
@@ -20,38 +20,38 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
         threshold: 1,
     });
 
-    const star1Options = {
-        loop: true,
-        autoplay: true,
-        animationData: star1,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
-    const star2Options = {
-        loop: true,
-        autoplay: true,
-        animationData: star2,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
-    const star3Options = {
-        loop: true,
-        autoplay: true,
-        animationData: star3,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
-    const star4Options = {
-        loop: true,
-        autoplay: true,
-        animationData: star4,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
+    // const star1Options = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: star1,
+    //     rendererSettings: {
+    //         preserveAspectRatio: 'xMidYMid slice',
+    //     },
+    // };
+    // const star2Options = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: star2,
+    //     rendererSettings: {
+    //         preserveAspectRatio: 'xMidYMid slice',
+    //     },
+    // };
+    // const star3Options = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: star3,
+    //     rendererSettings: {
+    //         preserveAspectRatio: 'xMidYMid slice',
+    //     },
+    // };
+    // const star4Options = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: star4,
+    //     rendererSettings: {
+    //         preserveAspectRatio: 'xMidYMid slice',
+    //     },
+    // };
 
     const handleMouseMove = (event, element) => {
         const item = document.getElementById(element);
@@ -92,18 +92,18 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
                     src="/icons/odvp/Logo%20OdVp%20-%20No%20star.svg"
                     alt="On double votre pot"
                 />
-                <figure className={css.logo__star1}>
-                    <Lottie options={star1Options} />
-                </figure>
-                <figure className={css.logo__star2}>
-                    <Lottie options={star2Options} />
-                </figure>
-                <figure className={css.logo__star3}>
-                    <Lottie options={star3Options} />
-                </figure>
-                <figure className={css.logo__star4}>
-                    <Lottie options={star4Options} />
-                </figure>
+                {/* <figure className={css.logo__star1}> */}
+                {/*    <Lottie options={star1Options} /> */}
+                {/* </figure> */}
+                {/* <figure className={css.logo__star2}> */}
+                {/*    <Lottie options={star2Options} /> */}
+                {/* </figure> */}
+                {/* <figure className={css.logo__star3}> */}
+                {/*    <Lottie options={star3Options} /> */}
+                {/* </figure> */}
+                {/* <figure className={css.logo__star4}> */}
+                {/*    <Lottie options={star4Options} /> */}
+                {/* </figure> */}
             </div>
 
             <p className={css.title}>Du 4 au 14 décembre</p>
@@ -138,7 +138,6 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
             </div>
 
             <div className={css.reindeer}>
-                {/* <img className={css.reindeer__head} src="/icons/odvp/Reindeer%20-%20Complete.svg" alt="Reindeer" /> */}
                 <img className={css.reindeer__head} src="/icons/odvp/Reindeer%20-%20Head.svg" alt="Reindeer" />
                 <div className={css.reindeer__eye}>
                     <span id="eyeLeft" className={css.reindeer__eye__left} />

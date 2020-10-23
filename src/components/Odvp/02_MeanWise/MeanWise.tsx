@@ -4,8 +4,8 @@ import Timeline from '@components/Odvp/02_MeanWise/Timeline';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import Lottie from 'react-lottie';
 import { useInView } from 'react-intersection-observer';
-import starsLeft from '../../../../public/icons/odvp/lottie/Doublant - Stars_leftside.json';
-import starsRight from '../../../../public/icons/odvp/lottie/Doublant - Stars_rightside.json';
+// import starsLeft from '../../../../public/icons/odvp/lottie/Doublant - Stars_leftside.json';
+// import starsRight from '../../../../public/icons/odvp/lottie/Doublant - Stars_rightside.json';
 import wise from '../../../../public/icons/odvp/lottie/wording - sage V2.json';
 
 const MeanWise = () => {
@@ -29,20 +29,20 @@ const MeanWise = () => {
         item.style.transform = `translateX(${-currPos.y * 0.2}px)`;
     }, []);
 
-    const starsLeftOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: starsLeft,
-    };
-
-    const starsRightOptions = {
-        loop: true,
-        autoplay: true,
-        animationData: starsRight,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
-    };
+    // const starsLeftOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: starsLeft,
+    // };
+    //
+    // const starsRightOptions = {
+    //     loop: true,
+    //     autoplay: true,
+    //     animationData: starsRight,
+    //     rendererSettings: {
+    //         preserveAspectRatio: 'xMidYMid slice',
+    //     },
+    // };
 
     const wiseOptions = {
         loop: false,
@@ -81,15 +81,15 @@ const MeanWise = () => {
                         vous gâter en
                     </p>
 
-                    <div className={css.content__stars}>
-                        <div className={css.content__stars__icon}>
-                            <Lottie options={starsLeftOptions} width={100} height={100} />
-                        </div>
-                        <p className={css.content__text__bold}>DOUBLANT VOS CAGNOTTES !</p>
-                        <div className={css.content__stars__icon}>
-                            <Lottie options={starsRightOptions} width={100} height={100} />{' '}
-                        </div>
-                    </div>
+                    {/* <div className={css.content__stars}> */}
+                    {/*    <div className={css.content__stars__icon}> */}
+                    {/*        <Lottie options={starsLeftOptions} width={100} height={100} /> */}
+                    {/*    </div> */}
+                    {/*    <p className={css.content__text__bold}>DOUBLANT VOS CAGNOTTES !</p> */}
+                    {/*    <div className={css.content__stars__icon}> */}
+                    {/*        <Lottie options={starsRightOptions} width={100} height={100} />{' '} */}
+                    {/*    </div> */}
+                    {/* </div> */}
                 </div>
 
                 <Timeline />
