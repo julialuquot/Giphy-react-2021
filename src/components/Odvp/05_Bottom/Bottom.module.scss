@@ -60,16 +60,14 @@
     display: flex;
     justify-content: center;
     width: 218px;
-    height: 56px;
     font-family: $odvp-primary-reg;
     font-size: 24px;
-    line-height: 2.33;
     color: $odvp-very-light-pink;
     text-decoration: underline;
 
     @include media(s-device) {
       font-size: 16px;
-      bottom: 32px;
+      bottom: 16px;
     }
   }
 
@@ -79,6 +77,8 @@
     left: -110px;
     width: 302px;
     height: 482px;
+    animation: rotatingClockwise 30s linear infinite;
+
     @include media(s-device) {
       left: -60px;
       top: 55%;
@@ -93,6 +93,7 @@
     right: 20%;
     width: 249px;
     height: 287px;
+    animation: rotatingCounterClockwise 50s linear infinite;
     @include media(s-device) {
       width: 140px;
       height: 161px;
@@ -109,7 +110,7 @@
       position: relative;
       width: 196px;
       height: 190px;
-      animation: rotating 15s linear infinite;
+      animation: rotatingClockwise 15s linear infinite;
 
       @include media(s-device) {
         width: 141px;
@@ -137,7 +138,17 @@
 }
 
 
-@-webkit-keyframes rotating {
+@-webkit-keyframes rotatingClockwise {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+
+@-webkit-keyframes rotatingCounterClockwise {
   from {
     -webkit-transform: rotate(0deg);
   }
