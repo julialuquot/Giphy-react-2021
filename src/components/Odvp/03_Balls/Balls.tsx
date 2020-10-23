@@ -56,7 +56,7 @@ const Balls = () => {
             <img ref={rightBallRef} className={css.rightBall} src="/icons/odvp/garland_x2.svg" alt="x2" />
 
             <div className={css.txt}>
-                <p>Exemple de gain</p>
+                <p className={css.txt__bold}>Exemple de gain</p>
                 <p>super hooooottte à gagner !</p>
             </div>
         </div>

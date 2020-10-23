@@ -38,11 +38,25 @@
 
 .txt {
   position: relative;
-  left: 40%;
-  top: 60%;
+  left: 50%;
+  top: 80%;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   justify-content: center;
-  width: 200px;
-  height: 200px;
+  width: fit-content;
+  font-size: 32px;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  color: $odvp-strawberry;
+  @include media(s-device) {
+    font-size: 16px;
+
+  }
+
+  &__bold {
+    font-family: $odvp-primary-bold;
+
+  }
 }
