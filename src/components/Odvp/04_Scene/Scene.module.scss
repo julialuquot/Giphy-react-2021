@@ -12,22 +12,47 @@
   background-size: 1165px 100vh;
   background-repeat: no-repeat;
   background-position: bottom -70px right -220px;
+  @include media(s-device) {
+    background-size: 500px 500px;
+    background-position: bottom -70px right -120px;
+  }
 
   &__text {
     display: flex;
-    width: 800px;
+    max-width: 1000px;
+    width: 80%;
     height: 192px;
-    padding: 10% 0 0 10%;
+    padding: 15% 0 0 10%;
     font-size: 32px;
     font-stretch: normal;
     font-style: normal;
     line-height: 2;
     color: $odvp-strawberry;
+    @include media(s-device) {
+      position: absolute;
+      bottom: 350px;
+      max-width: 100%;
+      font-size: 16px;
+      & > p {
+        line-height: 2.5;
+      }
+    }
 
     &__bold {
       font-family: $odvp-primary-bold;
     }
 
+  }
+
+  &__cat {
+    position: absolute;
+    bottom: 88px;
+    right: 630px;
+    @include media(s-device) {
+      transform: scale(0.5);
+      right: 200px;
+      bottom: -20px;
+    }
   }
 
 
