@@ -157,18 +157,13 @@
     margin: auto;
     width: 57px;
     height: 65px;
+    transition: all .4s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+
+    &:hover {
+      transform: scale(0.8)
+    }
 
 
-  }
-}
-
-
-@-webkit-keyframes rotating {
-  from {
-    -webkit-transform: rotate(0deg);
-  }
-  to {
-    -webkit-transform: rotate(360deg);
   }
 }
 
@@ -273,59 +268,14 @@
 //  }
 //}
 
+//ANIMATIONS
 
-.stars {
-  width: 40px;
-  display: block;
-  animation: glitterWithRotate 8s linear 0s infinite normal;
-
-}
-
-
-@keyframes glitter {
-  0% {
-    -webkit-transform: scale(1.0);
-    opacity: 1;
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0deg);
   }
-  25% {
-    -webkit-transform: scale(0.5);
-    opacity: 0;
-  }
-  50% {
-    -webkit-transform: scale(1.0);
-    opacity: 1;
-  }
-  75% {
-    -webkit-transform: scale(0.5);
-    opacity: 0;
-  }
-  100% {
-    -webkit-transform: scale(1.0);
-    opacity: 1;
+  to {
+    -webkit-transform: rotate(360deg);
   }
 }
 
-@keyframes glitterWithRotate {
-  0% {
-    -webkit-transform: scale(0.3) rotate(0deg);
-    opacity: 0;
-  }
-  25% {
-    -webkit-transform: scale(1) rotate(180deg);
-    opacity: 1;
-  }
-  50% {
-    -webkit-transform: scale(0.3) rotate(360deg);
-    opacity: 0;
-  }
-
-  75% {
-    -webkit-transform: scale(0.3) rotate(360deg);
-    opacity: 0;
-  }
-
-  100% {
-    -webkit-transform: scale(0.3) rotate(0deg);
-    opacity: 0;
-  }
-}

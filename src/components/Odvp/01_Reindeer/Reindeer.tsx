@@ -1,13 +1,13 @@
 import React, { useEffect } from 'react';
 import css from './Reindeer.module.scss';
-import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
 import useWindowSize from '@components/Hooks/useWindowSize';
+import { useInView } from 'react-intersection-observer';
 import Lottie from 'react-lottie';
+import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
 import star1 from '../../../../public/icons/odvp/lottie/Logo - Star 1.json';
 import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
-import { useInView } from 'react-intersection-observer';
 
 type ReindeerProps = {
     onSetIsButtonInView: (boolean) => void;
@@ -181,7 +181,6 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
 
             {/* <span id="eyeLeft" className={css.eye} /> */}
             {/* <span id="eyeRight" className={css.eye} /> */}
-            {/* <img className={css.stars} src="/icons/odvp/stars.svg" alt="stars" /> */}
         </div>
     );
 };
