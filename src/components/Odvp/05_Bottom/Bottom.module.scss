@@ -21,6 +21,9 @@
     font-family: $odvp-secondary-reg;
     color: $odvp-very-light-pink;
     font-size: 246px;
+    @include media(s-device) {
+      font-size: 80px;
+    }
   }
 }
 

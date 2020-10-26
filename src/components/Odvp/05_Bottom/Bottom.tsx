@@ -68,7 +68,9 @@ const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
                     <img className={css.scroll__rocket} src="/icons/odvp/rocket.svg" alt="rocket" />
                 </div>
 
-                <p className={css.rules}>Règlement du jeu</p>
+                <a className={css.rules} href="/icons/odvp/pdf/Règlement_ODVP_2020.pdf">
+                    Règlement du jeu
+                </a>
             </div>
         </div>
     );
