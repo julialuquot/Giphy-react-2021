@@ -1,65 +1,70 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useLayoutEffect } from 'react';
 import css from './Balls.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import useWindowSize from '@components/Hooks/useWindowSize';
+import { InView } from 'react-intersection-observer';
 
 const Balls = () => {
     const { height } = useWindowSize();
+
+    const [isComponentInView, setIsComponentInView] = useState(false);
 
     const leftBallRef = useRef(null);
     const rightBallRef = useRef(null);
     const middleBallRef = useRef(null);
 
-    useScrollPosition(
-        ({ currPos }) => {
-            const scrollY = currPos.y;
+    const [scrollY, setScrollY] = useState(0);
 
-            const LEFT_BALL_BREAKPOINT = height * -2;
-            //
-            const MIDDLE_BALL_BREAKPOINT = height * -2.9;
-            const MIDDLE_BALL_SPEED = 1.7;
-            //
-            const RIGHT_BALL_BREAKPOINT = height * -2.65;
-            const RIGHT_BALL_SPEED = 1.2;
-            //
+    useScrollPosition(({ currPos }) => {
+        isComponentInView && setScrollY(currPos.y);
+    });
 
-            const parallax = (distance, speed) => `translateY(${distance * speed}px)`;
+    useLayoutEffect(() => {
+        const LEFT_BALL_BREAKPOINT = height * -2;
+        const MIDDLE_BALL_BREAKPOINT = height * -2.9;
+        const MIDDLE_BALL_SPEED = 1.7;
+        const RIGHT_BALL_BREAKPOINT = height * -2.65;
+        const RIGHT_BALL_SPEED = 1.2;
 
-            leftBallRef.current.style.transform = parallax(-scrollY, 1);
-            rightBallRef.current.style.transform = parallax(-scrollY, RIGHT_BALL_SPEED);
-            middleBallRef.current.style.transform = parallax(-scrollY, MIDDLE_BALL_SPEED);
+        const parallax = (distance, speed) => `translateY(${distance * speed}px)`;
 
-            if (scrollY < LEFT_BALL_BREAKPOINT) {
-                leftBallRef.current.style.transform = parallax(-LEFT_BALL_BREAKPOINT, 1);
-            }
+        leftBallRef.current.style.transform = isComponentInView && parallax(-scrollY, 1);
+        rightBallRef.current.style.transform = isComponentInView && parallax(-scrollY, RIGHT_BALL_SPEED);
+        middleBallRef.current.style.transform = isComponentInView && parallax(-scrollY, MIDDLE_BALL_SPEED);
 
-            if (scrollY < RIGHT_BALL_BREAKPOINT) {
-                rightBallRef.current.style.transform = parallax(-RIGHT_BALL_BREAKPOINT, RIGHT_BALL_SPEED);
-            }
+        if (scrollY < LEFT_BALL_BREAKPOINT) {
+            leftBallRef.current.style.transform = isComponentInView && parallax(-LEFT_BALL_BREAKPOINT, 1);
+        }
 
-            if (scrollY < MIDDLE_BALL_BREAKPOINT) {
-                middleBallRef.current.style.transform = parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
-            }
-        },
-        [height],
-    );
+        if (scrollY < RIGHT_BALL_BREAKPOINT) {
+            rightBallRef.current.style.transform =
+                isComponentInView && parallax(-RIGHT_BALL_BREAKPOINT, RIGHT_BALL_SPEED);
+        }
+
+        if (scrollY < MIDDLE_BALL_BREAKPOINT) {
+            middleBallRef.current.style.transform =
+                isComponentInView && parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
+        }
+    }, [scrollY]);
 
     return (
-        <div className={css.container}>
-            <img ref={middleBallRef} className={css.middleBall} src="/icons/odvp/garland_800.svg" alt="800" />
-            <img
-                ref={leftBallRef}
-                className={`${css.leftBall} ${css.swing}`}
-                src="/icons/odvp/garland_400.svg"
-                alt="400"
-            />
-            <img ref={rightBallRef} className={css.rightBall} src="/icons/odvp/garland_x2.svg" alt="x2" />
+        <InView onChange={setIsComponentInView}>
+            <div className={css.container}>
+                <img ref={middleBallRef} className={css.middleBall} src="/icons/odvp/garland_800.svg" alt="800" />
+                <img
+                    ref={leftBallRef}
+                    className={`${css.leftBall} ${css.swing}`}
+                    src="/icons/odvp/garland_400.svg"
+                    alt="400"
+                />
+                <img ref={rightBallRef} className={css.rightBall} src="/icons/odvp/garland_x2.svg" alt="x2" />
 
-            <div className={css.txt}>
-                <p className={css.txt__bold}>Exemple de gain</p>
-                <p>super hooooottte à gagner !</p>
+                <div className={css.txt}>
+                    <p className={css.txt__bold}>Exemple de gain</p>
+                    <p>super hooooottte à gagner !</p>
+                </div>
             </div>
-        </div>
+        </InView>
     );
 };
 

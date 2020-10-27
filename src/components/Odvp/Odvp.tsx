@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import css from './Odvp.module.scss';
 import Reindeer from '@components/Odvp/01_Reindeer/Reindeer';
 import MeanWise from '@components/Odvp/02_MeanWise/MeanWise';
@@ -21,7 +21,11 @@ const Odvp = () => {
         }, 1000);
     };
 
-    useEffect(() => {
+    const handleButtonView = (value) => {
+        setIsButtonInView(value);
+    };
+
+    useLayoutEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
@@ -35,13 +39,12 @@ const Odvp = () => {
                     Créer un pot commun
                 </OdvbButton>
             </div>
-            <Reindeer onSetIsButtonInView={(value) => setIsButtonInView(value)} />
+            <Reindeer onSetIsButtonInView={(value) => handleButtonView(value)} />
             <MeanWise />
             <Balls />
             <Scene />
-            <Bottom onSetIsButtonInView={(value) => setIsButtonInView(value)} />
+            <Bottom onSetIsButtonInView={(value) => handleButtonView(value)} />
         </>
     );
 };
-
 export default Odvp;
