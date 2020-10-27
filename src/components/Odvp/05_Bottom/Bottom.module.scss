@@ -79,8 +79,7 @@
     position: absolute;
     top: 40%;
     left: -110px;
-    width: 302px;
-    height: 482px;
+    max-width: 300px;
     animation: rotatingClockwise 30s linear infinite;
 
     @include media(s-device) {
@@ -95,12 +94,10 @@
     position: absolute;
     top: 0;
     right: 20%;
-    width: 249px;
-    height: 287px;
+    max-width: 250px;
     animation: rotatingCounterClockwise 50s linear infinite;
     @include media(s-device) {
       width: 140px;
-      height: 161px;
     }
   }
 

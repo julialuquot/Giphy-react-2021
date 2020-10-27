@@ -15,14 +15,22 @@ const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
     const [btnRef, inView] = useInView({
         threshold: 1,
     });
+
     const { width } = useWindowSize();
 
     useScrollPosition(({ currPos }) => {
-        titleRef.current.style.transform = `translateX(${-currPos.y * 0.2}px)`;
-        const scaleAmt = 0.11 + -currPos.y / 4000;
-        const item = document.getElementById('snowflakeRight');
-        item.style.transform = `scale(${scaleAmt})`;
+        const snowflakeRight = document.getElementById('snowflakeRight');
+        const snowflakeLeft = document.getElementById('snowflakeLeft');
+        const rightWidthAnimation = (-currPos.y / 100) * 5.5 - 200;
+        const leftWidthAnimation = (-currPos.y / 100) * 5.5 - 180;
+        const scaleUp = (ratio, speed) => `${Math.round(ratio * speed)}px`;
+        snowflakeRight.style.width = scaleUp(rightWidthAnimation, 3.5);
+        snowflakeLeft.style.width = scaleUp(leftWidthAnimation, 4);
     }, []);
+
+    // useScrollPosition(({ currPos }) => {
+    //     titleRef.current.style.transform = `translateX(${-currPos.y * 0.2}px)`;
+    // }, []);
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -67,7 +75,12 @@ const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
                     src="/icons/odvp/snowflake_1.svg"
                     alt="snowflake"
                 />
-                <img className={css.snowflake_left} src="/icons/odvp/snowflake_2.svg" alt="snowflake" />
+                <img
+                    id={'snowflakeLeft'}
+                    className={css.snowflake_left}
+                    src="/icons/odvp/snowflake_2.svg"
+                    alt="snowflake"
+                />
 
                 <div onClick={() => scrollToTop()} className={css.scroll}>
                     <img
