@@ -10,36 +10,39 @@ const Balls = () => {
     const rightBallRef = useRef(null);
     const middleBallRef = useRef(null);
 
-    useScrollPosition(({ currPos }) => {
-        const scrollY = currPos.y;
+    useScrollPosition(
+        ({ currPos }) => {
+            const scrollY = currPos.y;
 
-        const LEFT_BALL_BREAKPOINT = height * -2;
-        //
-        const MIDDLE_BALL_BREAKPOINT = height * -2.9;
-        const MIDDLE_BALL_SPEED = 1.7;
-        //
-        const RIGHT_BALL_BREAKPOINT = height * -2.65;
-        const RIGHT_BALL_SPEED = 1.2;
-        //
+            const LEFT_BALL_BREAKPOINT = height * -2;
+            //
+            const MIDDLE_BALL_BREAKPOINT = height * -2.9;
+            const MIDDLE_BALL_SPEED = 1.7;
+            //
+            const RIGHT_BALL_BREAKPOINT = height * -2.65;
+            const RIGHT_BALL_SPEED = 1.2;
+            //
 
-        const parallax = (distance, speed) => `translateY(${distance * speed}px)`;
+            const parallax = (distance, speed) => `translateY(${distance * speed}px)`;
 
-        leftBallRef.current.style.transform = parallax(-scrollY, 1);
-        rightBallRef.current.style.transform = parallax(-scrollY, RIGHT_BALL_SPEED);
-        middleBallRef.current.style.transform = parallax(-scrollY, MIDDLE_BALL_SPEED);
+            leftBallRef.current.style.transform = parallax(-scrollY, 1);
+            rightBallRef.current.style.transform = parallax(-scrollY, RIGHT_BALL_SPEED);
+            middleBallRef.current.style.transform = parallax(-scrollY, MIDDLE_BALL_SPEED);
 
-        if (scrollY < LEFT_BALL_BREAKPOINT) {
-            leftBallRef.current.style.transform = parallax(-LEFT_BALL_BREAKPOINT, 1);
-        }
+            if (scrollY < LEFT_BALL_BREAKPOINT) {
+                leftBallRef.current.style.transform = parallax(-LEFT_BALL_BREAKPOINT, 1);
+            }
 
-        if (scrollY < RIGHT_BALL_BREAKPOINT) {
-            rightBallRef.current.style.transform = parallax(-RIGHT_BALL_BREAKPOINT, RIGHT_BALL_SPEED);
-        }
+            if (scrollY < RIGHT_BALL_BREAKPOINT) {
+                rightBallRef.current.style.transform = parallax(-RIGHT_BALL_BREAKPOINT, RIGHT_BALL_SPEED);
+            }
 
-        if (scrollY < MIDDLE_BALL_BREAKPOINT) {
-            middleBallRef.current.style.transform = parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
-        }
-    }, []);
+            if (scrollY < MIDDLE_BALL_BREAKPOINT) {
+                middleBallRef.current.style.transform = parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
+            }
+        },
+        [height],
+    );
 
     return (
         <div className={css.container}>

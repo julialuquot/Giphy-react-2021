@@ -3,6 +3,8 @@ import css from './Bottom.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
 import { useInView } from 'react-intersection-observer';
+import { S_DEVICE } from '@components/Constants';
+import useWindowSize from '@components/Hooks/useWindowSize';
 
 type BottomProps = {
     onSetIsButtonInView: (boolean) => void;
@@ -10,15 +12,16 @@ type BottomProps = {
 
 const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
     const titleRef = useRef(null);
-    const snowflakeRight = useRef(null);
     const [btnRef, inView] = useInView({
         threshold: 1,
     });
+    const { width } = useWindowSize();
 
     useScrollPosition(({ currPos }) => {
         titleRef.current.style.transform = `translateX(${-currPos.y * 0.2}px)`;
         const scaleAmt = 0.11 + -currPos.y / 4000;
-        snowflakeRight.current.style.transform = `scale(${scaleAmt})`;
+        const item = document.getElementById('snowflakeRight');
+        item.style.transform = `scale(${scaleAmt})`;
     }, []);
 
     const scrollToTop = () => {
@@ -36,7 +39,14 @@ const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
     return (
         <div className={css.container}>
             <div className={css.title}>
-                <h1 ref={titleRef}>Bonne chance à tous</h1>
+                {width > S_DEVICE ? (
+                    <h1 ref={titleRef}>Bonne chance à tous</h1>
+                ) : (
+                    <h1 ref={titleRef}>
+                        Bonne chance à tous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bonne
+                        chance à tous
+                    </h1>
+                )}
             </div>
 
             <div className={css.content}>
@@ -52,7 +62,7 @@ const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
                 </div>
 
                 <img
-                    ref={snowflakeRight}
+                    id={'snowflakeRight'}
                     className={css.snowflake_right}
                     src="/icons/odvp/snowflake_1.svg"
                     alt="snowflake"

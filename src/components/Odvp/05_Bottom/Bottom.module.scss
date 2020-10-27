@@ -23,6 +23,7 @@
     font-size: 246px;
     @include media(s-device) {
       font-size: 80px;
+      animation: slide-right 10s linear infinite;
     }
   }
 }
@@ -164,6 +165,17 @@
   }
   to {
     -webkit-transform: rotate(-360deg);
+  }
+}
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-100vw);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw);
   }
 }
 

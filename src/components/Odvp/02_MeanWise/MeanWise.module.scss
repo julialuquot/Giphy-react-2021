@@ -20,7 +20,10 @@
   white-space: nowrap;
   margin: 70px 20% 70px 0;
   @include media(s-device) {
-    margin: 32px 20% 32px 0;
+    margin: 32px 0 32px 0;
+    animation: slide-right 10s linear infinite;
+
+
   }
 
   & > h1 {
@@ -30,10 +33,23 @@
     line-height: 0.39;
     @include media(s-device) {
       font-size: 80px;
+      animation: slide-right 10s linear infinite;
     }
   }
 
 }
+
+@keyframes slide-right {
+  0% {
+    -webkit-transform: translateX(-100vw);
+    transform: translateX(-100vw);
+  }
+  100% {
+    -webkit-transform: translateX(100vw);
+    transform: translateX(100vw);
+  }
+}
+
 
 .content {
   text-align: center;
