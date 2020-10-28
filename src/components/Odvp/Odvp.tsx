@@ -30,7 +30,7 @@ const Odvp = () => {
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    }, []);
+    });
 
     return (
         <>

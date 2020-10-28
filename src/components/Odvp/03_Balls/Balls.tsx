@@ -3,6 +3,11 @@ import css from './Balls.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import useWindowSize from '@components/Hooks/useWindowSize';
 import { InView } from 'react-intersection-observer';
+import Lottie from 'react-lottie';
+import star1 from '../../../../public/icons/odvp/lottie/Garland - star 1.json';
+import star2 from '../../../../public/icons/odvp/lottie/Garland - star 2.json';
+import star3 from '../../../../public/icons/odvp/lottie/Garland - star 3.json';
+import star4 from '../../../../public/icons/odvp/lottie/Garland - star 4.json';
 
 const Balls = () => {
     const { height } = useWindowSize();
@@ -45,7 +50,28 @@ const Balls = () => {
             middleBallRef.current.style.transform =
                 isComponentInView && parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
         }
-    }, [scrollY]);
+    }, [height, isComponentInView, scrollY]);
+
+    const star1Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star1,
+    };
+    const star2Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star2,
+    };
+    const star3Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star3,
+    };
+    const star4Options = {
+        loop: true,
+        autoplay: true,
+        animationData: star4,
+    };
 
     return (
         <InView onChange={setIsComponentInView}>
@@ -58,6 +84,23 @@ const Balls = () => {
                     alt="400"
                 />
                 <img ref={rightBallRef} className={css.rightBall} src="/icons/odvp/garland_x2.svg" alt="x2" />
+
+                {isComponentInView && (
+                    <>
+                        <div className={css.star1}>
+                            <Lottie options={star1Options} width={26} height={38} />
+                        </div>
+                        <div className={css.star2}>
+                            <Lottie options={star2Options} width={31} height={44} />
+                        </div>
+                        <div className={css.star3}>
+                            <Lottie options={star3Options} width={22} height={31} />
+                        </div>
+                        <div className={css.star4}>
+                            <Lottie options={star4Options} width={44} height={64} />
+                        </div>
+                    </>
+                )}
 
                 <div className={css.txt}>
                     <p className={css.txt__bold}>Exemple de gain</p>
