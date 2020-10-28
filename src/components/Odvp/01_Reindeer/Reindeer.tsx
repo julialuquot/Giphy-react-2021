@@ -8,6 +8,7 @@ import star1 from '../../../../public/icons/odvp/lottie/Logo - Star 1.json';
 import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
+import { S_DEVICE } from '@components/Constants';
 
 type ReindeerProps = {
     onSetIsButtonInView: (boolean) => void;
@@ -16,7 +17,7 @@ type ReindeerProps = {
 const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
     const [isComponentInView, setIsComponentInView] = useState(true);
 
-    const { height } = useWindowSize();
+    const { width, height } = useWindowSize();
 
     const [btnRef, inView] = useInView({
         threshold: 1,
@@ -73,7 +74,7 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
         return () => {
             window.removeEventListener('mousemove', () => handleMouseMove);
         };
-    }, []);
+    });
 
     useLayoutEffect(() => {
         inView ? onSetIsButtonInView(true) : onSetIsButtonInView(false);
@@ -147,15 +148,26 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
                 </div>
 
                 <div className={css.reindeer}>
-                    <img className={css.reindeer__head} src="/icons/odvp/Reindeer%20-%20Head.svg" alt="Reindeer" />
-                    <div className={css.reindeer__eye}>
-                        <span id="eyeLeft" className={css.reindeer__eye__left} />
-                        <span id="eyeRight" className={css.reindeer__eye__right} />
-                    </div>
+                    {width > S_DEVICE ? (
+                        <>
+                            <img
+                                className={css.reindeer__head}
+                                src="/icons/odvp/Reindeer%20-%20Head.svg"
+                                alt="Reindeer"
+                            />
+                            <div className={css.reindeer__eye}>
+                                <span id="eyeLeft" className={css.reindeer__eye__pupil} />
+                                <span id="eyeRight" className={css.reindeer__eye__pupil} />
+                            </div>
+                        </>
+                    ) : (
+                        <img
+                            className={css.reindeer__head}
+                            src="/icons/odvp/Reindeer%20-%20Complete.svg"
+                            alt="Reindeer"
+                        />
+                    )}
                 </div>
-
-                {/* <span id="eyeLeft" className={css.eye} /> */}
-                {/* <span id="eyeRight" className={css.eye} /> */}
             </div>
         </InView>
     );
