@@ -5,15 +5,23 @@
 
 .container {
   height: 130vh;
+
 }
 
 .leftBall {
-  z-index: 25;
+  z-index: 24;
   position: absolute;
   display: block;
   width: 200px;
   left: 10%;
   bottom: 5%;
+  @include media(s-device) {
+    width: 100px;
+    bottom: 0;
+    top: 260vh
+  }
+
+
 }
 
 
@@ -24,6 +32,12 @@
   width: 250px;
   left: 18%;
   bottom: 230%;
+  @include media(s-device) {
+    width: 113px;
+    left: 25%;
+    bottom: 0;
+    top: 270vh
+  }
 }
 
 
@@ -34,6 +48,12 @@
   width: 200px;
   left: 28%;
   bottom: 90%;
+  @include media(s-device) {
+    width: 100px;
+    left: 45%;
+    bottom: 0;
+    top: 265vh
+  }
 }
 
 .txt {
@@ -52,7 +72,6 @@
   color: $odvp-strawberry;
   @include media(s-device) {
     font-size: 16px;
-
   }
 
   &__bold {

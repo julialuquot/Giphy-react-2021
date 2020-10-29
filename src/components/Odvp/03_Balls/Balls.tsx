@@ -8,9 +8,10 @@ import star1 from '../../../../public/icons/odvp/lottie/Garland - star 1.json';
 import star2 from '../../../../public/icons/odvp/lottie/Garland - star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Garland - star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Garland - star 4.json';
+import { S_DEVICE } from '@components/Constants';
 
 const Balls = () => {
-    const { height } = useWindowSize();
+    const { width, height } = useWindowSize();
 
     const [isComponentInView, setIsComponentInView] = useState(false);
 
@@ -25,6 +26,10 @@ const Balls = () => {
     });
 
     useLayoutEffect(() => {
+        if (width < S_DEVICE) {
+            return;
+        }
+
         const LEFT_BALL_BREAKPOINT = height * -2;
         const MIDDLE_BALL_BREAKPOINT = height * -2.9;
         const MIDDLE_BALL_SPEED = 1.7;
