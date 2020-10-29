@@ -18,7 +18,7 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
     const titleRef = useRef(null);
 
     const [btnRef, inView] = useInView({
-        threshold: 1,
+        threshold: 0,
     });
 
     const { width } = useWindowSize();

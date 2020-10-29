@@ -23,7 +23,7 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
     const { width, height } = useWindowSize();
 
     const [btnRef, inView] = useInView({
-        threshold: 1,
+        threshold: 0,
     });
 
     const star1Options = {
