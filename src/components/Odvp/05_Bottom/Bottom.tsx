@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import css from './Bottom.module.scss';
 import { InView, useInView } from 'react-intersection-observer';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
@@ -13,8 +13,6 @@ type BottomProps = {
 const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
     const [isComponentInView, setIsComponentInView] = useState(false);
 
-    const [scrollY, setScrollY] = useState(0);
-
     const titleRef = useRef(null);
 
     const [btnRef, inView] = useInView({
@@ -24,7 +22,9 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
     const { width } = useWindowSize();
 
     useScrollPosition(({ currPos }) => {
-        isComponentInView && setScrollY(currPos.y);
+        if (isComponentInView && width > S_DEVICE) {
+            handleScroll(currPos.y);
+        }
     });
 
     const scrollToTop = () => {
@@ -35,17 +35,17 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
         });
     };
 
-    useLayoutEffect(() => {
+    const handleScroll = (scrollY) => {
         const snowflakeRight = document.getElementById('snowflakeRight');
         const snowflakeLeft = document.getElementById('snowflakeLeft');
-        const rightWidthAnimation = (-scrollY / 100) * 5.5 - 200;
-        const leftWidthAnimation = (-scrollY / 100) * 5.5 - 180;
+        const ratioRight = (-scrollY / 100) * 5.5 - 180;
+        const ratioLeft = (-scrollY / 100) * 5.5 - 180;
         const scaleUp = (ratio, speed) => `${Math.round(ratio * speed)}px`;
 
         titleRef.current.style.transform = isComponentInView && `translateX(${-scrollY * 0.2}px)`;
-        snowflakeRight.style.width = isComponentInView && scaleUp(rightWidthAnimation, 3.5);
-        snowflakeLeft.style.width = isComponentInView && scaleUp(leftWidthAnimation, 4);
-    }, [scrollY]);
+        snowflakeRight.style.width = scaleUp(ratioRight, 3.5);
+        snowflakeLeft.style.width = scaleUp(ratioLeft, 4);
+    };
 
     useEffect(() => {
         onSetIsButtonBottomInView(inView);

@@ -102,17 +102,15 @@ const MeanWise = () => {
                             vous gâter en
                         </p>
 
-                        {isComponentInView && (
-                            <div className={css.content__stars}>
-                                <div className={css.content__stars__icon}>
-                                    <Lottie options={starsLeftOptions} width={100} height={100} />
-                                </div>
-                                <p className={css.content__text__bold}>DOUBLANT VOS CAGNOTTES !</p>
-                                <div className={css.content__stars__icon}>
-                                    <Lottie options={starsRightOptions} width={100} height={100} />{' '}
-                                </div>
+                        <div className={css.content__stars}>
+                            <div className={css.content__stars__icon}>
+                                <Lottie options={starsLeftOptions} width={100} height={100} />
                             </div>
-                        )}
+                            <p className={css.content__text__bold}>DOUBLANT VOS CAGNOTTES !</p>
+                            <div className={css.content__stars__icon}>
+                                <Lottie options={starsRightOptions} width={100} height={100} />{' '}
+                            </div>
+                        </div>
                     </div>
 
                     <Timeline />

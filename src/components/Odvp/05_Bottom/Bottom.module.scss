@@ -81,12 +81,10 @@
     left: -110px;
     max-width: 300px;
     animation: rotatingClockwise 30s linear infinite;
-
     @include media(s-device) {
-      left: -60px;
-      top: 55%;
       width: 151px;
-      height: 241px;
+      left: -60px;
+      top: 60%;
     }
   }
 
@@ -95,6 +93,7 @@
     top: 0;
     right: 20%;
     max-width: 250px;
+    min-width: 5px !important;
     animation: rotatingCounterClockwise 50s linear infinite;
     @include media(s-device) {
       width: 140px;

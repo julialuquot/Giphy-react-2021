@@ -5,7 +5,10 @@
 
 .container {
   height: 130vh;
+  @include media(s-device) {
+    height: 80vh;
 
+  }
 }
 
 .leftBall {
@@ -18,7 +21,7 @@
   @include media(s-device) {
     width: 100px;
     bottom: 0;
-    top: 260vh
+    top: 255vh;
   }
 
 
@@ -36,7 +39,7 @@
     width: 113px;
     left: 25%;
     bottom: 0;
-    top: 270vh
+    top: 261vh
   }
 }
 
@@ -52,7 +55,7 @@
     width: 100px;
     left: 45%;
     bottom: 0;
-    top: 265vh
+    top: 258vh
   }
 }
 
@@ -72,6 +75,7 @@
   color: $odvp-strawberry;
   @include media(s-device) {
     font-size: 16px;
+    left: 20%;
   }
 
   &__bold {

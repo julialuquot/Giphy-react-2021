@@ -1,4 +1,4 @@
-import React, { useRef, useState, useLayoutEffect } from 'react';
+import React, { useRef, useState } from 'react';
 import css from './Balls.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import useWindowSize from '@components/Hooks/useWindowSize';
@@ -19,17 +19,11 @@ const Balls = () => {
     const rightBallRef = useRef(null);
     const middleBallRef = useRef(null);
 
-    const [scrollY, setScrollY] = useState(0);
-
     useScrollPosition(({ currPos }) => {
-        isComponentInView && setScrollY(currPos.y);
+        isComponentInView && width > S_DEVICE && handleScroll(currPos.y);
     });
 
-    useLayoutEffect(() => {
-        if (width < S_DEVICE) {
-            return;
-        }
-
+    const handleScroll = (scrollY) => {
         const LEFT_BALL_BREAKPOINT = height * -2;
         const MIDDLE_BALL_BREAKPOINT = height * -2.9;
         const MIDDLE_BALL_SPEED = 1.7;
@@ -38,12 +32,12 @@ const Balls = () => {
 
         const parallax = (distance, speed) => `translateY(${distance * speed}px)`;
 
-        leftBallRef.current.style.transform = isComponentInView && parallax(-scrollY, 1);
-        rightBallRef.current.style.transform = isComponentInView && parallax(-scrollY, RIGHT_BALL_SPEED);
-        middleBallRef.current.style.transform = isComponentInView && parallax(-scrollY, MIDDLE_BALL_SPEED);
+        leftBallRef.current.style.transform = parallax(-scrollY, 1);
+        rightBallRef.current.style.transform = parallax(-scrollY, RIGHT_BALL_SPEED);
+        middleBallRef.current.style.transform = parallax(-scrollY, MIDDLE_BALL_SPEED);
 
         if (scrollY < LEFT_BALL_BREAKPOINT) {
-            leftBallRef.current.style.transform = isComponentInView && parallax(-LEFT_BALL_BREAKPOINT, 1);
+            leftBallRef.current.style.transform = parallax(-LEFT_BALL_BREAKPOINT, 1);
         }
 
         if (scrollY < RIGHT_BALL_BREAKPOINT) {
@@ -55,7 +49,7 @@ const Balls = () => {
             middleBallRef.current.style.transform =
                 isComponentInView && parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
         }
-    }, [height, isComponentInView, scrollY]);
+    };
 
     const star1Options = {
         loop: true,
