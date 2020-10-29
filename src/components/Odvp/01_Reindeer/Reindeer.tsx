@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
 import css from './Reindeer.module.scss';
 import useWindowSize from '@components/Hooks/useWindowSize';
 import { InView, useInView } from 'react-intersection-observer';
@@ -11,11 +11,14 @@ import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
 import { S_DEVICE } from '@components/Constants';
 
 type ReindeerProps = {
-    onSetIsButtonInView: (boolean) => void;
+    onSetIsButtonTopInView: (boolean) => void;
 };
 
-const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
+const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
     const [isComponentInView, setIsComponentInView] = useState(true);
+
+    const eyeLeft = useRef(null);
+    const eyeRight = useRef(null);
 
     const { width, height } = useWindowSize();
 
@@ -57,7 +60,11 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
     };
 
     const handleMouseMove = (event, element) => {
-        const item = document.getElementById(element);
+        if (!element || !element.current || width < S_DEVICE || !isComponentInView) {
+            return;
+        }
+
+        const item = element.current;
         const mouseX = item.getBoundingClientRect().left;
         const mouseY = item.getBoundingClientRect().top;
         const radianDegrees = Math.atan2(event.pageX - mouseX, event.pageY - mouseY);
@@ -66,19 +73,18 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
     };
 
     useLayoutEffect(() => {
-        isComponentInView &&
-            window.addEventListener('mousemove', function (event) {
-                handleMouseMove(event, 'eyeLeft');
-                handleMouseMove(event, 'eyeRight');
-            });
+        window.addEventListener('mousemove', function (event) {
+            handleMouseMove(event, eyeLeft);
+            handleMouseMove(event, eyeRight);
+        });
         return () => {
             window.removeEventListener('mousemove', () => handleMouseMove);
         };
     });
 
-    useLayoutEffect(() => {
-        inView ? onSetIsButtonInView(true) : onSetIsButtonInView(false);
-    }, [inView]);
+    useEffect(() => {
+        onSetIsButtonTopInView(inView);
+    }, [inView, onSetIsButtonTopInView]);
 
     const scrollToRef = () => {
         window.scrollTo({
@@ -156,8 +162,8 @@ const Reindeer = ({ onSetIsButtonInView }: ReindeerProps) => {
                                 alt="Reindeer"
                             />
                             <div className={css.reindeer__eye}>
-                                <span id="eyeLeft" className={css.reindeer__eye__pupil} />
-                                <span id="eyeRight" className={css.reindeer__eye__pupil} />
+                                <span ref={eyeLeft} className={css.reindeer__eye__pupil} />
+                                <span ref={eyeRight} className={css.reindeer__eye__pupil} />
                             </div>
                         </>
                     ) : (

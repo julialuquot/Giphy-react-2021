@@ -9,7 +9,8 @@ import OdvbButton from '@components/Odvp/OdvbButton/OdvpButton';
 
 const Odvp = () => {
     const [isUserScrolling, setIsUserScrolling] = useState(false);
-    const [isButtonInView, setIsButtonInView] = useState(true);
+    const [isButtonTopInView, setIsButtonTopInView] = useState(true);
+    const [isButtonBottomInView, setIsButtonBottomInView] = useState(false);
 
     let isScrolling;
 
@@ -21,8 +22,12 @@ const Odvp = () => {
         }, 1000);
     };
 
-    const handleButtonView = (value) => {
-        setIsButtonInView(value);
+    const handleButtonTopView = (value) => {
+        setIsButtonTopInView(value);
+    };
+
+    const handleButtonBottomView = (value) => {
+        setIsButtonBottomInView(value);
     };
 
     useLayoutEffect(() => {
@@ -34,16 +39,20 @@ const Odvp = () => {
 
     return (
         <>
-            <div className={`${css.button} ${isButtonInView || isUserScrolling ? css.button__hide : css.button__show}`}>
+            <div
+                className={`${css.button} ${
+                    isButtonTopInView || isButtonBottomInView || isUserScrolling ? css.button__hide : css.button__show
+                }`}
+            >
                 <OdvbButton width={200} height={47}>
                     Créer un pot commun
                 </OdvbButton>
             </div>
-            <Reindeer onSetIsButtonInView={(value) => handleButtonView(value)} />
+            <Reindeer onSetIsButtonTopInView={(value) => handleButtonTopView(value)} />
             <MeanWise />
             <Balls />
             <Scene />
-            <Bottom onSetIsButtonInView={(value) => handleButtonView(value)} />
+            <Bottom onSetIsButtonBottomInView={(value) => handleButtonBottomView(value)} />
         </>
     );
 };

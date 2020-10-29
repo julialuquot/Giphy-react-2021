@@ -7,10 +7,10 @@ import useWindowSize from '@components/Hooks/useWindowSize';
 import { S_DEVICE } from '@components/Constants';
 
 type BottomProps = {
-    onSetIsButtonInView: (boolean) => void;
+    onSetIsButtonBottomInView: (boolean) => void;
 };
 
-const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
+const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
     const [isComponentInView, setIsComponentInView] = useState(false);
 
     const [scrollY, setScrollY] = useState(0);
@@ -48,8 +48,8 @@ const Bottom = ({ onSetIsButtonInView }: BottomProps) => {
     }, [scrollY]);
 
     useEffect(() => {
-        inView ? onSetIsButtonInView(true) : onSetIsButtonInView(false);
-    }, [inView]);
+        onSetIsButtonBottomInView(inView);
+    }, [inView, onSetIsButtonBottomInView]);
 
     return (
         <InView onChange={setIsComponentInView}>
