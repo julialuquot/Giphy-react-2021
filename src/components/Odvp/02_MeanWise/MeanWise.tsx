@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useLayoutEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from './MeanWise.module.scss';
 import Timeline from '@components/Odvp/02_MeanWise/Timeline';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
@@ -13,7 +13,6 @@ import { S_DEVICE } from '@components/Constants';
 const MeanWise = () => {
     const [showLottie, setShowLottie] = useState(false);
     const [isComponentInView, setIsComponentInView] = useState(false);
-    const [scrollY, setScrollY] = useState(0);
     const { width } = useWindowSize();
     const [ref, inView] = useInView({
         threshold: 1,
@@ -28,16 +27,19 @@ const MeanWise = () => {
             }, 800);
     }, [inView]);
 
-    useScrollPosition(({ currPos }) => {
-        isComponentInView && setScrollY(currPos.y);
-    });
+    useScrollPosition(
+        ({ currPos }) => {
+            if (width < S_DEVICE || !isComponentInView) {
+                return;
+            }
 
-    useLayoutEffect(() => {
-        const item = document.getElementById('title');
-        if (width > S_DEVICE) {
+            const scrollY = currPos.y;
+            const item = document.getElementById('title');
+
             item.style.transform = isComponentInView && `translateX(${-scrollY * 0.2}px)`;
-        }
-    }, [scrollY, width]);
+        },
+        [width, isComponentInView],
+    );
 
     const starsLeftOptions = {
         loop: true,
@@ -120,4 +122,4 @@ const MeanWise = () => {
     );
 };
 
-export default MeanWise;
+export default React.memo(MeanWise);

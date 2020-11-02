@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import css from './Balls.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import useWindowSize from '@components/Hooks/useWindowSize';
@@ -19,37 +19,44 @@ const Balls = () => {
     const rightBallRef = useRef(null);
     const middleBallRef = useRef(null);
 
-    useScrollPosition(({ currPos }) => {
-        isComponentInView && width > S_DEVICE && handleScroll(currPos.y);
-    });
+    useEffect(() => {
+        leftBallRef.current.style.willChange = 'transform';
+        rightBallRef.current.style.willChange = 'transform';
+        middleBallRef.current.style.willChange = 'transform';
+    }, []);
 
-    const handleScroll = (scrollY) => {
-        const LEFT_BALL_BREAKPOINT = height * -2;
-        const MIDDLE_BALL_BREAKPOINT = height * -2.9;
-        const MIDDLE_BALL_SPEED = 1.7;
-        const RIGHT_BALL_BREAKPOINT = height * -2.65;
-        const RIGHT_BALL_SPEED = 1.2;
+    useScrollPosition(
+        ({ currPos }) => {
+            if (!isComponentInView || width < S_DEVICE) {
+                return;
+            }
+            const scrollY = currPos.y;
+            const LEFT_BALL_BREAKPOINT = height * -2;
+            const MIDDLE_BALL_BREAKPOINT = height * -2.9;
+            const MIDDLE_BALL_SPEED = 1.7;
+            const RIGHT_BALL_BREAKPOINT = height * -2.65;
+            const RIGHT_BALL_SPEED = 1.2;
 
-        const parallax = (distance, speed) => `translateY(${distance * speed}px)`;
+            const parallax = (distance, speed) => `translateY(${distance * speed}px) translateZ(0)`;
 
-        leftBallRef.current.style.transform = parallax(-scrollY, 1);
-        rightBallRef.current.style.transform = parallax(-scrollY, RIGHT_BALL_SPEED);
-        middleBallRef.current.style.transform = parallax(-scrollY, MIDDLE_BALL_SPEED);
+            leftBallRef.current.style.transform = parallax(-scrollY, 1);
+            rightBallRef.current.style.transform = parallax(-scrollY, RIGHT_BALL_SPEED);
+            middleBallRef.current.style.transform = parallax(-scrollY, MIDDLE_BALL_SPEED);
 
-        if (scrollY < LEFT_BALL_BREAKPOINT) {
-            leftBallRef.current.style.transform = parallax(-LEFT_BALL_BREAKPOINT, 1);
-        }
+            if (scrollY < LEFT_BALL_BREAKPOINT) {
+                leftBallRef.current.style.transform = parallax(-LEFT_BALL_BREAKPOINT, 1);
+            }
 
-        if (scrollY < RIGHT_BALL_BREAKPOINT) {
-            rightBallRef.current.style.transform =
-                isComponentInView && parallax(-RIGHT_BALL_BREAKPOINT, RIGHT_BALL_SPEED);
-        }
+            if (scrollY < RIGHT_BALL_BREAKPOINT) {
+                rightBallRef.current.style.transform = parallax(-RIGHT_BALL_BREAKPOINT, RIGHT_BALL_SPEED);
+            }
 
-        if (scrollY < MIDDLE_BALL_BREAKPOINT) {
-            middleBallRef.current.style.transform =
-                isComponentInView && parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
-        }
-    };
+            if (scrollY < MIDDLE_BALL_BREAKPOINT) {
+                middleBallRef.current.style.transform = parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
+            }
+        },
+        [isComponentInView, width],
+    );
 
     const star1Options = {
         loop: true,

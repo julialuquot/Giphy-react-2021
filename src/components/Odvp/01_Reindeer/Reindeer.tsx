@@ -179,4 +179,4 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
     );
 };
 
-export default Reindeer;
+export default React.memo(Reindeer);

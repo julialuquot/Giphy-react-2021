@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useLayoutEffect, useState, useCallback } from 'react';
 import css from './Odvp.module.scss';
 import Reindeer from '@components/Odvp/01_Reindeer/Reindeer';
 import MeanWise from '@components/Odvp/02_MeanWise/MeanWise';
@@ -14,28 +14,28 @@ const Odvp = () => {
 
     let isScrolling;
 
-    const handleScroll = () => {
+    const handleScroll = useCallback(() => {
         setIsUserScrolling(true);
         window.clearTimeout(isScrolling);
         isScrolling = setTimeout(function () {
             setIsUserScrolling(false);
-        }, 1000);
-    };
+        }, 1500);
+    }, []);
 
-    const handleButtonTopView = (value) => {
+    const handleButtonTopView = useCallback((value) => {
         setIsButtonTopInView(value);
-    };
+    }, []);
 
-    const handleButtonBottomView = (value) => {
+    const handleButtonBottomView = useCallback((value) => {
         setIsButtonBottomInView(value);
-    };
+    }, []);
 
     useLayoutEffect(() => {
         window.addEventListener('scroll', handleScroll);
         return () => {
             window.removeEventListener('scroll', handleScroll);
         };
-    });
+    }, [handleScroll]);
 
     return (
         <>

@@ -21,11 +21,25 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
 
     const { width } = useWindowSize();
 
-    useScrollPosition(({ currPos }) => {
-        if (isComponentInView && width > S_DEVICE) {
-            handleScroll(currPos.y);
-        }
-    });
+    useScrollPosition(
+        ({ currPos }) => {
+            if (!isComponentInView || width < S_DEVICE) {
+                return;
+            }
+
+            const scrollY = currPos.y;
+            const snowflakeRight = document.getElementById('snowflakeRight');
+            const snowflakeLeft = document.getElementById('snowflakeLeft');
+            const ratioRight = (-scrollY / 100) * 5.5 - 180;
+            const ratioLeft = (-scrollY / 100) * 5.5 - 180;
+            const scaleUp = (ratio, speed) => `${Math.round(ratio * speed)}px`;
+
+            titleRef.current.style.transform = `translateX(${-scrollY * 0.2}px)`;
+            snowflakeRight.style.width = scaleUp(ratioRight, 3.5);
+            snowflakeLeft.style.width = scaleUp(ratioLeft, 4);
+        },
+        [isComponentInView, width],
+    );
 
     const scrollToTop = () => {
         window.scrollTo({
@@ -33,18 +47,6 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
             left: 0,
             behavior: 'smooth',
         });
-    };
-
-    const handleScroll = (scrollY) => {
-        const snowflakeRight = document.getElementById('snowflakeRight');
-        const snowflakeLeft = document.getElementById('snowflakeLeft');
-        const ratioRight = (-scrollY / 100) * 5.5 - 180;
-        const ratioLeft = (-scrollY / 100) * 5.5 - 180;
-        const scaleUp = (ratio, speed) => `${Math.round(ratio * speed)}px`;
-
-        titleRef.current.style.transform = isComponentInView && `translateX(${-scrollY * 0.2}px)`;
-        snowflakeRight.style.width = scaleUp(ratioRight, 3.5);
-        snowflakeLeft.style.width = scaleUp(ratioLeft, 4);
     };
 
     useEffect(() => {
@@ -108,4 +110,4 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
     );
 };
 
-export default Bottom;
+export default React.memo(Bottom);
