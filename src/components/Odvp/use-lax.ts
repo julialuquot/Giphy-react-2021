@@ -3,8 +3,8 @@ import lax from 'lax.js';
 
 let selector = 'lax';
 
-function useLax({ breakpoints, className, animationYPos } = {}) {
-    const requestRef = React.useRef();
+function useLax({ breakpoints = null, className = null, animationYPos = null } = {}) {
+    const requestRef = React.useRef(null);
     selector = className || selector;
 
     React.useEffect(() => {
