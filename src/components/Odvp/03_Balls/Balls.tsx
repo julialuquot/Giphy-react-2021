@@ -12,11 +12,8 @@ import star4 from '../../../../public/icons/odvp/lottie/Garland - star 4.json';
 import { S_DEVICE } from '@components/Constants';
 
 const Balls = () => {
-    const { width, height } = useWindowSize();
-    // const { ref, inView, entry } = useInView({ threshold: 0.2 });
     const [attachLeftBall, setAttachLeftBall] = useState(false);
-    // const [translateDownRightBall, setTranslateDownRightBall] = useState(false);
-    // console.log(attachLeftBall);
+
     const [animationYPos, setAnimationYPos] = useState(0);
     useLax({ breakpoints: null, className: null, animationYPos });
     const rightBallRef = useLaxElement();
@@ -24,22 +21,10 @@ const Balls = () => {
 
     useEffect(() => {
         const rect = document.getElementById('timeline').getBoundingClientRect();
-        console.log(rect);
         setAnimationYPos(rect.y);
     }, []);
 
-    console.log('rendering');
-
     const leftBallRef = useRef(null);
-    // const rightBallRef = useRef(null);
-    // const middleBallRef = useRef(null);
-
-    // useEffect(() => {
-    //     leftBallRef.current.style.willChange = 'transform';
-    //     rightBallRef.current.style.willChange = 'transform';
-    //     middleBallRef.current.style.willChange = 'transform';
-    // }, []);
-
     useScrollPosition(({ currPos }) => {
         // console.log(currPos);
         const rect = document.getElementById('gain').getBoundingClientRect();
@@ -50,34 +35,6 @@ const Balls = () => {
         if (attachLeftBall && rect.y > 320) {
             setAttachLeftBall(false);
         }
-
-        // if (width < S_DEVICE) {
-        //     return;
-        // }
-        // const scrollY = currPos.y;
-        // const LEFT_BALL_BREAKPOINT = height * -2;
-        // const MIDDLE_BALL_BREAKPOINT = height * -2.9;
-        // const MIDDLE_BALL_SPEED = 1.7;
-        // const RIGHT_BALL_BREAKPOINT = height * -2.65;
-        // const RIGHT_BALL_SPEED = 1.2;
-
-        // const parallax = (distance, speed) => `translateY(${distance * speed}px) translateZ(0)`;
-
-        // leftBallRef.current.style.transform = parallax(-scrollY, 1);
-        // rightBallRef.current.style.transform = parallax(-scrollY, RIGHT_BALL_SPEED);
-        // middleBallRef.current.style.transform = parallax(-scrollY, MIDDLE_BALL_SPEED);
-
-        // if (scrollY < LEFT_BALL_BREAKPOINT) {
-        //     leftBallRef.current.style.transform = parallax(-LEFT_BALL_BREAKPOINT, 1);
-        // }
-
-        // if (scrollY < RIGHT_BALL_BREAKPOINT) {
-        //     rightBallRef.current.style.transform = parallax(-RIGHT_BALL_BREAKPOINT, RIGHT_BALL_SPEED);
-        // }
-
-        // if (scrollY < MIDDLE_BALL_BREAKPOINT) {
-        //     middleBallRef.current.style.transform = parallax(-MIDDLE_BALL_BREAKPOINT, MIDDLE_BALL_SPEED);
-        // }
     });
 
     const star1Options = {
@@ -122,7 +79,7 @@ const Balls = () => {
                 id="right"
                 ref={rightBallRef}
                 className={`${css.rightBall} lax`}
-                data-lax-translate-y={`${animationYPos} 0,${animationYPos} 0,${animationYPos + 300} 600 | speed=0,5 `} // "1940 0, 1940 0, 2200 600 | speed=0,5 "
+                data-lax-translate-y={`${animationYPos} 0,${animationYPos} 0,${animationYPos + 300} 600 | speed=0,5`} // "1940 0, 1940 0, 2200 600 | speed=0,5 "
                 src="/icons/odvp/garland_x2.svg"
                 alt="x2"
             />
