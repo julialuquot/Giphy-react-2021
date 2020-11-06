@@ -3,7 +3,7 @@ import css from '@components/Odvp/02_MeanWise/Timeline.module.scss';
 
 const Timeline = () => {
     return (
-        <div className={css.timeline}>
+        <div id="timeline" className={css.timeline}>
             <div className={css.timeline__step}>
                 <span className={css.timeline__step__number}>1</span>
                 <p className={css.timeline__step__bold}>Créer un pot commun</p>

@@ -35,6 +35,7 @@
         "formik": "^2.1.5",
         "http-proxy-middleware": "^1.0.5",
         "i18next": "^19.7.0",
+        "lax.js": "^1.2.5",
         "moment": "^2.27.0",
         "next": "9.4.4",
         "next-i18next": "^4.5.0",

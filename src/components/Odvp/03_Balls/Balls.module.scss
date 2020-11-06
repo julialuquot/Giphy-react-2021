@@ -5,6 +5,7 @@
 
 .container {
   height: 130vh;
+  position: relative;
   @include media(s-device) {
     height: 80vh;
 
@@ -12,12 +13,20 @@
 }
 
 .leftBall {
-  z-index: 24;
-  position: absolute;
+  z-index: 25;
+  position: fixed;
   display: block;
   width: 200px;
   left: 10%;
-  bottom: 5%;
+  top: 100px;
+  &__attach{
+    position: absolute;
+    top: -220px;
+    left: 10%;
+    width: 200px;
+  }
+
+
   @include media(s-device) {
     width: 100px;
     bottom: 0;
@@ -34,7 +43,8 @@
   display: block;
   width: 250px;
   left: 18%;
-  bottom: 230%;
+  top: -1010px;
+ // background-color: black;
   @include media(s-device) {
     width: 113px;
     left: 25%;
@@ -49,8 +59,11 @@
   position: absolute;
   display: block;
   width: 200px;
-  left: 28%;
-  bottom: 90%;
+  left: 33%;
+  //bottom: 123%;
+  top: -740px;
+  //top:0;
+  // background-color: black;
   @include media(s-device) {
     width: 100px;
     left: 45%;
