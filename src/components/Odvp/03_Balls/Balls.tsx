@@ -10,24 +10,30 @@ import star2 from '../../../../public/icons/odvp/lottie/Garland - star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Garland - star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Garland - star 4.json';
 import { S_DEVICE } from '@components/Constants';
+import { use } from 'ast-types';
 
 const Balls = () => {
     const [attachLeftBall, setAttachLeftBall] = useState(false);
-
     const [animationYPos, setAnimationYPos] = useState(0);
-    useLax({ breakpoints: null, className: null, animationYPos });
+
+    const leftBallRef = useRef(null);
     const rightBallRef = useLaxElement();
     const middleBallRef = useLaxElement();
+
+    useLax({ breakpoints: null, className: null, animationYPos });
+
+    useEffect(() => {
+        window.onbeforeunload = () => window.scrollTo(0, 0);
+    }, []);
 
     useEffect(() => {
         const rect = document.getElementById('timeline').getBoundingClientRect();
         setAnimationYPos(rect.y);
     }, []);
 
-    const leftBallRef = useRef(null);
     useScrollPosition(({ currPos }) => {
         // console.log(currPos);
-        const rect = document.getElementById('gain').getBoundingClientRect();
+        const rect = document.getElementById('container').getBoundingClientRect();
         // console.log(rect);
         if (!attachLeftBall && rect.y < 320) {
             setAttachLeftBall(true);
@@ -59,7 +65,7 @@ const Balls = () => {
     };
 
     return (
-        <div id="gain" className={css.container}>
+        <div id="container" className={css.container}>
             <img
                 data-lax-translate-y={`${animationYPos + 100} 0,${animationYPos + 100} 0,${
                     animationYPos + 500
@@ -71,7 +77,7 @@ const Balls = () => {
             />
             <img
                 ref={leftBallRef}
-                className={`${attachLeftBall ? css.leftBall__attach : css.leftBall}`}
+                className={`${css.leftBall} ${attachLeftBall && css.leftBall__attach}`}
                 src="/icons/odvp/garland_400.svg"
                 alt="400"
             />
@@ -84,7 +90,6 @@ const Balls = () => {
                 alt="x2"
             />
 
-            {/* {isComponentInView && ( */}
             <>
                 <div className={css.star1}>
                     <Lottie options={star1Options} width={26} height={38} />
@@ -99,7 +104,6 @@ const Balls = () => {
                     <Lottie options={star4Options} width={44} height={64} />
                 </div>
             </>
-            {/* )} */}
 
             <div className={css.txt}>
                 <p className={css.txt__bold}>Exemple de gain</p>

@@ -13,24 +13,27 @@
 }
 
 .leftBall {
-  z-index: 25;
+  z-index: 24;
   position: fixed;
   display: block;
   width: 200px;
   left: 10%;
   top: 100px;
-  &__attach{
-    position: absolute;
-    top: -220px;
-    left: 10%;
-    width: 200px;
-  }
-
 
   @include media(s-device) {
+    left: 10%;
     width: 100px;
-    bottom: 0;
-    top: 255vh;
+    top: 110px;
+  }
+
+  &__attach {
+    position: absolute;
+    top: -220px;
+    @include media(s-device) {
+      position: absolute;
+      top: -198px;
+
+    }
   }
 
 
@@ -44,12 +47,10 @@
   width: 250px;
   left: 18%;
   top: -1010px;
- // background-color: black;
   @include media(s-device) {
     width: 113px;
     left: 25%;
-    bottom: 0;
-    top: 261vh
+    top: -1115px;
   }
 }
 
@@ -62,13 +63,10 @@
   left: 33%;
   //bottom: 123%;
   top: -740px;
-  //top:0;
-  // background-color: black;
   @include media(s-device) {
     width: 100px;
     left: 45%;
-    bottom: 0;
-    top: 258vh
+    top: -740px;
   }
 }
 
@@ -89,6 +87,7 @@
   @include media(s-device) {
     font-size: 16px;
     left: 20%;
+    top: 90%;
   }
 
   &__bold {
@@ -114,7 +113,13 @@
 .star3 {
   margin-top: 22%;
   position: absolute;
-  left: 62%
+  left: 62%;
+  @include media(s-device) {
+    margin-top: 25%;
+
+    left: 70%;
+
+  }
 }
 
 .star4 {

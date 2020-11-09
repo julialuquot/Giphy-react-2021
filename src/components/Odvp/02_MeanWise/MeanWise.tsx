@@ -91,23 +91,44 @@ const MeanWise = () => {
                             {showLottie && <Lottie options={wiseOptions} width={211} height={127} />}
                         </div>
 
-                        <p>
-                            Parce que vous avez été très
-                            <span
-                                ref={ref}
-                                className={`${css.content__text__bold} ${css.content__text__mean} ${
-                                    startAnimation ? css.strike : ''
-                                }`}
-                            >
-                                méchants
-                            </span>
-                            cette année
-                        </p>
-                        <p>
-                            <span className={css.content__text__bold}>Le Pot Commun et Virgin Radio</span> ont décidé de
-                            vous gâter en
-                        </p>
-
+                        {width > S_DEVICE ? (
+                            <>
+                                <p>
+                                    Parce que vous avez été très
+                                    <span
+                                        ref={ref}
+                                        className={`${css.content__text__bold} ${css.content__text__mean} ${
+                                            startAnimation ? css.strike : ''
+                                        }`}
+                                    >
+                                        méchants
+                                    </span>
+                                    cette année
+                                </p>
+                                <p>
+                                    <span className={css.content__text__bold}>Le Pot Commun et Virgin Radio</span> ont
+                                    décidé de vous gâter en
+                                </p>
+                            </>
+                        ) : (
+                            <>
+                                <p>
+                                    Parce que vous avez été très
+                                    <span
+                                        ref={ref}
+                                        className={`${css.content__text__bold} ${css.content__text__mean} ${
+                                            startAnimation ? css.strike : ''
+                                        }`}
+                                    >
+                                        méchants
+                                    </span>{' '}
+                                    <br />
+                                    cette année&nbsp;
+                                    <span className={css.content__text__bold}>Le Pot Commun et Virgin Radio</span> ont
+                                    décidé de vous gâter en
+                                </p>
+                            </>
+                        )}
                         <div className={css.content__stars}>
                             <div className={css.content__stars__icon}>
                                 <Lottie options={starsLeftOptions} width={100} height={100} />
