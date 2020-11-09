@@ -16,12 +16,12 @@
 
 .logo {
   position: relative;
-  width: 390px;
+  width: 360px;
   height: 207px;
-  margin-top: 72px;
-  margin-bottom: 24px;
+  margin-top: 32px;
+  margin-bottom: 16px;
   @include media(s-device) {
-    width: 222px;
+    width: 160px;
     height: 132px;
     margin-top: 111px;
   }
@@ -35,12 +35,19 @@
     position: absolute;
     top: -20%;
     left: 39%;
+    @include media(s-device) {
+      top: -35%;
+    }
   }
 
   &__star2 {
     position: absolute;
     top: 0;
     right: 0;
+    @include media(s-device) {
+      top: -20%;
+      right: -5%;
+    }
 
   }
 
@@ -48,6 +55,10 @@
     position: absolute;
     top: 10%;
     right: 5%;
+    @include media(s-device) {
+      top: -5%;
+      right: -15%;
+    }
 
   }
 
@@ -55,7 +66,10 @@
     position: absolute;
     bottom: -3%;
     left: -3%;
-
+    @include media(s-device) {
+      bottom: -15%;
+      left: -15%;
+    }
   }
 
 
@@ -63,17 +77,23 @@
 
 
 .title {
-  font-size: 14px;
+  font-size: 16px;
   font-family: $odvp-primary-bold;
   color: $odvp-strawberry;
 }
 
 .cta {
   margin-top: 24px;
+  @include media(s-device) {
+    margin-top: 16px;
+
+  }
 }
 
 .partnership {
   position: absolute;
+  z-index: 35;
+
   left: 5%;
   top: 70%;
   width: 325px;

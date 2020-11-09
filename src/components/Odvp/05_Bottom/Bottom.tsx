@@ -4,7 +4,7 @@ import { InView, useInView } from 'react-intersection-observer';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
 import useWindowSize from '@components/Hooks/useWindowSize';
-import { S_DEVICE } from '@components/Constants';
+import { S_DEVICE, XL_DEVICE } from '@components/Constants';
 
 type BottomProps = {
     onSetIsButtonBottomInView: (boolean) => void;
@@ -57,18 +57,21 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
         <InView onChange={setIsComponentInView}>
             <div className={css.container}>
                 <div className={css.title}>
-                    {width > S_DEVICE ? (
+                    {width > S_DEVICE && width < XL_DEVICE ? (
                         <h1 ref={titleRef}>Bonne chance à tous</h1>
                     ) : (
                         <h1 ref={titleRef}>
                             Bonne chance à tous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bonne
-                            chance à tous
+                            chance à tous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bonne chance
+                            à tous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bonne chance à
+                            tous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bonne chance à
+                            tous&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bonne chance à tous
                         </h1>
                     )}
                 </div>
 
                 <div className={css.content}>
-                    <p>Alors nhésitez plus,</p>
+                    <p>Alors n&rsquo;hésitez plus,</p>
                     <p>vous navez rien à perdre,</p>
                     <p>
                         <span className={css.content__bold}>tout à y gagner !</span>

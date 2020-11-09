@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './OdvpButton.module.scss';
+import Link from 'next/link';
 
 type ButtonProps = {
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
@@ -8,18 +9,29 @@ type ButtonProps = {
     customClass?: string;
     width?: number;
     height?: number;
+    fontSize?: number;
 };
 
-const OdvpButton = ({ children, type, onClick, customClass, width, height }: ButtonProps) => {
+const OdvpButton = ({ children, type, onClick, customClass, width, height, fontSize }: ButtonProps) => {
     const buttonStyle = {
         width: width,
         height: height,
+        fontSize: fontSize,
     };
 
     return (
-        <button type={type} className={`${css.button} ${customClass || ''}`} style={buttonStyle} onClick={onClick}>
-            {children}
-        </button>
+        <Link href={'/?action=create-pot'}>
+            <a>
+                <button
+                    type={type}
+                    className={`${css.button} ${customClass || ''}`}
+                    style={buttonStyle}
+                    onClick={onClick}
+                >
+                    {children}
+                </button>
+            </a>
+        </Link>
     );
 };
 

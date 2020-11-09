@@ -21,6 +21,7 @@ const Scene = () => {
             <div className={css.scene}>
                 <div className={css.scene__text}>
                     <p>
+                        <span>Le </span>
                         <span className={css.scene__text__bold}>18 décembre,</span> un tirage au sort sera effectué
                         parmi
                         <span className={css.scene__text__bold}> tous les pots créés</span> pour élire

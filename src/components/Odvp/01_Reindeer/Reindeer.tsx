@@ -1,14 +1,15 @@
 import React, { useLayoutEffect, useRef, useState, useEffect } from 'react';
+import Lottie from 'react-lottie';
+import Link from 'next/link';
 import css from './Reindeer.module.scss';
 import useWindowSize from '@components/Hooks/useWindowSize';
 import { InView, useInView } from 'react-intersection-observer';
-import Lottie from 'react-lottie';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
+import { S_DEVICE } from '@components/Constants';
 import star1 from '../../../../public/icons/odvp/lottie/Logo - Star 1.json';
 import star2 from '../../../../public/icons/odvp/lottie/Logo - Star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Logo - Star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Logo - Star 4.json';
-import { S_DEVICE } from '@components/Constants';
 
 type ReindeerProps = {
     onSetIsButtonTopInView: (boolean) => void;
@@ -30,33 +31,21 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
         loop: true,
         autoplay: true,
         animationData: star1,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
     };
     const star2Options = {
         loop: true,
         autoplay: true,
         animationData: star2,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
     };
     const star3Options = {
         loop: true,
         autoplay: true,
         animationData: star3,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
     };
     const star4Options = {
         loop: true,
         autoplay: true,
         animationData: star4,
-        rendererSettings: {
-            preserveAspectRatio: 'xMidYMid slice',
-        },
     };
 
     const handleMouseMove = (event, element) => {
@@ -104,22 +93,18 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                         alt="On double votre pot"
                     />
 
-                    {isComponentInView && (
-                        <>
-                            <figure className={css.logo__star1}>
-                                <Lottie options={star1Options} />
-                            </figure>
-                            <figure className={css.logo__star2}>
-                                <Lottie options={star2Options} />
-                            </figure>
-                            <figure className={css.logo__star3}>
-                                <Lottie options={star3Options} />
-                            </figure>
-                            <figure className={css.logo__star4}>
-                                <Lottie options={star4Options} />
-                            </figure>
-                        </>
-                    )}
+                    <figure className={css.logo__star1}>
+                        <Lottie options={star1Options} />
+                    </figure>
+                    <figure className={css.logo__star2}>
+                        <Lottie options={star2Options} />
+                    </figure>
+                    <figure className={css.logo__star3}>
+                        <Lottie options={star3Options} />
+                    </figure>
+                    <figure className={css.logo__star4}>
+                        <Lottie options={star4Options} />
+                    </figure>
                 </div>
 
                 <p className={css.title}>Du 4 au 14 décembre</p>
@@ -131,17 +116,23 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                 <div className={css.partnership}>
                     <p className={css.partnership__title}>En partenariat avec</p>
                     <div className={css.partnership__logo}>
-                        <img
-                            className={css.partnership__logo__virgin}
-                            src="/icons/odvp/logo-virgin-radio@2x.png"
-                            alt="Virgin Radio"
-                        />
+                        <a href="https://www.virginradio.fr" target="_blank" rel="noreferrer">
+                            <img
+                                className={css.partnership__logo__virgin}
+                                src="/icons/odvp/logo-virgin-radio@2x.png"
+                                alt="Virgin Radio"
+                            />
+                        </a>
                         <span>&</span>
-                        <img
-                            className={css.partnership__logo__lpc}
-                            src="/icons/odvp/Logo%20-%20LPC.svg"
-                            alt="Le pot commun"
-                        />
+                        <Link href={'/'}>
+                            <a>
+                                <img
+                                    className={css.partnership__logo__lpc}
+                                    src="/icons/odvp/Logo%20-%20LPC.svg"
+                                    alt="Le pot commun"
+                                />
+                            </a>
+                        </Link>
                     </div>
                 </div>
                 <div onClick={() => scrollToRef()} className={css.scroll}>

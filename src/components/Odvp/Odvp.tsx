@@ -1,5 +1,7 @@
-import React, { useLayoutEffect, useState, useCallback } from 'react';
+import React, { useLayoutEffect, useState, useCallback, useEffect } from 'react';
 import css from './Odvp.module.scss';
+import smoothscroll from 'smoothscroll-polyfill';
+
 import Reindeer from '@components/Odvp/01_Reindeer/Reindeer';
 import MeanWise from '@components/Odvp/02_MeanWise/MeanWise';
 import Balls from '@components/Odvp/03_Balls/Balls';
@@ -19,7 +21,7 @@ const Odvp = () => {
         window.clearTimeout(isScrolling);
         isScrolling = setTimeout(function () {
             setIsUserScrolling(false);
-        }, 1500);
+        }, 1000);
     }, []);
 
     const handleButtonTopView = useCallback((value) => {
@@ -37,6 +39,10 @@ const Odvp = () => {
         };
     }, [handleScroll]);
 
+    useEffect(() => {
+        smoothscroll.polyfill();
+    }, []);
+
     return (
         <>
             <div
@@ -44,7 +50,7 @@ const Odvp = () => {
                     isButtonTopInView || isButtonBottomInView || isUserScrolling ? css.button__hide : css.button__show
                 }`}
             >
-                <OdvbButton width={200} height={47}>
+                <OdvbButton width={248} height={64} fontSize={16}>
                     Créer un pot commun
                 </OdvbButton>
             </div>

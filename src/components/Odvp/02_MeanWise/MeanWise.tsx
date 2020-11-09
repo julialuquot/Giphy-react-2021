@@ -8,24 +8,25 @@ import starsLeft from '../../../../public/icons/odvp/lottie/Doublant - Stars_lef
 import starsRight from '../../../../public/icons/odvp/lottie/Doublant - Stars_rightside.json';
 import wise from '../../../../public/icons/odvp/lottie/wording - sage V2.json';
 import useWindowSize from '@components/Hooks/useWindowSize';
-import { S_DEVICE } from '@components/Constants';
+import { S_DEVICE, XL_DEVICE } from '@components/Constants';
 
 const MeanWise = () => {
     const [showLottie, setShowLottie] = useState(false);
+    const [startAnimation, setStartAnimation] = useState(false);
     const [isComponentInView, setIsComponentInView] = useState(false);
     const { width } = useWindowSize();
     const [ref, inView] = useInView({
         threshold: 1,
         delay: 250,
-        triggerOnce: true,
     });
 
     useEffect(() => {
-        inView &&
-            setTimeout(function () {
-                setShowLottie(true);
-            }, 800);
+        inView ? setStartAnimation(true) : setStartAnimation(false);
     }, [inView]);
+
+    useEffect(() => {
+        startAnimation ? setTimeout(() => setShowLottie(true), 800) : setShowLottie(false);
+    }, [startAnimation]);
 
     useScrollPosition(
         ({ currPos }) => {
@@ -68,7 +69,7 @@ const MeanWise = () => {
     return (
         <InView onChange={setIsComponentInView}>
             <div className={css.container}>
-                {width > S_DEVICE ? (
+                {width > S_DEVICE && width < XL_DEVICE ? (
                     <div className={css.title}>
                         <h1 id={'title'}>Du 04 au 14 décembre</h1>
                     </div>
@@ -76,15 +77,18 @@ const MeanWise = () => {
                     <div className={css.title}>
                         <h1 id={'title'}>
                             Du 04 au 14 décembre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Du 04
-                            au 14 décembre
+                            au 14 décembre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Du 04 au 14
+                            décembre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Du 04 au 14
+                            décembre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Du 04 au 14
+                            décembre&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </h1>
                     </div>
                 )}
 
                 <div className={css.content}>
                     <div className={css.content__text}>
-                        <div className={`${css.lottie} ${!showLottie ? css.lottie__hide : ''}`}>
-                            <Lottie options={wiseOptions} width={211} height={127} />
+                        <div className={css.lottie}>
+                            {showLottie && <Lottie options={wiseOptions} width={211} height={127} />}
                         </div>
 
                         <p>
@@ -92,10 +96,10 @@ const MeanWise = () => {
                             <span
                                 ref={ref}
                                 className={`${css.content__text__bold} ${css.content__text__mean} ${
-                                    inView ? css.strike : ''
+                                    startAnimation ? css.strike : ''
                                 }`}
                             >
-                                méchant
+                                méchants
                             </span>
                             cette année
                         </p>
@@ -108,7 +112,7 @@ const MeanWise = () => {
                             <div className={css.content__stars__icon}>
                                 <Lottie options={starsLeftOptions} width={100} height={100} />
                             </div>
-                            <p className={css.content__text__bold}>DOUBLANT VOS CAGNOTTES !</p>
+                            <p className={css.content__stars__txt}>DOUBLANT VOS CAGNOTTES !</p>
                             <div className={css.content__stars__icon}>
                                 <Lottie options={starsRightOptions} width={100} height={100} />{' '}
                             </div>
