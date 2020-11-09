@@ -12,6 +12,7 @@ type BottomProps = {
 
 const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
     const [isComponentInView, setIsComponentInView] = useState(false);
+    const [isHover, setIsHover] = useState(false);
 
     const titleRef = useRef(null);
 
@@ -52,6 +53,14 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
     useEffect(() => {
         onSetIsButtonBottomInView(inView);
     }, [inView, onSetIsButtonBottomInView]);
+
+    const onMouseLeave = () => {
+        setIsHover(false);
+    };
+
+    const onMouseEnter = () => {
+        setIsHover(true);
+    };
 
     return (
         <InView onChange={setIsComponentInView}>
@@ -95,13 +104,22 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
                         alt="snowflake"
                     />
 
-                    <div onClick={() => scrollToTop()} className={css.scroll}>
+                    <div
+                        onMouseLeave={onMouseLeave}
+                        onMouseEnter={onMouseEnter}
+                        onClick={() => scrollToTop()}
+                        className={css.scroll}
+                    >
                         <img
                             className={css.scroll__txt}
                             src="/icons/odvp/scroll-text-up.svg"
                             alt="Remonter vers le haut de la page"
                         />
-                        <img className={css.scroll__rocket} src="/icons/odvp/rocket.svg" alt="rocket" />
+                        <img
+                            className={`${css.scroll__rocket} ${isHover && css.scroll__rocket__isHover}`}
+                            src="/icons/odvp/rocket.svg"
+                            alt="rocket"
+                        />
                     </div>
 
                     <a className={css.rules} href="/icons/odvp/pdf/Règlement_ODVP_2020.pdf">

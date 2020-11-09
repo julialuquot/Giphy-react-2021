@@ -17,6 +17,7 @@ type ReindeerProps = {
 
 const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
     const [isComponentInView, setIsComponentInView] = useState(true);
+    const [isHover, setIsHover] = useState(false);
 
     const eyeLeft = useRef(null);
     const eyeRight = useRef(null);
@@ -83,6 +84,14 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
         });
     };
 
+    const onMouseLeave = () => {
+        setIsHover(false);
+    };
+
+    const onMouseEnter = () => {
+        setIsHover(true);
+    };
+
     return (
         <InView onChange={setIsComponentInView}>
             <div className={css.container}>
@@ -135,13 +144,22 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                         </Link>
                     </div>
                 </div>
-                <div onClick={() => scrollToRef()} className={css.scroll}>
+                <div
+                    onMouseLeave={onMouseLeave}
+                    onMouseEnter={onMouseEnter}
+                    onClick={() => scrollToRef()}
+                    className={css.scroll}
+                >
                     <img
                         className={css.scroll__txt}
                         src="/icons/odvp/scroll-text-down.svg"
                         alt="Scroll pour découvrir le jeux concours"
                     />
-                    <img className={css.scroll__rocket} src="/icons/odvp/snowflake.svg" alt="rocket" />
+                    <img
+                        className={`${css.scroll__rocket} ${isHover && css.scroll__rocket__isHover}`}
+                        src="/icons/odvp/snowflake.svg"
+                        alt="rocket"
+                    />
                 </div>
 
                 <div className={css.reindeer}>

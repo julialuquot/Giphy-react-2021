@@ -135,9 +135,21 @@
       height: 96px;
       transition: all .4s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 
-      &:hover {
+      &__lottie {
+        z-index: 9999;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        margin: auto;
+      }
+
+
+      &__isHover {
         transform: scale(0.8)
       }
+
 
       @include media(s-device) {
         width: 23px;
