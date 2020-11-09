@@ -80,15 +80,17 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
                 </div>
 
                 <div className={css.content}>
-                    <p>Alors n&rsquo;hésitez plus,</p>
-                    <p>vous navez rien à perdre,</p>
-                    <p>
-                        <span className={css.content__bold}>tout à y gagner !</span>
-                    </p>
-                    <div ref={btnRef} className={css.cta}>
-                        <OdvpButton width={200} height={47}>
-                            Créer un pot commun
-                        </OdvpButton>
+                    <div className={css.content__text}>
+                        <p>Alors n&rsquo;hésitez plus,</p>
+                        <p>vous navez rien à perdre,</p>
+                        <p>
+                            <span className={css.content__text__bold}>tout à y gagner !</span>
+                        </p>
+                        <div ref={btnRef} className={css.cta}>
+                            <OdvpButton width={200} height={47}>
+                                Créer un pot commun
+                            </OdvpButton>
+                        </div>
                     </div>
 
                     <img

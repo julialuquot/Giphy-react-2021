@@ -36,7 +36,7 @@
 
 .content {
   position: relative;
-  height: 150vh;
+  height: 100vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -51,9 +51,22 @@
     font-size: 16px;
   }
 
-  .content__bold {
-    font-family: $odvp-primary-bold;
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @include media(s-device) {
+      margin-bottom: 50px;
+    }
+
+
+    &__bold {
+      font-family: $odvp-primary-bold;
+    }
   }
+
 
   .cta {
     margin-top: 40px;
@@ -88,7 +101,7 @@
     max-width: 300px;
     animation: rotatingClockwise 30s linear infinite;
     @include media(s-device) {
-      width: 151px;
+      width: 150px;
       left: -60px;
       top: 60%;
     }
@@ -102,7 +115,7 @@
     min-width: 5px !important;
     animation: rotatingCounterClockwise 50s linear infinite;
     @include media(s-device) {
-      width: 140px;
+      width: 100px;
     }
   }
 
@@ -111,6 +124,10 @@
     bottom: 72px;
     right: 10%;
     cursor: pointer;
+    @include media(s-device) {
+      transform: scale(0.7);
+      bottom: 35px;
+    }
 
     &__txt {
       position: relative;

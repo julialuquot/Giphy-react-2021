@@ -2,15 +2,11 @@ import React, { useRef, useState, useEffect } from 'react';
 import { useLax, useLaxElement } from '../use-lax';
 import css from './Balls.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
-import useWindowSize from '@components/Hooks/useWindowSize';
-import { InView, useInView } from 'react-intersection-observer';
 import Lottie from 'react-lottie';
 import star1 from '../../../../public/icons/odvp/lottie/Garland - star 1.json';
 import star2 from '../../../../public/icons/odvp/lottie/Garland - star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Garland - star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Garland - star 4.json';
-import { S_DEVICE } from '@components/Constants';
-import { use } from 'ast-types';
 
 const Balls = () => {
     const [attachLeftBall, setAttachLeftBall] = useState(false);
@@ -31,10 +27,8 @@ const Balls = () => {
         setAnimationYPos(rect.y);
     }, []);
 
-    useScrollPosition(({ currPos }) => {
-        // console.log(currPos);
+    useScrollPosition(() => {
         const rect = document.getElementById('container').getBoundingClientRect();
-        // console.log(rect);
         if (!attachLeftBall && rect.y < 320) {
             setAttachLeftBall(true);
         }

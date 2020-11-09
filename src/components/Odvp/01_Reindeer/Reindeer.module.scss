@@ -203,7 +203,7 @@
     @media screen and (max-height: 800px) {
       height: 750px;
     }
-    @media screen and (max-height: 625px) {
+    @media screen and (max-height: 700px) {
       height: 500px;
     }
 
@@ -228,7 +228,7 @@
       bottom: 172px;
       width: 150px;
     }
-    @media screen and (max-height: 625px) {
+    @media screen and (max-height: 700px) {
       bottom: 55px;
       width: 120px;
     }
@@ -256,7 +256,7 @@
         @media screen and (max-height: 800px) {
           transform: scale(1.8);
         }
-        @media screen and (max-height: 625px) {
+        @media screen and (max-height: 700px) {
           transform: scale(1.2);
 
         }
