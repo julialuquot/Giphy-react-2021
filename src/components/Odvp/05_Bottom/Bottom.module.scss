@@ -97,7 +97,7 @@
   .snowflake_left {
     position: absolute;
     top: 40%;
-    left: -110px;
+    left: 40px;
     max-width: 300px;
     animation: rotatingClockwise 30s linear infinite;
     @include media(s-device) {
