@@ -21,7 +21,7 @@ const Odvp = () => {
         window.clearTimeout(isScrolling);
         isScrolling = setTimeout(function () {
             setIsUserScrolling(false);
-        }, 1000);
+        }, 450);
     }, []);
 
     const handleButtonTopView = useCallback((value) => {
@@ -50,7 +50,7 @@ const Odvp = () => {
                     isButtonTopInView || isButtonBottomInView || isUserScrolling ? css.button__hide : css.button__show
                 }`}
             >
-                <OdvbButton width={248} height={64} fontSize={16}>
+                <OdvbButton width={248} height={64} fontSize={16} borderRadius={50}>
                     Créer un pot commun
                 </OdvbButton>
             </div>

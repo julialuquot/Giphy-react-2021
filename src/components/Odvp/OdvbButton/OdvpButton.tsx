@@ -10,13 +10,15 @@ type ButtonProps = {
     width?: number;
     height?: number;
     fontSize?: number;
+    borderRadius?: number;
 };
 
-const OdvpButton = ({ children, type, onClick, customClass, width, height, fontSize }: ButtonProps) => {
+const OdvpButton = ({ children, type, onClick, customClass, width, height, fontSize, borderRadius }: ButtonProps) => {
     const buttonStyle = {
         width: width,
         height: height,
         fontSize: fontSize,
+        borderRadius: borderRadius,
     };
 
     return (
