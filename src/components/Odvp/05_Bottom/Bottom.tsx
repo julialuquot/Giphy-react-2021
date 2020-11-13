@@ -82,7 +82,7 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
                 <div className={css.content}>
                     <div className={css.content__text}>
                         <p>Alors n&rsquo;hésitez plus,</p>
-                        <p>vous navez rien à perdre,</p>
+                        <p>vous n&rsquo;avez rien à perdre,</p>
                         <p>
                             <span className={css.content__text__bold}>tout à y gagner !</span>
                         </p>
