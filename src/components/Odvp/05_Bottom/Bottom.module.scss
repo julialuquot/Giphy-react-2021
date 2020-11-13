@@ -70,6 +70,9 @@
 
   .cta {
     margin-top: 40px;
+    @include media(s-device) {
+      margin-top: 24px;
+    }
   }
 
 

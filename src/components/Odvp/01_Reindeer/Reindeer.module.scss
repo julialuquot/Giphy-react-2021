@@ -21,7 +21,7 @@
   margin-top: 32px;
   margin-bottom: 16px;
   @include media(s-device) {
-    width: 160px;
+    width: 220px;
     height: 132px;
     margin-top: 111px;
   }
@@ -142,6 +142,8 @@
       height: 29px;
       @include media(s-device) {
         margin-left: 10px;
+        width: 160px;
+
       }
     }
   }
