@@ -5,6 +5,8 @@ import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import OdvpButton from '@components/Odvp/OdvbButton/OdvpButton';
 import useWindowSize from '@components/Hooks/useWindowSize';
 import { S_DEVICE, XL_DEVICE } from '@components/Constants';
+import Lottie from 'react-lottie';
+import spark from '../../../../public/icons/odvp/lottie/spark.json';
 
 type BottomProps = {
     onSetIsButtonBottomInView: (boolean) => void;
@@ -22,6 +24,12 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
 
     const { width } = useWindowSize();
 
+    const sparkOptions = {
+        loop: true,
+        autoplay: true,
+        animationData: spark,
+    };
+
     useScrollPosition(
         ({ currPos }) => {
             if (!isComponentInView || width < S_DEVICE) {
@@ -32,7 +40,7 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
             const snowflakeRight = document.getElementById('snowflakeRight');
             const snowflakeLeft = document.getElementById('snowflakeLeft');
             const ratioRight = (-scrollY / 100) * 5.5 - 180;
-            const ratioLeft = (-scrollY / 100) * 5.5 - 180;
+            const ratioLeft = (-scrollY / 100) * 5.5 - 190;
             const scaleUp = (ratio, speed) => `${Math.round(ratio * speed)}px`;
 
             titleRef.current.style.transform = `translateX(${-scrollY * 0.2}px)`;
@@ -119,9 +127,15 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
                         />
                         <img
                             className={`${css.scroll__rocket} ${isHover && css.scroll__rocket__isHover}`}
-                            src="/icons/odvp/rocket.svg"
+                            src="/icons/odvp/rocket-empty.svg"
                             alt="rocket"
                         />
+
+                        {isHover && (
+                            <div className={css.scroll__rocket__spark}>
+                                <Lottie options={sparkOptions} width={40} height={40} />
+                            </div>
+                        )}
                     </div>
 
                     <a className={css.rules} href="/icons/odvp/pdf/Règlement_ODVP_2020.pdf">

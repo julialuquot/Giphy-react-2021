@@ -155,13 +155,10 @@
       height: 96px;
       transition: all .4s cubic-bezier(0.250, 0.460, 0.450, 0.940);
 
-      &__lottie {
-        z-index: 9999;
+      &__spark {
         position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        top: 0;
+        right: 70px;
+        bottom: 60px;
         margin: auto;
       }
 
