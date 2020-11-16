@@ -7,6 +7,8 @@ import star1 from '../../../../public/icons/odvp/lottie/Garland - star 1.json';
 import star2 from '../../../../public/icons/odvp/lottie/Garland - star 2.json';
 import star3 from '../../../../public/icons/odvp/lottie/Garland - star 3.json';
 import star4 from '../../../../public/icons/odvp/lottie/Garland - star 4.json';
+import useWindowSize from '@components/Hooks/useWindowSize';
+import { S_DEVICE } from '@components/Constants';
 
 const Balls = () => {
     const [attachLeftBall, setAttachLeftBall] = useState(false);
@@ -17,23 +19,28 @@ const Balls = () => {
     const middleBallRef = useLaxElement();
 
     useLax({ breakpoints: null, className: null, animationYPos });
+    const { width } = useWindowSize();
 
     useEffect(() => {
         window.onbeforeunload = () => window.scrollTo(0, 0);
     }, []);
 
     useEffect(() => {
-        const rect = document.getElementById('timeline').getBoundingClientRect();
-        setAnimationYPos(rect.y);
-    }, []);
+        if (width > S_DEVICE) {
+            const rect = document.getElementById('timeline').getBoundingClientRect();
+            setAnimationYPos(rect.y);
+        }
+    }, [width]);
 
     useScrollPosition(() => {
-        const rect = document.getElementById('container').getBoundingClientRect();
-        if (!attachLeftBall && rect.y < 320) {
-            setAttachLeftBall(true);
-        }
-        if (attachLeftBall && rect.y > 320) {
-            setAttachLeftBall(false);
+        if (width > S_DEVICE) {
+            const rect = document.getElementById('container').getBoundingClientRect();
+            if (!attachLeftBall && rect.y < 320) {
+                setAttachLeftBall(true);
+            }
+            if (attachLeftBall && rect.y > 320) {
+                setAttachLeftBall(false);
+            }
         }
     });
 
@@ -71,7 +78,7 @@ const Balls = () => {
             />
             <img
                 ref={leftBallRef}
-                className={`${css.leftBall} ${attachLeftBall && css.leftBall__attach}`}
+                className={`${css.leftBall} ${(attachLeftBall || width < S_DEVICE) && css.leftBall__attach}`}
                 src="/icons/odvp/garland_400.svg"
                 alt="400"
             />

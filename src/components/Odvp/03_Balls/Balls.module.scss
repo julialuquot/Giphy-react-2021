@@ -31,7 +31,7 @@
     top: -220px;
     @include media(s-device) {
       position: absolute;
-      top: -198px;
+      top: -180px;
 
     }
   }
@@ -50,7 +50,7 @@
   @include media(s-device) {
     width: 113px;
     left: 25%;
-    top: -1115px;
+    top: -1050px;
   }
 }
 
@@ -66,7 +66,7 @@
   @include media(s-device) {
     width: 100px;
     left: 45%;
-    top: -740px;
+    top: -700px;
   }
 }
 
