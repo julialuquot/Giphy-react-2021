@@ -32,21 +32,33 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
         loop: true,
         autoplay: true,
         animationData: star1,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
     };
     const star2Options = {
         loop: true,
         autoplay: true,
         animationData: star2,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
     };
     const star3Options = {
         loop: true,
         autoplay: true,
         animationData: star3,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
     };
     const star4Options = {
         loop: true,
         autoplay: true,
         animationData: star4,
+        rendererSettings: {
+            preserveAspectRatio: 'xMidYMid slice',
+        },
     };
 
     const handleMouseMove = (event, element) => {
@@ -61,20 +73,6 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
         const rotationDegrees = radianDegrees * (180 / Math.PI) * -1 + 180;
         item.style.transform = isComponentInView && `rotate(${rotationDegrees}deg)`;
     };
-
-    useLayoutEffect(() => {
-        window.addEventListener('mousemove', function (event) {
-            handleMouseMove(event, eyeLeft);
-            handleMouseMove(event, eyeRight);
-        });
-        return () => {
-            window.removeEventListener('mousemove', () => handleMouseMove);
-        };
-    });
-
-    useEffect(() => {
-        onSetIsButtonTopInView(inView);
-    }, [inView, onSetIsButtonTopInView]);
 
     const scrollToRef = () => {
         window.scrollTo({
@@ -92,6 +90,20 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
         setIsHover(true);
     };
 
+    useLayoutEffect(() => {
+        window.addEventListener('mousemove', function (event) {
+            handleMouseMove(event, eyeLeft);
+            handleMouseMove(event, eyeRight);
+        });
+        return () => {
+            window.removeEventListener('mousemove', () => handleMouseMove);
+        };
+    });
+
+    useEffect(() => {
+        onSetIsButtonTopInView(inView);
+    }, [inView, onSetIsButtonTopInView]);
+
     return (
         <InView onChange={setIsComponentInView}>
             <div className={css.container}>
@@ -102,18 +114,18 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                         alt="On double votre pot"
                     />
 
-                    <figure className={css.logo__star1}>
-                        <Lottie options={star1Options} />
-                    </figure>
-                    <figure className={css.logo__star2}>
-                        <Lottie options={star2Options} />
-                    </figure>
-                    <figure className={css.logo__star3}>
-                        <Lottie options={star3Options} />
-                    </figure>
-                    <figure className={css.logo__star4}>
-                        <Lottie options={star4Options} />
-                    </figure>
+                    <div className={css.logo__star1}>
+                        <Lottie options={star1Options} width={50} height={50} />
+                    </div>
+                    <div className={css.logo__star2}>
+                        <Lottie options={star2Options} width={50} height={50} />
+                    </div>
+                    <div className={css.logo__star3}>
+                        <Lottie options={star3Options} width={50} height={50} />
+                    </div>
+                    <div className={css.logo__star4}>
+                        <Lottie options={star4Options} width={50} height={50} />
+                    </div>
                 </div>
 
                 <p className={css.title}>Du 4 au 14 décembre</p>
