@@ -1,0 +1,51 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+
+.navbar {
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  height: 113px;
+  max-width: 100vw;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 32px;
+  background-color: $white;
+  @include media(s-device) {
+    height: 56px;
+    padding-left: 24px;
+
+  }
+
+  &__left {
+    display: flex;
+  }
+
+  &__logo {
+    margin-right: 10px;
+    vertical-align: middle;
+  }
+
+  &__txt {
+    margin-right: 12px;
+    margin-top: 5px;
+  }
+
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    margin-right: 32px;
+
+  }
+
+}
+
+
+
+

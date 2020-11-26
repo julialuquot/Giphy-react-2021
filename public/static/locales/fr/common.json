@@ -1,13 +1,20 @@
 {
     "test": "Home page !",
-    "errors":{
+    "errors": {
         "REQUIRED": "Ce champs est obligatoire",
         "INVALID_email": "Email invalide",
         "MIN_LENGTH_email": "Minimum 2 caratères",
-        "MAX_LENGTH_email":"Le nombre de caractères est dépassé",
-        "MIN_LENGTH_password":"minimum 8 caractères",
+        "MAX_LENGTH_email": "Le nombre de caractères est dépassé",
+        "MIN_LENGTH_password": "minimum 8 caractères",
         "MAX_LENGTH_password": "Maximum 60 caractères",
-        "DOES_NOT_MATCH_passwordConfirmation":"Il faut tapper le même mot de passe"
-
+        "DOES_NOT_MATCH_passwordConfirmation": "Il faut tapper le même mot de passe",
+        "MIN_LENGTH_color": "Minimum 6 caractères",
+        "MAX_LENGTH_color": "Le nombre de caractères est dépassé",
+        "MIN_LENGTH_title": "Minimum 2 caractères",
+        "MAX_LENGTH_title": "Le nombre de caractères est dépassé",
+        "MIN_LENGTH_description": "Minimum 2 caractères",
+        "MAX_LENGTH_description": "Le nombre de caractères est dépassé",
+        "WRONG_FORMAT_url": "Le format n’est pas respecté",
+        "EMOTES_NOT_SUPPORTED": "Les emojies ne sont pas supportés"
     }
 }

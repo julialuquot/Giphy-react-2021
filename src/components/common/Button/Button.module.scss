@@ -12,7 +12,7 @@
   height: 48px;
   padding: 12px 24px;
   border: none;
-  @include border-radius(24px);
+  @include border-radius(6px);
   font-family: $primary-SemiBold;
   font-size: $level3;
   color: $white;
@@ -21,18 +21,18 @@
 }
 
 .small {
-  width: 97px;
+  width: 95px;
 }
 
 .medium {
-  width: 166px;
+  width: 205px;
 }
 
 .large {
   width: 360px;
 }
 
-.mobile_full_width{
+.mobile_full_width {
   width: 100%;
 }
 
@@ -59,25 +59,24 @@
 .secondary {
   @extend %button-shared;
   @include transition;
-  background-color: $ui-transparent;
-  color: $brand-primary;
+  background-color: $ui-quaternary;
+  color: $black;
 
   &:hover {
-    background-color: lighten($color: $brand-primary, $amount: 40%);
+    background-color: darken($color: $ui-quaternary, $amount: 5%);
   }
 
   &:active {
-    background-color: lighten($color: $brand-primary, $amount: 30%);
+    background-color: darken($color: $ui-quaternary, $amount: 5%);
   }
 
   &:disabled {
-    color: lighten($color: $brand-primary, $amount: 40%);
-    background-color: $ui-transparent;
+    color: darken($color: $ui-quaternary, $amount: 10%);
 
   }
 }
 
-.tertiary{
+.tertiary {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -89,13 +88,16 @@
   font-family: $primary-SemiBold;
   font-size: $level3;
   outline: none;
-  &:hover{
+
+  &:hover {
     text-decoration: underline;
   }
-  &:active{
+
+  &:active {
     color: darken($color: $brand-primary, $amount: 10%);
     text-decoration: underline;
   }
+
   &:disabled {
     color: lighten($color: $brand-primary, $amount: 40%);
   }

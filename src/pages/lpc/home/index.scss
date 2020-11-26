@@ -1,0 +1,16 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+
+
+.home {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 11% 0 11%;
+
+  @include media(m-device) {
+    padding: 0;
+
+  }
+}
+

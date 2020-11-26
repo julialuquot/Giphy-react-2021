@@ -1,0 +1,120 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+
+%avatar-shared {
+  width: fit-content;
+  position: absolute;
+}
+
+
+.wrapper {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  max-width: 1140px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+
+
+  .icon {
+    @include hide-on-m-device
+  }
+
+  .label {
+    &__success {
+      position: absolute;
+      top: 400px;
+      left: -3%;
+      transform: rotate(8deg)
+    }
+
+    &__primary_left {
+      position: absolute;
+      top: 750px;
+      left: -5%;
+      transform: rotate(-6deg)
+
+
+    }
+
+    &__secondary {
+      position: absolute;
+      top: 215px;
+      right: -3%;
+      transform: rotate(5deg)
+
+
+    }
+
+    &__primary_right {
+      position: absolute;
+      top: 530px;
+      right: -6%;
+
+      transform: rotate(-6deg)
+
+
+    }
+  }
+
+  .avatar {
+
+    &__accent {
+      @extend %avatar-shared;
+      top: 180px;
+      left: -3%;
+      transform: rotate(-6deg)
+    }
+
+    &__secondary {
+      @extend %avatar-shared;
+      top: 580px;
+      left: -2%;
+      transform: rotate(3deg)
+
+    }
+
+    &__success {
+      @extend %avatar-shared;
+      top: 670px;
+      right: -2%;
+      transform: rotate(3deg)
+
+    }
+  }
+
+
+  .title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 563px;
+    margin: 100px 0 56px 0;
+
+    @include media(m-device) {
+      max-width: 100%;
+    }
+
+    > p {
+      text-align: center;
+    }
+
+    &__primary {
+      color: $brand-primary;
+    }
+
+    &__text {
+      margin-top: 20px;
+    }
+
+  }
+
+}
+
+

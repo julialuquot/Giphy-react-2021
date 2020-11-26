@@ -4,6 +4,7 @@ import Checkbox from '@components/common/Checkbox/Checkbox';
 
 type FormikCheckBoxProps = {
     name: string;
+    onCheck?: (string) => void;
 };
 
 const FormikCheckBox: React.FC<FormikCheckBoxProps> = ({ name, ...props }: FormikCheckBoxProps) => {
