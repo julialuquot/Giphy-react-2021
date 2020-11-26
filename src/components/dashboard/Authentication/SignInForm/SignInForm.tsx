@@ -16,7 +16,7 @@ const SignInForm = () => {
     const router = useRouter();
 
     const authContext = useContext(AuthContext);
-    const { userSignIn, isFetching, responseStatus } = authContext;
+    const { userSignIn, isFetching, user } = authContext;
 
     const [, setStayConnected] = useState(true);
 
@@ -30,8 +30,8 @@ const SignInForm = () => {
     };
 
     useEffect(() => {
-        responseStatus === 200 && router.push('/dashboard/workspace');
-    }, [responseStatus, router]);
+        user && router.push('/dashboard/workspace');
+    }, [router, user]);
 
     return (
         <Formik validationSchema={signin} initialValues={initialValues} onSubmit={(values) => onSubmit(values)}>

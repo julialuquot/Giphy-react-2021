@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useEffect } from 'react';
 import AuthContext from './AuthContext';
 import authReducer from './AuthReducer';
 import AuthService from '@services/domain/AuthService';
@@ -10,12 +10,23 @@ type AuthProviderProps = {
 const AuthProvider = ({ children }: AuthProviderProps) => {
     const initialState = {
         isFetching: false,
-        responseStatus: null,
         error: null,
         stayConnected: null,
+        user: null,
     };
 
-    const [state, dispatch] = useReducer(authReducer, initialState);
+    let localState = null;
+    if (typeof localStorage !== 'undefined' && localStorage.getItem('userInfo')) {
+        localState = JSON.parse(localStorage.getItem('userInfo') || '');
+    }
+
+    const [state, dispatch] = useReducer(authReducer, localState || initialState);
+
+    useEffect(() => {
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('userInfo', JSON.stringify(state));
+        }
+    }, [state]);
 
     const userSignIn = async (body) => {
         try {
@@ -33,6 +44,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
                 responseStatus: state.responseStatus,
                 isFetching: state.isFetching,
                 error: state.error,
+                user: state.user,
                 userSignIn,
             }}
         >
@@ -40,5 +52,4 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         </AuthContext.Provider>
     );
 };
-
 export default AuthProvider;
