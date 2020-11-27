@@ -20,14 +20,14 @@ const url = yup
 
 const color = yup.string().min(6, 'MIN_LENGTH').max(6, 'MAX_LENGTH').required('REQUIRED');
 
-const desc = yup.string().min(2, 'MIN_LENGTH').max(155, 'MAX_LENGTH').required('REQUIRED');
+const description = yup.string().min(2, 'MIN_LENGTH').max(155, 'MAX_LENGTH').required('REQUIRED');
 
-const terms = yup.string().min(2, 'MIN_LENGTH').max(155, 'MAX_LENGTH');
+const mentions = yup.string().min(2, 'MIN_LENGTH').max(155, 'MAX_LENGTH');
 
-export const updateBrand = yup.object({
+export const updateBrandSchema = yup.object({
     name,
     url,
     color,
-    desc,
-    terms,
+    description,
+    mentions,
 });

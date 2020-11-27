@@ -32,7 +32,7 @@ const ImageUpload = ({ inputName, cta, label, format, onUploadImg, imgUrl, width
     };
 
     const style = {
-        backgroundImage: `url(${imgUrl})`,
+        backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url(${imgUrl})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
@@ -47,7 +47,7 @@ const ImageUpload = ({ inputName, cta, label, format, onUploadImg, imgUrl, width
                     {label && <p className={css.input__label}>{label}</p>}
                     <div className={css.input} style={style}>
                         <label className={css.input__btn}>
-                            <img className={css.input__btn__icon} src="/icons/edit.svg" alt="" />
+                            <img className={css.input__btn__icon} src="/icons/paper-download.svg" alt="" />
                             <p className={css.input__btn__cta}>{cta}</p>
                             <input
                                 className={css.input__hidden}

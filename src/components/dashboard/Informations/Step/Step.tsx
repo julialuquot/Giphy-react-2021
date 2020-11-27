@@ -13,9 +13,10 @@ type StepProps = {
     name: string;
     title: string;
     desc: string;
+    order: number;
 };
 
-const Step = ({ name, title, desc }: StepProps) => {
+const Step = ({ name, title, desc, order }: StepProps) => {
     const { t } = useTranslation('informations');
 
     const [isEditing, setIsEditing] = useState(false);
@@ -37,16 +38,18 @@ const Step = ({ name, title, desc }: StepProps) => {
             description: '',
             imageDesktop: '',
             imageMobile: '',
-            order: '',
+            order: order,
             merchant: '',
         };
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const onSubmit = async (values) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
-        const data = {
-            ...values,
-        };
+        // const body = {
+        //     ...values,
+        //     imageDesktop: desktopImgUrl,
+        //     imageMobile: mobileImgUrl,
+        // };
 
         setIsEditing(false);
     };

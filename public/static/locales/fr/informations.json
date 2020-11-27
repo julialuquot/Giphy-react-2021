@@ -37,6 +37,11 @@
             "title": "Comment ça marche ?",
             "text": "Nous vous permettons de personnaliser en 3 étapes votre parcours de dépense, pour aider les utilisateurs à bien comprendre comment dépenser chez vous."
         },
+        "step": {
+            "step": "Etape {{step}}",
+            "title": "Titre générique lorem ipsum",
+            "desc": "Descriptif générique lorem ipsum"
+        },
         "step-one": {
             "step": "Etape 1",
             "title": "Titre générique lorem ipsum",
@@ -72,6 +77,7 @@
             "desc": "Pour que nos utilisateurs puissent se projeter d’avantage sur votre marque, nous vous proposons de mettre en avant une sélection de 4 produits."
         },
         "product": {
+            "product": "Produit {{order}}",
             "product-one": "Produit 1",
             "product-two": "Produit 2",
             "product-three": "Produit 3",
@@ -79,7 +85,7 @@
             "title": "Titre du produit générique",
             "desc": "Descriptif générique",
             "price": "Prix générique",
-            "euros": "€"
+            "euro": "€"
         },
         "title-label": "Titre du produit",
         "title-placeholder": "Converse special heart edition",

@@ -1,0 +1,1534 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots AuthenticationCode Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "padding": "30px",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <form
+    action="#"
+    id="codeForm"
+    onReset={[Function]}
+    onSubmit={[Function]}
+  >
+    <div
+      className="wrapper"
+    >
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={false}
+              id="number_0"
+              name="number_0"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_1"
+              name="number_1"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_2"
+              name="number_2"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_3"
+              name="number_3"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_4"
+              name="number_4"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+      <div>
+        <div
+          className="wrapper"
+        >
+          <div
+            className="input__wrapper"
+          >
+            <input
+              className="input input__authentication-code"
+              disabled={true}
+              id="number_5"
+              name="number_5"
+              onBlur={[Function]}
+              onChange={[Function]}
+              type="text"
+              value=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="feedback false false"
+      style={
+        Object {
+          "visibility": "hidden",
+        }
+      }
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots Avatar Simple 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "space-around",
+        "display": "flex",
+        "marginBottom": "20px",
+        "width": "90vw",
+      }
+    }
+  >
+    <div
+      className=""
+    >
+      <div
+        className="circle circle__brand-primary"
+      >
+        <img
+          alt="avatar_img"
+          className="image"
+          src="test-file-stub"
+        />
+        <div
+          className="label label__brand-primary"
+        >
+          Daniel Negreanu
+        </div>
+      </div>
+    </div>
+  </div>
+   
+  <div
+    style={
+      Object {
+        "alignItems": "space-around",
+        "display": "flex",
+        "marginBottom": "20px",
+        "width": "90vw",
+      }
+    }
+  >
+    <div
+      className=""
+    >
+      <div
+        className="circle circle__brand-secondary"
+      >
+        <img
+          alt="avatar_img"
+          className="image"
+          src="test-file-stub"
+        />
+        <div
+          className="label label__brand-secondary"
+        >
+          Gus Hansen
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Control 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <button
+      className="button "
+      onClick={[Function]}
+    >
+      Anniversaire
+    </button>
+    <button
+      className="button disabled "
+      disabled={true}
+      onClick={[Function]}
+    >
+      Disabled
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Primary 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <button
+      className=" primary small "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Small
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" primary medium "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Medium
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" primary large "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Large
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" primary large disabled "
+      disabled={true}
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Disabled
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button Secondary 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <button
+      className=" secondary small "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Small
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" secondary medium "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Medium
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" secondary large "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Large
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" secondary large disabled "
+      disabled={true}
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Disabled
+      <div
+        className="button_spinner_container "
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Button With Loading 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <button
+      className=" primary small "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Primary Small
+      <div
+        className="button_spinner_container button_spinner_container__visible"
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" primary medium "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Primary Medium
+      <div
+        className="button_spinner_container button_spinner_container__visible"
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" primary large "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Primary Medium
+      <div
+        className="button_spinner_container button_spinner_container__visible"
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <button
+      className=" secondary small "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Secondary
+      <div
+        className="button_spinner_container button_spinner_container__visible"
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" secondary medium "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Secondary Small
+      <div
+        className="button_spinner_container button_spinner_container__visible"
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+    <button
+      className=" secondary large "
+      onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
+    >
+      Secondary Large
+      <div
+        className="button_spinner_container button_spinner_container__visible"
+      >
+        <div
+          className="button_spinner"
+        >
+          <div />
+          <div />
+          <div />
+          <div />
+        </div>
+      </div>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Card Partner 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "marginBottom": "20px",
+        "width": "90vw",
+      }
+    }
+  >
+    <div
+      className="card"
+    >
+      <div
+        className="card__header brand-primary"
+      >
+        <img
+          alt="Zalando"
+          className="card__header__img"
+          src="test-file-stub"
+        />
+      </div>
+      <div
+        className="card__footer"
+      >
+        <div
+          className="card__footer__top"
+        >
+          <h5>
+            Zalando
+          </h5>
+          <h6>
+            Prêt à porter
+          </h6>
+        </div>
+        <p
+          className=" ui-primary body_00 card__footer__text"
+        >
+          Créez un chèque-cadeau Amazon du montant de votre choix utilisable parmi des millions de produits en stock. Livres, jeux vidéos, high-tech, jouets, chaussures, vêtements, sport et plus encore ! sport et plus encore !sport et plus encore !
+        </p>
+      </div>
+    </div>
+  </div>
+   
+</div>
+`;
+
+exports[`Storyshots Checkbox Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <label
+      className="container"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        className="checkmark"
+      />
+      <p
+        className=" body_02 "
+      />
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        className="checkmark"
+      />
+      <p
+        className=" body_02 "
+      >
+        With Label
+      </p>
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        disabled={true}
+        type="checkbox"
+      />
+      <span
+        className="checkmark checkmark__disabled"
+      />
+      <p
+        className=" body_02 "
+      >
+        Disabled
+      </p>
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        className="checkmark"
+      />
+      <p
+        className=" body_02 "
+      >
+        Success
+      </p>
+    </label>
+    <label
+      className="container"
+    >
+      <input
+        type="checkbox"
+      />
+      <span
+        className="checkmark checkmark__error"
+      />
+      <p
+        className=" body_02 "
+      >
+        Error
+      </p>
+    </label>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdowns Collapsible 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100%",
+        "justifyContent": "center",
+        "marginBottom": "20px",
+        "width": "300px",
+      }
+    }
+  >
+    <div
+      className="collapsible"
+    >
+      <div
+        className="collapsible__trigger is-closed  trigger"
+        onClick={[Function]}
+        onKeyPress={[Function]}
+        style={null}
+        tabIndex={null}
+      >
+        Mon titre
+      </div>
+      <div
+        className="collapsible__contentOuter content__outer"
+        onTransitionEnd={[Function]}
+        style={
+          Object {
+            "WebkitTransition": "height 400ms ease-in-out",
+            "height": 0,
+            "msTransition": "height 400ms ease-in-out",
+            "overflow": "hidden",
+            "transition": "height 400ms ease-in-out",
+          }
+        }
+      >
+        <div
+          className="collapsible__contentInner content__inner"
+        >
+          <a
+            className="content__inner"
+            href="/#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 1
+          </a>
+          <a
+            className="content__inner"
+            href="/#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 2
+          </a>
+          <a
+            className="content__inner"
+            href="/#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 3
+          </a>
+          <a
+            className="content__inner"
+            href="/#"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Item 4
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdowns Default 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100%",
+        "justifyContent": "center",
+        "marginBottom": "20px",
+        "width": "300px",
+      }
+    }
+  >
+    <div
+      className="input__wrapper  }"
+    >
+      <label
+        className="label"
+      />
+      <div
+        className="Dropdown-root select"
+      >
+        <div
+          aria-haspopup="listbox"
+          className="Dropdown-control select__control false"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className="Dropdown-placeholder select__placeholder"
+          >
+            Un anniversaire
+          </div>
+          <div
+            className="Dropdown-arrow-wrapper"
+          >
+            <span
+              className="select__arrow_closed"
+            >
+              <img
+                alt="chevron_down"
+                src="/icons/chevron-down-grey.svg"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Dropdowns With Icon 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "100%",
+        "justifyContent": "center",
+        "marginBottom": "20px",
+        "width": "300px",
+      }
+    }
+  >
+    <div
+      className="input__wrapper  }"
+    >
+      <label
+        className="label"
+      />
+      <img
+        alt="input icon"
+        className="icon_left"
+        src="test-file-stub"
+      />
+      <div
+        className="Dropdown-root select"
+      >
+        <div
+          aria-haspopup="listbox"
+          className="Dropdown-control select__control false"
+          onMouseDown={[Function]}
+          onTouchEnd={[Function]}
+        >
+          <div
+            className="Dropdown-placeholder select__placeholder "
+          >
+            Français
+          </div>
+          <div
+            className="Dropdown-arrow-wrapper"
+          >
+            <span
+              className="select__arrow_closed"
+            >
+              <img
+                alt="chevron_up"
+                src="/icons/chevron-down-grey-small.svg"
+              />
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Input field Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "center",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input"
+          placeholder="name"
+        />
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__error"
+          placeholder="name"
+        />
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__valid"
+          placeholder="name"
+        />
+      </div>
+    </div>
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+        "height": "150px",
+        "justifyContent": "space-around",
+        "marginBottom": "20px",
+        "width": "100%",
+      }
+    }
+  >
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__iconRight"
+          placeholder="name"
+        />
+        <div
+          className="input__icon input__icon__right"
+        >
+          <img
+            alt="input icon"
+            src="/icons/eye-outline.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__iconLeft"
+          placeholder="name"
+        />
+        <div
+          className="input__icon input__icon__left"
+        >
+          <img
+            alt="input icon"
+            src="/icons/eye-outline.svg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="wrapper"
+    >
+      <label
+        className="label"
+      >
+        Name
+      </label>
+      <div
+        className="input__wrapper"
+      >
+        <input
+          className="input input__iconLeft input__custom1"
+          placeholder="name"
+        />
+        <div
+          className="input__icon input__icon__left"
+        >
+          <img
+            alt="input icon"
+            src="/icons/search.svg"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Text Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "padding": "30px",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <p
+    className=" ui-primary body_01 "
+  >
+    Body 01
+  </p>
+  <br />
+  <p
+    className=" ui-secondary body_02 "
+  >
+    Body 02
+  </p>
+  <br />
+  <p
+    className=" brand-secondary button "
+  >
+    Button
+  </p>
+  <br />
+  <p
+    className=" label "
+  >
+    Label
+  </p>
+  <br />
+  <p
+    className=" tagline "
+  >
+    Tagline
+  </p>
+  <br />
+  <p
+    className=" caption "
+  >
+    Caption
+  </p>
+  <br />
+  <p
+    className=" hint "
+  >
+    Hint
+  </p>
+</div>
+`;
+
+exports[`Storyshots Welcome to Storybook 1`] = `
+<article
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "color": "#000",
+      "fontFamily": "\\"Helvetica Neue\\", Helvetica, \\"Segoe UI\\", Arial, freesans, sans-serif",
+      "lineHeight": 1.4,
+      "padding": 15,
+    }
+  }
+>
+  <h1>
+    Welcome to storybook
+  </h1>
+  <p>
+    This is a UI component dev environment for your app.
+  </p>
+  <p>
+    We've added some basic stories inside the 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      src/stories
+    </code>
+     directory.
+    <br />
+    A story is a single state of one or more UI components. You can have as many stories as you want.
+    <br />
+    (Basically a story is like a visual test case.)
+  </p>
+  <p>
+    See these sample 
+    <button
+      onClick={[Function]}
+      style={
+        Object {
+          "backgroundColor": "transparent",
+          "borderBottom": "1px solid #1474f3",
+          "borderLeft": "none",
+          "borderRight": "none",
+          "borderTop": "none",
+          "color": "#1474f3",
+          "cursor": "pointer",
+          "font": "inherit",
+          "padding": 0,
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+      type="button"
+    >
+      stories
+    </button>
+     for a component called 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      Button
+    </code>
+    .
+  </p>
+  <p>
+    Just like that, you can add your own components as stories.
+    <br />
+    You can also edit those components and see changes right away.
+    <br />
+    (Try editing the 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      Button
+    </code>
+     stories located at 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      src/stories/1-Button.stories.js
+    </code>
+    .)
+  </p>
+  <p>
+    Usually we create stories with smaller UI components in the app.
+    <br />
+    Have a look at the 
+    <a
+      href="https://storybook.js.org/basics/writing-stories"
+      rel="noopener noreferrer"
+      style={
+        Object {
+          "borderBottom": "1px solid #1474f3",
+          "color": "#1474f3",
+          "paddingBottom": 2,
+          "textDecoration": "none",
+        }
+      }
+      target="_blank"
+    >
+      Writing Stories
+    </a>
+     section in our documentation.
+  </p>
+  <p
+    style={
+      Object {
+        "opacity": 0.5,
+      }
+    }
+  >
+    <b>
+      NOTE:
+    </b>
+    <br />
+    Have a look at the 
+    <code
+      style={
+        Object {
+          "backgroundColor": "#f3f2f2",
+          "border": "1px solid #eae9e9",
+          "borderRadius": 4,
+          "color": "#3a3a3a",
+          "fontSize": 15,
+          "fontWeight": 600,
+          "padding": "2px 5px",
+        }
+      }
+    >
+      .storybook/webpack.config.js
+    </code>
+     to add webpack loaders and plugins you are using in this project.
+  </p>
+</article>
+`;
+
+exports[`Storyshots Xconnect Default 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "column",
+      "justifyContent": "space-between",
+      "padding": "30px",
+      "paddingTop": "20px",
+    }
+  }
+>
+  <div
+    className="wrapper"
+  >
+    <div
+      className="apple"
+    >
+      <img
+        alt="apple logo"
+        src="icons/apple-logo.svg"
+      />
+    </div>
+    <div
+      className="google"
+    >
+      <img
+        alt="google logo"
+        src="icons/google-logo.svg"
+      />
+    </div>
+    <div
+      className="facebook"
+    >
+      <img
+        alt="facebook logo"
+        src="icons/facebook-logo.svg"
+      />
+    </div>
+  </div>
+</div>
+`;

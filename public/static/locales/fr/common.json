@@ -15,6 +15,7 @@
         "MIN_LENGTH_description": "Minimum 2 caractères",
         "MAX_LENGTH_description": "Le nombre de caractères est dépassé",
         "WRONG_FORMAT_url": "Le format n’est pas respecté",
-        "EMOTES_NOT_SUPPORTED": "Les emojies ne sont pas supportés"
+        "EMOTES_NOT_SUPPORTED": "Les emojies ne sont pas supportés",
+        "MUST_BE_NUMBER_price": "Doit être un nombre"
     }
 }

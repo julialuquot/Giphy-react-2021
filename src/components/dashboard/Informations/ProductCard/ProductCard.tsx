@@ -1,54 +1,51 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import css from './ProductCard.module.scss';
 import Text from '@components/common/Text/Text';
 import { Form, Formik } from 'formik';
-import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import Input from '@components/common/Formik/FormikInputField';
 import Button from '@components/common/Button/Button';
 import { useTranslation } from '@i18n';
 import ImageUpload from '@components/dashboard/Informations/ImageUpload/ImageUpload';
-import { updateTutorial } from '@validations/tutorial';
+import { updateProductsSchema } from '@validations/products';
 
 type ProductCardProps = {
-    name: string;
     title: string;
-    desc: string;
+    description: string;
     price: string;
+    order: number;
+    image: string;
+    onUpdateProduct: ({ title, desc, price, order, image, onUpdateProduct }) => void;
 };
 
-const ProductCard = ({ name, title, desc, price }: ProductCardProps) => {
+const ProductCard = ({ title, description, price, order, image, onUpdateProduct }: ProductCardProps) => {
     const { t } = useTranslation('informations');
 
     const [isEditing, setIsEditing] = useState(false);
+    const [imgUrl, setImgUrl] = useState('');
 
     const onEdit = () => {
         setIsEditing(true);
     };
 
-    const informationsContext = useContext(InformationsContext);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
-    const { isFetching, error, brand } = informationsContext;
-
-    const [imgUrl, setImgUrl] = useState('');
-
     const getInitialValues = () => {
         return {
-            title: '',
-            description: '',
-            imageDesktop: '',
-            imageMobile: '',
-            order: '',
-            merchant: '',
+            title: title || '',
+            description: description || '',
+            image: image || '',
+            order: order,
+            price: price || '',
+            merchantUniq: 'azerty1234',
         };
     };
 
     const onSubmit = async (values) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
-        const data = {
+        const body = {
             ...values,
+            image: imgUrl,
         };
 
         setIsEditing(false);
+        onUpdateProduct(body);
     };
 
     const onCancel = () => {
@@ -63,9 +60,9 @@ const ProductCard = ({ name, title, desc, price }: ProductCardProps) => {
                 <div className={css.form__upload}>
                     <ImageUpload
                         cta={t('informations:products.add-visual')}
-                        inputName={'imageDesktop'}
+                        inputName={'image'}
                         format={t('informations:products.format')}
-                        imgUrl={imgUrl}
+                        imgUrl={imgUrl !== '' ? imgUrl : image}
                         onUploadImg={(url) => setImgUrl(url)}
                         width={'255px'}
                         height={'382px'}
@@ -131,23 +128,32 @@ const ProductCard = ({ name, title, desc, price }: ProductCardProps) => {
                 />
                 {!isEditing ? (
                     <>
-                        <h5>{name}</h5>
+                        <h5> {t('informations:products.product.product', { order })}</h5>
                         <div className={css.product__content}>
-                            <div className={css.product__content__img}></div>
+                            <div
+                                className={css.product__content__img}
+                                style={{
+                                    backgroundImage: `url(${imgUrl || image})`,
+                                    backgroundSize: 'cover',
+                                    backgroundPosition: 'center',
+                                }}
+                            />
                             <div className={css.product__content__informations}>
                                 <h6>{title}</h6>
-                                <Text variant={'body_00'} color={'ui-primary'}>
-                                    {desc}
+                                <Text variant={'body_00'} color={'ui-secondary'}>
+                                    {description}
                                 </Text>
-                                <span>{price}</span>
+                                <span>
+                                    {price} {t('informations:products.product.euro')}
+                                </span>
                             </div>
                         </div>
                     </>
                 ) : (
                     <>
-                        <h5>{name}</h5>
+                        <h5> {t('informations:products.product.product', { order })}</h5>
                         <Formik
-                            validationSchema={updateTutorial}
+                            validationSchema={updateProductsSchema}
                             initialValues={getInitialValues()}
                             onSubmit={(values) => onSubmit(values)}
                         >

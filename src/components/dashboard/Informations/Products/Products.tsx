@@ -1,53 +1,40 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import css from './Products.module.scss';
 import Banner from '@components/dashboard/Informations/Banner/Banner';
 import { useTranslation } from '@i18n';
 import ProductCard from '@components/dashboard/Informations/ProductCard/ProductCard';
 import Introduction from '@components/dashboard/Informations/Introduction/Introduction';
+import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 
 const Products = () => {
     const { t } = useTranslation('informations');
 
-    const mockStep = [
-        {
-            name: t('informations:products.product.product-one'),
-            title: t('informations:products.product.title'),
-            desc: t('informations:products.product.desc'),
-            price: t('informations:products.product.price'),
-        },
-        {
-            name: t('informations:products.product.product-two'),
-            title: t('informations:products.product.title'),
-            desc: t('informations:products.product.desc'),
-            price: t('informations:products.product.price'),
-        },
-        {
-            name: t('informations:products.product.product-three'),
-            title: t('informations:products.product.title'),
-            desc: t('informations:products.product.desc'),
-            price: t('informations:products.product.price'),
-        },
-        {
-            name: t('informations:products.product.product-four'),
-            title: t('informations:products.product.title'),
-            desc: t('informations:products.product.desc'),
-            price: t('informations:products.product.price'),
-        },
-    ];
+    const informationsContext = useContext(InformationsContext);
+    const { getProducts, updateProduct, products } = informationsContext;
+
+    useEffect(() => {
+        getProducts('azerty1234');
+    }, []);
+
+    const onUpdateProduct = (body) => {
+        updateProduct(body);
+    };
 
     return (
         <div className={css.tutorial}>
             <Banner text={t('informations:products.banner.text')} />
             <Introduction />
 
-            {mockStep.map((product) => {
+            {products.map((product) => {
                 return (
                     <ProductCard
-                        key={product.name}
-                        name={product.name}
+                        key={product.order}
                         title={product.title}
-                        desc={product.desc}
+                        description={product.description}
                         price={product.price}
+                        order={product.order}
+                        image={product.image}
+                        onUpdateProduct={(body) => onUpdateProduct(body)}
                     />
                 );
             })}

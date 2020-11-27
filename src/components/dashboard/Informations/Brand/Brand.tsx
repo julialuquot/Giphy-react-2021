@@ -2,38 +2,42 @@ import React, { useContext, useState } from 'react';
 import css from './Brand.module.scss';
 import { useTranslation } from '@i18n';
 import { Form, Formik } from 'formik';
-import { updateBrand } from '@validations/brand';
+import { updateBrandSchema } from '@validations/brand';
 import Input from '@components/common/Formik/FormikInputField';
 import Button from '@components/common/Button/Button';
 import LogoUpload from '@components/dashboard/Informations/LogoUpload/LogoUpload';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 
-const Brand = () => {
+type BrandProps = {
+    user: {};
+};
+
+const Brand = ({ user }: BrandProps) => {
     const { t } = useTranslation('informations');
 
     const informationsContext = useContext(InformationsContext);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
-    const { isFetching, error, brand } = informationsContext;
+    const { updateBrand } = informationsContext;
 
     const [logoUrl, setLogoUrl] = useState('');
 
     const getInitialValues = () => {
         return {
             name: '',
+            logo: '',
             color: '',
             url: '',
-            desc: '',
-            terms: '',
+            description: '',
+            mentions: '',
+            merchantUniq: user.merchantUniq || 'azerty1234',
         };
     };
 
     const onSubmit = async (values) => {
-        // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
-        const data = {
+        const body = {
             ...values,
             logo: logoUrl,
         };
-        // TODO connect to WS
+        updateBrand(body);
     };
 
     // eslint-disable-next-line react/prop-types
@@ -74,7 +78,7 @@ const Brand = () => {
                 </div>
                 <div className={css.brand__card__form__input}>
                     <Input
-                        name="desc"
+                        name="description"
                         type="textarea"
                         label={t('informations:brand.desc-label')}
                         placeholder={t('informations:brand.desc-placeholder')}
@@ -82,7 +86,7 @@ const Brand = () => {
                 </div>
                 <div className={css.brand__card__form__input}>
                     <Input
-                        name="terms"
+                        name="mentions"
                         type="textarea"
                         label={t('informations:brand.terms-label')}
                         placeholder={t('informations:brand.terms-placeholder')}
@@ -124,7 +128,7 @@ const Brand = () => {
                     <p className={css.brand__card__logo__placeholder}> {t('informations:brand.logo')}</p>
                 </div>
                 <Formik
-                    validationSchema={updateBrand}
+                    validationSchema={updateBrandSchema}
                     initialValues={getInitialValues()}
                     onSubmit={(values) => onSubmit(values)}
                 >

@@ -7,8 +7,10 @@ const API = {
     },
     INFORMATIONS: {
         IMAGE_UPLOAD: `${apiURL}/images`,
-        GET_BRAND: `${apiURL}/brands`,
+        GET_BRAND: `${apiURL}/brands?merchantUniq=`,
         UPDATE_BRAND: `${apiURL}/brands`,
+        GET_PRODUCTS: `${apiURL}/products?merchantUniq=`,
+        UPDATE_PRODUCT: `${apiURL}/products`,
     },
 };
 

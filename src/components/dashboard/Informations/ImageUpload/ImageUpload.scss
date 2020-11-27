@@ -17,8 +17,6 @@
   margin: 13px 0 0;
   padding: 49px 55px 43px 56px;
   border-radius: 6px;
-  -webkit-backdrop-filter: blur(1px);
-  backdrop-filter: blur(1px);
   background-color: $background-light-grey;
 
 
@@ -40,7 +38,7 @@
       font-size: 20px;
       line-height: 1.2;
       text-align: center;
-      color: $ui-primary-2;
+      color: $white;
     }
 
 
@@ -59,7 +57,7 @@
     font-size: 14px;
     line-height: 1.71;
     text-align: center;
-    color: $ui-primary;
+    color: $white;
   }
 
 
