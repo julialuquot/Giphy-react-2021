@@ -60,6 +60,35 @@
         "mobile-label": "Visuel mobile",
         "add-visual": "Ajouter un visuel",
         "edit-visual": "Modifier le visuel",
-        "format": "Format 747 x 420 px | Taille max 1 Mo"
+        "format": "Format 747 x 420 px Taille max 1 Mo"
+    },
+    "products": {
+        "banner": {
+            "title": "Comment ça marche ?",
+            "text": "Cet espace vous offre la possibilité de personnaliser votre parcours de dépense en 3 étapes. L’objectif est d’aider les utilisateurs, une fois sur votre page partenaire, à mieux comprendre la manière dont ils peuvent dépenser leur cagnotte chez vous."
+        },
+        "introduction": {
+            "title": "Texte d'introduction",
+            "desc": "Pour que nos utilisateurs puissent se projeter d’avantage sur votre marque, nous vous proposons de mettre en avant une sélection de 4 produits."
+        },
+        "product": {
+            "product-one": "Produit 1",
+            "product-two": "Produit 2",
+            "product-three": "Produit 3",
+            "product-four": "Produit 4",
+            "title": "Titre du produit générique",
+            "desc": "Descriptif générique",
+            "price": "Prix générique",
+            "euros": "€"
+        },
+        "title-label": "Titre du produit",
+        "title-placeholder": "Converse special heart edition",
+        "desc-label": "Descriptif",
+        "desc-placeholder": "La Converse x PLAY Comme des Garçons Chuck 70 arbore un design Chuck Taylor classique avec un petit truc en plus.",
+        "price-label": "Prix",
+        "price-placeholder": "59,95 €",
+        "add-visual": "Ajouter un visuel",
+        "edit-visual": "Modifier le visuel",
+        "format": "Format 600 px de large Taille max 1 Mo"
     }
 }

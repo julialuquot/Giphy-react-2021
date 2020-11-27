@@ -6,13 +6,15 @@ import InformationsService from '@services/domain/InformationsService';
 type LogoUploadProps = {
     cta: string;
     inputName: string;
-    label: string;
+    label?: string;
     format: string;
     onUploadImg: (string) => void;
     imgUrl: string;
+    width: string;
+    height: string;
 };
 
-const ImageUpload = ({ inputName, cta, label, format, onUploadImg, imgUrl }: LogoUploadProps) => {
+const ImageUpload = ({ inputName, cta, label, format, onUploadImg, imgUrl, width, height }: LogoUploadProps) => {
     const onChange = (e) => {
         e.preventDefault();
         if (!e || !e.target || !e.target.files || !e.target.files.length) {
@@ -33,13 +35,16 @@ const ImageUpload = ({ inputName, cta, label, format, onUploadImg, imgUrl }: Log
         backgroundImage: `url(${imgUrl})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
+        backgroundPosition: 'center',
+        width: width,
+        height: height,
     };
 
     return (
         <Field name={inputName}>
             {() => (
                 <div className={css.container}>
-                    <p className={css.input__label}>{label}</p>
+                    {label && <p className={css.input__label}>{label}</p>}
                     <div className={css.input} style={style}>
                         <label className={css.input__btn}>
                             <img className={css.input__btn__icon} src="/icons/edit.svg" alt="" />

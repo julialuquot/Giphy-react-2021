@@ -58,7 +58,7 @@ const Step = ({ name, title, desc }: StepProps) => {
     };
 
     // eslint-disable-next-line react/prop-types
-    const renderTutorialForm = ({ handleReset }) => {
+    const renderProductForm = ({ handleReset }) => {
         return (
             <Form className={css.form}>
                 <div className={css.form__input}>
@@ -87,6 +87,8 @@ const Step = ({ name, title, desc }: StepProps) => {
                         format={t('informations:tutorial.format')}
                         imgUrl={desktopImgUrl}
                         onUploadImg={(url) => setDesktopImgUrl(url)}
+                        width={'368px'}
+                        height={'208px'}
                     />
 
                     <ImageUpload
@@ -96,6 +98,8 @@ const Step = ({ name, title, desc }: StepProps) => {
                         format={t('informations:tutorial.format')}
                         imgUrl={mobileImgUrl}
                         onUploadImg={(url) => setMobileImgUrl(url)}
+                        width={'368px'}
+                        height={'208px'}
                     />
                 </div>
 
@@ -144,7 +148,7 @@ const Step = ({ name, title, desc }: StepProps) => {
                             initialValues={getInitialValues()}
                             onSubmit={(values) => onSubmit(values)}
                         >
-                            {(values) => renderTutorialForm(values)}
+                            {(values) => renderProductForm(values)}
                         </Formik>
                     </>
                 )}

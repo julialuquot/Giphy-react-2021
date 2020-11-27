@@ -4,7 +4,11 @@ import { useTranslation } from '@i18n';
 import Image from 'next/image';
 import Button from '@components/common/Button/Button';
 
-const Banner = () => {
+type BannerProps = {
+    text: string;
+};
+
+const Banner = ({ text }: BannerProps) => {
     const { t } = useTranslation('informations');
 
     const [isOpen, setIsOpen] = useState(false);
@@ -21,7 +25,7 @@ const Banner = () => {
                 <img className={css.banner__title__chevron} src="/icons/chevron-up.svg" alt="chevron-up" />
             </div>
             <div className={`${css.banner__content} ${isOpen && css.banner__content__show}`}>
-                <p>{t('informations:tutorial.banner.text')}</p>
+                <p>{text}</p>
                 <Button
                     customClass={css.banner__content__btn}
                     width={'173px'}

@@ -27,7 +27,7 @@ const Tutorial = () => {
 
     return (
         <div className={css.tutorial}>
-            <Banner />
+            <Banner text={t('informations:tutorial.banner.text')} />
 
             {mockStep.map((step) => {
                 return <Step key={step.name} name={step.name} title={step.title} desc={step.desc} />;

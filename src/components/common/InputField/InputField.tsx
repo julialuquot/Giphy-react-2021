@@ -13,8 +13,8 @@ type InputFieldProps = {
     value: string | number;
     icon?: string;
     iconPosition?: 'left' | 'right';
-    onChange: React.FormEventHandler<HTMLInputElement>;
-    onBlur: React.FormEventHandler<HTMLInputElement>;
+    onChange: React.EventHandler<any>;
+    onBlur: React.EventHandler<any>;
     customStyle?: string;
     iconRef?: React.RefObject<HTMLInputElement>;
 };
@@ -72,17 +72,31 @@ const InputField = ({
                 </label>
             )}
             <div className={css.input__wrapper}>
-                <input
-                    type={type}
-                    name={name}
-                    id={id}
-                    placeholder={placeholder}
-                    className={getClassName()}
-                    value={value}
-                    onChange={onChange}
-                    onBlur={onBlur}
-                    disabled={disabled}
-                />
+                {type === 'textarea' ? (
+                    <textarea
+                        name={name}
+                        id={id}
+                        placeholder={placeholder}
+                        className={`${getClassName()} ${css.text_area}`}
+                        value={value}
+                        onChange={onChange}
+                        onBlur={onBlur}
+                        disabled={disabled}
+                        style={{ height: '120px' }}
+                    />
+                ) : (
+                    <input
+                        type={type}
+                        name={name}
+                        id={id}
+                        placeholder={placeholder}
+                        className={getClassName()}
+                        value={value}
+                        onChange={onChange}
+                        onBlur={onBlur}
+                        disabled={disabled}
+                    />
+                )}
                 {icon && (
                     <div
                         ref={iconRef}
