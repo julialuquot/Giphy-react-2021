@@ -110,6 +110,7 @@ pipeline{
                         script {
 
                              sh "docker tag $IMAGE_NAME:${VERSION}-snapshot $NEXUS_PRIVATE_REPOSITORY/$IMAGE_NAME:${VERSION}-snapshot"
+                             sh "docker login -u admin -p SBwkEnygqUVcdEWdpv8b 127.0.0.1:8123"
                              sh "docker push $NEXUS_PRIVATE_REPOSITORY/$IMAGE_NAME:${VERSION}-snapshot"
                             // if (env.BRANCH_NAME.replaceAll( '/', '-' ) == 'develop') {
                             //     sh "docker tag $IMAGE_NAME:${VERSION}-snapshot $NEXUS_PRIVATE_REPOSITORY/$IMAGE_NAME:${VERSION}-snapshot"
