@@ -172,7 +172,7 @@ const ProductCard = ({
                             initialValues={getInitialValues()}
                             onSubmit={(values) => onSubmit(values)}
                         >
-                            {(values) => renderTutorialForm(values)}
+                            {() => renderTutorialForm()}
                         </Formik>
                     </>
                 )}

@@ -72,7 +72,7 @@ const Step = ({
         setMobileImgUrl('');
     };
 
-    const renderProductForm = () => {
+    const renderStepForm = () => {
         return (
             <Form className={css.form}>
                 <div className={css.form__input}>
@@ -176,7 +176,7 @@ const Step = ({
                             initialValues={getInitialValues()}
                             onSubmit={(values) => onSubmit(values)}
                         >
-                            {(values) => renderProductForm(values)}
+                            {() => renderStepForm()}
                         </Formik>
                     </>
                 )}
