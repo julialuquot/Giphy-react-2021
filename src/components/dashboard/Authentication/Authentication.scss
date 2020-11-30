@@ -1,0 +1,55 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+
+
+.signIn__wrapper {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  @include media(s-device) {
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 35px;
+  }
+
+
+  .login {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 360px;
+    margin: 0 auto;
+
+    & > h3 {
+      text-align: center;
+      color: $ui-primary
+
+    }
+
+    @include media(s-device) {
+      width: 100%;
+    }
+
+
+    .form {
+      margin-top: 40px;
+      width: 100%;
+
+      .input {
+        margin-bottom: 30px;
+        position: relative;
+
+        .lost-password {
+          position: absolute;
+          top: 0;
+          right: 0;
+          cursor: pointer;
+        }
+      }
+    }
+
+
+  }
+
+}
+

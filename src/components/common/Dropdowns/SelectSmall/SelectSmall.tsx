@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import css from './SelectSmall.module.scss';
 import Dropdown from 'react-dropdown';
-import useOnClickOutside from '../../../Hooks/useOnClickOutside';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 type SelectSmallProps = {
     options: { value: string; label: string }[];

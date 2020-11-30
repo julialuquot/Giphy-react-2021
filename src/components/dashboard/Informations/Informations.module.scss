@@ -1,0 +1,11 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/fonts';
+
+.informations {
+  display: flex;
+  justify-content: space-around;
+  width: 80vw;
+
+}

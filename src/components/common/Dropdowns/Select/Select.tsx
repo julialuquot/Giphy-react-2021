@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import css from './Select.module.scss';
 import Dropdown from 'react-dropdown';
-import useOnClickOutside from '../../../Hooks/useOnClickOutside';
+import useOnClickOutside from '../../hooks/useOnClickOutside';
 
 type DropdownProps = {
     options: { value: string; label: string }[];

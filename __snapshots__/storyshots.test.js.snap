@@ -293,6 +293,13 @@ exports[`Storyshots Button Primary 1`] = `
     <button
       className=" primary small "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Small
       <div
@@ -311,6 +318,13 @@ exports[`Storyshots Button Primary 1`] = `
     <button
       className=" primary medium "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Medium
       <div
@@ -329,6 +343,13 @@ exports[`Storyshots Button Primary 1`] = `
     <button
       className=" primary large "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Large
       <div
@@ -348,6 +369,13 @@ exports[`Storyshots Button Primary 1`] = `
       className=" primary large disabled "
       disabled={true}
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Disabled
       <div
@@ -393,6 +421,13 @@ exports[`Storyshots Button Secondary 1`] = `
     <button
       className=" secondary small "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Small
       <div
@@ -411,6 +446,13 @@ exports[`Storyshots Button Secondary 1`] = `
     <button
       className=" secondary medium "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Medium
       <div
@@ -429,6 +471,13 @@ exports[`Storyshots Button Secondary 1`] = `
     <button
       className=" secondary large "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Large
       <div
@@ -448,6 +497,13 @@ exports[`Storyshots Button Secondary 1`] = `
       className=" secondary large disabled "
       disabled={true}
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Disabled
       <div
@@ -493,6 +549,13 @@ exports[`Storyshots Button With Loading 1`] = `
     <button
       className=" primary small "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Primary Small
       <div
@@ -511,6 +574,13 @@ exports[`Storyshots Button With Loading 1`] = `
     <button
       className=" primary medium "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Primary Medium
       <div
@@ -529,6 +599,13 @@ exports[`Storyshots Button With Loading 1`] = `
     <button
       className=" primary large "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Primary Medium
       <div
@@ -560,6 +637,13 @@ exports[`Storyshots Button With Loading 1`] = `
     <button
       className=" secondary small "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Secondary
       <div
@@ -578,6 +662,13 @@ exports[`Storyshots Button With Loading 1`] = `
     <button
       className=" secondary medium "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Secondary Small
       <div
@@ -596,6 +687,13 @@ exports[`Storyshots Button With Loading 1`] = `
     <button
       className=" secondary large "
       onClick={[Function]}
+      style={
+        Object {
+          "height": undefined,
+          "margin": undefined,
+          "width": undefined,
+        }
+      }
     >
       Secondary Large
       <div
@@ -828,7 +926,7 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
         >
           <a
             className="content__inner"
-            href="#"
+            href="/#"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -836,7 +934,7 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
           </a>
           <a
             className="content__inner"
-            href="#"
+            href="/#"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -844,7 +942,7 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
           </a>
           <a
             className="content__inner"
-            href="#"
+            href="/#"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
@@ -852,7 +950,7 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
           </a>
           <a
             className="content__inner"
-            href="#"
+            href="/#"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >

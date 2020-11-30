@@ -1,0 +1,14 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/fonts';
+
+.layout {
+  @include media(m-device) {
+    padding: 24px;
+  }
+
+  &__main {
+    margin-top: 86px;
+  }
+}

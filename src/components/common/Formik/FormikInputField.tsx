@@ -2,6 +2,7 @@ import React from 'react';
 import { Field, ErrorMessage } from 'formik';
 import InputField from '@components/common/InputField/InputField';
 import InputErrorMessage from '@components/common/Formik/InputErrorMessage/InputErrorMessage';
+
 const valid = (touched, errors, name) => touched[name] && !errors[name];
 const error = (touched, errors, name) => touched[name] && errors[name];
 type FormikInputFieldProps = {
