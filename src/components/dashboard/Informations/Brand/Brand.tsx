@@ -15,10 +15,21 @@ type BrandProps = {
     description: string;
     mentions: string;
     onUpdateBrand: (body: object) => void;
+    onResetBrand: (body: object) => void;
     merchantUniq: string;
 };
 
-const Brand = ({ name, logo, color, url, description, mentions, onUpdateBrand, merchantUniq }: BrandProps) => {
+const Brand = ({
+    name,
+    logo,
+    color,
+    url,
+    description,
+    mentions,
+    onUpdateBrand,
+    onResetBrand,
+    merchantUniq,
+}: BrandProps) => {
     const { t } = useTranslation('informations');
 
     const [logoUrl, setLogoUrl] = useState('');
@@ -41,6 +52,11 @@ const Brand = ({ name, logo, color, url, description, mentions, onUpdateBrand, m
             logo: logoUrl !== '' ? logoUrl : logo,
         };
         onUpdateBrand(body);
+    };
+
+    const onReset = () => {
+        const body = { merchantUniq: merchantUniq, reset: true };
+        onResetBrand(body);
     };
 
     // eslint-disable-next-line react/prop-types
@@ -96,7 +112,7 @@ const Brand = ({ name, logo, color, url, description, mentions, onUpdateBrand, m
                     />
                 </div>
 
-                <p className={css.brand__card__form__reset} onClick={handleReset}>
+                <p className={css.brand__card__form__reset} onClick={onReset}>
                     {t('informations:brand.reset')}
                 </p>
 

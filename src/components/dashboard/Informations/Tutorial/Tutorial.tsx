@@ -4,6 +4,7 @@ import Banner from '@components/dashboard/Informations/Banner/Banner';
 import Step from '@components/dashboard/Informations/Step/Step';
 import { useTranslation } from '@i18n';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
+import InformationsService from '@services/domain/InformationsService';
 
 type TutorialProps = {
     user: { merchantUniq: string };
@@ -23,6 +24,12 @@ const Tutorial = ({ user }: TutorialProps) => {
         updateTutorial(body);
     };
 
+    const onResetTutorial = (body) => {
+        InformationsService.resetTutorial(body)
+            .then(() => getTutorial(user.merchantUniq))
+            .catch((err) => err);
+    };
+
     return (
         <div className={css.tutorial}>
             <Banner text={t('informations:tutorial.banner.text')} />
@@ -38,6 +45,7 @@ const Tutorial = ({ user }: TutorialProps) => {
                         imageDesktop={tutorial.imageDesktop}
                         imageMobile={tutorial.imageMobile}
                         onUpdateTutorial={(body) => onUpdateTutorial(body)}
+                        onResetTutorial={(body) => onResetTutorial(body)}
                         merchantUniq={user.merchantUniq}
                     />
                 ))}

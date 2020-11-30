@@ -9,10 +9,13 @@ const API = {
         IMAGE_UPLOAD: `${apiURL}/images`,
         GET_BRAND: `${apiURL}/brands?merchantUniq=`,
         UPDATE_BRAND: `${apiURL}/brands`,
+        RESET_BRAND: `${apiURL}/brands`,
         GET_TUTORIAL: `${apiURL}/how-it-works?merchantUniq=`,
         UPDATE_TUTORIAL: `${apiURL}/how-it-works`,
+        RESET_TUTORIAL: `${apiURL}/how-it-works`,
         GET_PRODUCTS: `${apiURL}/products?merchantUniq=`,
         UPDATE_PRODUCT: `${apiURL}/products`,
+        RESET_PRODUCT: `${apiURL}/products`,
     },
 };
 

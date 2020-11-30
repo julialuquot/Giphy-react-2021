@@ -15,10 +15,20 @@ type StepProps = {
     imageDesktop: string;
     imageMobile: string;
     onUpdateTutorial: (body: object) => void;
+    onResetTutorial: (body: object) => void;
     merchantUniq: string;
 };
 
-const Step = ({ title, description, order, imageDesktop, imageMobile, onUpdateTutorial, merchantUniq }: StepProps) => {
+const Step = ({
+    title,
+    description,
+    order,
+    imageDesktop,
+    imageMobile,
+    onUpdateTutorial,
+    merchantUniq,
+    onResetTutorial,
+}: StepProps) => {
     const { t } = useTranslation('informations');
 
     const [isEditing, setIsEditing] = useState(false);
@@ -51,14 +61,18 @@ const Step = ({ title, description, order, imageDesktop, imageMobile, onUpdateTu
         onUpdateTutorial(body);
     };
 
+    const onReset = () => {
+        const body = { merchantUniq: merchantUniq, reset: true, order: order };
+        onResetTutorial(body);
+    };
+
     const onCancel = () => {
         setIsEditing(false);
         setDesktopImgUrl('');
         setMobileImgUrl('');
     };
 
-    // eslint-disable-next-line react/prop-types
-    const renderProductForm = ({ handleReset }) => {
+    const renderProductForm = () => {
         return (
             <Form className={css.form}>
                 <div className={css.form__input}>
@@ -103,7 +117,7 @@ const Step = ({ title, description, order, imageDesktop, imageMobile, onUpdateTu
                     />
                 </div>
 
-                <p className={css.form__reset} onClick={handleReset}>
+                <p className={css.form__reset} onClick={onReset}>
                     {t('informations:brand.reset')}
                 </p>
 

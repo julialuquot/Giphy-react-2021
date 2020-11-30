@@ -14,11 +14,21 @@ type ProductCardProps = {
     price: string;
     order: number;
     image: string;
-    onUpdateProduct: ({ title, desc, price, order, image }) => void;
+    onUpdateProduct: (body: object) => void;
+    onResetProduct: (body: object) => void;
     merchantUniq: string;
 };
 
-const ProductCard = ({ title, description, price, order, image, onUpdateProduct, merchantUniq }: ProductCardProps) => {
+const ProductCard = ({
+    title,
+    description,
+    price,
+    order,
+    image,
+    onUpdateProduct,
+    onResetProduct,
+    merchantUniq,
+}: ProductCardProps) => {
     const { t } = useTranslation('informations');
 
     const [isEditing, setIsEditing] = useState(false);
@@ -49,13 +59,17 @@ const ProductCard = ({ title, description, price, order, image, onUpdateProduct,
         onUpdateProduct(body);
     };
 
+    const onReset = () => {
+        const body = { merchantUniq: merchantUniq, reset: true, order: order };
+        onResetProduct(body);
+    };
+
     const onCancel = () => {
         setIsEditing(false);
         setImgUrl('');
     };
 
-    // eslint-disable-next-line react/prop-types
-    const renderTutorialForm = ({ handleReset }) => {
+    const renderTutorialForm = () => {
         return (
             <Form className={css.form}>
                 <div className={css.form__upload}>
@@ -97,7 +111,7 @@ const ProductCard = ({ title, description, price, order, image, onUpdateProduct,
                         />
                     </div>
 
-                    <p className={css.form__reset} onClick={handleReset}>
+                    <p className={css.form__reset} onClick={onReset}>
                         {t('informations:brand.reset')}
                     </p>
 

@@ -5,6 +5,7 @@ import { useTranslation } from '@i18n';
 import ProductCard from '@components/dashboard/Informations/ProductCard/ProductCard';
 import Introduction from '@components/dashboard/Informations/Introduction/Introduction';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
+import InformationsService from '@services/domain/InformationsService';
 
 type ProductsProps = {
     user: { merchantUniq: string };
@@ -24,6 +25,12 @@ const Products = ({ user }: ProductsProps) => {
         updateProduct(body);
     };
 
+    const onResetProduct = (body) => {
+        InformationsService.resetProduct(body)
+            .then(() => getProducts(user.merchantUniq))
+            .catch((err) => err);
+    };
+
     return (
         <div className={css.tutorial}>
             <Banner text={t('informations:products.banner.text')} />
@@ -41,6 +48,7 @@ const Products = ({ user }: ProductsProps) => {
                             order={product.order}
                             image={product.image}
                             onUpdateProduct={(body) => onUpdateProduct(body)}
+                            onResetProduct={(body) => onResetProduct(body)}
                             merchantUniq={user.merchantUniq}
                         />
                     );
