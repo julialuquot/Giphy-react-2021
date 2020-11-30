@@ -8,13 +8,25 @@ type LogoUploadProps = {
     inputName: string;
     label?: string;
     format: string;
-    onUploadImg: (string) => void;
+    onUploadImg?: (string) => void;
+    onMobileUploadImg?: (string) => void;
     imgUrl: string;
     width: string;
     height: string;
+    mobileUpload?: boolean;
 };
 
-const ImageUpload = ({ inputName, cta, label, format, onUploadImg, imgUrl, width, height }: LogoUploadProps) => {
+const ImageUpload = ({
+    inputName,
+    cta,
+    label,
+    format,
+    onUploadImg,
+    onMobileUploadImg,
+    imgUrl,
+    width,
+    height,
+}: LogoUploadProps) => {
     const onChange = (e) => {
         e.preventDefault();
         if (!e || !e.target || !e.target.files || !e.target.files.length) {
@@ -26,7 +38,7 @@ const ImageUpload = ({ inputName, cta, label, format, onUploadImg, imgUrl, width
         reader.onloadend = () => {
             const body = { image: reader.result };
             InformationsService.imageUpload(body)
-                .then((res) => onUploadImg(res.data.image))
+                .then((res) => (onMobileUploadImg ? onMobileUploadImg(res.data.image) : onUploadImg(res.data.image)))
                 .catch((err) => err);
         };
     };

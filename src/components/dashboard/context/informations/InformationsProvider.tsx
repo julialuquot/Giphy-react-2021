@@ -12,34 +12,57 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         isFetching: false,
         error: null,
         brand: {},
+        tutorial: [],
         products: [],
     };
 
     const [state, dispatch] = useReducer(informationsReducer, initialState);
 
-    // Get BRAND informations
+    // Get BRAND
     const getBrand = async (merchantUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.getBrand(merchantUniq);
-            dispatch({ type: 'GET_BRAND_SUCCESS', payload: data });
+            dispatch({ type: 'GET_BRAND_SUCCESS', payload: data.data });
         } catch (err) {
             dispatch({ type: 'GET_BRAND_FAILURE', payload: err.message });
         }
     };
 
-    // update BRAND informations
+    // update BRAND
     const updateBrand = async (body) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.updateBrand(body);
-            dispatch({ type: 'UPDATE_BRAND_SUCCESS', payload: data });
+            dispatch({ type: 'UPDATE_BRAND_SUCCESS', payload: data.data });
         } catch (err) {
             dispatch({ type: 'UPDATE_BRAND_FAILURE', payload: err.message });
         }
     };
 
-    // GET PRODUCTS informations
+    // GET TUTORIAL
+    const getTutorial = async (merchantUniq) => {
+        try {
+            dispatch({ type: 'FETCH_START' });
+            const data = await InformationsService.getTutorial(merchantUniq);
+            dispatch({ type: 'GET_TUTORIAL_SUCCESS', payload: data.data });
+        } catch (err) {
+            dispatch({ type: 'GET_TUTORIAL_FAILURE', payload: err.message });
+        }
+    };
+
+    // UPDATE TUTORIAL
+    const updateTutorial = async (body) => {
+        try {
+            dispatch({ type: 'FETCH_START' });
+            const data = await InformationsService.updateTutorial(body);
+            dispatch({ type: 'UPDATE_TUTORIAL_SUCCESS', payload: data.data });
+        } catch (err) {
+            dispatch({ type: 'UPDATE_TUTORIAL_FAILURE', payload: err.message });
+        }
+    };
+
+    // GET PRODUCTS
     const getProducts = async (merchantUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
@@ -50,7 +73,7 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         }
     };
 
-    // UPDATE PRODUCT informations
+    // UPDATE PRODUCT
     const updateProduct = async (body) => {
         try {
             dispatch({ type: 'FETCH_START' });
@@ -67,10 +90,13 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
                 isFetching: state.isFetching,
                 error: state.error,
                 brand: state.brand,
+                tutorial: state.tutorial,
                 products: state.products,
                 getBrand,
+                getTutorial,
                 getProducts,
                 updateBrand,
+                updateTutorial,
                 updateProduct,
             }}
         >

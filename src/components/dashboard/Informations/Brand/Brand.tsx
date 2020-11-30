@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import css from './Brand.module.scss';
 import { useTranslation } from '@i18n';
 import { Form, Formik } from 'formik';
@@ -6,38 +6,41 @@ import { updateBrandSchema } from '@validations/brand';
 import Input from '@components/common/Formik/FormikInputField';
 import Button from '@components/common/Button/Button';
 import LogoUpload from '@components/dashboard/Informations/LogoUpload/LogoUpload';
-import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 
 type BrandProps = {
-    user: {};
+    name: string;
+    logo: string;
+    url: string;
+    color: string;
+    description: string;
+    mentions: string;
+    onUpdateBrand: (body: object) => void;
+    merchantUniq: string;
 };
 
-const Brand = ({ user }: BrandProps) => {
+const Brand = ({ name, logo, color, url, description, mentions, onUpdateBrand, merchantUniq }: BrandProps) => {
     const { t } = useTranslation('informations');
-
-    const informationsContext = useContext(InformationsContext);
-    const { updateBrand } = informationsContext;
 
     const [logoUrl, setLogoUrl] = useState('');
 
     const getInitialValues = () => {
         return {
-            name: '',
-            logo: '',
-            color: '',
-            url: '',
-            description: '',
-            mentions: '',
-            merchantUniq: user.merchantUniq || 'azerty1234',
+            name: name,
+            logo: logo,
+            color: color,
+            siteUrl: url,
+            description: description,
+            mentions: mentions,
+            merchantUniq: merchantUniq,
         };
     };
 
     const onSubmit = async (values) => {
         const body = {
             ...values,
-            logo: logoUrl,
+            logo: logoUrl !== '' ? logoUrl : logo,
         };
-        updateBrand(body);
+        onUpdateBrand(body);
     };
 
     // eslint-disable-next-line react/prop-types
@@ -70,7 +73,7 @@ const Brand = ({ user }: BrandProps) => {
                 </div>
                 <div className={css.brand__card__form__input}>
                     <Input
-                        name="url"
+                        name="siteUrl"
                         type="text"
                         label={t('informations:brand.url-label')}
                         placeholder={t('informations:brand.url-placeholder')}
@@ -116,10 +119,10 @@ const Brand = ({ user }: BrandProps) => {
     };
 
     const style = {
-        backgroundImage: `url(${logoUrl})`,
+        backgroundImage: `url(${logoUrl || logo})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundColor: '#f2f7fc',
+        backgroundColor: color,
     };
     return (
         <div className={css.brand}>
@@ -139,4 +142,4 @@ const Brand = ({ user }: BrandProps) => {
     );
 };
 
-export default Brand;
+export default React.memo(Brand);

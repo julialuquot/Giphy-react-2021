@@ -38,22 +38,7 @@
             "text": "Nous vous permettons de personnaliser en 3 étapes votre parcours de dépense, pour aider les utilisateurs à bien comprendre comment dépenser chez vous."
         },
         "step": {
-            "step": "Etape {{step}}",
-            "title": "Titre générique lorem ipsum",
-            "desc": "Descriptif générique lorem ipsum"
-        },
-        "step-one": {
-            "step": "Etape 1",
-            "title": "Titre générique lorem ipsum",
-            "desc": "Descriptif générique lorem ipsum"
-        },
-        "step-two": {
-            "step": "Etape 2",
-            "title": "Titre générique lorem ipsum",
-            "desc": "Descriptif générique lorem ipsum"
-        },
-        "step-three": {
-            "step": "Etape 3",
+            "step": "Etape {{order}}",
             "title": "Titre générique lorem ipsum",
             "desc": "Descriptif générique lorem ipsum"
         },

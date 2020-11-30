@@ -19,6 +19,39 @@
 
   & > h5 {
     color: $ui-primary;
+    margin-bottom: 36px;
+
+  }
+
+  & > h6 {
+    color: $ui-primary;
+    margin-bottom: 16px;
+
+  }
+
+  &__img {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 36px;
+
+    &__desktop {
+      width: 368px;
+      height: 208px;
+      border-radius: 6px;
+      background-size: cover;
+      background-position: center;
+      background-color: $background-light-grey;
+    }
+
+    &__mobile {
+      width: 368px;
+      height: 208px;
+      border-radius: 6px;
+      background-size: cover;
+      background-position: center;
+      background-color: $background-light-grey;
+
+    }
   }
 
   &__icon {
@@ -57,10 +90,9 @@
 
 .form {
   width: 100%;
-  margin-top: 36px;
 
   &__input {
-    margin: 21px 0 21px 0;
+    margin: 0px 0 21px 0;
   }
 
   &__upload {

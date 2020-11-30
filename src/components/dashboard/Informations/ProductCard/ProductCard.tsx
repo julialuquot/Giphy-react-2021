@@ -14,10 +14,11 @@ type ProductCardProps = {
     price: string;
     order: number;
     image: string;
-    onUpdateProduct: ({ title, desc, price, order, image, onUpdateProduct }) => void;
+    onUpdateProduct: ({ title, desc, price, order, image }) => void;
+    merchantUniq: string;
 };
 
-const ProductCard = ({ title, description, price, order, image, onUpdateProduct }: ProductCardProps) => {
+const ProductCard = ({ title, description, price, order, image, onUpdateProduct, merchantUniq }: ProductCardProps) => {
     const { t } = useTranslation('informations');
 
     const [isEditing, setIsEditing] = useState(false);
@@ -29,19 +30,19 @@ const ProductCard = ({ title, description, price, order, image, onUpdateProduct 
 
     const getInitialValues = () => {
         return {
-            title: title || '',
-            description: description || '',
-            image: image || '',
+            title: title,
+            description: description,
+            image: image,
             order: order,
-            price: price || '',
-            merchantUniq: 'azerty1234',
+            price: price,
+            merchantUniq: merchantUniq,
         };
     };
 
     const onSubmit = async (values) => {
         const body = {
             ...values,
-            image: imgUrl,
+            image: imgUrl !== '' ? imgUrl : image,
         };
 
         setIsEditing(false);

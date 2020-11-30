@@ -1,57 +1,54 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import css from './Step.module.scss';
 import Text from '@components/common/Text/Text';
 import { Form, Formik } from 'formik';
-import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import Input from '@components/common/Formik/FormikInputField';
 import Button from '@components/common/Button/Button';
 import { useTranslation } from '@i18n';
 import ImageUpload from '@components/dashboard/Informations/ImageUpload/ImageUpload';
-import { updateTutorial } from '@validations/tutorial';
+import { updateTutorialSchema } from '@validations/tutorial';
 
 type StepProps = {
-    name: string;
     title: string;
-    desc: string;
+    description: string;
     order: number;
+    imageDesktop: string;
+    imageMobile: string;
+    onUpdateTutorial: (body: object) => void;
+    merchantUniq: string;
 };
 
-const Step = ({ name, title, desc, order }: StepProps) => {
+const Step = ({ title, description, order, imageDesktop, imageMobile, onUpdateTutorial, merchantUniq }: StepProps) => {
     const { t } = useTranslation('informations');
 
     const [isEditing, setIsEditing] = useState(false);
+    const [desktopImgUrl, setDesktopImgUrl] = useState('');
+    const [mobileImgUrl, setMobileImgUrl] = useState('');
 
     const onEdit = () => {
         setIsEditing(true);
     };
 
-    const informationsContext = useContext(InformationsContext);
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
-    const { isFetching, error, brand } = informationsContext;
-
-    const [desktopImgUrl, setDesktopImgUrl] = useState('');
-    const [mobileImgUrl, setMobileImgUrl] = useState('');
-
     const getInitialValues = () => {
         return {
-            title: '',
-            description: '',
-            imageDesktop: '',
-            imageMobile: '',
+            title: title,
+            description: description,
+            imageDesktop: imageDesktop,
+            imageMobile: imageMobile,
             order: order,
-            merchant: '',
+            merchantUniq: merchantUniq,
         };
     };
 
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     const onSubmit = async (values) => {
-        // const body = {
-        //     ...values,
-        //     imageDesktop: desktopImgUrl,
-        //     imageMobile: mobileImgUrl,
-        // };
+        const body = {
+            ...values,
+            imageDesktop: desktopImgUrl !== '' ? desktopImgUrl : imageDesktop,
+            imageMobile: mobileImgUrl !== '' ? mobileImgUrl : imageMobile,
+        };
 
         setIsEditing(false);
+        onUpdateTutorial(body);
     };
 
     const onCancel = () => {
@@ -88,7 +85,7 @@ const Step = ({ name, title, desc, order }: StepProps) => {
                         inputName={'imageDesktop'}
                         label={t('informations:tutorial.desktop-label')}
                         format={t('informations:tutorial.format')}
-                        imgUrl={desktopImgUrl}
+                        imgUrl={desktopImgUrl !== '' ? desktopImgUrl : imageDesktop}
                         onUploadImg={(url) => setDesktopImgUrl(url)}
                         width={'368px'}
                         height={'208px'}
@@ -99,8 +96,8 @@ const Step = ({ name, title, desc, order }: StepProps) => {
                         inputName={'imageMobile'}
                         label={t('informations:tutorial.mobile-label')}
                         format={t('informations:tutorial.format')}
-                        imgUrl={mobileImgUrl}
-                        onUploadImg={(url) => setMobileImgUrl(url)}
+                        imgUrl={mobileImgUrl !== '' ? mobileImgUrl : imageMobile}
+                        onMobileUploadImg={(url) => setMobileImgUrl(url)}
                         width={'368px'}
                         height={'208px'}
                     />
@@ -137,17 +134,31 @@ const Step = ({ name, title, desc, order }: StepProps) => {
                 />
                 {!isEditing ? (
                     <>
-                        <h5>{name}</h5>
-                        <h5>{title}</h5>
-                        <Text variant={'body_00'} color={'ui-primary'}>
-                            {desc}
+                        <h5> {t('informations:tutorial.step.step', { order })}</h5>
+                        <h6>{title}</h6>
+                        <Text variant={'body_00'} color={'ui-secondary'}>
+                            {description}
                         </Text>
+                        <div className={css.step__img}>
+                            <div
+                                className={css.step__img__desktop}
+                                style={{
+                                    backgroundImage: `url(${desktopImgUrl || imageDesktop})`,
+                                }}
+                            />
+                            <div
+                                className={css.step__img__mobile}
+                                style={{
+                                    backgroundImage: `url(${mobileImgUrl || imageMobile})`,
+                                }}
+                            />
+                        </div>
                     </>
                 ) : (
                     <>
-                        <h5>{name}</h5>
+                        <h5> {t('informations:tutorial.step.step', { order })}</h5>
                         <Formik
-                            validationSchema={updateTutorial}
+                            validationSchema={updateTutorialSchema}
                             initialValues={getInitialValues()}
                             onSubmit={(values) => onSubmit(values)}
                         >

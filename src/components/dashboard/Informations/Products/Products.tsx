@@ -6,14 +6,18 @@ import ProductCard from '@components/dashboard/Informations/ProductCard/ProductC
 import Introduction from '@components/dashboard/Informations/Introduction/Introduction';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 
-const Products = () => {
+type ProductsProps = {
+    user: { merchantUniq: string };
+};
+
+const Products = ({ user }: ProductsProps) => {
     const { t } = useTranslation('informations');
 
     const informationsContext = useContext(InformationsContext);
-    const { getProducts, updateProduct, products } = informationsContext;
+    const { getProducts, updateProduct, products, isFetching } = informationsContext;
 
     useEffect(() => {
-        getProducts('azerty1234');
+        getProducts(user.merchantUniq);
     }, []);
 
     const onUpdateProduct = (body) => {
@@ -25,19 +29,22 @@ const Products = () => {
             <Banner text={t('informations:products.banner.text')} />
             <Introduction />
 
-            {products.map((product) => {
-                return (
-                    <ProductCard
-                        key={product.order}
-                        title={product.title}
-                        description={product.description}
-                        price={product.price}
-                        order={product.order}
-                        image={product.image}
-                        onUpdateProduct={(body) => onUpdateProduct(body)}
-                    />
-                );
-            })}
+            {!isFetching &&
+                products.length > 0 &&
+                products.map((product) => {
+                    return (
+                        <ProductCard
+                            key={product.order}
+                            title={product.title}
+                            description={product.description}
+                            price={product.price}
+                            order={product.order}
+                            image={product.image}
+                            onUpdateProduct={(body) => onUpdateProduct(body)}
+                            merchantUniq={user.merchantUniq}
+                        />
+                    );
+                })}
         </div>
     );
 };
