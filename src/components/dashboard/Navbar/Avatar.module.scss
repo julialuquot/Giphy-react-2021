@@ -24,12 +24,26 @@
     }
   }
 
-
-  &__name {
-    font-family: $primary-medium;
-    color: $ui-primary;
-    font-size: 14px;
+  &__infos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin-left: 8px;
+
+
+    &__name {
+      font-family: $primary-medium;
+      color: $ui-primary;
+      font-size: 14px;
+    }
+
+    &__settings {
+      font-family: $primary-medium;
+      font-size: 12px;
+      color: $ui-secondary;
+    }
   }
+
+
 }
 

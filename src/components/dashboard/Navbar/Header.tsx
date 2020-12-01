@@ -1,9 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import css from './Header.module.scss';
 import Avatar from '@components/dashboard/Navbar/Avatar';
 import AuthContext from '@components/dashboard/context/auth/AuthContext';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import Profil from '@components/dashboard/Navbar/Profil';
+import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
 
 const Header = () => {
     const authContext = useContext(AuthContext);
@@ -14,9 +15,12 @@ const Header = () => {
 
     const [isProfilOpen, setIsProfilOpen] = useState(false);
 
+    const avatarRef = useRef();
+    useOnClickOutside(avatarRef, () => setIsProfilOpen(false));
+
     useEffect(() => {
         user && getBrand(user.merchantUniq);
-    }, []);
+    }, [getBrand, user]);
 
     const getInitial = () => {
         if (brand && brand.name && brand.name !== '') {
@@ -58,15 +62,15 @@ const Header = () => {
             <div className={css.navbar__left}>
                 <img className={css.navbar__logo} src="/icons/logo-lpc.svg" alt={'logo lpc'} />
             </div>
-            {!isFetching && user && (
-                <div>
+            {!isFetching && (
+                <div ref={avatarRef}>
                     <Avatar
                         onToggleProfil={() => onToggleProfil()}
                         initial={getInitial()}
                         name={getName()}
+                        color={getColor()}
                         height={'38px'}
                         width={'38px'}
-                        color={getColor()}
                     />
                     <Profil
                         onSignOut={() => onSignOut()}
@@ -74,7 +78,7 @@ const Header = () => {
                         initial={getInitial()}
                         name={getName()}
                         color={getColor()}
-                    />{' '}
+                    />
                 </div>
             )}
         </nav>

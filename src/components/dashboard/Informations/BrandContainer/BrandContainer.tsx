@@ -13,7 +13,7 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
 
     useEffect(() => {
         getBrand(user.merchantUniq);
-    }, []);
+    }, [getBrand, user.merchantUniq]);
 
     const onUpdateBrand = (body) => {
         updateBrand(body);
@@ -44,4 +44,4 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
     );
 };
 
-export default React.memo(BrandContainer);
+export default BrandContainer;

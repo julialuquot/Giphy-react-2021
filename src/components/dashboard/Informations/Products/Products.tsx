@@ -19,7 +19,7 @@ const Products = ({ user }: ProductsProps) => {
 
     useEffect(() => {
         getProducts(user.merchantUniq);
-    }, []);
+    }, [getProducts, user.merchantUniq]);
 
     const onUpdateProduct = (body) => {
         updateProduct(body);

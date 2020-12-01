@@ -18,7 +18,7 @@ const SignInForm = () => {
     const authContext = useContext(AuthContext);
     const { userSignIn, isFetching, user } = authContext;
 
-    const [, setStayConnected] = useState(true);
+    const [stayConnected, setStayConnected] = useState(['on']);
 
     const initialValues = {
         email: 'merchandclass1@yopmail.com',
@@ -26,7 +26,12 @@ const SignInForm = () => {
     };
 
     const onSubmit = async (values) => {
-        userSignIn(values);
+        const body = {
+            ...values,
+            stayConnected: stayConnected.length > 0,
+        };
+
+        userSignIn(body);
     };
 
     useEffect(() => {
@@ -62,7 +67,7 @@ const SignInForm = () => {
                     </div>
                     <div className={css.input}>
                         <Checkbox onCheck={(value) => setStayConnected(value)} name="stayConnected">
-                            {t('authentication:login.remember-me')}{' '}
+                            {t('authentication:login.remember-me')}
                         </Checkbox>
                     </div>
 

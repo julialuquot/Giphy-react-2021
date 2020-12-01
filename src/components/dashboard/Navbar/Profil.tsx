@@ -2,6 +2,7 @@ import React from 'react';
 import css from './Profil.module.scss';
 import { useTranslation } from '@i18n';
 import Avatar from '@components/dashboard/Navbar/Avatar';
+import Link from 'next/link';
 
 type ProfilProps = {
     initial: string;
@@ -16,13 +17,14 @@ const Profil = ({ onSignOut, initial, name, color, isOpen }: ProfilProps) => {
 
     return (
         <div className={`${css.profil} ${isOpen && css.profil__open}`}>
-            <Avatar width={'48px'} height={'48px'} color={color} name={name} initial={initial} />
-
+            <Avatar width={'48px'} height={'48px'} color={color} name={name} initial={initial} settings={true} />
             <span className={css.divider} />
-            <span className={css.cta}>
-                <img src="/icons/external-link.svg" alt="link" />
-                <p>{t('dashboard-header:lpc-dashboard')}</p>
-            </span>
+            <Link href={'#'}>
+                <a className={css.cta}>
+                    <img src="/icons/external-link.svg" alt="link" />
+                    <p>{t('dashboard-header:lpc-website')}</p>
+                </a>
+            </Link>
             <span onClick={() => onSignOut()} className={css.cta}>
                 <img src="/icons/logout.svg" alt="logout" />
                 <p>{t('dashboard-header:logout')}</p>
