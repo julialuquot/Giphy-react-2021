@@ -1,0 +1,35 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/fonts';
+
+
+.avatar {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+
+  &__circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $background-light-grey;
+    text-align: center;
+    border-radius: 50%;
+
+    &__initial {
+      font-family: $primary-medium;
+      color: $white;
+    }
+  }
+
+
+  &__name {
+    font-family: $primary-medium;
+    color: $ui-primary;
+    font-size: 14px;
+    margin-left: 8px;
+  }
+}
+

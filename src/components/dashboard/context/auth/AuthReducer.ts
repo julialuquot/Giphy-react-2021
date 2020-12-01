@@ -3,10 +3,16 @@ import Cookies from 'js-cookie';
 
 const AuthReducer = (state, action) => {
     switch (action.type) {
-        case 'USER_SIGN_IN_START':
+        case 'START':
             return {
                 ...state,
                 isFetching: true,
+            };
+        case 'FAILURE':
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload,
             };
         case 'USER_SIGN_IN_SUCCESS':
             return {
@@ -14,11 +20,11 @@ const AuthReducer = (state, action) => {
                 isFetching: false,
                 user: getUserInformations(action.payload.status),
             };
-        case 'USER_SIGN_IN_FAILURE':
+        case 'USER_SIGN_OUT_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                user: getUserInformations(action.payload.status),
             };
         default:
             return state;
