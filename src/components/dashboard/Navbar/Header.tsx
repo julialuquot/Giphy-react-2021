@@ -27,13 +27,13 @@ const Header = () => {
             return brand.name.charAt(0).toUpperCase();
         }
         if (user && user.firstName) {
-            return user && user.firstName.charAt(0).toUpperCase();
+            return user.firstName.charAt(0).toUpperCase();
         }
         return '';
     };
 
     const getColor = () => {
-        if (brand && brand.color !== '') {
+        if (brand && brand.color && brand.color !== '') {
             return brand.color;
         }
         return '#E22B76';
