@@ -14,10 +14,10 @@ const Landing3 = ({ t }: Landing3Props) => {
     return (
         <div className={css.wrapper}>
             <div className={css.icon}>
-                <img className={css.icon__torus} src="/images/torus.png" alt={'torus'} />
-                <img className={css.icon__sphere} src="/images/sphere-blue.png" alt={'sphere'} />
-                <img className={css.icon__wallet_left} src="/images/wallet.png" alt={'wallet'} />
-                <img className={css.icon__wallet_right} src="/images/wallet.png" alt={'wallet'} />
+                <img className={css.icon__torus} src="/front-static/images/torus.png" alt={'torus'} />
+                <img className={css.icon__sphere} src="/front-static/images/sphere-blue.png" alt={'sphere'} />
+                <img className={css.icon__wallet_left} src="/front-static/images/wallet.png" alt={'wallet'} />
+                <img className={css.icon__wallet_right} src="/front-static/images/wallet.png" alt={'wallet'} />
             </div>
 
             <div className={css.title}>

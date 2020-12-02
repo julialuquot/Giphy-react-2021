@@ -22,21 +22,21 @@ const Landing2 = ({ t }: Landing2Props) => {
             tabLabel: t('home-page:landing-2.cardInfo.tab-0.label'),
             title: t('home-page:landing-2.cardInfo.tab-0.title'),
             text: t('home-page:landing-2.cardInfo.tab-0.text'),
-            cardImg: '/images/bg-birthday.png',
+            cardImg: '/front-static/images/bg-birthday.png',
         },
         {
             tabId: 1,
             tabLabel: t('home-page:landing-2.cardInfo.tab-1.label'),
             title: t('home-page:landing-2.cardInfo.tab-1.title'),
             text: t('home-page:landing-2.cardInfo.tab-1.text'),
-            cardImg: '/images/bg-birthday.png',
+            cardImg: '/front-static/images/bg-birthday.png',
         },
         {
             tabId: 2,
             tabLabel: t('home-page:landing-2.cardInfo.tab-2.label'),
             title: t('home-page:landing-2.cardInfo.tab-2.title'),
             text: t('home-page:landing-2.cardInfo.tab-2.text'),
-            cardImg: '/images/bg-birthday.png',
+            cardImg: '/front-static/images/bg-birthday.png',
         },
     ];
 
@@ -48,19 +48,19 @@ const Landing2 = ({ t }: Landing2Props) => {
                 <div className={css.icon}>
                     <Avatar
                         customClass={css.avatar__accent}
-                        imageSrc={'images/profile-picture-1.jpg'}
+                        imageSrc={'front-static/images/profile-picture-1.jpg'}
                         color="brand-accent"
                         label={t('home-page:landing-2.avatar.label-1')}
                     />
                     <Avatar
                         customClass={css.avatar__secondary}
-                        imageSrc={'images/profile-picture-2.jpg'}
+                        imageSrc={'front-static/images/profile-picture-2.jpg'}
                         color="brand-secondary"
                         label={t('home-page:landing-2.avatar.label-2')}
                     />
                     <Avatar
                         customClass={css.avatar__success}
-                        imageSrc={'images/profile-picture-3.jpg'}
+                        imageSrc={'front-static/images/profile-picture-3.jpg'}
                         color="ui-success"
                         label={t('home-page:landing-2.avatar.label-3')}
                     />

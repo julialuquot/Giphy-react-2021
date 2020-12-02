@@ -11,7 +11,7 @@ const LeftSide: React.FC<LeftSideProps> = ({ children }: LeftSideProps) => {
         <div className={css.left_side_wrapper}>
             <Link href="/">
                 <a href="/" className={css.logo}>
-                    <img src="/images/logo.svg" alt="LPC logo" />
+                    <img src="/front-static/images/logo.svg" alt="LPC logo" />
                 </a>
             </Link>
             {children}

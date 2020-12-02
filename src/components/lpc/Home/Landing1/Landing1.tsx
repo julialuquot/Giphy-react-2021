@@ -32,25 +32,25 @@ const Landing1 = ({ t }: LandingProps) => {
                     <>
                         <img
                             className={css.banner__gift_left_mobile}
-                            src={'/images/gift-left-mobile.png'}
+                            src={'/front-static/images/gift-left-mobile.png'}
                             alt={'gift'}
                         />
                         <img
                             className={css.banner__gift_right_mobile}
-                            src={'/images/gift-right-mobile.png'}
+                            src={'/front-static/images/gift-right-mobile.png'}
                             alt={'gift'}
                         />
                     </>
                 )}
                 <div className={css.icons__container}>
                     <div className={css.icons__container__relative}>
-                        <img className={css.sphere_blue_left} src="/images/sphere-blue.png" alt={'sphere'} />
-                        <img className={css.sphere_blue_right} src="/images/sphere-blue.png" alt={'sphere'} />
-                        <img className={css.sphere_yellow_right} src="/images/sphere-yellow.png" alt={'sphere'} />
-                        <img className={css.banner__gift_small} src="/images/gift-right.png" alt={'gift'} />
-                        <img className={css.banner__sphere_green} src="/images/sphere-green.png" alt={'sphere'} />
-                        <img className={css.banner__gift_left} src={'/images/gift-left.png'} alt={'gift'} />{' '}
-                        <img className={css.banner__gift_right} src={'/images/gift-right.png'} alt={'gift'} />
+                        <img className={css.sphere_blue_left} src="/front-static/images/sphere-blue.png" alt={'sphere'} />
+                        <img className={css.sphere_blue_right} src="/front-static/images/sphere-blue.png" alt={'sphere'} />
+                        <img className={css.sphere_yellow_right} src="/front-static/images/sphere-yellow.png" alt={'sphere'} />
+                        <img className={css.banner__gift_small} src="/front-static/images/gift-right.png" alt={'gift'} />
+                        <img className={css.banner__sphere_green} src="/front-static/images/sphere-green.png" alt={'sphere'} />
+                        <img className={css.banner__gift_left} src={'/front-static/images/gift-left.png'} alt={'gift'} />{' '}
+                        <img className={css.banner__gift_right} src={'/front-static/images/gift-right.png'} alt={'gift'} />
                     </div>
                 </div>
                 <img className={`${css.arrow} ${css.bounce}`} src="/front-static/icons/arrow-downward.svg" alt={'arrow'} />

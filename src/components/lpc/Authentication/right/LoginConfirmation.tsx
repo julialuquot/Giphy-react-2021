@@ -7,7 +7,7 @@ const LoginConfirmation: React.FC = () => {
     const { t } = useTranslation('autthentication');
     return (
         <div className={css.wrapper}>
-            <img src="/images/authentication/loginConfirmation/partner.jpg" alt="test image" />
+            <img src="/front-static/images/authentication/loginConfirmation/partner.jpg" alt="test image" />
             <div className={css.title}>
                 <h4 className={css['text-brand-color']}>{t('authentication:login-confirmation.right.title_1')}</h4>
                 <h4>{t('authentication:login-confirmation.right.title_2')} </h4>

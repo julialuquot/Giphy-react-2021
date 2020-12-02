@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../src/components/common/Card/Card';
-import lpc from '../public/images/lpc.png';
+import lpc from '../public/front-static/images/lpc.png';
 
 export default {
     title: 'Card',

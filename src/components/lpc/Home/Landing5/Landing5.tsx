@@ -17,7 +17,7 @@ const Landing5 = ({ t }: Landing5Props) => {
     return (
         <div className={css.wrapper}>
             <div className={css.left}>
-                <img className={css.left__mockup} src="/images/mockup-phone.png" alt={'phone'} />
+                <img className={css.left__mockup} src="/front-static/images/mockup-phone.png" alt={'phone'} />
                 {size.width < M_DEVICE && (
                     <div className={css.store}>
                         <img className={css.play} src="/front-static/icons/play-store.svg" alt={'play_store'} />
@@ -27,9 +27,9 @@ const Landing5 = ({ t }: Landing5Props) => {
             </div>
 
             <div className={css.icon}>
-                <img className={css.icon__torus} src="/images/torus.png" alt={'torus'} />
-                <img className={css.icon__sphere_green} src="/images/sphere-green.png" alt={'sphere'} />
-                <img className={css.icon__sphere_blue} src="/images/sphere-blue.png" alt={'sphere'} />
+                <img className={css.icon__torus} src="/front-static/images/torus.png" alt={'torus'} />
+                <img className={css.icon__sphere_green} src="/front-static/images/sphere-green.png" alt={'sphere'} />
+                <img className={css.icon__sphere_blue} src="/front-static/images/sphere-blue.png" alt={'sphere'} />
             </div>
 
             <div className={css.title}>
