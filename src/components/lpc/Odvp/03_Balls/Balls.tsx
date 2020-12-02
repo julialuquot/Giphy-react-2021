@@ -3,10 +3,10 @@ import { useLax, useLaxElement } from '../use-lax';
 import css from './Balls.module.scss';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import Lottie from 'react-lottie';
-import star1 from '../../../../../public/icons/odvp/lottie/Garland - star 1.json';
-import star2 from '../../../../../public/icons/odvp/lottie/Garland - star 2.json';
-import star3 from '../../../../../public/icons/odvp/lottie/Garland - star 3.json';
-import star4 from '../../../../../public/icons/odvp/lottie/Garland - star 4.json';
+import star1 from '../../../../../public/front-static/icons/odvp/lottie/Garland - star 1.json';
+import star2 from '../../../../../public/front-static/icons/odvp/lottie/Garland - star 2.json';
+import star3 from '../../../../../public/front-static/icons/odvp/lottie/Garland - star 3.json';
+import star4 from '../../../../../public/front-static/icons/odvp/lottie/Garland - star 4.json';
 import useWindowSize from '@components/common/hooks/useWindowSize';
 import { S_DEVICE } from '@components/lpc/Constants';
 
@@ -73,13 +73,13 @@ const Balls = () => {
                 } 1000 | speed=0,8 `}
                 ref={middleBallRef}
                 className={`${css.middleBall} lax`}
-                src="/icons/odvp/garland_800.svg"
+                src="/front-static/icons/odvp/garland_800.svg"
                 alt="800"
             />
             <img
                 ref={leftBallRef}
                 className={`${css.leftBall} ${(attachLeftBall || width < S_DEVICE) && css.leftBall__attach}`}
-                src="/icons/odvp/garland_400.svg"
+                src="/front-static/icons/odvp/garland_400.svg"
                 alt="400"
             />
             <img
@@ -87,7 +87,7 @@ const Balls = () => {
                 ref={rightBallRef}
                 className={`${css.rightBall} lax`}
                 data-lax-translate-y={`${animationYPos} 0,${animationYPos} 0,${animationYPos + 300} 600 | speed=0,5`} // "1940 0, 1940 0, 2200 600 | speed=0,5 "
-                src="/icons/odvp/garland_x2.svg"
+                src="/front-static/icons/odvp/garland_x2.svg"
                 alt="x2"
             />
 

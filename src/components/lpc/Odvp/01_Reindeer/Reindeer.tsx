@@ -6,10 +6,10 @@ import useWindowSize from '@components/common/hooks/useWindowSize';
 import { InView, useInView } from 'react-intersection-observer';
 import OdvpButton from '@components/lpc/Odvp/OdvbButton/OdvpButton';
 import { S_DEVICE } from '@components/lpc/Constants';
-import star1 from '../../../../../public/icons/odvp/lottie/Logo - Star 1.json';
-import star2 from '../../../../../public/icons/odvp/lottie/Logo - Star 2.json';
-import star3 from '../../../../../public/icons/odvp/lottie/Logo - Star 3.json';
-import star4 from '../../../../../public/icons/odvp/lottie/Logo - Star 4.json';
+import star1 from '../../../../../public/front-static/icons/odvp/lottie/Logo - Star 1.json';
+import star2 from '../../../../../public/front-static/icons/odvp/lottie/Logo - Star 2.json';
+import star3 from '../../../../../public/front-static/icons/odvp/lottie/Logo - Star 3.json';
+import star4 from '../../../../../public/front-static/icons/odvp/lottie/Logo - Star 4.json';
 
 type ReindeerProps = {
     onSetIsButtonTopInView: (boolean) => void;
@@ -110,7 +110,7 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                 <div className={css.logo}>
                     <img
                         className={css.logo__odvp}
-                        src="/icons/odvp/Logo%20OdVp%20-%20No%20star.svg"
+                        src="/front-static/icons/odvp/Logo%20OdVp%20-%20No%20star.svg"
                         alt="On double votre pot"
                     />
 
@@ -140,7 +140,7 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                         <a href="https://www.virginradio.fr" target="_blank" rel="noreferrer">
                             <img
                                 className={css.partnership__logo__virgin}
-                                src="/icons/odvp/logo-virgin-radio@2x.png"
+                                src="/front-static/icons/odvp/logo-virgin-radio@2x.png"
                                 alt="Virgin Radio"
                             />
                         </a>
@@ -149,7 +149,7 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                             <a>
                                 <img
                                     className={css.partnership__logo__lpc}
-                                    src="/icons/odvp/Logo%20-%20LPC.svg"
+                                    src="/front-static/icons/odvp/Logo%20-%20LPC.svg"
                                     alt="Le pot commun"
                                 />
                             </a>
@@ -164,12 +164,12 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                 >
                     <img
                         className={css.scroll__txt}
-                        src="/icons/odvp/scroll-text-down.svg"
+                        src="/front-static/icons/odvp/scroll-text-down.svg"
                         alt="Scroll pour découvrir le jeux concours"
                     />
                     <img
                         className={`${css.scroll__rocket} ${isHover && css.scroll__rocket__isHover}`}
-                        src="/icons/odvp/snowflake.svg"
+                        src="/front-static/icons/odvp/snowflake.svg"
                         alt="rocket"
                     />
                 </div>
@@ -179,7 +179,7 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                         <>
                             <img
                                 className={css.reindeer__head}
-                                src="/icons/odvp/Reindeer%20-%20Head.svg"
+                                src="/front-static/icons/odvp/Reindeer%20-%20Head.svg"
                                 alt="Reindeer"
                             />
                             <div className={css.reindeer__eye}>
@@ -190,7 +190,7 @@ const Reindeer = ({ onSetIsButtonTopInView }: ReindeerProps) => {
                     ) : (
                         <img
                             className={css.reindeer__head}
-                            src="/icons/odvp/Reindeer%20-%20Complete.svg"
+                            src="/front-static/icons/odvp/Reindeer%20-%20Complete.svg"
                             alt="Reindeer"
                         />
                     )}

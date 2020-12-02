@@ -37,7 +37,7 @@ const FeedBack: React.FC<FeedBackPropsType> = ({ submissionState, t }: FeedBackP
                 submissionState === SUBMISSION_STATE.FAILURE && css.feedback_failure
             }`}
         >
-            {submissionState === SUBMISSION_STATE.LOADING && <img src="/icons/spinner.svg" />}
+            {submissionState === SUBMISSION_STATE.LOADING && <img src="/front-static/icons/spinner.svg" />}
             {submissionState === SUBMISSION_STATE.SUCCESS && (
                 <Text variant="hint" color="ui-success">
                     {t('authentication:login-confirmation.submission-success')}{' '}

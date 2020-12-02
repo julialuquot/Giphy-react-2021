@@ -40,9 +40,9 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
     const arrowClosed = (
         <span className={css.select__arrow_closed}>
             {isHover ? (
-                <img src="/icons/chevron-down-grey.svg" alt="chevron_down" />
+                <img src="/front-static/icons/chevron-down-grey.svg" alt="chevron_down" />
             ) : (
-                <img src="/icons/chevron-down-black.svg" alt="chevron_down" />
+                <img src="/front-static/icons/chevron-down-black.svg" alt="chevron_down" />
             )}
         </span>
     );
@@ -50,9 +50,9 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
     const arrowOpen = (
         <span className={css.select__arrow_open}>
             {isHover ? (
-                <img src="/icons/chevron-down-grey.svg" alt="chevron_down" />
+                <img src="/front-static/icons/chevron-down-grey.svg" alt="chevron_down" />
             ) : (
-                <img src="/icons/chevron-down-black.svg" alt="chevron_down" />
+                <img src="/front-static/icons/chevron-down-black.svg" alt="chevron_down" />
             )}
         </span>
     );

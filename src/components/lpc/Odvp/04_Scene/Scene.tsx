@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import css from './Scene.module.scss';
 import { InView } from 'react-intersection-observer';
 import Lottie from 'react-lottie';
-import cat from '../../../../../public/icons/odvp/lottie/Cat.json';
+import cat from '../../../../../public/front-static/icons/odvp/lottie/Cat.json';
 
 const catOptions = {
     loop: true,

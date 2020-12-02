@@ -31,16 +31,16 @@ const SelectSmall = ({ options, customClass, label, placeholder, icon }: SelectS
 
     const arrowClosed = (
         <span className={css.select__arrow_closed}>
-            <img src="/icons/chevron-down-grey-small.svg" alt="chevron_up" />
+            <img src="/front-static/icons/chevron-down-grey-small.svg" alt="chevron_up" />
         </span>
     );
 
     const arrowOpen = (
         <span className={css.select__arrow_open}>
             {isOptionSelected ? (
-                <img src="/icons/chevron-down-black-small.svg" alt="chevron_up" />
+                <img src="/front-static/icons/chevron-down-black-small.svg" alt="chevron_up" />
             ) : (
-                <img src="/icons/chevron-down-grey-small.svg" alt="chevron_up" />
+                <img src="/front-static/icons/chevron-down-grey-small.svg" alt="chevron_up" />
             )}
         </span>
     );

@@ -17,7 +17,7 @@ const EmailSentConfirmation: React.FC = () => {
         <AuthenticationPageContext.Consumer>
             {({ email }) => (
                 <div className={css['email-sent-confirmation']}>
-                    <img src="/icons/checkmark.svg" alt="checkmark" />
+                    <img src="/front-static/icons/checkmark.svg" alt="checkmark" />
                     <h3>{t('authentication:email-sent-confirmation.title')}</h3>
                     <br />
                     <Text tag="span" variant="body_02" color="ui-secondary">

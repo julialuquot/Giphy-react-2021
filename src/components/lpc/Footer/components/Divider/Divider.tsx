@@ -13,10 +13,10 @@ const language = [
 const Divider = () => {
     return (
         <div className={css.divider}>
-            <SelectSmall icon={'/icons/globe-outline.svg'} options={language} />
+            <SelectSmall icon={'/front-static/icons/globe-outline.svg'} options={language} />
             <div className={css.logo}>
-                <img src="/icons/play-store.svg" alt={'play-store'} />
-                <img src="/icons/app-store.svg" alt={'app-store'} />
+                <img src="/front-static/icons/play-store.svg" alt={'play-store'} />
+                <img src="/front-static/icons/app-store.svg" alt={'app-store'} />
             </div>
         </div>
     );

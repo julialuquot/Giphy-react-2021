@@ -20,8 +20,8 @@ const Landing5 = ({ t }: Landing5Props) => {
                 <img className={css.left__mockup} src="/images/mockup-phone.png" alt={'phone'} />
                 {size.width < M_DEVICE && (
                     <div className={css.store}>
-                        <img className={css.play} src="/icons/play-store.svg" alt={'play_store'} />
-                        <img className={css.apple} src="/icons/app-store.svg" alt={'app_store'} />
+                        <img className={css.play} src="/front-static/icons/play-store.svg" alt={'play_store'} />
+                        <img className={css.apple} src="/front-static/icons/app-store.svg" alt={'app_store'} />
                     </div>
                 )}
             </div>
@@ -42,8 +42,8 @@ const Landing5 = ({ t }: Landing5Props) => {
                 </Text>
                 {size.width > M_DEVICE && (
                     <div className={css.store}>
-                        <img className={css.play} src="/icons/play-store.svg" alt={'play_store'} />
-                        <img className={css.apple} src="/icons/app-store.svg" alt={'app_store'} />
+                        <img className={css.play} src="/front-static/icons/play-store.svg" alt={'play_store'} />
+                        <img className={css.apple} src="/front-static/icons/app-store.svg" alt={'app_store'} />
                     </div>
                 )}
             </div>

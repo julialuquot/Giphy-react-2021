@@ -20,9 +20,9 @@ const Banner = ({ text }: BannerProps) => {
     return (
         <div className={`${css.banner} ${isOpen && css.banner__open}`}>
             <div onClick={() => handleClick()} className={css.banner__title}>
-                <Image src="/icons/alert-outline.svg" alt="alert" width="24" height="24" />
+                <Image src="/front-static/icons/alert-outline.svg" alt="alert" width="24" height="24" />
                 <p>{t('informations:tutorial.banner.title')}</p>
-                <img className={css.banner__title__chevron} src="/icons/chevron-up.svg" alt="chevron-up" />
+                <img className={css.banner__title__chevron} src="/front-static/icons/chevron-up.svg" alt="chevron-up" />
             </div>
             <div className={`${css.banner__content} ${isOpen && css.banner__content__show}`}>
                 <p>{text}</p>

@@ -15,7 +15,7 @@ const Hint = ({ t }: HintProps) => {
             <Text variant={'hint'} color={'ui-secondary'}>
                 {t('footer:hint')}
             </Text>
-            <img src="/icons/logo-natixis.svg" alt={'natixis'} />
+            <img src="/front-static/icons/logo-natixis.svg" alt={'natixis'} />
         </div>
     );
 };

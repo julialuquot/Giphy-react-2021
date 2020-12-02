@@ -17,7 +17,7 @@ const CardWithSwiper = () => {
         return (
             index !== 0 && (
                 <div className={css.slider__prev_arrow} onClick={onClick}>
-                    <img src="icons/arrow-forward-white.svg" alt="arrow" />
+                    <img src="front-static/icons/arrow-forward-white.svg" alt="arrow" />
                 </div>
             )
         );
@@ -28,7 +28,7 @@ const CardWithSwiper = () => {
         return (
             index !== 2 && (
                 <div className={css.slider__next_arrow} onClick={onClick}>
-                    <img src="/icons/arrow-forward-white.svg" alt="arrow" />
+                    <img src="/front-static/icons/arrow-forward-white.svg" alt="arrow" />
                 </div>
             )
         );

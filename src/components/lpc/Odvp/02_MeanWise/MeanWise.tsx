@@ -4,9 +4,9 @@ import Timeline from '@components/lpc/Odvp/02_MeanWise/Timeline';
 import { useScrollPosition } from '@n8tb1t/use-scroll-position';
 import Lottie from 'react-lottie';
 import { InView, useInView } from 'react-intersection-observer';
-import starsLeft from '../../../../../public/icons/odvp/lottie/Doublant - Stars_leftside.json';
-import starsRight from '../../../../../public/icons/odvp/lottie/Doublant - Stars_rightside.json';
-import wise from '../../../../../public/icons/odvp/lottie/wording - sage V2.json';
+import starsLeft from '../../../../../public/front-static/icons/odvp/lottie/Doublant - Stars_leftside.json';
+import starsRight from '../../../../../public/front-static/icons/odvp/lottie/Doublant - Stars_rightside.json';
+import wise from '../../../../../public/front-static/icons/odvp/lottie/wording - sage V2.json';
 import useWindowSize from '@components/common/hooks/useWindowSize';
 import { S_DEVICE, XL_DEVICE } from '@components/lpc/Constants';
 

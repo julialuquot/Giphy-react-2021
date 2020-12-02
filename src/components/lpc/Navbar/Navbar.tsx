@@ -15,7 +15,7 @@ const Navbar = ({ t }: NavBarProps) => {
     return (
         <nav className={css.navbar}>
             <div className={css.navbar__left}>
-                <img className={css.navbar__logo} src="/icons/logo-lpc.svg" alt={'logo lpc'} />
+                <img className={css.navbar__logo} src="/front-static/icons/logo-lpc.svg" alt={'logo lpc'} />
 
                 <SelectNavBar />
             </div>

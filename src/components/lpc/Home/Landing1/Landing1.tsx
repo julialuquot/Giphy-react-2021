@@ -53,7 +53,7 @@ const Landing1 = ({ t }: LandingProps) => {
                         <img className={css.banner__gift_right} src={'/images/gift-right.png'} alt={'gift'} />
                     </div>
                 </div>
-                <img className={`${css.arrow} ${css.bounce}`} src="/icons/arrow-downward.svg" alt={'arrow'} />
+                <img className={`${css.arrow} ${css.bounce}`} src="/front-static/icons/arrow-downward.svg" alt={'arrow'} />
 
                 <div className={css.banner__content}>
                     <h1>{t('home-page:landing.main-title')}</h1>

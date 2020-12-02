@@ -6,7 +6,7 @@ import OdvpButton from '@components/lpc/Odvp/OdvbButton/OdvpButton';
 import useWindowSize from '@components/common/hooks/useWindowSize';
 import { S_DEVICE, XL_DEVICE } from '@components/lpc/Constants';
 import Lottie from 'react-lottie';
-import spark from '../../../../../public/icons/odvp/lottie/spark.json';
+import spark from '../../../../../public/front-static/icons/odvp/lottie/spark.json';
 
 type BottomProps = {
     onSetIsButtonBottomInView: (boolean) => void;
@@ -104,13 +104,13 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
                     <img
                         id={'snowflakeRight'}
                         className={css.snowflake_right}
-                        src="/icons/odvp/snowflake_1.svg"
+                        src="/front-static/icons/odvp/snowflake_1.svg"
                         alt="snowflake"
                     />
                     <img
                         id={'snowflakeLeft'}
                         className={css.snowflake_left}
-                        src="/icons/odvp/snowflake_2.svg"
+                        src="/front-static/icons/odvp/snowflake_2.svg"
                         alt="snowflake"
                     />
 
@@ -122,12 +122,12 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
                     >
                         <img
                             className={css.scroll__txt}
-                            src="/icons/odvp/scroll-text-up.svg"
+                            src="/front-static/icons/odvp/scroll-text-up.svg"
                             alt="Remonter vers le haut de la page"
                         />
                         <img
                             className={`${css.scroll__rocket} ${isHover && css.scroll__rocket__isHover}`}
-                            src="/icons/odvp/rocket-empty.svg"
+                            src="/front-static/icons/odvp/rocket-empty.svg"
                             alt="rocket"
                         />
 
@@ -138,7 +138,7 @@ const Bottom = ({ onSetIsButtonBottomInView }: BottomProps) => {
                         )}
                     </div>
 
-                    <a className={css.rules} href="/icons/odvp/pdf/Règlement_ODVP_2020.pdf">
+                    <a className={css.rules} href="/front-static/icons/odvp/pdf/Règlement_ODVP_2020.pdf">
                         Règlement du jeu
                     </a>
                 </div>

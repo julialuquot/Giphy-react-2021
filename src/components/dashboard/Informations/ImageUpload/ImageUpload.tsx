@@ -59,7 +59,7 @@ const ImageUpload = ({
                     {label && <p className={css.input__label}>{label}</p>}
                     <div className={css.input} style={style}>
                         <label className={css.input__btn}>
-                            <img className={css.input__btn__icon} src="/icons/paper-download.svg" alt="" />
+                            <img className={css.input__btn__icon} src="/front-static/icons/paper-download.svg" alt="" />
                             <p className={css.input__btn__cta}>{cta}</p>
                             <input
                                 className={css.input__hidden}
