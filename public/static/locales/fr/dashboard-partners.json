@@ -9,5 +9,11 @@
         "edit": "Modifier",
         "suspend-partner": "Suspendre le partenaire",
         "reactivate-partner": "Réactiver le partenaire"
+    },
+    "modal": {
+        "confirm": "Suspendre",
+        "cancel": "Retour à la liste",
+        "title": " Suspendre le partenaire ?",
+        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras commodo gravida neque sed porttitor."
     }
 }

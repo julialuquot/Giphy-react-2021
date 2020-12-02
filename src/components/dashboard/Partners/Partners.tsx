@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import css from './Partners.module.scss';
 import PartnerCard from '@components/dashboard/Administrator/PartnerCard';
 import { useTranslation } from '@i18n';
+import ConfirmModal from '@components/common/ConfirmModal/ConfirmModal';
 
 const mockPartners = [
     {
@@ -102,8 +103,27 @@ const Partners = () => {
 
     // TODO Connect to WS et remove fake Db!!
 
+    const [open, setOpen] = useState(false);
+    const [selectedPartner, setSelectedPartner] = useState(null);
+
+    const onConfirm = () => {
+        // TODO connect to webservice !
+        // eslint-disable-next-line no-console
+        console.log('@@@@@@@ je confirm', selectedPartner);
+    };
+
     return (
         <div className={css.partners}>
+            <ConfirmModal
+                isVisible={open}
+                onHide={() => setOpen(false)}
+                onConfirm={() => onConfirm()}
+                title={t('dashboard-partners:modal.title')}
+                text={t('dashboard-partners:modal.text')}
+                confirmLabel={t('dashboard-partners:modal.confirm')}
+                cancelLabel={t('dashboard-partners:modal.cancel')}
+            />
+
             <h3>{t('dashboard-partners:checking-partner')}</h3>
 
             <div className={css.partners__grid}>
@@ -118,6 +138,8 @@ const Partners = () => {
                                 color={partner.color}
                                 img={partner.logo}
                                 status={partner.status}
+                                onOpenModal={(value) => setOpen(value)}
+                                onSelectPartner={(partner) => setSelectedPartner(partner)}
                             />
                         </>
                     ))}
@@ -136,6 +158,8 @@ const Partners = () => {
                                 color={partner.color}
                                 img={partner.logo}
                                 status={partner.status}
+                                onOpenModal={(value) => setOpen(value)}
+                                onSelectPartner={(partner) => setSelectedPartner(partner)}
                             />
                         </>
                     ))}
@@ -154,6 +178,8 @@ const Partners = () => {
                                 color={partner.color}
                                 img={partner.logo}
                                 status={partner.status}
+                                onOpenModal={(value) => setOpen(value)}
+                                onSelectPartner={(partner) => setSelectedPartner(partner)}
                             />
                         </>
                     ))}
