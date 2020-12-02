@@ -8,11 +8,11 @@ module.exports = new NextI18Next({
     defaultNS: 'common',
     fallbackNS: 'common',
 
-    localePath: 'public/static/locales',
+    localePath: 'public/front-static/static/locales',
 
     initImmediate: false,
 
-    interpolation: { escapeValue: false },
+    interpolation: {escapeValue: false},
 
     missingKeyHandler: function () {
         // eslint-disable-next-line no-console
