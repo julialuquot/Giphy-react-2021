@@ -62,7 +62,7 @@ const Header = () => {
             <div className={css.navbar__left}>
                 <img className={css.navbar__logo} src="/icons/logo-lpc.svg" alt={'logo lpc'} />
             </div>
-            {!isFetching && (
+            {!isFetching && user && (
                 <div ref={avatarRef}>
                     <Avatar
                         onToggleProfil={() => onToggleProfil()}

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import css from './Checkbox.module.scss';
 import Text from '../Text/Text';
 
@@ -8,22 +8,17 @@ interface CheckboxProps {
     error?: boolean;
     success?: boolean;
     onChange: any;
-    value: [];
+    value: any;
     name: string;
-    onCheck?: any;
 }
 
-const Checkbox = ({ children, disabled, error, success, onChange, value, name, onCheck }: CheckboxProps) => {
-    useEffect(() => {
-        onCheck && onCheck(value);
-    }, [onCheck, value]);
-
+const Checkbox = ({ children, disabled, error, success, onChange, value, name }: CheckboxProps) => {
     const checked = value;
     const checkmarkStyle = () => {
         let className = css.checkmark;
-        checked && checked.length > 0 && (className += ' ' + css.checkmark__checked);
-        checked && checked.length > 0 && success && (className += ' ' + css.checkmark__checked__success);
-        checked && checked.length > 0 && error && (className += ' ' + css.checkmark__checked__error);
+        checked && (className += ' ' + css.checkmark__checked);
+        checked && success && (className += ' ' + css.checkmark__checked__success);
+        checked && error && (className += ' ' + css.checkmark__checked__error);
         error && (className += ' ' + css.checkmark__error);
         disabled && (className += ' ' + css.checkmark__disabled);
 
@@ -32,7 +27,7 @@ const Checkbox = ({ children, disabled, error, success, onChange, value, name, o
 
     return (
         <label className={css.container}>
-            <input onChange={onChange} name={name} type="checkbox" disabled={disabled} />
+            <input onChange={onChange} name={name} value={value} checked={value} type="checkbox" disabled={disabled} />
             <span className={checkmarkStyle()} />
             <Text variant="body_02">{children}</Text>
         </label>
