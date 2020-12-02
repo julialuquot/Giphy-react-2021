@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 import css from './PartnerCard.module.scss';
 import CardPopUp from '@components/dashboard/Administrator/CardPopUp';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
@@ -10,9 +10,11 @@ type PartnerCardProps = {
     title: string;
     subtitle: string;
     status: string;
+    onOpenModal: (boolean) => void;
+    onSelectPartner: (string) => void;
 };
 
-const PartnerCard = ({ img, color, title, subtitle, status }: PartnerCardProps) => {
+const PartnerCard = ({ img, color, title, subtitle, status, onOpenModal, onSelectPartner }: PartnerCardProps) => {
     const { t } = useTranslation('dashboard-partners');
 
     const [isHover, setIsHover] = useState(false);
@@ -37,9 +39,21 @@ const PartnerCard = ({ img, color, title, subtitle, status }: PartnerCardProps) 
         setIsPopUpOpen(!isPopUpOpen);
     };
 
+    const handleOnSelectPartner = useCallback(
+        (partner) => {
+            onSelectPartner(partner);
+        },
+        [onSelectPartner],
+    );
+
     return (
         <div ref={cardRef} className={css.wrapper}>
-            <div className={css.card} onMouseEnter={() => onMouseEnter()} onMouseLeave={() => onMouseLeave()}>
+            <div
+                className={css.card}
+                onClick={() => handleOnSelectPartner(title)}
+                onMouseEnter={() => onMouseEnter()}
+                onMouseLeave={() => onMouseLeave()}
+            >
                 <div className={css.card__header} style={headerStyle}>
                     <img className={css.card__header__img} src={img} alt={title} />
                     <div onClick={() => onToggleProfil()} className={css.card__header__more}>
@@ -63,7 +77,7 @@ const PartnerCard = ({ img, color, title, subtitle, status }: PartnerCardProps) 
                 </div>
             </div>
 
-            <CardPopUp isOpen={isPopUpOpen} status={status} />
+            <CardPopUp onOpenModal={(value) => onOpenModal(value)} isOpen={isPopUpOpen} status={status} />
         </div>
     );
 };
