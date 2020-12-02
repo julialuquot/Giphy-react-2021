@@ -1,0 +1,12 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+
+
+.partnersPageWrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 150px;
+}
+

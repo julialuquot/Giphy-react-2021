@@ -1,0 +1,22 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/fonts';
+
+
+.partners {
+  padding: 0 150px 0 150px;
+
+  & > h3 {
+    margin: 32px 0 32px 0;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 360px);
+    grid-gap: 30px;
+    margin: 0 auto 80px auto;
+
+
+  }
+}

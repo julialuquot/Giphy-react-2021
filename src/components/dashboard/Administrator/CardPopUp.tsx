@@ -1,18 +1,26 @@
 import React from 'react';
 import css from './CardPopUp.module.scss';
+import { useTranslation } from '@i18n';
 
-type CardPopupProps = { isOpen: boolean; isActive: boolean };
+type CardPopupProps = { isOpen: boolean; status: string };
 
-const CardPopUp = ({ isOpen, isActive }: CardPopupProps) => {
+const CardPopUp = ({ isOpen, status }: CardPopupProps) => {
+    const { t } = useTranslation('dashboard-partners');
+
     return (
         <div className={`${css.popup} ${isOpen && css.popup__open}`}>
-            <span className={`${css.cta} ${isActive ? css.cta__success : css.cta__error}`}>
+            <span className={`${css.cta} ${status !== 'inactive' ? css.cta__error : css.cta__success}`}>
                 <img src="/icons/suspend.svg" alt="suspend" />
-                <p>Suspendre le partenaire</p>
+                {status !== 'inactive' ? (
+                    <p> {t('dashboard-partners:card.suspend-partner')}</p>
+                ) : (
+                    <p> {t('dashboard-partners:card.reactivate-partner')}</p>
+                )}
             </span>
+
             <span className={`${css.cta} ${css.cta__edit}`}>
                 <img src="/icons/edit.svg" alt="edit" />
-                <p>Modifier</p>
+                <p>{t('dashboard-partners:card.edit')}</p>
             </span>
         </div>
     );
