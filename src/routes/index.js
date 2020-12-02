@@ -39,6 +39,11 @@ const routes = require('next-routes')()
         name: 'dashboard-workspace',
         pattern: '/dashboard/workspace',
         page: 'dashboard/workspace-page',
+    })
+    .add({
+        name: 'dashboard-parnters',
+        pattern: '/dashboard/partners',
+        page: 'dashboard/partners-page',
     });
 
 module.exports = routes;

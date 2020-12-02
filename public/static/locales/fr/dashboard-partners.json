@@ -1,0 +1,13 @@
+{
+    "title": "Partenaires",
+    "sub-title": "Le Pot Commun",
+    "checking-partner": "À vérifier",
+    "pending-partner": "En attente du partenaire",
+    "list-partner": "Liste des partenaires",
+    "card": {
+        "edit-on": "Modifié le 19",
+        "edit": "Modifier",
+        "suspend-partner": "Suspendre le partenaire",
+        "reactivate-partner": "Réactiver le partenaire"
+    }
+}
