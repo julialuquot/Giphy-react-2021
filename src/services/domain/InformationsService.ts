@@ -15,6 +15,8 @@ const getProducts = (merchantUniq) => axiosClient().get(`${API.INFORMATIONS.GET_
 const updateProduct = (body) => axiosClient().put(API.INFORMATIONS.UPDATE_PRODUCT, JSON.stringify(body));
 const resetProduct = (body) => axiosClient().put(API.INFORMATIONS.RESET_PRODUCT, JSON.stringify(body));
 
+const goOnLine = (body) => axiosClient().put(API.MERCHANT.GO_ONLINE, JSON.stringify(body));
+
 const informationsService = {
     imageUpload,
     getBrand,
@@ -26,6 +28,7 @@ const informationsService = {
     getProducts,
     updateProduct,
     resetProduct,
+    goOnLine,
 };
 
 export default informationsService;

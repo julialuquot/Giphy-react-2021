@@ -21,12 +21,12 @@ const Profil = ({ onSignOut, initial, name, color, isOpen }: ProfilProps) => {
             <span className={css.divider} />
             <Link href={'#'}>
                 <a className={css.cta}>
-                    <img src="/icons/external-link.svg" alt="link" />
+                    <img src="/front-static/icons/external-link.svg" alt="link" />
                     <p>{t('dashboard-header:lpc-website')}</p>
                 </a>
             </Link>
             <span onClick={() => onSignOut()} className={css.cta}>
-                <img src="/icons/logout.svg" alt="logout" />
+                <img src="/front-static/icons/logout.svg" alt="logout" />
                 <p>{t('dashboard-header:logout')}</p>
             </span>
         </div>

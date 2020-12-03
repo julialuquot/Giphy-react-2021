@@ -17,6 +17,12 @@ const API = {
         UPDATE_PRODUCT: `${apiURL}/products`,
         RESET_PRODUCT: `${apiURL}/products`,
     },
+    MERCHANT: {
+        GO_ONLINE: `${apiURL}/merchants`,
+        GET_ALL: `${apiURL}/merchants`,
+        SUSPEND: `${apiURL}/merchants`,
+        ACTIVATE: `${apiURL}/merchants`,
+    },
 };
 
 export default API;

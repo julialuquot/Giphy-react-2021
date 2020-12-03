@@ -1,7 +1,7 @@
-@import '../../../assets/styles/colors';
-@import '../../../assets/styles/typography';
-@import '../../../assets/styles/fonts';
-@import '../../../assets/styles/mixins';
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/typography';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
 
 .custom {
   display: flex;
@@ -9,7 +9,7 @@
   align-items: center;
   justify-content: center;
   width: 360px;
-  height: 421px;
+  height: fit-content;
 
 
 }

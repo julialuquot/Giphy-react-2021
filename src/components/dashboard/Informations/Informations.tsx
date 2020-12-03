@@ -20,7 +20,7 @@ const Informations = () => {
 
     return (
         <div className={css.informations}>
-            <SideNavigation onStepChange={(step) => setActiveStep(step)} />
+            <SideNavigation user={user} onStepChange={(step) => setActiveStep(step)} />
             {activeStep === 0 && <BrandContainer user={user} />}
             {activeStep === 1 && <Tutorial user={user} />}
             {activeStep === 2 && <Products user={user} />}

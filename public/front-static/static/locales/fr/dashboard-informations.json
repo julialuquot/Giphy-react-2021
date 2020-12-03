@@ -6,9 +6,14 @@
         "add": "Ajouter",
         "cancel": "Annuler",
         "validate": "Valider",
+        "confirm": "Confirmer",
         "preview": "Prévisualiser",
         "upload": "Mettre en ligne",
         "show-example": "Afficher un exemple"
+    },
+    "modal": {
+        "title": "Mettre en ligne",
+        "text": "Avez-vous bien vérifié l’ensemble des informations ajoutées ? Une fois la page confirmée, celle-ci sera directement mise en ligne. Toutefois, une vérification a posteriori sera effectuée en interne."
     },
     "side-nav": {
         "brand": "Marque",

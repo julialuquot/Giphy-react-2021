@@ -1,7 +1,7 @@
 import React from 'react';
-import Modal from '@components/common/Modal/Modal';
+import Modal from '@components/common/Modals/Modal/Modal';
 import Button from '@components/common/Button/Button';
-import css from './ConfirmModal.module.scss';
+import css from './ConfirmGoOnLine.module.scss';
 import Text from '@components/common/Text/Text';
 
 type ConfirmModalProps = {
@@ -16,7 +16,7 @@ type ConfirmModalProps = {
     onConfirm: () => void;
 };
 
-const ConfirmModal = ({
+const ConfirmGoOnLine = ({
     isVisible,
     title,
     text,
@@ -57,4 +57,4 @@ const ConfirmModal = ({
     );
 };
 
-export default ConfirmModal;
+export default ConfirmGoOnLine;

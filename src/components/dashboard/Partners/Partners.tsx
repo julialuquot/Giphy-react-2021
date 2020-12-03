@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import css from './Partners.module.scss';
 import PartnerCard from '@components/dashboard/Administrator/PartnerCard';
 import { useTranslation } from '@i18n';
-import ConfirmModal from '@components/common/ConfirmModal/ConfirmModal';
+import ConfirmGoOnLine from '@components/common/Modals/ConfirmGoOnLine/ConfirmGoOnLine';
+import ConfirmModification from '@components/common/Modals/ConfirmModification/ConfirmModification';
 
 const mockPartners = [
     {
@@ -114,14 +115,24 @@ const Partners = () => {
 
     return (
         <div className={css.partners}>
-            <ConfirmModal
+            {/* <ConfirmGoOnLine */}
+            {/*    isVisible={open} */}
+            {/*    onHide={() => setOpen(false)} */}
+            {/*    onConfirm={() => onConfirm()} */}
+            {/*    title={t('dashboard-partners:modal.title')} */}
+            {/*    text={t('dashboard-partners:modal.text')} */}
+            {/*    confirmLabel={t('dashboard-partners:modal.confirm')} */}
+            {/*    cancelLabel={t('dashboard-partners:modal.cancel')} */}
+            {/* /> */}
+
+            <ConfirmModification
                 isVisible={open}
                 onHide={() => setOpen(false)}
                 onConfirm={() => onConfirm()}
-                title={t('dashboard-partners:modal.title')}
-                text={t('dashboard-partners:modal.text')}
-                confirmLabel={t('dashboard-partners:modal.confirm')}
-                cancelLabel={t('dashboard-partners:modal.cancel')}
+                title={t('dashboard-partners:modal-modification-confirmation.title')}
+                text={t('dashboard-partners:modal-modification-confirmation.text')}
+                confirmLabel={t('dashboard-partners:modal-modification-confirmation.confirm')}
+                cancelLabel={t('dashboard-partners:modal-modification-confirmation.cancel')}
             />
 
             <h3>{t('dashboard-partners:checking-partner')}</h3>
