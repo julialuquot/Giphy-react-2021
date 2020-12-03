@@ -29,7 +29,7 @@ const SignInForm = () => {
     };
 
     useEffect(() => {
-        user && router.push('/dashboard/workspace');
+        user && router.push(`/dashboard/workspace?${user.merchantUniq}`);
     }, [router, user]);
 
     return (

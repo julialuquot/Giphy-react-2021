@@ -15,5 +15,21 @@
         "cancel": "Retour à la liste",
         "title": " Suspendre le partenaire ?",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras commodo gravida neque sed porttitor."
+    },
+    "modal-modification": {
+        "confirm": "J'ai compris",
+        "title": "Voilà ce qui a changé"
+    },
+    "modal-modification-confirmation": {
+        "confirm": "Valider",
+        "cancel": "Annuler",
+        "title": "Tout est okay pour vous ?",
+        "text": "Tout est bon pour vous ? Si c'est le cas, après votre validation, cette page apparaitra (maintenant) dans la liste des partenaires.",
+        "yes": "Oui",
+        "no": "Non",
+        "message-label": "Votre message",
+        "message-placeholder": "Saisir un message",
+        "email-label": "Votre message",
+        "email-placeholder": "Saisir un email"
     }
 }

@@ -1,5 +1,4 @@
 import React, { useContext, useEffect } from 'react';
-import css from './Stats.module.scss';
 import { useRouter } from 'next/router';
 import AuthContext from '@components/dashboard/context/auth/AuthContext';
 

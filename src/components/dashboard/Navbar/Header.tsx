@@ -11,7 +11,7 @@ const Header = () => {
     const { user, userSignOut } = authContext;
 
     const informationsContext = useContext(InformationsContext);
-    const { getBrand, brand, isFetching } = informationsContext;
+    const { getBrand, brand } = informationsContext;
 
     const [isProfilOpen, setIsProfilOpen] = useState(false);
 
@@ -62,7 +62,7 @@ const Header = () => {
             <div className={css.navbar__left}>
                 <img className={css.navbar__logo} src="/front-static/icons/logo-lpc.svg" alt={'logo lpc'} />
             </div>
-            {!isFetching && user && (
+            {user && (
                 <div ref={avatarRef}>
                     <Avatar
                         onToggleProfil={() => onToggleProfil()}
