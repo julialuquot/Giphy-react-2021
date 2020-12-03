@@ -61,7 +61,7 @@ const PartnerCard = ({ img, color, title, subtitle, status, onOpenModal, onSelec
                             className={`${css.card__header__more__icon} ${
                                 isHover && css.card__header__more__icon__visible
                             }`}
-                            src="/icons/more-horizontal.svg"
+                            src="/front-static/icons/more-horizontal.svg"
                             alt="more"
                         />
                     </div>
@@ -72,7 +72,7 @@ const PartnerCard = ({ img, color, title, subtitle, status, onOpenModal, onSelec
                         {t('dashboard-partners:card.edit-on')} {subtitle}
                     </p>
                     <div className={css.card__footer__eye}>
-                        <img src="/icons/show-eye.svg" alt="show" />
+                        <img src="/front-static/icons/show-eye.svg" alt="show" />
                     </div>
                 </div>
             </div>

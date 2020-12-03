@@ -13,7 +13,7 @@ const CardPopUp = ({ isOpen, status, onOpenModal }: CardPopupProps) => {
                 onClick={() => onOpenModal(true)}
                 className={`${css.cta} ${status !== 'inactive' ? css.cta__error : css.cta__success}`}
             >
-                <img src="/icons/suspend.svg" alt="suspend" />
+                <img src="/front-static/icons/suspend.svg" alt="suspend" />
                 {status !== 'inactive' ? (
                     <p> {t('dashboard-partners:card.suspend-partner')}</p>
                 ) : (
@@ -22,7 +22,7 @@ const CardPopUp = ({ isOpen, status, onOpenModal }: CardPopupProps) => {
             </span>
 
             <span className={`${css.cta} ${css.cta__edit}`}>
-                <img src="/icons/edit.svg" alt="edit" />
+                <img src="/front-static/icons/edit.svg" alt="edit" />
                 <p>{t('dashboard-partners:card.edit')}</p>
             </span>
         </div>

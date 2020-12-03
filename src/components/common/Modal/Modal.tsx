@@ -41,7 +41,7 @@ const Modal = ({
             <div className={css.modal__content_wrapper}>
                 {!hideCloseButton && (
                     <span onClick={() => onHide()} className={css.modal__close_button}>
-                        <img src="/icons/navigation-close.svg" alt="close" />
+                        <img src="/front-static/icons/navigation-close.svg" alt="close" />
                     </span>
                 )}
                 {mainTitle && (
