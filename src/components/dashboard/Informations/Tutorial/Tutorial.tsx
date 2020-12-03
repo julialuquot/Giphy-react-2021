@@ -32,7 +32,7 @@ const Tutorial = ({ user }: TutorialProps) => {
 
     return (
         <div className={css.tutorial}>
-            <Banner text={t('informations:tutorial.banner.text')} />
+            <Banner text={t('dashboard-informations:tutorial.banner.text')} />
 
             {!isFetching &&
                 tutorial.length > 0 &&

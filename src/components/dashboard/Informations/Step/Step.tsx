@@ -79,8 +79,8 @@ const Step = ({
                     <Input
                         name="title"
                         type="text"
-                        label={t('informations:tutorial.title-label')}
-                        placeholder={t('informations:tutorial.title-placeholder')}
+                        label={t('dashboard-informations:tutorial.title-label')}
+                        placeholder={t('dashboard-informations:tutorial.title-placeholder')}
                     />
                 </div>
 
@@ -88,17 +88,17 @@ const Step = ({
                     <Input
                         name="description"
                         type="textarea"
-                        label={t('informations:tutorial.desc-label')}
-                        placeholder={t('informations:tutorial.desc-placeholder')}
+                        label={t('dashboard-informations:tutorial.desc-label')}
+                        placeholder={t('dashboard-informations:tutorial.desc-placeholder')}
                     />
                 </div>
 
                 <div className={css.form__upload}>
                     <ImageUpload
-                        cta={t('informations:tutorial.add-visual')}
+                        cta={t('dashboard-informations:tutorial.add-visual')}
                         inputName={'imageDesktop'}
-                        label={t('informations:tutorial.desktop-label')}
-                        format={t('informations:tutorial.format')}
+                        label={t('dashboard-informations:tutorial.desktop-label')}
+                        format={t('dashboard-informations:tutorial.format')}
                         imgUrl={desktopImgUrl !== '' ? desktopImgUrl : imageDesktop}
                         onUploadImg={(url) => setDesktopImgUrl(url)}
                         width={'368px'}
@@ -106,10 +106,10 @@ const Step = ({
                     />
 
                     <ImageUpload
-                        cta={t('informations:tutorial.add-visual')}
+                        cta={t('dashboard-informations:tutorial.add-visual')}
                         inputName={'imageMobile'}
-                        label={t('informations:tutorial.mobile-label')}
-                        format={t('informations:tutorial.format')}
+                        label={t('dashboard-informations:tutorial.mobile-label')}
+                        format={t('dashboard-informations:tutorial.format')}
                         imgUrl={mobileImgUrl !== '' ? mobileImgUrl : imageMobile}
                         onMobileUploadImg={(url) => setMobileImgUrl(url)}
                         width={'368px'}
@@ -118,7 +118,7 @@ const Step = ({
                 </div>
 
                 <p className={css.form__reset} onClick={onReset}>
-                    {t('informations:brand.reset')}
+                    {t('dashboard-informations:brand.reset')}
                 </p>
 
                 <div className={css.form__btn}>
@@ -129,10 +129,10 @@ const Step = ({
                         onClick={() => onCancel()}
                         type={'button'}
                     >
-                        {t('informations:btn.cancel')}
+                        {t('dashboard-informations:btn.cancel')}
                     </Button>
                     <Button variant="primary" size="small" type="submit">
-                        {t('informations:btn.validate')}
+                        {t('dashboard-informations:btn.validate')}
                     </Button>
                 </div>
             </Form>
@@ -148,7 +148,7 @@ const Step = ({
                 />
                 {!isEditing ? (
                     <>
-                        <h5> {t('informations:tutorial.step.step', { order })}</h5>
+                        <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
                         <h6>{title}</h6>
                         <Text variant={'body_00'} color={'ui-secondary'}>
                             {description}
@@ -170,7 +170,7 @@ const Step = ({
                     </>
                 ) : (
                     <>
-                        <h5> {t('informations:tutorial.step.step', { order })}</h5>
+                        <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
                         <Formik
                             validationSchema={updateTutorialSchema}
                             initialValues={getInitialValues()}

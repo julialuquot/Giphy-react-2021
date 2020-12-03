@@ -65,9 +65,9 @@ const Brand = ({
             <Form className={css.brand__card__form}>
                 <LogoUpload
                     inputName="logo"
-                    label={t('informations:brand.logo-label')}
-                    cta={t('informations:btn.add')}
-                    format={t('informations:brand.logo-format')}
+                    label={t('dashboard-informations:brand.logo-label')}
+                    cta={t('dashboard-informations:btn.add')}
+                    format={t('dashboard-informations:brand.logo-format')}
                     onUploadLogo={(url) => setLogoUrl(url)}
                 />
 
@@ -75,45 +75,45 @@ const Brand = ({
                     <Input
                         name="name"
                         type="text"
-                        label={t('informations:brand.brand-label')}
-                        placeholder={t('informations:brand.brand-placeholder')}
+                        label={t('dashboard-informations:brand.brand-label')}
+                        placeholder={t('dashboard-informations:brand.brand-placeholder')}
                     />
                 </div>
                 <div className={css.brand__card__form__input}>
                     <Input
                         name="color"
                         type="text"
-                        label={t('informations:brand.color-label')}
-                        placeholder={t('informations:brand.color-placeholder')}
+                        label={t('dashboard-informations:brand.color-label')}
+                        placeholder={t('dashboard-informations:brand.color-placeholder')}
                     />
                 </div>
                 <div className={css.brand__card__form__input}>
                     <Input
                         name="siteUrl"
                         type="text"
-                        label={t('informations:brand.url-label')}
-                        placeholder={t('informations:brand.url-placeholder')}
+                        label={t('dashboard-informations:brand.url-label')}
+                        placeholder={t('dashboard-informations:brand.url-placeholder')}
                     />
                 </div>
                 <div className={css.brand__card__form__input}>
                     <Input
                         name="description"
                         type="textarea"
-                        label={t('informations:brand.desc-label')}
-                        placeholder={t('informations:brand.desc-placeholder')}
+                        label={t('dashboard-informations:brand.desc-label')}
+                        placeholder={t('dashboard-informations:brand.desc-placeholder')}
                     />
                 </div>
                 <div className={css.brand__card__form__input}>
                     <Input
                         name="mentions"
                         type="textarea"
-                        label={t('informations:brand.terms-label')}
-                        placeholder={t('informations:brand.terms-placeholder')}
+                        label={t('dashboard-informations:brand.terms-label')}
+                        placeholder={t('dashboard-informations:brand.terms-placeholder')}
                     />
                 </div>
 
                 <p className={css.brand__card__form__reset} onClick={onReset}>
-                    {t('informations:brand.reset')}
+                    {t('dashboard-informations:brand.reset')}
                 </p>
 
                 <div className={css.brand__card__form__btn}>
@@ -124,10 +124,10 @@ const Brand = ({
                         onClick={handleReset}
                         type={'button'}
                     >
-                        {t('informations:btn.cancel')}
+                        {t('dashboard-informations:btn.cancel')}
                     </Button>
                     <Button variant="primary" size="small" type="submit">
-                        {t('informations:btn.validate')}
+                        {t('dashboard-informations:btn.validate')}
                     </Button>
                 </div>
             </Form>
@@ -144,7 +144,7 @@ const Brand = ({
         <div className={css.brand}>
             <div className={css.brand__card}>
                 <div className={css.brand__card__logo} style={style}>
-                    <p className={css.brand__card__logo__placeholder}> {t('informations:brand.logo')}</p>
+                    <p className={css.brand__card__logo__placeholder}> {t('dashboard-informations:brand.logo')}</p>
                 </div>
                 <Formik
                     validationSchema={updateBrandSchema}

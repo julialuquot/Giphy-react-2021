@@ -12,7 +12,6 @@ const PartnersPage = () => {
         <Layout>
             <div className={css.partnersPageWrapper}>
                 <Heading title={t('dashboard-partners:title')} subtitle={t('dashboard-partners:sub-title')} />
-
                 <Partners />
             </div>
         </Layout>

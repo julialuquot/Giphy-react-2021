@@ -14,11 +14,11 @@ const WorkspacePage = () => {
     return (
         <Layout>
             <div className={css.workspacePageWrapper}>
-                <Heading title={t('informations:title')} subtitle={t('informations:sub-title')} />
+                <Heading title={t('dashboard-informations:title')} subtitle={t('dashboard-informations:sub-title')} />
                 <TabNavigation
                     onTabChange={(tab) => setActiveTab(tab)}
-                    tabTitle0={t('stats:stats')}
-                    tabTitle1={t('informations:informations')}
+                    tabTitle0={t('dashboard-stats:stats')}
+                    tabTitle1={t('dashboard-informations:informations')}
                 />
 
                 {activeTab === 0 ? <Stats /> : <Informations />}
