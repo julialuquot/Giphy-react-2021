@@ -1015,7 +1015,7 @@ exports[`Storyshots Dropdowns Default 1`] = `
             >
               <img
                 alt="chevron_down"
-                src="/icons/chevron-down-grey.svg"
+                src="/front-static/icons/chevron-down-grey.svg"
               />
             </span>
           </div>
@@ -1083,7 +1083,7 @@ exports[`Storyshots Dropdowns With Icon 1`] = `
             >
               <img
                 alt="chevron_up"
-                src="/icons/chevron-down-grey-small.svg"
+                src="/front-static/icons/chevron-down-grey-small.svg"
               />
             </span>
           </div>
@@ -1510,7 +1510,7 @@ exports[`Storyshots Xconnect Default 1`] = `
     >
       <img
         alt="apple logo"
-        src="icons/apple-logo.svg"
+        src="front-static/icons/apple-logo.svg"
       />
     </div>
     <div
@@ -1518,7 +1518,7 @@ exports[`Storyshots Xconnect Default 1`] = `
     >
       <img
         alt="google logo"
-        src="icons/google-logo.svg"
+        src="front-static/icons/google-logo.svg"
       />
     </div>
     <div
@@ -1526,7 +1526,7 @@ exports[`Storyshots Xconnect Default 1`] = `
     >
       <img
         alt="facebook logo"
-        src="icons/facebook-logo.svg"
+        src="front-static/icons/facebook-logo.svg"
       />
     </div>
   </div>

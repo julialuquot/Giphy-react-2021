@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useTranslation } from '@i18n';
 import { Form, Formik } from 'formik';
 import { useRouter } from 'next/router';
@@ -18,11 +18,10 @@ const SignInForm = () => {
     const authContext = useContext(AuthContext);
     const { userSignIn, isFetching, user } = authContext;
 
-    const [, setStayConnected] = useState(true);
-
     const initialValues = {
         email: 'merchandclass1@yopmail.com',
         password: 'Aa123456!',
+        stayConnected: true,
     };
 
     const onSubmit = async (values) => {
@@ -61,9 +60,7 @@ const SignInForm = () => {
                         </div>
                     </div>
                     <div className={css.input}>
-                        <Checkbox onCheck={(value) => setStayConnected(value)} name="stayConnected">
-                            {t('authentication:login.remember-me')}{' '}
-                        </Checkbox>
+                        <Checkbox name="stayConnected">{t('authentication:login.remember-me')}</Checkbox>
                     </div>
 
                     <Button mobileFullWidth={true} variant="primary" size="large" type="submit" isLoading={isFetching}>

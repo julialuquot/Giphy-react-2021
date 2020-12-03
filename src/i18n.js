@@ -12,7 +12,7 @@ module.exports = new NextI18Next({
 
     initImmediate: false,
 
-    interpolation: {escapeValue: false},
+    interpolation: { escapeValue: false },
 
     missingKeyHandler: function () {
         // eslint-disable-next-line no-console

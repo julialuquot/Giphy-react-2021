@@ -29,9 +29,17 @@ const Banner = ({ t }: BannerProps) => {
                 </Button>
             </div>
             <div className={css.icon}>
-                <img className={css.icon__sphere_left} src="/front-static/images/footer/sphere-left.png" alt={'sphere'} />
+                <img
+                    className={css.icon__sphere_left}
+                    src="/front-static/images/footer/sphere-left.png"
+                    alt={'sphere'}
+                />
                 <img className={css.icon__sphere_mid} src="/front-static/images/footer/sphere-mid.png" alt={'sphere'} />
-                <img className={css.icon__sphere_right} src="/front-static/images/footer/sphere-right.png" alt={'sphere'} />
+                <img
+                    className={css.icon__sphere_right}
+                    src="/front-static/images/footer/sphere-right.png"
+                    alt={'sphere'}
+                />
             </div>
         </div>
     );

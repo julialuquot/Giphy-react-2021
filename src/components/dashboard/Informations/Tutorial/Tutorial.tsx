@@ -18,7 +18,7 @@ const Tutorial = ({ user }: TutorialProps) => {
 
     useEffect(() => {
         getTutorial(user.merchantUniq);
-    }, []);
+    }, [getTutorial, user.merchantUniq]);
 
     const onUpdateTutorial = (body) => {
         updateTutorial(body);

@@ -1,4 +1,4 @@
-import React, { useReducer } from 'react';
+import React, { useCallback, useReducer } from 'react';
 import InformationsContext from './InformationsContext';
 import informationsReducer from './InformationsReducer';
 import InformationsService from '@services/domain/InformationsService';
@@ -18,8 +18,8 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
 
     const [state, dispatch] = useReducer(informationsReducer, initialState);
 
-    // Get BRAND
-    const getBrand = async (merchantUniq) => {
+    /* BRAND */
+    const getBrand = useCallback(async (merchantUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.getBrand(merchantUniq);
@@ -27,10 +27,9 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         } catch (err) {
             dispatch({ type: 'GET_BRAND_FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
-    // update BRAND
-    const updateBrand = async (body) => {
+    const updateBrand = useCallback(async (body) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.updateBrand(body);
@@ -38,10 +37,10 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         } catch (err) {
             dispatch({ type: 'UPDATE_BRAND_FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
-    // GET TUTORIAL
-    const getTutorial = async (merchantUniq) => {
+    /* TUTORIAL */
+    const getTutorial = useCallback(async (merchantUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.getTutorial(merchantUniq);
@@ -49,10 +48,9 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         } catch (err) {
             dispatch({ type: 'GET_TUTORIAL_FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
-    // UPDATE TUTORIAL
-    const updateTutorial = async (body) => {
+    const updateTutorial = useCallback(async (body) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.updateTutorial(body);
@@ -60,10 +58,10 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         } catch (err) {
             dispatch({ type: 'UPDATE_TUTORIAL_FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
-    // GET PRODUCTS
-    const getProducts = async (merchantUniq) => {
+    /* PRODUCTS */
+    const getProducts = useCallback(async (merchantUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.getProducts(merchantUniq);
@@ -71,10 +69,9 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         } catch (err) {
             dispatch({ type: 'GET_PRODUCTS_FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
-    // UPDATE PRODUCT
-    const updateProduct = async (body) => {
+    const updateProduct = useCallback(async (body) => {
         try {
             dispatch({ type: 'FETCH_START' });
             const data = await InformationsService.updateProduct(body);
@@ -82,7 +79,7 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         } catch (err) {
             dispatch({ type: 'UPDATE_PRODUCT_FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
     return (
         <InformationsContext.Provider

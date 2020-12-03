@@ -24,12 +24,20 @@ const SlideOne = ({ t }: SlideOneProps) => {
             <img className={css.slide_one__torus_yellow} src="/front-static/images/torus-yellow.png" alt={'torus'} />
             <img
                 className={css.slide_one__sphere_green}
-                src={size.width > M_DEVICE ? '/front-static/images/sphere-half-green.png' : '/front-static/images/sphere-green-mobile.png'}
+                src={
+                    size.width > M_DEVICE
+                        ? '/front-static/images/sphere-half-green.png'
+                        : '/front-static/images/sphere-green-mobile.png'
+                }
                 alt={'sphere'}
             />
             <img
                 className={css.slide_one__torus_red}
-                src={size.width > M_DEVICE ? '/front-static/images/torus-red.png' : '/front-static/images/torus-red-mobile.png'}
+                src={
+                    size.width > M_DEVICE
+                        ? '/front-static/images/torus-red.png'
+                        : '/front-static/images/torus-red-mobile.png'
+                }
                 alt={'torus'}
             />
         </div>

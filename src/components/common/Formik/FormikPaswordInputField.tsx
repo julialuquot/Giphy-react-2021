@@ -47,7 +47,11 @@ const FormikPaswordInputField: React.FC<FormikPaswordInputFieldProps> = ({
                             {...props}
                             {...field}
                             iconRef={iconRef}
-                            icon={visible ? '/front-static/icons/eye-off-outline.svg' : '/front-static/icons/eye-outline.svg'}
+                            icon={
+                                visible
+                                    ? '/front-static/icons/eye-off-outline.svg'
+                                    : '/front-static/icons/eye-outline.svg'
+                            }
                             type={visible ? 'text' : 'password'}
                         />
 

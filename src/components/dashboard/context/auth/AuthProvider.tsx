@@ -30,11 +30,21 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
 
     const userSignIn = async (body) => {
         try {
-            dispatch({ type: 'USER_SIGN_IN_START' });
+            dispatch({ type: 'START' });
             const data = await AuthService.signIn(body);
             dispatch({ type: 'USER_SIGN_IN_SUCCESS', payload: data });
         } catch (err) {
-            dispatch({ type: 'USER_SIGN_IN_FAILURE', payload: err });
+            dispatch({ type: 'FAILURE', payload: err });
+        }
+    };
+
+    const userSignOut = async () => {
+        try {
+            dispatch({ type: 'START' });
+            const data = await AuthService.signOut();
+            dispatch({ type: 'USER_SIGN_OUT_SUCCESS', payload: data });
+        } catch (err) {
+            dispatch({ type: 'FAILURE', payload: err });
         }
     };
 
@@ -46,6 +56,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
                 error: state.error,
                 user: state.user,
                 userSignIn,
+                userSignOut,
             }}
         >
             {children}
