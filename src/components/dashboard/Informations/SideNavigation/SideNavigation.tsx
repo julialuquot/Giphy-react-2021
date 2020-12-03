@@ -9,7 +9,7 @@ type SideNavigationProps = {
 };
 
 const SideNavigation = ({ onStepChange }: SideNavigationProps) => {
-    const { t } = useTranslation('informations');
+    const { t } = useTranslation('dashboard-informations');
 
     const [activeStep, setActiveStep] = useState(0);
     const [, setIsSwitchActive] = useState(false);
@@ -29,19 +29,19 @@ const SideNavigation = ({ onStepChange }: SideNavigationProps) => {
                     className={`${css.side__nav__tag} ${activeStep === 0 && css.side__nav__tag__active}`}
                     onClick={() => handleClick(0)}
                 >
-                    {t('informations:side-nav.brand')}
+                    {t('dashboard-informations:side-nav.brand')}
                 </p>
                 <p
                     className={`${css.side__nav__tag} ${activeStep === 1 && css.side__nav__tag__active}`}
                     onClick={() => handleClick(1)}
                 >
-                    {t('informations:side-nav.tutorial')}
+                    {t('dashboard-informations:side-nav.tutorial')}
                 </p>
                 <p
                     className={`${css.side__nav__tag} ${activeStep === 2 && css.side__nav__tag__active}`}
                     onClick={() => handleClick(2)}
                 >
-                    {t('informations:side-nav.products')}
+                    {t('dashboard-informations:side-nav.products')}
                 </p>
                 <Switch
                     customClass={css.side__nav__tag__switch}
@@ -52,13 +52,13 @@ const SideNavigation = ({ onStepChange }: SideNavigationProps) => {
 
             <div className={css.side__btn}>
                 <Button variant="secondary" size="medium" type={'button'}>
-                    {t('informations:btn.preview')}
+                    {t('dashboard-informations:btn.preview')}
                 </Button>
                 <Button margin={'10px 0 16px 0'} variant="primary" size="medium" type="submit">
-                    {t('informations:btn.upload')}
+                    {t('dashboard-informations:btn.upload')}
                 </Button>
             </div>
-            <p className={css.warning}> {t('informations:side-nav.warning')}</p>
+            <p className={css.warning}> {t('dashboard-informations:side-nav.warning')}</p>
         </div>
     );
 };

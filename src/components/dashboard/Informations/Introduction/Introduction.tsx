@@ -17,8 +17,8 @@ const Introduction = () => {
                 onClick={() => onEdit()}
                 className={`${css.introduction__icon} ${isEditing && css.introduction__icon__editing}`}
             />
-            <h5>{t('informations:products.introduction.title')}</h5>
-            <p>{t('informations:products.introduction.desc')}</p>
+            <h5>{t('dashboard-informations:products.introduction.title')}</h5>
+            <p>{t('dashboard-informations:products.introduction.desc')}</p>
         </div>
     );
 };

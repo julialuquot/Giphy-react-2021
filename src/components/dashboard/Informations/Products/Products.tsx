@@ -33,7 +33,7 @@ const Products = ({ user }: ProductsProps) => {
 
     return (
         <div className={css.tutorial}>
-            <Banner text={t('informations:products.banner.text')} />
+            <Banner text={t('dashboard-informations:products.banner.text')} />
             <Introduction />
 
             {!isFetching &&

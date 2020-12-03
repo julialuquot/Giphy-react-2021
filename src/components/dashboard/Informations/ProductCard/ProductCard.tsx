@@ -74,9 +74,9 @@ const ProductCard = ({
             <Form className={css.form}>
                 <div className={css.form__upload}>
                     <ImageUpload
-                        cta={t('informations:products.add-visual')}
+                        cta={t('dashboard-informations:products.add-visual')}
                         inputName={'image'}
-                        format={t('informations:products.format')}
+                        format={t('dashboard-informations:products.format')}
                         imgUrl={imgUrl !== '' ? imgUrl : image}
                         onUploadImg={(url) => setImgUrl(url)}
                         width={'255px'}
@@ -89,8 +89,8 @@ const ProductCard = ({
                         <Input
                             name="title"
                             type="text"
-                            label={t('informations:products.title-label')}
-                            placeholder={t('informations:products.title-placeholder')}
+                            label={t('dashboard-informations:products.title-label')}
+                            placeholder={t('dashboard-informations:products.title-placeholder')}
                         />
                     </div>
 
@@ -98,21 +98,21 @@ const ProductCard = ({
                         <Input
                             name="description"
                             type="textarea"
-                            label={t('informations:products.desc-label')}
-                            placeholder={t('informations:products.desc-placeholder')}
+                            label={t('dashboard-informations:products.desc-label')}
+                            placeholder={t('dashboard-informations:products.desc-placeholder')}
                         />
                     </div>
                     <div className={css.form__input}>
                         <Input
                             name="price"
                             type="text"
-                            label={t('informations:products.price-label')}
-                            placeholder={t('informations:products.price-placeholder')}
+                            label={t('dashboard-informations:products.price-label')}
+                            placeholder={t('dashboard-informations:products.price-placeholder')}
                         />
                     </div>
 
                     <p className={css.form__reset} onClick={onReset}>
-                        {t('informations:brand.reset')}
+                        {t('dashboard-informations:brand.reset')}
                     </p>
 
                     <div className={css.form__btn}>
@@ -123,10 +123,10 @@ const ProductCard = ({
                             onClick={() => onCancel()}
                             type={'button'}
                         >
-                            {t('informations:btn.cancel')}
+                            {t('dashboard-informations:btn.cancel')}
                         </Button>
                         <Button variant="primary" size="small" type="submit">
-                            {t('informations:btn.validate')}
+                            {t('dashboard-informations:btn.validate')}
                         </Button>
                     </div>
                 </div>
@@ -159,7 +159,7 @@ const ProductCard = ({
                                     {description}
                                 </Text>
                                 <span>
-                                    {price} {t('informations:products.product.euro')}
+                                    {price} {t('dashboard-informations:products.product.euro')}
                                 </span>
                             </div>
                         </div>
