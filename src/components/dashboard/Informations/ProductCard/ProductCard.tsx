@@ -7,6 +7,7 @@ import Button from '@components/common/Button/Button';
 import { useTranslation } from '@i18n';
 import ImageUpload from '@components/dashboard/Informations/ImageUpload/ImageUpload';
 import { updateProductsSchema } from '@validations/products';
+import Spinner from '@components/common/Spinner/Spinner';
 
 type ProductCardProps = {
     title: string;
@@ -17,6 +18,7 @@ type ProductCardProps = {
     onUpdateProduct: (body: object) => void;
     onResetProduct: (body: object) => void;
     merchantUniq: string;
+    isFetching: boolean;
 };
 
 const ProductCard = ({
@@ -28,8 +30,9 @@ const ProductCard = ({
     onUpdateProduct,
     onResetProduct,
     merchantUniq,
+    isFetching,
 }: ProductCardProps) => {
-    const { t } = useTranslation('informations');
+    const { t } = useTranslation('dashboard-informations');
 
     const [isEditing, setIsEditing] = useState(false);
     const [imgUrl, setImgUrl] = useState('');
@@ -125,7 +128,7 @@ const ProductCard = ({
                         >
                             {t('dashboard-informations:btn.cancel')}
                         </Button>
-                        <Button variant="primary" size="small" type="submit">
+                        <Button variant="primary" size="small" type="submit" isLoading={isFetching}>
                             {t('dashboard-informations:btn.validate')}
                         </Button>
                     </div>
@@ -137,43 +140,50 @@ const ProductCard = ({
     return (
         <>
             <div className={css.product}>
-                <span
-                    onClick={() => onEdit()}
-                    className={`${css.product__icon} ${isEditing && css.product__icon__editing}`}
-                />
-                {!isEditing ? (
-                    <>
-                        <h5> {t('informations:products.product.product', { order })}</h5>
-                        <div className={css.product__content}>
-                            <div
-                                className={css.product__content__img}
-                                style={{
-                                    backgroundImage: `url(${imgUrl || image})`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center',
-                                }}
-                            />
-                            <div className={css.product__content__informations}>
-                                <h6>{title}</h6>
-                                <Text variant={'body_00'} color={'ui-secondary'}>
-                                    {description}
-                                </Text>
-                                <span>
-                                    {price} {t('dashboard-informations:products.product.euro')}
-                                </span>
-                            </div>
-                        </div>
-                    </>
+                {isFetching ? (
+                    <Spinner height={'60px'} width={'60px'} />
                 ) : (
                     <>
-                        <h5> {t('informations:products.product.product', { order })}</h5>
-                        <Formik
-                            validationSchema={updateProductsSchema}
-                            initialValues={getInitialValues()}
-                            onSubmit={(values) => onSubmit(values)}
-                        >
-                            {() => renderTutorialForm()}
-                        </Formik>
+                        <span
+                            onClick={() => onEdit()}
+                            className={`${css.product__icon} ${isEditing && css.product__icon__editing}`}
+                        />
+
+                        {!isEditing ? (
+                            <>
+                                <h5> {t('dashboard-informations:products.product.product', { order })}</h5>
+                                <div className={css.product__content}>
+                                    <div
+                                        className={css.product__content__img}
+                                        style={{
+                                            backgroundImage: `url(${imgUrl || image})`,
+                                            backgroundSize: 'cover',
+                                            backgroundPosition: 'center',
+                                        }}
+                                    />
+                                    <div className={css.product__content__informations}>
+                                        <h6>{title}</h6>
+                                        <Text variant={'body_00'} color={'ui-secondary'}>
+                                            {description}
+                                        </Text>
+                                        <span>
+                                            {price} {t('dashboard-informations:products.product.euro')}
+                                        </span>
+                                    </div>
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <h5> {t('informations:products.product.product', { order })}</h5>
+                                <Formik
+                                    validationSchema={updateProductsSchema}
+                                    initialValues={getInitialValues()}
+                                    onSubmit={(values) => onSubmit(values)}
+                                >
+                                    {() => renderTutorialForm()}
+                                </Formik>
+                            </>
+                        )}
                     </>
                 )}
             </div>

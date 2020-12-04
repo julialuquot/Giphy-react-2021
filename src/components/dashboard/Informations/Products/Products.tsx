@@ -12,7 +12,7 @@ type ProductsProps = {
 };
 
 const Products = ({ user }: ProductsProps) => {
-    const { t } = useTranslation('informations');
+    const { t } = useTranslation('dashboard-informations');
 
     const informationsContext = useContext(InformationsContext);
     const { getProducts, updateProduct, products, isFetching } = informationsContext;
@@ -36,8 +36,7 @@ const Products = ({ user }: ProductsProps) => {
             <Banner text={t('dashboard-informations:products.banner.text')} />
             <Introduction />
 
-            {!isFetching &&
-                products.length > 0 &&
+            {products &&
                 products.map((product) => {
                     return (
                         <ProductCard
@@ -50,6 +49,7 @@ const Products = ({ user }: ProductsProps) => {
                             onUpdateProduct={(body) => onUpdateProduct(body)}
                             onResetProduct={(body) => onResetProduct(body)}
                             merchantUniq={user.merchantUniq}
+                            isFetching={isFetching}
                         />
                     );
                 })}

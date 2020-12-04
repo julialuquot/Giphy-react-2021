@@ -17,6 +17,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
     const [activeStep, setActiveStep] = useState(0);
     const [, setIsSwitchActive] = useState(false);
     const [open, setOpen] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
 
     const onSetActiveStep = (step) => {
         setActiveStep(step);
@@ -31,9 +32,11 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
         // eslint-disable-next-line no-console
         // @ts-ignore
         const body = { merchantUniq: user.merchantUniq, goOnline: true };
+        setIsLoading(true);
         InformationsService.goOnLine(body)
             .then((res) => res)
-            .catch((err) => err);
+            .catch((err) => err)
+            .finally(() => setIsLoading(false));
     };
 
     return (
@@ -76,7 +79,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
                 </div>
 
                 <div className={css.side__btn}>
-                    <Button variant="secondary" size="medium" type={'button'}>
+                    <Button variant="secondary" size="medium" type={'button'} isLoading={isLoading}>
                         {t('dashboard-informations:btn.preview')}
                     </Button>
                     <Button
@@ -85,6 +88,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
                         variant="primary"
                         size="medium"
                         type="submit"
+                        isLoading={isLoading}
                     >
                         {t('dashboard-informations:btn.upload')}
                     </Button>

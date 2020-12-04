@@ -7,6 +7,7 @@ import Button from '@components/common/Button/Button';
 import { useTranslation } from '@i18n';
 import ImageUpload from '@components/dashboard/Informations/ImageUpload/ImageUpload';
 import { updateTutorialSchema } from '@validations/tutorial';
+import Spinner from '@components/common/Spinner/Spinner';
 
 type StepProps = {
     title: string;
@@ -17,6 +18,7 @@ type StepProps = {
     onUpdateTutorial: (body: object) => void;
     onResetTutorial: (body: object) => void;
     merchantUniq: string;
+    isFetching: boolean;
 };
 
 const Step = ({
@@ -28,6 +30,7 @@ const Step = ({
     onUpdateTutorial,
     merchantUniq,
     onResetTutorial,
+    isFetching,
 }: StepProps) => {
     const { t } = useTranslation('informations');
 
@@ -142,42 +145,48 @@ const Step = ({
     return (
         <>
             <div className={css.step}>
-                <span
-                    onClick={() => onEdit()}
-                    className={`${css.step__icon} ${isEditing && css.step__icon__editing}`}
-                />
-                {!isEditing ? (
-                    <>
-                        <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
-                        <h6>{title}</h6>
-                        <Text variant={'body_00'} color={'ui-secondary'}>
-                            {description}
-                        </Text>
-                        <div className={css.step__img}>
-                            <div
-                                className={css.step__img__desktop}
-                                style={{
-                                    backgroundImage: `url(${desktopImgUrl || imageDesktop})`,
-                                }}
-                            />
-                            <div
-                                className={css.step__img__mobile}
-                                style={{
-                                    backgroundImage: `url(${mobileImgUrl || imageMobile})`,
-                                }}
-                            />
-                        </div>
-                    </>
+                {isFetching ? (
+                    <Spinner height={'60px'} width={'60px'} />
                 ) : (
                     <>
-                        <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
-                        <Formik
-                            validationSchema={updateTutorialSchema}
-                            initialValues={getInitialValues()}
-                            onSubmit={(values) => onSubmit(values)}
-                        >
-                            {() => renderStepForm()}
-                        </Formik>
+                        <span
+                            onClick={() => onEdit()}
+                            className={`${css.step__icon} ${isEditing && css.step__icon__editing}`}
+                        />
+                        {!isEditing ? (
+                            <>
+                                <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
+                                <h6>{title}</h6>
+                                <Text variant={'body_00'} color={'ui-secondary'}>
+                                    {description}
+                                </Text>
+                                <div className={css.step__img}>
+                                    <div
+                                        className={css.step__img__desktop}
+                                        style={{
+                                            backgroundImage: `url(${desktopImgUrl || imageDesktop})`,
+                                        }}
+                                    />
+                                    <div
+                                        className={css.step__img__mobile}
+                                        style={{
+                                            backgroundImage: `url(${mobileImgUrl || imageMobile})`,
+                                        }}
+                                    />
+                                </div>
+                            </>
+                        ) : (
+                            <>
+                                <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
+                                <Formik
+                                    validationSchema={updateTutorialSchema}
+                                    initialValues={getInitialValues()}
+                                    onSubmit={(values) => onSubmit(values)}
+                                >
+                                    {() => renderStepForm()}
+                                </Formik>
+                            </>
+                        )}
                     </>
                 )}
             </div>
