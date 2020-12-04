@@ -5,7 +5,7 @@ import PasswordInput from '@components/common/Formik/FormikPaswordInputField';
 import Button from '@components/common/Button/Button';
 import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Text from '@components/common/Text/Text';
-import { signin } from '@validations/user';
+import { signIn } from '@validations/user';
 import css from '../Authentication.scss';
 import { useTranslation } from '@i18n';
 import Xconnect from '@components/common/Xconnect/Xconnect';
@@ -32,7 +32,7 @@ const LoginForm: React.FC = () => {
     const { t } = useTranslation('authentication');
     return (
         <Formik
-            validationSchema={signin}
+            validationSchema={signIn}
             initialValues={{ email: 'a@a.com', password: '123234', stayConnected: false }}
             onSubmit={async (values) => {
                 try {

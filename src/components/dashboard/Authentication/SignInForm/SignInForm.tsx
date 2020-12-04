@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useTranslation } from '@i18n';
 import { Form, Formik } from 'formik';
 import { useRouter } from 'next/router';
-import { signin } from '@validations/user';
+import { signIn } from '@validations/user';
 import css from '@components/dashboard/Authentication/Authentication.scss';
 import AuthContext from '@components/dashboard/context/auth/AuthContext';
 import Input from '@components/common/Formik/FormikInputField';
@@ -33,7 +33,7 @@ const SignInForm = () => {
     }, [router, user]);
 
     return (
-        <Formik validationSchema={signin} initialValues={initialValues} onSubmit={(values) => onSubmit(values)}>
+        <Formik validationSchema={signIn} initialValues={initialValues} onSubmit={(values) => onSubmit(values)}>
             {() => (
                 <Form className={css.form}>
                     <div className={css.input}>

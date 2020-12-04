@@ -3,7 +3,7 @@ import css from './Partners.module.scss';
 import PartnerCard from '@components/dashboard/Administrator/PartnerCard';
 import { useTranslation } from '@i18n';
 import ConfirmGoOnLine from '@components/common/Modals/ConfirmGoOnLine/ConfirmGoOnLine';
-import ConfirmModification from '@components/common/Modals/ConfirmModification/ConfirmModification';
+// import ConfirmModification from '@components/common/Modals/ConfirmModification/ConfirmModification';
 
 const mockPartners = [
     {
@@ -115,28 +115,26 @@ const Partners = () => {
 
     return (
         <div className={css.partners}>
-            {/* <ConfirmGoOnLine */}
-            {/*    isVisible={open} */}
-            {/*    onHide={() => setOpen(false)} */}
-            {/*    onConfirm={() => onConfirm()} */}
-            {/*    title={t('dashboard-partners:modal.title')} */}
-            {/*    text={t('dashboard-partners:modal.text')} */}
-            {/*    confirmLabel={t('dashboard-partners:modal.confirm')} */}
-            {/*    cancelLabel={t('dashboard-partners:modal.cancel')} */}
-            {/* /> */}
-
-            <ConfirmModification
+            <ConfirmGoOnLine
                 isVisible={open}
                 onHide={() => setOpen(false)}
                 onConfirm={() => onConfirm()}
-                title={t('dashboard-partners:modal-modification-confirmation.title')}
-                text={t('dashboard-partners:modal-modification-confirmation.text')}
-                confirmLabel={t('dashboard-partners:modal-modification-confirmation.confirm')}
-                cancelLabel={t('dashboard-partners:modal-modification-confirmation.cancel')}
+                title={t('dashboard-partners:modal.title')}
+                text={t('dashboard-partners:modal.text')}
+                confirmLabel={t('dashboard-partners:modal.confirm')}
+                cancelLabel={t('dashboard-partners:modal.cancel')}
             />
-
+            {/* TODO just for testing purpose , must be in preview page */}
+            {/* <ConfirmModification */}
+            {/*    isVisible={open} */}
+            {/*    onHide={() => setOpen(false)} */}
+            {/*    onConfirm={() => onConfirm()} */}
+            {/*    title={t('dashboard-partners:modal-modification-confirmation.title')} */}
+            {/*    text={t('dashboard-partners:modal-modification-confirmation.text')} */}
+            {/*    confirmLabel={t('dashboard-partners:modal-modification-confirmation.confirm')} */}
+            {/*    cancelLabel={t('dashboard-partners:modal-modification-confirmation.cancel')} */}
+            {/* /> */}
             <h3>{t('dashboard-partners:checking-partner')}</h3>
-
             <div className={css.partners__grid}>
                 {mockPartners
                     .filter((partner) => partner.status === 'checking')
@@ -155,7 +153,6 @@ const Partners = () => {
                         </>
                     ))}
             </div>
-
             <h3>{t('dashboard-partners:pending-partner')}</h3>
             <div className={css.partners__grid}>
                 {mockPartners
@@ -175,7 +172,6 @@ const Partners = () => {
                         </>
                     ))}
             </div>
-
             <h3>{t('dashboard-partners:list-partner')}</h3>
             <div className={css.partners__grid}>
                 {mockPartners

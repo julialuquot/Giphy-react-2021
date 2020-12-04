@@ -29,7 +29,7 @@
         "no": "Non",
         "message-label": "Votre message",
         "message-placeholder": "Saisir un message",
-        "email-label": "Votre message",
+        "email-label": "Mettre en copie",
         "email-placeholder": "Saisir un email"
     }
 }
