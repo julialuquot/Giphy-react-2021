@@ -1,0 +1,85 @@
+{
+    "title": "Bienvenue",
+    "sub-title": "dans votre espace",
+    "informations": "Informations",
+    "btn": {
+        "add": "Ajouter",
+        "cancel": "Annuler",
+        "validate": "Valider",
+        "preview": "Prévisualiser",
+        "upload": "Mettre en ligne",
+        "show-example": "Afficher un exemple"
+    },
+    "side-nav": {
+        "brand": "Marque",
+        "tutorial": "Tutoriel CCM",
+        "products": "Produits",
+        "warning": "Les mises en ligne interagissent directement avec le site en production"
+    },
+    "brand": {
+        "logo": "Logo",
+        "logo-label": "Ajouter votre logo",
+        "logo-format": "Type SVG | Format 747 x 420 px | Taille max 1 Mo",
+        "brand-label": "Nom de la marque",
+        "brand-placeholder": "Nouveau Partenaire",
+        "color-label": "Couleur principale",
+        "color-placeholder": "#F8F8F8",
+        "url-label": "URL site internet",
+        "url-placeholder": "Saisir",
+        "desc-label": "Descriptif",
+        "desc-placeholder": "Saisir",
+        "terms-label": "Mentions (facultatif)",
+        "terms-placeholder": "Saisir",
+        "reset": "Réinitialiser les informations"
+    },
+    "tutorial": {
+        "banner": {
+            "title": "Comment ça marche ?",
+            "text": "Nous vous permettons de personnaliser en 3 étapes votre parcours de dépense, pour aider les utilisateurs à bien comprendre comment dépenser chez vous."
+        },
+        "step": {
+            "step": "Etape {{order}}",
+            "title": "Titre générique lorem ipsum",
+            "desc": "Descriptif générique lorem ipsum"
+        },
+        "title-label": "Titre",
+        "title-placeholder": "Dépensez",
+        "desc-label": "Descriptif",
+        "desc-placeholder": "Au moment du paiement, je clique sur le logo le pot commun pour payer.",
+        "desktop-label": "Visuel desktop",
+        "mobile-label": "Visuel mobile",
+        "add-visual": "Ajouter un visuel",
+        "edit-visual": "Modifier le visuel",
+        "format": "Format 747 x 420 px Taille max 1 Mo"
+    },
+    "products": {
+        "banner": {
+            "title": "Comment ça marche ?",
+            "text": "Cet espace vous offre la possibilité de personnaliser votre parcours de dépense en 3 étapes. L’objectif est d’aider les utilisateurs, une fois sur votre page partenaire, à mieux comprendre la manière dont ils peuvent dépenser leur cagnotte chez vous."
+        },
+        "introduction": {
+            "title": "Texte d'introduction",
+            "desc": "Pour que nos utilisateurs puissent se projeter d’avantage sur votre marque, nous vous proposons de mettre en avant une sélection de 4 produits."
+        },
+        "product": {
+            "product": "Produit {{order}}",
+            "product-one": "Produit 1",
+            "product-two": "Produit 2",
+            "product-three": "Produit 3",
+            "product-four": "Produit 4",
+            "title": "Titre du produit générique",
+            "desc": "Descriptif générique",
+            "price": "Prix générique",
+            "euro": "€"
+        },
+        "title-label": "Titre du produit",
+        "title-placeholder": "Converse special heart edition",
+        "desc-label": "Descriptif",
+        "desc-placeholder": "La Converse x PLAY Comme des Garçons Chuck 70 arbore un design Chuck Taylor classique avec un petit truc en plus.",
+        "price-label": "Prix",
+        "price-placeholder": "59,95 €",
+        "add-visual": "Ajouter un visuel",
+        "edit-visual": "Modifier le visuel",
+        "format": "Format 600 px de large Taille max 1 Mo"
+    }
+}

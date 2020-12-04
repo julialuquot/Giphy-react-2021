@@ -1,0 +1,37 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
+
+.article {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  > h5 {
+    margin-bottom: 16px;
+  }
+
+  > p {
+    font-family: $primary-medium;
+    font-size: $level3;
+    color: $ui-secondary;
+    @include media(m-device) {
+      font-size: $level3-mobile;
+    }
+  }
+
+
+  &:after {
+    position: absolute;
+    width: 100%;
+    content: '';
+    border-bottom: 1px solid $background-2;
+    bottom: -56px;
+  }
+
+  margin-bottom: 113px;
+
+
+}
+

@@ -1,0 +1,87 @@
+@import '../../../../../../assets/styles/colors';
+@import '../../../../../../assets/styles/fonts';
+@import '../../../../../../assets/styles/mixins';
+@import '../../../../../../assets/styles/typography';
+
+
+.slide_one {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  height: 464px;
+  width: 100%;
+
+  @include media(m-device) {
+    height: 374px;
+  }
+
+
+  > h2 {
+    margin-bottom: 16px;
+    text-align: center;
+  }
+
+  > p {
+    text-align: center;
+
+  }
+
+  &__sphere_blue {
+    position: absolute;
+    top: 12%;
+    left: 19%;
+    width: 42px;
+    height: 42px;
+    @include media(m-device) {
+      width: 42px;
+      height: 42px;
+      top: 33px;
+      left: 29px;
+    }
+  }
+
+  &__sphere_green {
+    position: absolute;
+    top: 0px;
+    right: 8%;
+    width: 254px;
+    height: 122px;
+    @include media(m-device) {
+      width: 64px;
+      height: 73px;
+      right: 0;
+      top: 0;
+    }
+  }
+
+  &__torus_red {
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    width: 203px;
+    height: 107px;
+    @include media(m-device) {
+      width: 87px;
+      height: 82px;
+      left: 0;
+    }
+  }
+
+  &__torus_yellow {
+    position: absolute;
+    bottom: 9%;
+    right: 10%;
+    width: 33px;
+    height: 35px;
+    @include media(m-device) {
+      width: 22px;
+      height: 22px;
+      top: 280px;
+      left: 259px;
+    }
+  }
+}
+
+

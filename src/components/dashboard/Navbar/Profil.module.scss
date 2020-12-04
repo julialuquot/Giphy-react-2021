@@ -1,0 +1,55 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/fonts';
+
+
+.profil {
+  position: absolute;
+  top: 72px;
+  right: 27px;
+  display: flex;
+  flex-direction: column;
+  width: 255px;
+  height: 173px;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 12px 12px 48px 0 $box-shadow;
+  border: solid 2px $ui-quaternary;
+  background-color: $white;
+  visibility: hidden;
+  opacity: 0;
+  @include transition;
+  cursor: pointer;
+
+  &__open {
+    visibility: visible;
+    opacity: 1;
+
+  }
+}
+
+.divider {
+  width: 100%;
+  height: 1px;
+  margin: 8px 0;
+  background-color: $ui-quaternary
+}
+
+.cta {
+  display: flex;
+  align-items: center;
+  height: 38px;
+  border-radius: 6px;
+  font-family: $primary-medium;
+  font-size: 14px;
+  color: $ui-primary;
+
+  &:hover {
+    background-color: $ui-quaternary;
+  }
+
+  & > img {
+    margin: 0 4px 0 10px;
+  }
+}

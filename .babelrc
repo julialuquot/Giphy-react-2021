@@ -1,0 +1,23 @@
+{
+    "presets": [
+        [
+            "next/babel",
+            {
+                "preset-env": {
+                    "targets": {
+                        "ie": 11,
+                        "browsers": [
+                            "Chrome >= 59",
+                            "FireFox >= 44",
+                            "Safari >= 7",
+                            "Explorer 11",
+                            "ie >= 11",
+                            "last 4 Edge versions"
+                        ]
+                    },
+                    "useBuiltIns": "usage"
+                }
+            }
+        ]
+    ]
+}

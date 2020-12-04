@@ -1,0 +1,57 @@
+@import "reset";
+@import "colors";
+@import "fonts";
+@import "mixins";
+@import "typography";
+
+* {
+  font-size: 16px;
+}
+
+h1 {
+  font-family: $primary-bold;
+  font-size: $level12;
+  @include media(m-device) {
+    font-size: $level12-mobile;
+  }
+}
+
+h2 {
+  font-family: $primary-bold;
+  font-size: $level11;
+  @include media(m-device) {
+    font-size: $level7;
+  }
+}
+
+h3 {
+  font-family: $primary-bold;
+  font-size: $level8;
+  @include media(m-device) {
+    font-size: $level5;
+  }
+}
+
+h4 {
+  font-family: $primary-SemiBold;
+  font-size: $level7;
+
+}
+
+h5 {
+  font-family: $primary-SemiBold;
+  font-size: $level6;
+  @include media(m-device) {
+    font-size: $level4;
+  }
+}
+
+h6 {
+  font-family: $primary-SemiBold;
+  font-size: $level4;
+}
+
+a {
+  color: $black;
+  text-decoration: none;
+}

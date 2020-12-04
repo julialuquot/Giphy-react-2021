@@ -1,0 +1,130 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+
+
+%shared-select {
+  z-index: 9;
+  position: relative;
+  width: 438px;
+  padding: 0;
+  background-repeat: no-repeat;
+  background-position: right 20px top 22px;
+  font-family: $primary-medium;
+  color: $ui-primary;
+  font-size: $level3;
+  line-height: 1.5;
+  cursor: pointer;
+  @include border-radius(8px);
+  @include transition;
+
+  @include media(m-device) {
+    width: 264px;
+  }
+
+}
+
+
+.select {
+
+  @extend %shared-select;
+
+  &__arrow {
+
+    &_closed {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      @include transition;
+
+    }
+
+    &_open {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      transform: rotateZ(180deg);
+      @include transition;
+    }
+
+  }
+
+  &__placeholder {
+    display: flex;
+    align-items: center;
+    height: 60px;
+    padding-left: 20px;
+  }
+
+  &__control {
+    width: 438px;
+    height: 60px;
+    background-color: white;
+    border: 2px solid $ui-tertiary;
+    @include border-radius(8px);
+    @include transition;
+
+    @include media(m-device) {
+      width: 100%;
+    }
+
+    &:hover {
+      border: 2px solid $ui-secondary;
+    }
+
+    &__is_open {
+      background-color: $brand-primary;
+      color: white;
+    }
+  }
+
+  &__menu {
+    position: absolute;
+    width: 100%;
+    margin-top: 20px;
+    padding: 8px;
+    background-color: $background-1;
+    box-shadow: 4px 6px 40px 0 rgba(0, 0, 0, 0.1);
+    height: 270px;
+    overflow-y: auto;
+    cursor: pointer;
+    @include border-radius(8px);
+    @include transition;
+
+
+    & > div {
+      display: flex;
+      align-items: center;
+      width: 414px;
+      height: 48px;
+      padding-left: 12px;
+      color: $black;
+      @include transition;
+      @include border-radius(8px);
+
+      &:hover {
+        background-color: $brand-primary;
+        color: $white;
+      }
+
+    }
+
+    @include media(m-device) {
+      width: 100%;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      @include border-radius(8px);
+      background-color: $ui-tertiary;
+    }
+
+    &::-webkit-scrollbar {
+      width: 8px;
+      margin-right: 5px;
+    }
+  }
+
+
+}
+

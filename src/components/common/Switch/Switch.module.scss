@@ -1,0 +1,55 @@
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/colors';
+
+.cg__switch {
+  display: flex;
+  align-items: center;
+  margin: 0;
+
+  &__toggle {
+    display: inline-block;
+    background: $ui-quaternary;
+    padding: 2px;
+    border-radius: 100px;
+    width: 55px;
+    height: 27px;
+    cursor: pointer;
+    outline: 0;
+    margin: 0;
+    box-sizing: border-box;
+    transition: 0.15s linear background;
+
+    &::before {
+      content: '';
+      display: inline-block;
+      border-radius: 50%;
+      background: white;
+      width: 23px;
+      height: 23px;
+      outline: 0;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+      transform: translateX(0);
+      transition: 0.15s linear transform;
+    }
+
+    &__on {
+      background: $brand-primary;
+    }
+
+    &__on::before {
+      transform: translateX(27px);
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    line-height: 1.2;
+    font-family: $primary-reg;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    margin: 0 0 0 10px;
+  }
+}

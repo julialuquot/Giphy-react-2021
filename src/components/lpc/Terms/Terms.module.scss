@@ -1,0 +1,16 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 750px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+

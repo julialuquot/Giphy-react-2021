@@ -1,0 +1,135 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+@import '../../../../assets/styles/fonts';
+
+.product {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 855px;
+  min-height: 304px;
+  margin-top: 30px;
+  padding: 36px 48px 36px 48px;
+  border-radius: 8px;
+  box-shadow: 12px 12px 48px 0 $box-shadow;
+  border: solid 2px $ui-quaternary;
+  background-color: $white;
+
+  & > h5 {
+    color: $ui-primary;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 36px;
+
+
+    &__img {
+      width: 160px;
+      height: 200px;
+      margin-right: 40px;
+      border-radius: 8px;
+      background-color: $background-light-grey;
+
+    }
+
+    &__informations {
+      display: flex;
+      flex-direction: column;
+
+
+      & > h6 {
+        color: $ui-primary;
+        margin-bottom: 4px;
+      }
+
+      & > span {
+        margin-top: 8px;
+        font-family: $primary-medium;
+        font-size: 16px;
+        color: $orange;
+      }
+    }
+  }
+
+
+  &__icon {
+    position: absolute;
+    top: 36px;
+    right: 48px;
+    width: 38px;
+    height: 38px;
+    padding: 7px;
+    border-radius: 6px;
+    background-image: url("/front-static/icons/edit.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+      background-color: $ui-quaternary;
+    }
+
+    &__editing {
+      background: none;
+      cursor: auto;
+
+
+      &:hover {
+        background-color: $ui-transparent;
+      }
+    }
+
+  }
+
+
+}
+
+
+.form {
+  display: flex;
+  margin-top: 36px;
+
+  &__upload {
+    width: 40%;
+    margin: 21px 0 21px 0;
+  }
+
+
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+  }
+
+  &__input {
+    margin: 21px 0 21px 0;
+  }
+
+
+  &__btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__reset {
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    font-family: $primary-medium;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: $ui-secondary;
+    cursor: pointer;
+
+  }
+}
+

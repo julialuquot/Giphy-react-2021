@@ -1,0 +1,67 @@
+{
+    "landing": {
+        "main-title": "Créer un pot commun",
+        "button--create-pot": "Créer mon pot"
+    },
+    "landing-2": {
+        "main-title-1": "Plaisir d'offir",
+        "main-title-2": "joie de recevoir",
+        "subTitle": " Offrez lui à plusieurs le cadeau de ses rêves !",
+        "avatar": {
+            "label-1": "Julie Marchand",
+            "label-2": "Thomas Koper",
+            "label-3": "Nicolas Roussel"
+        },
+        "label": {
+            "txt-1": "Bon anniversaire \uD83D\uDE09 \uD83D\uDE09\n",
+            "txt-2": "Joyeux anniversaire l'ami",
+            "txt-3": " Un an de plus ! \uD83C\uDF89 \uD83C\uDF89",
+            "txt-4": "Le cap de la trentaine!"
+        },
+        "cardInfo": {
+            "tab-0": {
+                "label": "Anniversaire",
+                "title": "Petit pot pour l’anniversaire de notre Nico !",
+                "text": "34 personnes ont participé"
+            },
+            "tab-1": {
+                "label": "Pot de départ",
+                "title": "Lorem ipsum dolor sit amet!",
+                "text": "999 personnes ont participé"
+            },
+            "tab-2": {
+                "label": "Et Bien dautres",
+                "title": "consectetur adipiscing!",
+                "text": "12 personnes ont participé"
+            }
+        }
+    },
+    "landing-3": {
+        "main-title-1": "Des moyens",
+        "main-title-2": "dépenses variés",
+        "of": "de ",
+        "subTitle": "Qui s’adaptent à vos choix de cadeaux et à vos événements !",
+        "spending-way": {
+            "title-1": "Grauit pour toujours",
+            "title-2": "commission de 1,9% à 4%",
+            "cta-1": "Carte cadeau",
+            "cta-2": "Nos partenaires",
+            "cta-3": "carte cadeau"
+        }
+    },
+    "landing-4": {
+        "main-title": "Un service",
+        "subtitle": "simple et efficace",
+        "swiper": {
+            "slide-1": {
+                "title": "Créez",
+                "text": "Et configurez votre pot selon vos envies et besoins."
+            }
+        }
+    },
+    "landing-5": {
+        "main-title-1": "Disponible",
+        "main-title-2": "où que vous soyez !",
+        "subTitle": "Téléchargez l’application pour gérez votre pot et vos participations directement depuis votre mobile."
+    }
+}

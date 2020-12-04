@@ -1,0 +1,53 @@
+{
+    "plugins": [
+        {
+            "name": "@zeplin/cli-connect-react-plugin"
+        },
+        {
+            "name": "@zeplin/cli-connect-storybook-plugin",
+            "config": {
+                "url": "http://localhost:6006",
+                "startScript": "storybook"
+            }
+        }
+    ],
+    "projects": [
+        "5f1eeaf421192238a39eb563"
+    ],
+    "components": [
+        {
+            "path": "src/components/common/Button/Button.tsx",
+            "zeplinNames": [
+                "buttons / primary / active",
+                "buttons / primary / hover",
+                "buttons / primary / pressed",
+                "buttons / primary / disabled",
+                "buttons / text / active",
+                "buttons / text / hover",
+                "buttons / text / pressed",
+                "buttons / text / inactive"
+            ]
+        },
+        {
+            "path": "src/components/common/Checkbox/Checkbox.tsx",
+            "zeplinNames": [
+                "checkbox / on / default",
+                "checkbox / on / hover",
+                "checkbox / on / disabled",
+                "checkbox / on / error",
+                "checkbox / off / default",
+                "checkbox / off / hover",
+                "checkbox / off / disabled",
+                "checkbox / off / error"]
+        },
+        {
+            "path": "src/components/common/Card/Card.tsx",
+            "zeplinNames": [
+                "cards / partner / default",
+                "cards / partner / hover"
+            ]
+        }
+          
+    
+    ]
+}

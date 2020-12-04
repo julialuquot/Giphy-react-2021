@@ -1,0 +1,48 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+@import '../../../assets/styles/fonts';
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 305px;
+  height: 56px;
+  padding: 4px;
+  margin-bottom: 60px;
+  border-radius: 28px;
+  box-shadow: 12px 12px 48px 0 $box-shadow;
+  border: solid 2px $ui-quaternary;
+  background-color: $white;
+
+  .tab {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 152px;
+    height: 48px;
+    border: none;
+    @include border-radius(24px);
+    font-family: $primary-SemiBold;
+    font-size: $level3;
+    color: $ui-secondary;
+    cursor: pointer;
+    @include transition;
+
+    &:hover {
+      background-color: $brand-primary;
+      color: $white;
+    }
+
+    &__selected {
+      background-color: $brand-primary;
+      color: $white;
+      font-family: $primary-SemiBold;
+      font-size: $level3;
+    }
+  }
+
+
+}
+
