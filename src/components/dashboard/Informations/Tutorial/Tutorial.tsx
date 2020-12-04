@@ -34,8 +34,7 @@ const Tutorial = ({ user }: TutorialProps) => {
         <div className={css.tutorial}>
             <Banner text={t('dashboard-informations:tutorial.banner.text')} />
 
-            {!isFetching &&
-                tutorial.length > 0 &&
+            {tutorial &&
                 tutorial.map((tutorial) => (
                     <Step
                         key={tutorial.order}
@@ -47,6 +46,7 @@ const Tutorial = ({ user }: TutorialProps) => {
                         onUpdateTutorial={(body) => onUpdateTutorial(body)}
                         onResetTutorial={(body) => onResetTutorial(body)}
                         merchantUniq={user.merchantUniq}
+                        isFetching={isFetching}
                     />
                 ))}
         </div>

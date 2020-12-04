@@ -6,6 +6,7 @@ import { updateBrandSchema } from '@validations/brand';
 import Input from '@components/common/Formik/FormikInputField';
 import Button from '@components/common/Button/Button';
 import LogoUpload from '@components/dashboard/Informations/LogoUpload/LogoUpload';
+import Spinner from '@components/common/Spinner/Spinner';
 
 type BrandProps = {
     name: string;
@@ -17,6 +18,7 @@ type BrandProps = {
     onUpdateBrand: (body: object) => void;
     onResetBrand: (body: object) => void;
     merchantUniq: string;
+    isFetching: boolean;
 };
 
 const Brand = ({
@@ -29,6 +31,7 @@ const Brand = ({
     onUpdateBrand,
     onResetBrand,
     merchantUniq,
+    isFetching,
 }: BrandProps) => {
     const { t } = useTranslation('dashboard-informations');
 
@@ -143,19 +146,27 @@ const Brand = ({
     return (
         <div className={css.brand}>
             <div className={css.brand__card}>
-                <div className={css.brand__card__logo} style={style}>
-                    <p className={css.brand__card__logo__placeholder}> {t('dashboard-informations:brand.logo')}</p>
-                </div>
-                <Formik
-                    validationSchema={updateBrandSchema}
-                    initialValues={getInitialValues()}
-                    onSubmit={(values) => onSubmit(values)}
-                >
-                    {(values) => renderBrandForm(values)}
-                </Formik>
+                {isFetching ? (
+                    <Spinner height={'60px'} width={'60px'} />
+                ) : (
+                    <>
+                        <div className={css.brand__card__logo} style={style}>
+                            <p className={css.brand__card__logo__placeholder}>
+                                {' '}
+                                {t('dashboard-informations:brand.logo')}
+                            </p>
+                        </div>
+                        <Formik
+                            validationSchema={updateBrandSchema}
+                            initialValues={getInitialValues()}
+                            onSubmit={(values) => onSubmit(values)}
+                        >
+                            {(values) => renderBrandForm(values)}
+                        </Formik>
+                    </>
+                )}
             </div>
         </div>
     );
 };
-
 export default React.memo(Brand);

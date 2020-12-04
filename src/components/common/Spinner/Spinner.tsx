@@ -1,20 +1,28 @@
 import React from 'react';
-import css from './Spinner.module.scss';
+import css from './Spinner.scss';
 
-interface SpinnerProps {
-    isLoading: boolean;
-}
+type SpinnerProps = {
+    customClass?: string;
+    margin?: string;
+    width?: string;
+    height?: string;
+};
 
-const Spinner = ({ isLoading }: SpinnerProps) => {
+const Spinner = ({ customClass, margin, width, height }: SpinnerProps) => {
+    const style = {
+        margin: margin,
+        width: width,
+        height: height,
+    };
     return (
-        <div className={`${css.button_spinner_container} ${isLoading ? css.button_spinner_container__visible : ''}`}>
-            <div className={css.button_spinner}>
-                <div></div>
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-        </div>
+        <>
+            <img
+                className={`${css.spinner} ${customClass || ''}   `}
+                src="/front-static/icons/spinner.svg"
+                alt={'Loading...'}
+                style={style}
+            />
+        </>
     );
 };
 

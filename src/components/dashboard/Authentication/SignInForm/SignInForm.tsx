@@ -10,6 +10,7 @@ import PasswordInput from '@components/common/Formik/FormikPaswordInputField';
 import Text from '@components/common/Text/Text';
 import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Button from '@components/common/Button/Button';
+import { getRoute, ROUTE } from '@services//http/Route';
 
 const SignInForm = () => {
     const { t } = useTranslation('authentication');
@@ -29,7 +30,8 @@ const SignInForm = () => {
     };
 
     useEffect(() => {
-        user && router.push(`/dashboard/workspace?${user.merchantUniq}`);
+        const route = user && getRoute(ROUTE.DASHBOARD.WORKSPACE, { merchantUniq: user.merchantUniq });
+        user && router.push(route);
     }, [router, user]);
 
     return (

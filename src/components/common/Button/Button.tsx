@@ -56,7 +56,7 @@ const Button = ({
             onClick={onClick}
         >
             {children}
-            <Spinner isLoading={isLoading} />
+            {isLoading && <Spinner customClass={css.spinner} margin={'0 0 0 10px'} />}
         </button>
     );
 };

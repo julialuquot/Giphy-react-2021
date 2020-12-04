@@ -302,18 +302,6 @@ exports[`Storyshots Button Primary 1`] = `
       }
     >
       Small
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
     <button
       className=" primary medium "
@@ -327,18 +315,6 @@ exports[`Storyshots Button Primary 1`] = `
       }
     >
       Medium
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
     <button
       className=" primary large "
@@ -352,18 +328,6 @@ exports[`Storyshots Button Primary 1`] = `
       }
     >
       Large
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
     <button
       className=" primary large disabled "
@@ -378,18 +342,6 @@ exports[`Storyshots Button Primary 1`] = `
       }
     >
       Disabled
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
   </div>
 </div>
@@ -430,18 +382,6 @@ exports[`Storyshots Button Secondary 1`] = `
       }
     >
       Small
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
     <button
       className=" secondary medium "
@@ -455,18 +395,6 @@ exports[`Storyshots Button Secondary 1`] = `
       }
     >
       Medium
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
     <button
       className=" secondary large "
@@ -480,18 +408,6 @@ exports[`Storyshots Button Secondary 1`] = `
       }
     >
       Large
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
     <button
       className=" secondary large disabled "
@@ -506,18 +422,6 @@ exports[`Storyshots Button Secondary 1`] = `
       }
     >
       Disabled
-      <div
-        className="button_spinner_container "
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
     </button>
   </div>
 </div>
@@ -558,18 +462,18 @@ exports[`Storyshots Button With Loading 1`] = `
       }
     >
       Primary Small
-      <div
-        className="button_spinner_container button_spinner_container__visible"
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
+      <img
+        alt="Loading..."
+        className="spinner spinner   "
+        src="/front-static/icons/spinner.svg"
+        style={
+          Object {
+            "height": undefined,
+            "margin": "0 0 0 10px",
+            "width": undefined,
+          }
+        }
+      />
     </button>
     <button
       className=" primary medium "
@@ -583,18 +487,18 @@ exports[`Storyshots Button With Loading 1`] = `
       }
     >
       Primary Medium
-      <div
-        className="button_spinner_container button_spinner_container__visible"
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
+      <img
+        alt="Loading..."
+        className="spinner spinner   "
+        src="/front-static/icons/spinner.svg"
+        style={
+          Object {
+            "height": undefined,
+            "margin": "0 0 0 10px",
+            "width": undefined,
+          }
+        }
+      />
     </button>
     <button
       className=" primary large "
@@ -608,18 +512,18 @@ exports[`Storyshots Button With Loading 1`] = `
       }
     >
       Primary Medium
-      <div
-        className="button_spinner_container button_spinner_container__visible"
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
+      <img
+        alt="Loading..."
+        className="spinner spinner   "
+        src="/front-static/icons/spinner.svg"
+        style={
+          Object {
+            "height": undefined,
+            "margin": "0 0 0 10px",
+            "width": undefined,
+          }
+        }
+      />
     </button>
   </div>
   <div
@@ -646,18 +550,18 @@ exports[`Storyshots Button With Loading 1`] = `
       }
     >
       Secondary
-      <div
-        className="button_spinner_container button_spinner_container__visible"
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
+      <img
+        alt="Loading..."
+        className="spinner spinner   "
+        src="/front-static/icons/spinner.svg"
+        style={
+          Object {
+            "height": undefined,
+            "margin": "0 0 0 10px",
+            "width": undefined,
+          }
+        }
+      />
     </button>
     <button
       className=" secondary medium "
@@ -671,18 +575,18 @@ exports[`Storyshots Button With Loading 1`] = `
       }
     >
       Secondary Small
-      <div
-        className="button_spinner_container button_spinner_container__visible"
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
+      <img
+        alt="Loading..."
+        className="spinner spinner   "
+        src="/front-static/icons/spinner.svg"
+        style={
+          Object {
+            "height": undefined,
+            "margin": "0 0 0 10px",
+            "width": undefined,
+          }
+        }
+      />
     </button>
     <button
       className=" secondary large "
@@ -696,18 +600,18 @@ exports[`Storyshots Button With Loading 1`] = `
       }
     >
       Secondary Large
-      <div
-        className="button_spinner_container button_spinner_container__visible"
-      >
-        <div
-          className="button_spinner"
-        >
-          <div />
-          <div />
-          <div />
-          <div />
-        </div>
-      </div>
+      <img
+        alt="Loading..."
+        className="spinner spinner   "
+        src="/front-static/icons/spinner.svg"
+        style={
+          Object {
+            "height": undefined,
+            "margin": "0 0 0 10px",
+            "width": undefined,
+          }
+        }
+      />
     </button>
   </div>
 </div>

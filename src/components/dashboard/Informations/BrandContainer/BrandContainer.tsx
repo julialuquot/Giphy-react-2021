@@ -27,7 +27,7 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
 
     return (
         <>
-            {!isFetching && Object.keys(brand).length > 0 && brand.constructor === Object && (
+            {brand && (
                 <Brand
                     name={brand.name}
                     logo={brand.logo}
@@ -38,6 +38,7 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
                     onUpdateBrand={(body) => onUpdateBrand(body)}
                     onResetBrand={(body) => onResetBrand(body)}
                     merchantUniq={user.merchantUniq}
+                    isFetching={isFetching}
                 />
             )}
         </>
