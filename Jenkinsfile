@@ -13,16 +13,17 @@ pipeline{
         FRONT_DOCKER_NAME = "lpc-front-refonte-run-preprod"
         IMAGE_NAME="lpc/frontend"
         NEXUS_PRIVATE_REPOSITORY="127.0.0.1:8123"
+        NEXUS_AWS_REPOSITORY="520723914241.dkr.ecr.eu-west-3.amazonaws.com"
         DOCKER_COMPOSE_INT_STACK_PATH="/var/jenkins_home/lpc-frontend/int/docker-compose.yml"
         DOCKER_COMPOSE_STAGING_STACK_PATH="/var/jenkins_home/prin/stack/staging/docker-compose.yml"
         DOCKER_COMPOSE_STACK_SERVICE_NAME="frontend"
     }
 
-    stages{
-        stage('initialize'){
+    stages {
+        stage('initialize') {
             agent {
                 docker { 
-                    image 'node:alpine'
+                    image 'node:14-alpine'
                 }
             }
             steps{
@@ -40,7 +41,7 @@ pipeline{
          stage ('Build') {
             agent {
                 docker { 
-                    image 'node:alpine'
+                    image 'node:14-alpine'
                 }
             }
             steps{    
@@ -53,7 +54,7 @@ pipeline{
         //   stage ('js lint') {
         //     agent {
         //         docker { 
-        //             image 'node:alpine'
+        //             image 'node:14-alpine'
         //         }
         //     }
         //     steps{            
@@ -65,7 +66,7 @@ pipeline{
         //   stage ('Test') {
         //     agent {
         //         docker { 
-        //             image 'node:alpine'
+        //             image 'node:14-alpine'
         //         }
         //     }
         //     steps{            
@@ -83,7 +84,14 @@ pipeline{
             // }
             steps {
 				script {
-                    sh "docker build --force-rm --build-arg env_name=integration  -f Dockerfile -t $IMAGE_NAME:${VERSION}-snapshot ."
+                    if (env.BRANCH_NAME.replaceAll( '/', '-' ) == 'master') {
+                        NODE_ENV="production"
+                        DOCKER_FILE="Dockerfile"
+                    } else {
+                        NODE_ENV="integration"
+                        DOCKER_FILE="DockerfileInt"
+                    }
+                    sh "docker build --force-rm --build-arg env_name=$NODE_ENV -f $DOCKER_FILE -t $IMAGE_NAME:${VERSION}-snapshot ."
                     sh "ls -la"
                     // if (env.BRANCH_NAME.replaceAll( '/', '-' ) == 'develop') {
                     //     sh "docker build --force-rm --build-arg env_name=integration --build-arg npm_validation_package_version=${NPM_VALIDATION_PACKAGE_VERSION} -f Dockerfile -t $IMAGE_NAME:${VERSION}-snapshot ."
@@ -139,7 +147,7 @@ pipeline{
                     // }
                      agent {
                             docker { 
-                                image 'node:alpine'
+                                image 'node:14-alpine'
                             }
                         }
 
