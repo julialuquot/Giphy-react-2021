@@ -30,7 +30,7 @@ const Brand = ({
     onResetBrand,
     merchantUniq,
 }: BrandProps) => {
-    const { t } = useTranslation('informations');
+    const { t } = useTranslation('dashboard-informations');
 
     const [logoUrl, setLogoUrl] = useState('');
 
