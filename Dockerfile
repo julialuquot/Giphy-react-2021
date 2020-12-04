@@ -3,12 +3,10 @@ FROM node:14-alpine
 ARG env_name
 
 # Create app directory
-WORKDIR app
+WORKDIR /app
 
 # Bundle app source (node_modules are excluded)
 COPY . .
-
-RUN ls -l /app
 
 # Install package dependencies 
 RUN npm install
