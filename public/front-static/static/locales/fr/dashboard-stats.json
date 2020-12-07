@@ -1,3 +1,18 @@
 {
-    "stats": "Statistiques"
+    "stats": "Statistiques",
+    "period-from": "Période du",
+    "to": "au",
+    "btn": {
+        "load-next": "Charger les suivants",
+        "load-previous": "Charger les précédents"
+    },
+    "card": {
+        "transactions": "Transactions",
+        "expenses": "Dépenses brut",
+        "top": "top"
+    },
+    "documents": {
+        "title": "Documents",
+        "desc": "Vous retrouverez ici l'ensemble de vos factures et documents relatifs aux transactions"
+    }
 }

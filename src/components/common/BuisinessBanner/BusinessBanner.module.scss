@@ -1,0 +1,40 @@
+@import '../../../assets/styles/colors';
+@import '../../../assets/styles/fonts';
+@import '../../../assets/styles/mixins';
+@import '../../../assets/styles/typography';
+
+
+.banner {
+  position: relative;
+  height: 243px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  width: 100%;
+  padding: 48px 96px;
+  margin-bottom: 142px;
+  background-color: $ui-primary;
+  @include border-radius(12px);
+  @include media(m-device) {
+    height: 264px;
+    padding: 32px;
+  }
+
+  > h5 {
+    color: $white;
+    margin-bottom: 8px;
+  }
+
+  > p {
+    max-width: 640px;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+
+
+}
