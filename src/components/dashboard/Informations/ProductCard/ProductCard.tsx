@@ -80,6 +80,9 @@ const ProductCard = ({
                         cta={t('dashboard-informations:products.add-visual')}
                         inputName={'image'}
                         format={t('dashboard-informations:products.format')}
+                        fileSizeLimit={1000000}
+                        fileWidthLimit={600}
+                        fileHeightLimit={600}
                         imgUrl={imgUrl !== '' ? imgUrl : image}
                         onUploadImg={(url) => setImgUrl(url)}
                         width={'255px'}

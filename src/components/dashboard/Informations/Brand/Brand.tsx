@@ -72,6 +72,9 @@ const Brand = ({
                     cta={t('dashboard-informations:btn.add')}
                     format={t('dashboard-informations:brand.logo-format')}
                     onUploadLogo={(url) => setLogoUrl(url)}
+                    fileSizeLimit={1000000}
+                    fileWidthLimit={747}
+                    fileHeightLimit={420}
                 />
 
                 <div className={css.brand__card__form__input}>

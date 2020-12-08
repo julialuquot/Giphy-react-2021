@@ -102,6 +102,9 @@ const Step = ({
                         inputName={'imageDesktop'}
                         label={t('dashboard-informations:tutorial.desktop-label')}
                         format={t('dashboard-informations:tutorial.format')}
+                        fileSizeLimit={1000000}
+                        fileWidthLimit={747}
+                        fileHeightLimit={420}
                         imgUrl={desktopImgUrl !== '' ? desktopImgUrl : imageDesktop}
                         onUploadImg={(url) => setDesktopImgUrl(url)}
                         width={'368px'}
@@ -113,6 +116,9 @@ const Step = ({
                         inputName={'imageMobile'}
                         label={t('dashboard-informations:tutorial.mobile-label')}
                         format={t('dashboard-informations:tutorial.format')}
+                        fileSizeLimit={1000000}
+                        fileWidthLimit={747}
+                        fileHeightLimit={420}
                         imgUrl={mobileImgUrl !== '' ? mobileImgUrl : imageMobile}
                         onMobileUploadImg={(url) => setMobileImgUrl(url)}
                         width={'368px'}

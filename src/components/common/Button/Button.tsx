@@ -5,7 +5,7 @@ import css from './Button.module.scss';
 type ButtonProps = {
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
     children: React.ReactNode;
-    type?: 'button' | 'submit';
+    type?: 'button' | 'submit' | 'reset';
     isDisabled?: boolean;
     isLoading?: boolean;
     customClass?: string;

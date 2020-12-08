@@ -14,6 +14,9 @@ type LogoUploadProps = {
     width: string;
     height: string;
     mobileUpload?: boolean;
+    fileSizeLimit: number;
+    fileWidthLimit: number;
+    fileHeightLimit: number;
 };
 
 const ImageUpload = ({
@@ -26,6 +29,9 @@ const ImageUpload = ({
     imgUrl,
     width,
     height,
+    fileSizeLimit,
+    fileWidthLimit,
+    fileHeightLimit,
 }: LogoUploadProps) => {
     const onChange = (e) => {
         e.preventDefault();
@@ -33,13 +39,52 @@ const ImageUpload = ({
             return;
         }
         const file = e.target.files[0];
-        const reader = new FileReader();
-        reader.readAsDataURL(file);
-        reader.onloadend = () => {
-            const body = { image: reader.result };
-            InformationsService.imageUpload(body)
-                .then((res) => (onMobileUploadImg ? onMobileUploadImg(res.data.image) : onUploadImg(res.data.image)))
-                .catch((err) => err);
+
+        if (file.size > fileSizeLimit) {
+            return;
+        }
+
+        const getImageDimension = (image) => {
+            return new Promise((resolve, reject) => {
+                try {
+                    const fileReader = new FileReader();
+
+                    fileReader.onload = () => {
+                        const img = new Image();
+                        img.onload = () => {
+                            resolve({ width: img.width, height: img.height });
+                        };
+                        if (typeof fileReader.result === 'string') {
+                            img.src = fileReader.result;
+                        }
+                    };
+
+                    fileReader.readAsDataURL(image);
+                } catch (e) {
+                    reject(e);
+                }
+            });
+        };
+
+        getImageDimension(file).then((res) => {
+            // @ts-ignore
+            if (res.width < fileWidthLimit && res.height < fileHeightLimit) {
+                return onSubmit();
+            }
+        });
+
+        const onSubmit = () => {
+            const reader = new FileReader();
+            reader.readAsDataURL(file);
+
+            return (reader.onload = () => {
+                const body = { image: reader.result };
+                return InformationsService.imageUpload(body)
+                    .then((res) =>
+                        onMobileUploadImg ? onMobileUploadImg(res.data.image) : onUploadImg(res.data.image),
+                    )
+                    .catch((err) => err);
+            });
         };
     };
 
