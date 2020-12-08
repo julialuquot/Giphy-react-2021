@@ -12,7 +12,7 @@ const AuthReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                error: [action.payload],
             };
         case 'USER_SIGN_IN_SUCCESS':
             return {

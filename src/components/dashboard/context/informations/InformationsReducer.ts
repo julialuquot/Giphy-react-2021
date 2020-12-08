@@ -17,7 +17,7 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                error: [action.payload],
             };
         case 'UPDATE_BRAND_SUCCESS':
             return {
@@ -29,7 +29,7 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                error: [action.payload],
             };
         case 'GET_TUTORIAL_SUCCESS':
             return {
@@ -41,7 +41,7 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                error: [action.payload],
             };
         case 'UPDATE_TUTORIAL_SUCCESS':
             return {
@@ -53,7 +53,7 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                error: [action.payload],
             };
 
         case 'GET_PRODUCTS_SUCCESS':
@@ -66,7 +66,7 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                error: [action.payload],
             };
         case 'UPDATE_PRODUCT_SUCCESS':
             return {
@@ -78,7 +78,7 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                error: [action.payload],
             };
         default:
             return state;

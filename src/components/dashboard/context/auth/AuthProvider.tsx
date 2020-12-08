@@ -1,13 +1,18 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useEffect, useCallback } from 'react';
 import AuthContext from './AuthContext';
 import authReducer from './AuthReducer';
 import AuthService from '@services/domain/AuthService';
+import { useTranslation } from '@i18n';
+import { useToasts } from 'react-toast-notifications';
 
 type AuthProviderProps = {
     children: React.ReactNode;
 };
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
+    const { addToast } = useToasts();
+    const { t } = useTranslation('common');
+
     const initialState = {
         isFetching: false,
         error: null,
@@ -23,30 +28,39 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     const [state, dispatch] = useReducer(authReducer, localState || initialState);
 
     useEffect(() => {
-        if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('userInfo', JSON.stringify(state));
-        }
-    }, [state]);
+        state.error &&
+            state.error.length > 0 &&
+            addToast(t(`common:errors.${state.error}`), {
+                appearance: 'error',
+                autoDismiss: true,
+            });
+    }, [addToast, state.error, t]);
 
-    const userSignIn = async (body) => {
+    useEffect(() => {
+        if (typeof localStorage !== 'undefined') {
+            localStorage.setItem('userInfo', JSON.stringify(state.user));
+        }
+    }, [state.user]);
+
+    const userSignIn = useCallback(async (body) => {
         try {
             dispatch({ type: 'START' });
             const data = await AuthService.signIn(body);
             dispatch({ type: 'USER_SIGN_IN_SUCCESS', payload: data });
         } catch (err) {
-            dispatch({ type: 'FAILURE', payload: err });
+            dispatch({ type: 'FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
-    const userSignOut = async () => {
+    const userSignOut = useCallback(async () => {
         try {
             dispatch({ type: 'START' });
             const data = await AuthService.signOut();
             dispatch({ type: 'USER_SIGN_OUT_SUCCESS', payload: data });
         } catch (err) {
-            dispatch({ type: 'FAILURE', payload: err });
+            dispatch({ type: 'FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
     return (
         <AuthContext.Provider

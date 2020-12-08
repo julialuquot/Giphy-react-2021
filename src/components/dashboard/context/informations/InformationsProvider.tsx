@@ -1,13 +1,18 @@
-import React, { useCallback, useReducer } from 'react';
+import React, { useCallback, useEffect, useReducer } from 'react';
 import InformationsContext from './InformationsContext';
 import informationsReducer from './InformationsReducer';
 import InformationsService from '@services/domain/InformationsService';
+import { useToasts } from 'react-toast-notifications';
+import { useTranslation } from '@i18n';
 
 type InformationsProviderProps = {
     children: React.ReactNode;
 };
 
 const InformationsProvider = ({ children }: InformationsProviderProps) => {
+    const { addToast } = useToasts();
+    const { t } = useTranslation('common');
+
     const initialState = {
         isFetching: false,
         error: null,
@@ -17,6 +22,14 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
     };
 
     const [state, dispatch] = useReducer(informationsReducer, initialState);
+
+    useEffect(() => {
+        state.error &&
+            addToast(t(`common:errors.${state.error}`), {
+                appearance: 'error',
+                autoDismiss: true,
+            });
+    }, [addToast, state.error, t]);
 
     /* BRAND */
     const getBrand = useCallback(async (merchantUniq) => {

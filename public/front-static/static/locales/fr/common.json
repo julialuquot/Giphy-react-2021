@@ -1,6 +1,7 @@
 {
     "test": "Home page !",
     "errors": {
+        "DEFAULT_ERROR_MESSAGE": "Oops! Quelque chose s'est mal passé.",
         "REQUIRED": "Ce champs est obligatoire",
         "INVALID_email": "Email invalide",
         "MIN_LENGTH_email": "Minimum 2 caratères",
@@ -17,6 +18,8 @@
         "WRONG_FORMAT_siteUrl": "Le format n’est pas respecté",
         "WRONG_FORMAT_color": "Le format n’est pas respecté (ex: #16A085)",
         "EMOTES_NOT_SUPPORTED": "Les emojies ne sont pas supportés",
-        "MUST_BE_NUMBER_price": "Doit être un nombre"
+        "MUST_BE_NUMBER_price": "Doit être un nombre",
+        "ACCESS_DENIED": "Vous n'êtes pas autorisé à accéder à cette page",
+        "Request failed with status code 404": "Oops! Quelque chose s'est mal passé."
     }
 }
