@@ -12,7 +12,7 @@ COPY . .
 RUN npm install
 
 # Build react next app 
-RUN npm run build
+#RUN npm run build
 
 # Install PM2 
 RUN npm install pm2 -g
