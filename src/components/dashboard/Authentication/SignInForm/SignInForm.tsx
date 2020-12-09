@@ -65,7 +65,7 @@ const SignInForm = () => {
                         />
 
                         <div className={css['lost-password']}>
-                            <Text variant="caption" color="ui-secondary">
+                            <Text variant="caption_02" color="ui-secondary">
                                 {t('authentication:login.lost-password')}
                             </Text>
                         </div>

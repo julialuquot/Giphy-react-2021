@@ -40,7 +40,7 @@ export const Default = () => (
         <br />
         <Text variant={'tagline'}>Tagline</Text>
         <br />
-        <Text variant={'caption'}>Caption</Text>
+        <Text variant={'caption_00'}>Caption</Text>
         <br />
         <Text variant={'hint'}>Hint</Text>
     </div>

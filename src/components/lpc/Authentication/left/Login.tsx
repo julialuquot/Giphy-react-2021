@@ -18,7 +18,7 @@ const LostPasswordLink: React.FC = () => {
         <AuthenticationPageContext.Consumer>
             {({ setPage, pages }) => (
                 <div className={css['lost-password']} onClick={() => setPage(pages.lostPassword)}>
-                    <Text variant="caption" color="ui-secondary">
+                    <Text variant="caption_00" color="ui-secondary">
                         {t('authentication:login.lost-password')}
                     </Text>
                 </div>
