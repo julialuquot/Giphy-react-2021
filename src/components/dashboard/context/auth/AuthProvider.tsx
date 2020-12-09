@@ -2,17 +2,12 @@ import React, { useReducer, useEffect, useCallback } from 'react';
 import AuthContext from './AuthContext';
 import authReducer from './AuthReducer';
 import AuthService from '@services/domain/AuthService';
-import { useTranslation } from '@i18n';
-import { useToasts } from 'react-toast-notifications';
 
 type AuthProviderProps = {
     children: React.ReactNode;
 };
 
 const AuthProvider = ({ children }: AuthProviderProps) => {
-    const { addToast } = useToasts();
-    const { t } = useTranslation('common');
-
     const initialState = {
         isFetching: false,
         error: null,
@@ -28,19 +23,10 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
     const [state, dispatch] = useReducer(authReducer, localState || initialState);
 
     useEffect(() => {
-        state.error &&
-            state.error.length > 0 &&
-            addToast(t(`common:errors.${state.error}`), {
-                appearance: 'error',
-                autoDismiss: true,
-            });
-    }, [addToast, state.error, t]);
-
-    useEffect(() => {
         if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('userInfo', JSON.stringify(state.user));
+            localStorage.setItem('userInfo', JSON.stringify(state));
         }
-    }, [state.user]);
+    }, [state]);
 
     const userSignIn = useCallback(async (body) => {
         try {
