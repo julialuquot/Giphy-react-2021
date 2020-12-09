@@ -8,5 +8,6 @@ export const getRoute = (route, params) => {
 export const ROUTE = {
     DASHBOARD: {
         WORKSPACE: '/dashboard/workspace',
+        SIGN_IN: '/dashboard/connexion',
     },
 };
