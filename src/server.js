@@ -26,18 +26,16 @@ const dev = process.env.NODE_ENV === 'development';
     //     });
     // }
 
-    if (dev) {
-        const devProxy = {
-            '/api/merchant-dashboard': {
-                target: process.env.BACKEND_BASE_URL,
-                changeOrigin: true,
-            },
-        };
-        const { createProxyMiddleware } = require('http-proxy-middleware');
-        Object.keys(devProxy).forEach(function (context) {
-            server.use(context, createProxyMiddleware(devProxy[context]));
-        });
-    }
+    const devProxy = {
+        '/api/merchant-dashboard': {
+            target: process.env.BACKEND_BASE_URL,
+            changeOrigin: true,
+        },
+    };
+    const { createProxyMiddleware } = require('http-proxy-middleware');
+    Object.keys(devProxy).forEach(function (context) {
+        server.use(context, createProxyMiddleware(devProxy[context]));
+    });
 
     await nextI18next.initPromise;
     server.use(nextI18NextMiddleware(nextI18next));

@@ -28,7 +28,6 @@ EXPOSE 6006
 
 ENV NODE_ENV=${env_name}
 
-
 ENTRYPOINT ["./run.sh"]
 
 

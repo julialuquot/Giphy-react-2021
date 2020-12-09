@@ -12,7 +12,7 @@
         "lint": "eslint '*/**/*.{js,ts,tsx}' --quiet --fix",
         "lint-win": "eslint */**/*.{js,ts,tsx} --quiet --fix",
         "storybook": "start-storybook -s ./public -p 6006",
-        "build-storybook": "build-storybook",
+        "build-storybook": "build-storybook", 
         "test": "jest",
         "analyze": "cross-env ANALYZE=true next build",
         "analyze:server": "cross-env BUNDLE_ANALYZE=server next build",
