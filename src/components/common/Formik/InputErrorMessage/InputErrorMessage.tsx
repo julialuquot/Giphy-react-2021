@@ -12,7 +12,7 @@ const InputErrorMessage: React.FC<PropsType> = ({ messageCode, name }: PropsType
     const { t } = useTranslation('common');
     return (
         <div className={css.wrapper}>
-            <Text variant="caption_00" color="ui-error">
+            <Text variant="caption_01" color="ui-error">
                 {messageCode === 'REQUIRED'
                     ? t(`common:errors.${messageCode}`)
                     : t(`common:errors.${messageCode}_${name}`)}
