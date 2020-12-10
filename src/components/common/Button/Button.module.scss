@@ -109,5 +109,17 @@
   cursor: default;
 }
 
+.loading {
+  opacity: 0.5;
+}
+
+
+.spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
 
 

@@ -43,11 +43,11 @@
     flex-direction: column;
 
     &__primary {
-      background-color: rgba(251, 40, 56, 0.3);
+      background-color: $ui-error-lighten;
 
       &:hover {
         color: $ui-error;
-        background-color: rgba(251, 40, 56, 0.4);
+        background-color: $ui-error-lighten;
       }
     }
   }

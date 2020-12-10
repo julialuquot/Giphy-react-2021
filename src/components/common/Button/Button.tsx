@@ -55,8 +55,8 @@ const Button = ({
             className={`${buttonStyle()} ${customClass || ''}`}
             onClick={onClick}
         >
-            {children}
-            {isLoading && <Spinner customClass={css.spinner} margin={'0 0 0 10px'} />}
+            <div className={isLoading ? css.loading : ''}>{children}</div>
+            {isLoading && <Spinner customClass={css.spinner} />}
         </button>
     );
 };
