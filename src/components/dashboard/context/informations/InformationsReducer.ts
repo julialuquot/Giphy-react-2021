@@ -7,6 +7,7 @@ const InformationsReducer = (state, action) => {
                 ...state,
                 isFetching: true,
                 error: null,
+                showNotificationSuccess: false,
             };
         case 'FETCH_FAILURE':
             return {
@@ -27,6 +28,7 @@ const InformationsReducer = (state, action) => {
                 isFetching: false,
                 brand: action.payload,
                 error: null,
+                showNotificationSuccess: true,
             };
         case 'GET_TUTORIAL_SUCCESS':
             return {
@@ -39,8 +41,9 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                tutorial: updateItems(state.products, action.payload),
+                tutorial: updateItems(state.tutorial, action.payload),
                 error: null,
+                showNotificationSuccess: true,
             };
         case 'GET_PRODUCTS_SUCCESS':
             return {
@@ -55,6 +58,7 @@ const InformationsReducer = (state, action) => {
                 isFetching: false,
                 products: updateItems(state.products, action.payload),
                 error: null,
+                showNotificationSuccess: true,
             };
         default:
             return state;

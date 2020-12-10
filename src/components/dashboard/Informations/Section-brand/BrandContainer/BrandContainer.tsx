@@ -1,12 +1,12 @@
 import React, { useContext, useEffect } from 'react';
-import Brand from '@components/dashboard/Informations/Brand/Brand';
+import Brand from '@components/dashboard/Informations/Section-brand/Brand/Brand';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import InformationsService from '@services/domain/InformationsService';
 import { useTranslation } from '@i18n';
 import { useToasts } from 'react-toast-notifications';
 
 type BrandContainerProps = {
-    user: { merchantUniq: string };
+    user: { partnerUniq: string };
 };
 
 const BrandContainer = ({ user }: BrandContainerProps) => {
@@ -14,11 +14,11 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
     const { t } = useTranslation('common');
 
     const informationsContext = useContext(InformationsContext);
-    const { getBrand, updateBrand, brand, isFetching, error } = informationsContext;
+    const { getBrand, updateBrand, brand, isFetching, error, showNotificationSuccess } = informationsContext;
 
     useEffect(() => {
-        getBrand(user.merchantUniq);
-    }, [getBrand, user.merchantUniq]);
+        getBrand(user.partnerUniq);
+    }, [getBrand, user.partnerUniq]);
 
     useEffect(() => {
         error &&
@@ -28,13 +28,21 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
             });
     }, [addToast, error, t]);
 
+    useEffect(() => {
+        showNotificationSuccess &&
+            addToast(t(`common:success.UPDATE_SUCCESS`), {
+                appearance: 'success',
+                autoDismiss: true,
+            });
+    }, [addToast, error, showNotificationSuccess, t]);
+
     const onUpdateBrand = (body) => {
         updateBrand(body);
     };
 
     const onResetBrand = (body) => {
         InformationsService.resetBrand(body)
-            .then(() => getBrand(user.merchantUniq))
+            .then(() => getBrand(user.partnerUniq))
             .catch((err) => err);
     };
 
@@ -46,11 +54,11 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
                     logo={brand.logo}
                     color={brand.color}
                     url={brand.siteUrl}
-                    description={brand.description}
-                    mentions={brand.mentions}
+                    description={brand.description?.fr}
+                    mentions={brand.mentions?.fr}
                     onUpdateBrand={(body) => onUpdateBrand(body)}
                     onResetBrand={(body) => onResetBrand(body)}
-                    merchantUniq={user.merchantUniq}
+                    partnerUniq={user.partnerUniq}
                     isFetching={isFetching}
                 />
             )}

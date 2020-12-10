@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect, useCallback } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import AuthContext from './AuthContext';
 import authReducer from './AuthReducer';
 import AuthService from '@services/domain/AuthService';
@@ -15,18 +15,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         user: null,
     };
 
-    let localState = null;
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('userInfo')) {
-        localState = JSON.parse(localStorage.getItem('userInfo') || '');
-    }
-
-    const [state, dispatch] = useReducer(authReducer, localState || initialState);
-
-    useEffect(() => {
-        if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('userInfo', JSON.stringify(state));
-        }
-    }, [state]);
+    const [state, dispatch] = useReducer(authReducer, initialState);
 
     const userSignIn = useCallback(async (body) => {
         try {

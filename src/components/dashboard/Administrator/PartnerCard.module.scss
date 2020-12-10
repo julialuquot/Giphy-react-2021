@@ -27,6 +27,12 @@
   box-shadow: 12px 12px 48px 0 rgba(163, 175, 194, 0.18);
   border: solid 1px rgba(163, 175, 194, 0.24);
 
+  &__inactive {
+    opacity: 0.5;
+    filter: grayscale(80%);
+    filter: blur(1px);
+  }
+
 
   &__header {
     @extend %shared-header;
@@ -84,16 +90,9 @@
 
 
     & > h5 {
-      font-size: 1.5rem;
       color: $ui-primary;
     }
-
-    & > p {
-      font-family: $primary-reg;
-      font-size: $level3;
-      color: $ui-secondary;
-      font-weight: 500
-    }
+    
 
     &__eye {
       position: absolute;

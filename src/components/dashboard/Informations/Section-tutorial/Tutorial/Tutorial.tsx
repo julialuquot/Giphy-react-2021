@@ -1,24 +1,42 @@
 import React, { useContext, useEffect } from 'react';
 import css from './Tutorial.module.scss';
 import Banner from '@components/dashboard/Informations/Banner/Banner';
-import Step from '@components/dashboard/Informations/Step/Step';
+import Step from '@components/dashboard/Informations/Section-tutorial/Step/Step';
 import { useTranslation } from '@i18n';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import InformationsService from '@services/domain/InformationsService';
+import { useToasts } from 'react-toast-notifications';
 
 type TutorialProps = {
-    user: { merchantUniq: string };
+    user: { partnerUniq: string };
 };
 
 const Tutorial = ({ user }: TutorialProps) => {
     const { t } = useTranslation('informations');
+    const { addToast } = useToasts();
 
     const informationsContext = useContext(InformationsContext);
-    const { getTutorial, updateTutorial, tutorial, isFetching } = informationsContext;
+    const { getTutorial, updateTutorial, tutorial, isFetching, error, showNotificationSuccess } = informationsContext;
 
     useEffect(() => {
-        getTutorial(user.merchantUniq);
-    }, [getTutorial, user.merchantUniq]);
+        getTutorial(user.partnerUniq);
+    }, [getTutorial, user.partnerUniq]);
+
+    useEffect(() => {
+        error &&
+            addToast(t(`common:errors.${error}`), {
+                appearance: 'error',
+                autoDismiss: true,
+            });
+    }, [addToast, error, t]);
+
+    useEffect(() => {
+        showNotificationSuccess &&
+            addToast(t(`common:success.UPDATE_SUCCESS`), {
+                appearance: 'success',
+                autoDismiss: true,
+            });
+    }, [addToast, error, showNotificationSuccess, t]);
 
     const onUpdateTutorial = (body) => {
         updateTutorial(body);
@@ -26,7 +44,7 @@ const Tutorial = ({ user }: TutorialProps) => {
 
     const onResetTutorial = (body) => {
         InformationsService.resetTutorial(body)
-            .then(() => getTutorial(user.merchantUniq))
+            .then(() => getTutorial(user.partnerUniq))
             .catch((err) => err);
     };
 
@@ -39,13 +57,13 @@ const Tutorial = ({ user }: TutorialProps) => {
                     <Step
                         key={tutorial.order}
                         order={tutorial.order}
-                        title={tutorial.title}
-                        description={tutorial.description}
+                        title={tutorial.title?.fr}
+                        description={tutorial.description?.fr}
                         imageDesktop={tutorial.imageDesktop}
                         imageMobile={tutorial.imageMobile}
                         onUpdateTutorial={(body) => onUpdateTutorial(body)}
                         onResetTutorial={(body) => onResetTutorial(body)}
-                        merchantUniq={user.merchantUniq}
+                        partnerUniq={user.partnerUniq}
                         isFetching={isFetching}
                     />
                 ))}

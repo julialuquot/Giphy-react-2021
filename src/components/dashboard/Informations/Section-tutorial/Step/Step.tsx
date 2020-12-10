@@ -17,7 +17,7 @@ type StepProps = {
     imageMobile: string;
     onUpdateTutorial: (body: object) => void;
     onResetTutorial: (body: object) => void;
-    merchantUniq: string;
+    partnerUniq: string;
     isFetching: boolean;
 };
 
@@ -28,11 +28,11 @@ const Step = ({
     imageDesktop,
     imageMobile,
     onUpdateTutorial,
-    merchantUniq,
+    partnerUniq,
     onResetTutorial,
     isFetching,
 }: StepProps) => {
-    const { t } = useTranslation('informations');
+    const { t } = useTranslation('dashboard-informations');
 
     const [isEditing, setIsEditing] = useState(false);
     const [desktopImgUrl, setDesktopImgUrl] = useState('');
@@ -49,7 +49,7 @@ const Step = ({
             imageDesktop: imageDesktop,
             imageMobile: imageMobile,
             order: order,
-            merchantUniq: merchantUniq,
+            partnerUniq: partnerUniq,
         };
     };
 
@@ -58,6 +58,14 @@ const Step = ({
             ...values,
             imageDesktop: desktopImgUrl !== '' ? desktopImgUrl : imageDesktop,
             imageMobile: mobileImgUrl !== '' ? mobileImgUrl : imageMobile,
+            title: {
+                fr: values.title,
+                en: values.title,
+            },
+            description: {
+                fr: values.description,
+                en: values.description,
+            },
         };
 
         setIsEditing(false);
@@ -65,7 +73,7 @@ const Step = ({
     };
 
     const onReset = () => {
-        const body = { merchantUniq: merchantUniq, reset: true, order: order };
+        const body = { partnerUniq: partnerUniq, reset: true, order: order };
         onResetTutorial(body);
     };
 
@@ -162,8 +170,8 @@ const Step = ({
                         {!isEditing ? (
                             <>
                                 <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
-                                <h6>{title}</h6>
-                                <Text variant={'body_00'} color={'ui-secondary'}>
+                                <h5>{title}</h5>
+                                <Text variant={'body_01'} color={'ui-primary'}>
                                     {description}
                                 </Text>
                                 <div className={css.step__img}>

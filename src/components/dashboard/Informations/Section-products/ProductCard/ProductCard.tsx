@@ -17,7 +17,7 @@ type ProductCardProps = {
     image: string;
     onUpdateProduct: (body: object) => void;
     onResetProduct: (body: object) => void;
-    merchantUniq: string;
+    partnerUniq: string;
     isFetching: boolean;
 };
 
@@ -29,7 +29,7 @@ const ProductCard = ({
     image,
     onUpdateProduct,
     onResetProduct,
-    merchantUniq,
+    partnerUniq,
     isFetching,
 }: ProductCardProps) => {
     const { t } = useTranslation('dashboard-informations');
@@ -48,7 +48,7 @@ const ProductCard = ({
             image: image,
             order: order,
             price: price,
-            merchantUniq: merchantUniq,
+            partnerUniq: partnerUniq,
         };
     };
 
@@ -56,6 +56,14 @@ const ProductCard = ({
         const body = {
             ...values,
             image: imgUrl !== '' ? imgUrl : image,
+            title: {
+                fr: values.title,
+                en: values.title,
+            },
+            description: {
+                fr: values.description,
+                en: values.description,
+            },
         };
 
         setIsEditing(false);
@@ -63,7 +71,7 @@ const ProductCard = ({
     };
 
     const onReset = () => {
-        const body = { merchantUniq: merchantUniq, reset: true, order: order };
+        const body = { partnerUniq: partnerUniq, reset: true, order: order };
         onResetProduct(body);
     };
 
@@ -165,8 +173,8 @@ const ProductCard = ({
                                         }}
                                     />
                                     <div className={css.product__content__informations}>
-                                        <h6>{title}</h6>
-                                        <Text variant={'body_00'} color={'ui-secondary'}>
+                                        <h5>{title}</h5>
+                                        <Text variant={'caption_00'} color={'ui-secondary'}>
                                             {description}
                                         </Text>
                                         <span>
@@ -177,7 +185,7 @@ const ProductCard = ({
                             </>
                         ) : (
                             <>
-                                <h5> {t('informations:products.product.product', { order })}</h5>
+                                <h5> {t('dashboard-informations:products.product.product', { order })}</h5>
                                 <Formik
                                     validationSchema={updateProductsSchema}
                                     initialValues={getInitialValues()}

@@ -38,10 +38,10 @@ const SignInForm = () => {
             });
     }, [addToast, error, t]);
 
-    useEffect(() => {
-        const route = user && getRoute(ROUTE.DASHBOARD.WORKSPACE, { merchantUniq: user.merchantUniq });
-        user && router.push(route);
-    }, [router, user]);
+    // useEffect(() => {
+    //     const route = user && getRoute(ROUTE.DASHBOARD.WORKSPACE, { partnerUniq: user.partnerUniq });
+    //     user && router.push(route);
+    // }, [router, user]);
 
     return (
         <Formik validationSchema={signIn} initialValues={initialValues} onSubmit={(values) => onSubmit(values)}>

@@ -2,12 +2,17 @@
     "test": "Home page !",
     "errors": {
         "DEFAULT_ERROR_MESSAGE": "Oops! Quelque chose s'est mal passé.",
+        "Request failed with status code 404": "Oops! Quelque chose s'est mal passé.",
+        "Request failed with status code 500": "Oops! Quelque chose s'est mal passé.",
+        "Request failed with status code 400": "Oops! Quelque chose s'est mal passé.",
         "REQUIRED": "Ce champs est obligatoire",
         "INVALID_email": "Email invalide",
-        "MIN_LENGTH_email": "Minimum 2 caratères",
         "MAX_LENGTH_email": "Le nombre de caractères est dépassé",
-        "MIN_LENGTH_password": "minimum 8 caractères",
+        "MIN_LENGTH_email": "Minimum 2 caratères",
+        "MAX_LENGTH_mentions": "Le nombre de caractères est dépassé",
+        "MIN_LENGTH_mentions": "Minimum 2 caratères",
         "MAX_LENGTH_password": "Maximum 60 caractères",
+        "MIN_LENGTH_password": "minimum 8 caractères",
         "DOES_NOT_MATCH_passwordConfirmation": "Il faut tapper le même mot de passe",
         "MIN_LENGTH_color": "Minimum 6 caractères",
         "MAX_LENGTH_color": "Le nombre de caractères est dépassé",
@@ -20,7 +25,12 @@
         "EMOTES_NOT_SUPPORTED": "Les emojies ne sont pas supportés",
         "MUST_BE_NUMBER_price": "Doit être un nombre",
         "ACCESS_DENIED": "Vous n'êtes pas autorisé à accéder à cette page",
-        "Request failed with status code 404": "Oops! Quelque chose s'est mal passé.",
-        "Request failed with status code 500": "Oops! Quelque chose s'est mal passé."
+        "WRONG_FORMAT_IMG": "Le format de l'image n'est pas respecté"
+    },
+    "success": {
+        "GO_ONLINE_SUCCESS": "Vos modifications sont maintenant en ligne !",
+        "UPDATE_SUCCESS": "Vos modifications ont bien été enregistrées !",
+        "partner suspended": "Le partenaire est suspendu !",
+        "partner activated": "Le partenaire est activé !"
     }
 }

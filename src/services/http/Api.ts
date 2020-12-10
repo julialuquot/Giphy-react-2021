@@ -7,21 +7,21 @@ const API = {
     },
     INFORMATIONS: {
         IMAGE_UPLOAD: `${apiURL}/images`,
-        GET_BRAND: `${apiURL}/brands?merchantUniq=`,
+        GET_BRAND: `${apiURL}/brands?partnerUniq=`,
         UPDATE_BRAND: `${apiURL}/brands`,
         RESET_BRAND: `${apiURL}/brands`,
-        GET_TUTORIAL: `${apiURL}/how-it-works?merchantUniq=`,
+        GET_TUTORIAL: `${apiURL}/how-it-works?partnerUniq=`,
         UPDATE_TUTORIAL: `${apiURL}/how-it-works`,
         RESET_TUTORIAL: `${apiURL}/how-it-works`,
-        GET_PRODUCTS: `${apiURL}/products?merchantUniq=`,
+        GET_PRODUCTS: `${apiURL}/products?partnerUniq=`,
         UPDATE_PRODUCT: `${apiURL}/products`,
         RESET_PRODUCT: `${apiURL}/products`,
     },
-    MERCHANT: {
-        GO_ONLINE: `${apiURL}/merchants`,
-        GET_ALL: `${apiURL}/merchants`,
-        SUSPEND: `${apiURL}/merchants`,
-        ACTIVATE: `${apiURL}/merchants`,
+    PARTNER: {
+        GO_ONLINE: `${apiURL}/partners`,
+        GET_ALL: `${apiURL}/partners-admin`,
+        SUSPEND: `${apiURL}/partners`,
+        ACTIVATE: `${apiURL}/partners`,
     },
 };
 

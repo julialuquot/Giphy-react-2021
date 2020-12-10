@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import css from './Informations.module.scss';
 import SideNavigation from '@components/dashboard/Informations/SideNavigation/SideNavigation';
-import Tutorial from '@components/dashboard/Informations/Tutorial/Tutorial';
-import Products from '@components/dashboard/Informations/Products/Products';
-import BrandContainer from '@components/dashboard/Informations/BrandContainer/BrandContainer';
+import Tutorial from '@components/dashboard/Informations/Section-tutorial/Tutorial/Tutorial';
+import Products from '@components/dashboard/Informations/Section-products/Products/Products';
+import BrandContainer from '@components/dashboard/Informations/Section-brand/BrandContainer/BrandContainer';
 
 type InformationsProps = {
     principal: any;

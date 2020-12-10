@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
     return (
         <ToastProvider
             components={{ Toast: Toast, ToastContainer: ToastContainer }}
-            placement={'bottom-right'}
+            placement={'top-right'}
             autoDismissTimeout={5000}
         >
             <Component {...pageProps} />

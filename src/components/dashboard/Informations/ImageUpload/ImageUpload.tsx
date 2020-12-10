@@ -2,6 +2,8 @@ import React from 'react';
 import { Field } from 'formik';
 import css from './ImageUpload.scss';
 import InformationsService from '@services/domain/InformationsService';
+import { useToasts } from 'react-toast-notifications';
+import { useTranslation } from '@i18n';
 
 type LogoUploadProps = {
     cta: string;
@@ -33,6 +35,9 @@ const ImageUpload = ({
     fileWidthLimit,
     fileHeightLimit,
 }: LogoUploadProps) => {
+    const { t } = useTranslation('common');
+    const { addToast } = useToasts();
+
     const onChange = (e) => {
         e.preventDefault();
         if (!e || !e.target || !e.target.files || !e.target.files.length) {
@@ -41,6 +46,11 @@ const ImageUpload = ({
         const file = e.target.files[0];
 
         if (file.size > fileSizeLimit) {
+            addToast(t(`common:errors.WRONG_FORMAT_IMG`), {
+                appearance: 'error',
+                autoDismiss: true,
+            });
+
             return;
         }
 
@@ -67,10 +77,14 @@ const ImageUpload = ({
         };
 
         getImageDimension(file).then((res) => {
-            // @ts-ignore
-            if (res.width < fileWidthLimit && res.height < fileHeightLimit) {
-                return onSubmit();
+            if (res.width > fileWidthLimit || res.height > fileHeightLimit) {
+                addToast(t(`common:errors.WRONG_FORMAT_IMG`), {
+                    appearance: 'error',
+                    autoDismiss: true,
+                });
+                return;
             }
+            return onSubmit();
         });
 
         const onSubmit = () => {
@@ -87,7 +101,6 @@ const ImageUpload = ({
             });
         };
     };
-
     const style = {
         backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.66), rgba(0, 0, 0, 0.66)), url(${imgUrl})`,
         backgroundSize: 'cover',

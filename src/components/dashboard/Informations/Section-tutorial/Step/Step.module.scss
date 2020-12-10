@@ -1,59 +1,58 @@
-@import '../../../../assets/styles/colors';
-@import '../../../../assets/styles/mixins';
-@import '../../../../assets/styles/typography';
-@import '../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
+@import '../../../../../assets/styles/fonts';
 
-.product {
+.step {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 855px;
-  min-height: 304px;
+  min-height: 452px;
   margin-top: 30px;
-  padding: 36px 48px 36px 48px;
+  padding: 36px 48px 48px 36px;
   border-radius: 8px;
   box-shadow: 12px 12px 48px 0 $box-shadow;
   border: solid 2px $ui-quaternary;
   background-color: $white;
 
+
   & > h5 {
     color: $ui-primary;
+    margin-bottom: 36px;
+
   }
 
-  &__content {
+  & > h6 {
+    color: $ui-primary;
+    margin-bottom: 16px;
+
+  }
+
+  &__img {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     margin-top: 36px;
 
+    &__desktop {
+      width: 368px;
+      height: 208px;
+      border-radius: 6px;
+      background-size: cover;
+      background-position: center;
+      background-color: $background-light-grey;
+    }
 
-    &__img {
-      width: 160px;
-      height: 200px;
-      margin-right: 40px;
-      border-radius: 8px;
+    &__mobile {
+      width: 368px;
+      height: 208px;
+      border-radius: 6px;
+      background-size: cover;
+      background-position: center;
       background-color: $background-light-grey;
 
     }
-
-    &__informations {
-      display: flex;
-      flex-direction: column;
-
-
-      & > h6 {
-        color: $ui-primary;
-        margin-bottom: 4px;
-      }
-
-      & > span {
-        margin-top: 8px;
-        font-family: $primary-medium;
-        font-size: 16px;
-        color: $orange;
-      }
-    }
   }
-
 
   &__icon {
     position: absolute;
@@ -90,26 +89,18 @@
 
 
 .form {
-  display: flex;
-  margin-top: 36px;
-
-  &__upload {
-    width: 40%;
-    margin: 21px 0 21px 0;
-  }
-
-
-  &__content {
-
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-  }
+  width: 100%;
 
   &__input {
-    margin: 21px 0 21px 0;
+    margin: 0px 0 21px 0;
   }
 
+  &__upload {
+    display: flex;
+    justify-content: space-between;
+    margin: 21px 0 21px 0;
+
+  }
 
   &__btn {
     display: flex;

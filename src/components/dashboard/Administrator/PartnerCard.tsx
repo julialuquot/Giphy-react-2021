@@ -1,20 +1,35 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import css from './PartnerCard.module.scss';
 import CardPopUp from '@components/dashboard/Administrator/CardPopUp';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
 import { useTranslation } from '@i18n';
+import { formatDate } from '@services/utils/DateService';
+import Text from '@components/common/Text/Text';
 
 type PartnerCardProps = {
-    img: string;
+    logo: string;
     color: string;
-    title: string;
-    subtitle: string;
-    status: string;
+    name: string;
+    lastModification: string;
+    verificationStatus: string;
+    verificationResponsible: string;
     onOpenModal: (boolean) => void;
-    onSelectPartner: (string) => void;
+    onSelectPartner: (string, boolean) => void;
+    active: boolean;
+    uniq: string;
 };
 
-const PartnerCard = ({ img, color, title, subtitle, status, onOpenModal, onSelectPartner }: PartnerCardProps) => {
+const PartnerCard = ({
+    logo,
+    color,
+    name,
+    lastModification,
+    onOpenModal,
+    onSelectPartner,
+    verificationResponsible,
+    active,
+    uniq,
+}: PartnerCardProps) => {
     const { t } = useTranslation('dashboard-partners');
 
     const [isHover, setIsHover] = useState(false);
@@ -24,7 +39,7 @@ const PartnerCard = ({ img, color, title, subtitle, status, onOpenModal, onSelec
     useOnClickOutside(cardRef, () => setIsPopUpOpen(false));
 
     const headerStyle = {
-        backgroundColor: color,
+        backgroundColor: color || '#121922',
     };
 
     const onMouseEnter = () => {
@@ -39,23 +54,20 @@ const PartnerCard = ({ img, color, title, subtitle, status, onOpenModal, onSelec
         setIsPopUpOpen(!isPopUpOpen);
     };
 
-    const handleOnSelectPartner = useCallback(
-        (partner) => {
-            onSelectPartner(partner);
-        },
-        [onSelectPartner],
-    );
+    const handleOnSelectPartner = (uniq, active) => {
+        onSelectPartner(uniq, active);
+    };
 
     return (
         <div ref={cardRef} className={css.wrapper}>
             <div
-                className={css.card}
-                onClick={() => handleOnSelectPartner(title)}
+                className={`${css.card} ${!active ? css.card__inactive : ''}`}
+                onClick={() => handleOnSelectPartner(uniq, active)}
                 onMouseEnter={() => onMouseEnter()}
                 onMouseLeave={() => onMouseLeave()}
             >
                 <div className={css.card__header} style={headerStyle}>
-                    <img className={css.card__header__img} src={img} alt={title} />
+                    <img className={css.card__header__logo} src={logo} alt={name} />
                     <div onClick={() => onToggleProfil()} className={css.card__header__more}>
                         <img
                             className={`${css.card__header__more__icon} ${
@@ -67,17 +79,18 @@ const PartnerCard = ({ img, color, title, subtitle, status, onOpenModal, onSelec
                     </div>
                 </div>
                 <div className={css.card__footer}>
-                    <h5>{title}</h5>
-                    <p>
-                        {t('dashboard-partners:card.edit-on')} {subtitle}
-                    </p>
+                    <h5>{name}</h5>
+                    <Text variant={'caption_00'} color={'ui-secondary'}>
+                        {t('dashboard-partners:card.edit-on')} {formatDate(lastModification)} (
+                        {verificationResponsible || 'ND'})
+                    </Text>
                     <div className={css.card__footer__eye}>
                         <img src="/front-static/icons/show-eye.svg" alt="show" />
                     </div>
                 </div>
             </div>
 
-            <CardPopUp onOpenModal={(value) => onOpenModal(value)} isOpen={isPopUpOpen} status={status} />
+            <CardPopUp onOpenModal={(value) => onOpenModal(value)} isOpen={isPopUpOpen} active={active} />
         </div>
     );
 };

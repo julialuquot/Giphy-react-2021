@@ -14,15 +14,16 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         brand: {},
         tutorial: [],
         products: [],
+        showNotificationSuccess: false,
     };
 
     const [state, dispatch] = useReducer(informationsReducer, initialState);
 
     /* BRAND */
-    const getBrand = useCallback(async (merchantUniq) => {
+    const getBrand = useCallback(async (partnerUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
-            const data = await InformationsService.getBrand(merchantUniq);
+            const data = await InformationsService.getBrand(partnerUniq);
             dispatch({ type: 'GET_BRAND_SUCCESS', payload: data.data });
         } catch (err) {
             dispatch({ type: 'FETCH_FAILURE', payload: err.message });
@@ -40,10 +41,10 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
     }, []);
 
     /* TUTORIAL */
-    const getTutorial = useCallback(async (merchantUniq) => {
+    const getTutorial = useCallback(async (partnerUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
-            const data = await InformationsService.getTutorial(merchantUniq);
+            const data = await InformationsService.getTutorial(partnerUniq);
             dispatch({ type: 'GET_TUTORIAL_SUCCESS', payload: data.data });
         } catch (err) {
             dispatch({ type: 'FETCH_FAILURE', payload: err.message });
@@ -61,10 +62,10 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
     }, []);
 
     /* PRODUCTS */
-    const getProducts = useCallback(async (merchantUniq) => {
+    const getProducts = useCallback(async (partnerUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
-            const data = await InformationsService.getProducts(merchantUniq);
+            const data = await InformationsService.getProducts(partnerUniq);
             dispatch({ type: 'GET_PRODUCTS_SUCCESS', payload: data.data });
         } catch (err) {
             dispatch({ type: 'FETCH_FAILURE', payload: err.message });
@@ -89,6 +90,7 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
                 brand: state.brand,
                 tutorial: state.tutorial,
                 products: state.products,
+                showNotificationSuccess: state.showNotificationSuccess,
                 getBrand,
                 getTutorial,
                 getProducts,

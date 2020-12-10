@@ -16,13 +16,12 @@
 
 
   :global(.react-toast-notifications__toast__content) {
-    display: flex;
-    align-items: center;
-    min-height: auto;
-    margin: 0 0 0 8px;
-    font-family: $primary-medium;
-    font-size: 14px;
-    font-weight: 500;
+    display: flex !important;
+    align-items: center !important;
+    min-height: auto !important;
+    margin: 0 0 0 8px !important;
+    font-family: $primary-reg !important;
+    font-size: $level2 !important;
   }
 
   &__success {

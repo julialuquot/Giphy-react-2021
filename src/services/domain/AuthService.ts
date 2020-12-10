@@ -1,15 +1,15 @@
 import { axiosClient } from '@services/http/Http';
 import API from '@services/http/Api';
 import jwtDecode from 'jwt-decode';
-import Cookies from 'js-cookie';
+import nextCookies from 'next-cookies';
 
 const signIn = (body) => axiosClient().post(API.AUTH.SIGN_IN, body);
 const signOut = () => axiosClient().post(API.AUTH.SIGN_OUT);
 
-export const getUser = (ctx) => {
-    const tokenCookie = Cookies.get('merchantDashboardToken');
+const getUser = (ctx) => {
+    const tokenCookie = nextCookies(ctx).merchantDashboardToken;
 
-    if (ctx && ctx.req && tokenCookie) {
+    if (ctx && tokenCookie) {
         return jwtDecode(tokenCookie);
     }
 

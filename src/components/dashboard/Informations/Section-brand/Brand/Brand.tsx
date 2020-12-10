@@ -17,7 +17,7 @@ type BrandProps = {
     mentions: string;
     onUpdateBrand: (body: object) => void;
     onResetBrand: (body: object) => void;
-    merchantUniq: string;
+    partnerUniq: string;
     isFetching: boolean;
 };
 
@@ -30,7 +30,7 @@ const Brand = ({
     mentions,
     onUpdateBrand,
     onResetBrand,
-    merchantUniq,
+    partnerUniq,
     isFetching,
 }: BrandProps) => {
     const { t } = useTranslation('dashboard-informations');
@@ -45,7 +45,7 @@ const Brand = ({
             siteUrl: url,
             description: description,
             mentions: mentions,
-            merchantUniq: merchantUniq,
+            partnerUniq: partnerUniq,
         };
     };
 
@@ -53,12 +53,21 @@ const Brand = ({
         const body = {
             ...values,
             logo: logoUrl !== '' ? logoUrl : logo,
+            description: {
+                fr: values.description,
+                en: values.description,
+            },
+            mentions: {
+                fr: values.mentions,
+                en: values.mentions,
+            },
         };
+
         onUpdateBrand(body);
     };
 
     const onReset = () => {
-        const body = { merchantUniq: merchantUniq, reset: true };
+        const body = { partnerUniq: partnerUniq, reset: true };
         onResetBrand(body);
     };
 
@@ -132,7 +141,7 @@ const Brand = ({
                     >
                         {t('dashboard-informations:btn.cancel')}
                     </Button>
-                    <Button variant="primary" size="small" type="submit">
+                    <Button variant="primary" size="small" type="submit" isLoading={isFetching}>
                         {t('dashboard-informations:btn.validate')}
                     </Button>
                 </div>
@@ -154,10 +163,11 @@ const Brand = ({
                 ) : (
                     <>
                         <div className={css.brand__card__logo} style={style}>
-                            <p className={css.brand__card__logo__placeholder}>
-                                {' '}
-                                {t('dashboard-informations:brand.logo')}
-                            </p>
+                            {!logo && (
+                                <p className={css.brand__card__logo__placeholder}>
+                                    {t('dashboard-informations:brand.logo')}
+                                </p>
+                            )}
                         </div>
                         <Formik
                             validationSchema={updateBrandSchema}

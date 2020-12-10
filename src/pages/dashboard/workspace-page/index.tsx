@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import css from './workspace-page.module.scss';
+import { useTranslation } from '@i18n';
 import Layout from '@components/dashboard/Layout/Layout';
 import TabNavigation from '@components/dashboard/TabNavigation/TabNavigation';
 import Heading from '@components/common/Heading/Heading';
 import Stats from '@components/dashboard/Stats/Stats';
-import { useTranslation } from '@i18n';
 import Informations from '@components/dashboard/Informations/Informations';
+import AuthService from '@services/domain/AuthService';
 import { getRoute, ROUTE } from '@services//http/Route';
-
-import { getUser } from '@services/domain/AuthService';
 
 type WorkspaceProps = {
     principal: any;
@@ -35,7 +34,7 @@ const WorkspacePage = ({ principal }: WorkspaceProps) => {
 };
 
 WorkspacePage.getInitialProps = async (ctx) => {
-    const principal = getUser(ctx);
+    const principal = await AuthService.getUser(ctx);
     if (!principal) {
         ctx.res.writeHead(302, {
             Location: getRoute(ROUTE.DASHBOARD.SIGN_IN, null),

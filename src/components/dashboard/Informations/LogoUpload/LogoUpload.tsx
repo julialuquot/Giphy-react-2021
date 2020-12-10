@@ -2,6 +2,8 @@ import React from 'react';
 import { Field } from 'formik';
 import css from './LogoUpload.scss';
 import InformationsService from '@services/domain/InformationsService';
+import { useToasts } from 'react-toast-notifications';
+import { useTranslation } from '@i18n';
 
 type LogoUploadProps = {
     cta: string;
@@ -24,6 +26,9 @@ const LogoUpload = ({
     fileWidthLimit,
     fileHeightLimit,
 }: LogoUploadProps) => {
+    const { t } = useTranslation('common');
+    const { addToast } = useToasts();
+
     const onChange = (e) => {
         e.preventDefault();
         if (!e || !e.target || !e.target.files || !e.target.files.length) {
@@ -32,6 +37,11 @@ const LogoUpload = ({
         const file = e.target.files[0];
 
         if (file.size > fileSizeLimit) {
+            addToast(t(`common:errors.WRONG_FORMAT_IMG`), {
+                appearance: 'error',
+                autoDismiss: true,
+            });
+
             return;
         }
 
@@ -58,12 +68,15 @@ const LogoUpload = ({
         };
 
         getImageDimension(file).then((res) => {
-            // @ts-ignore
-            if (res.width < fileWidthLimit && res.height < fileHeightLimit) {
-                return onSubmit();
+            if (res.width > fileWidthLimit || res.height > fileHeightLimit) {
+                addToast(t(`common:errors.WRONG_FORMAT_IMG`), {
+                    appearance: 'error',
+                    autoDismiss: true,
+                });
+                return;
             }
+            return onSubmit();
         });
-
         const onSubmit = () => {
             const reader = new FileReader();
             reader.readAsDataURL(file);

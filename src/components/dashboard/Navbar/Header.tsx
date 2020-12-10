@@ -19,7 +19,7 @@ const Header = () => {
     useOnClickOutside(avatarRef, () => setIsProfilOpen(false));
 
     useEffect(() => {
-        user && getBrand(user.merchantUniq);
+        user && getBrand(user.partnerUniq);
     }, [getBrand, user]);
 
     const getInitial = () => {
