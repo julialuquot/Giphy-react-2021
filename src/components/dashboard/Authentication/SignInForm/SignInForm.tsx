@@ -18,7 +18,7 @@ const SignInForm = () => {
     const router = useRouter();
     const { t } = useTranslation('authentication');
     const { addToast } = useToasts();
-    const { userSignIn, isFetching, user, error, isLoggedIn, setUser } = authContext;
+    const { userSignIn, isFetching, getUser, user, error } = authContext;
 
     const initialValues = {
         email: 'merchandclass1@yopmail.com',
@@ -27,7 +27,8 @@ const SignInForm = () => {
     };
 
     const onSubmit = async (values) => {
-        userSignIn(values);
+        await userSignIn(values);
+        await getUser();
     };
 
     useEffect(() => {
@@ -39,8 +40,8 @@ const SignInForm = () => {
     }, [addToast, error, t]);
 
     useEffect(() => {
-        isLoggedIn && setUser();
-    }, [isLoggedIn, setUser]);
+        getUser();
+    }, [getUser]);
 
     useEffect(() => {
         user && router.push(getRoute(ROUTE.DASHBOARD.WORKSPACE, user.partnerUniq));

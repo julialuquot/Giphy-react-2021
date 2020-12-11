@@ -38,11 +38,11 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         }
     }, []);
 
-    const setUser = useCallback(async () => {
+    const getUser = useCallback(async () => {
         try {
             dispatch({ type: 'START' });
             const data = await AuthService.decodeAuthCookie();
-            dispatch({ type: 'SET_USER_SUCCESS', payload: data });
+            dispatch({ type: 'GET_USER_SUCCESS', payload: data });
         } catch (err) {
             dispatch({ type: 'FAILURE', payload: err });
         }
@@ -58,7 +58,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
                 user: state.user,
                 userSignIn,
                 userSignOut,
-                setUser,
+                getUser,
             }}
         >
             {children}

@@ -7,7 +7,6 @@ import Profil from '@components/dashboard/Navbar/Profil';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
 import { getRoute, ROUTE } from '@services/http/Route';
 import { useRouter } from 'next/router';
-import AuthService from '@services/domain/AuthService';
 
 const Header = () => {
     const router = useRouter();
@@ -15,9 +14,8 @@ const Header = () => {
     const { getBrand, brand } = informationsContext;
 
     const authContext = useContext(AuthContext);
-    const { userSignOut } = authContext;
+    const { userSignOut, isFetching, getUser, user } = authContext;
 
-    const [user, setUser] = useState(null);
     const [isProfilOpen, setIsProfilOpen] = useState(false);
 
     const avatarRef = useRef();
@@ -28,30 +26,26 @@ const Header = () => {
     }, [getBrand, user]);
 
     useEffect(() => {
-        setUser(AuthService.decodeAuthCookie());
-    }, [setUser]);
+        getUser();
+    }, [getUser]);
 
     const onSignOut = async () => {
         await userSignOut();
         await router.push(getRoute(ROUTE.DASHBOARD.SIGN_IN, null));
-        setIsProfilOpen(false);
     };
 
     const getInitial = () => {
-        if (brand && brand.name && brand.name !== '') {
+        if (user && brand && brand.name && brand.name !== '') {
             return brand.name.charAt(0).toUpperCase();
         }
-        if (user && user.firstName) {
-            return user.firstName.charAt(0).toUpperCase();
-        }
+
         return '';
     };
 
     const getColor = () => {
-        if (brand && brand.color && brand.color !== '') {
+        if (user && brand && brand.color && brand.color !== '') {
             return brand.color;
         }
-        return '#E22B76';
     };
 
     const getName = () => {
@@ -61,7 +55,6 @@ const Header = () => {
         if (user && user.email) {
             return user.email;
         }
-        return '';
     };
 
     const onToggleProfil = () => {
@@ -73,7 +66,7 @@ const Header = () => {
             <div className={css.navbar__left}>
                 <img className={css.navbar__logo} src="/front-static/icons/logo-lpc.svg" alt={'logo lpc'} />
             </div>
-            {user && (
+            {!isFetching && user && (
                 <div ref={avatarRef}>
                     <Avatar
                         onToggleProfil={() => onToggleProfil()}

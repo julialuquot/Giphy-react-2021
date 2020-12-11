@@ -28,7 +28,7 @@ const AuthReducer = (state, action) => {
                 error: null,
                 isLoggedIn: false,
             };
-        case 'SET_USER_SUCCESS':
+        case 'GET_USER_SUCCESS':
             return {
                 ...state,
                 isFetching: false,

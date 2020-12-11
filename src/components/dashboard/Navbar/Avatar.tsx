@@ -19,7 +19,7 @@ const Avatar = ({ width, height, color, name, initial, onToggleProfil, settings 
     const style = {
         width: width,
         height: height,
-        backgroundColor: color,
+        backgroundColor: color || '#FFFFFF',
     };
 
     return (
