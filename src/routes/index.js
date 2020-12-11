@@ -37,12 +37,12 @@ const routes = require('next-routes')()
     })
     .add({
         name: 'dashboard-workspace',
-        pattern: '/dashboard/workspace',
-        page: 'dashboard/workspace-page',
+        pattern: '/dashboard/workspace/:reference',
+        page: 'dashboard/workspace-page/[reference]',
     })
     .add({
-        name: 'dashboard-parnters',
-        pattern: '/dashboard/partners',
+        name: 'dashboard-partners',
+        pattern: '/dashboard/admin/partners',
         page: 'dashboard/partners-page',
     });
 

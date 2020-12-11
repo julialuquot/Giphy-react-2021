@@ -3,7 +3,7 @@ import css from './Products.module.scss';
 import Banner from '@components/dashboard/Informations/Banner/Banner';
 import { useTranslation } from '@i18n';
 import ProductCard from '@components/dashboard/Informations/Section-products/ProductCard/ProductCard';
-import Introduction from '@components/dashboard/Informations/Introduction/Introduction';
+import Introduction from '@components/dashboard/Informations/Section-products/Introduction/Introduction';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import InformationsService from '@services/domain/InformationsService';
 import { useToasts } from 'react-toast-notifications';
@@ -17,11 +17,28 @@ const Products = ({ user }: ProductsProps) => {
     const { addToast } = useToasts();
 
     const informationsContext = useContext(InformationsContext);
-    const { getProducts, updateProduct, products, isFetching, error, showNotificationSuccess } = informationsContext;
+    const {
+        getProducts,
+        updateProduct,
+        products,
+        getProductsIntroduction,
+        updateProductsIntroduction,
+        productsIntroduction,
+        isFetching,
+        error,
+        showNotificationSuccess,
+    } = informationsContext;
 
     useEffect(() => {
         getProducts(user.partnerUniq);
     }, [getProducts, user.partnerUniq]);
+
+    useEffect(() => {
+        getProductsIntroduction(user.partnerUniq);
+    }, [getProductsIntroduction, user.partnerUniq]);
+
+    // console.log('----->', products);
+    // console.log('----->', productsIntroduction);
 
     useEffect(() => {
         error &&
@@ -43,6 +60,10 @@ const Products = ({ user }: ProductsProps) => {
         updateProduct(body);
     };
 
+    const onUpdateIntroduction = (body) => {
+        updateProductsIntroduction(body);
+    };
+
     const onResetProduct = (body) => {
         InformationsService.resetProduct(body)
             .then(() => getProducts(user.partnerUniq))
@@ -52,7 +73,15 @@ const Products = ({ user }: ProductsProps) => {
     return (
         <div className={css.tutorial}>
             <Banner text={t('dashboard-informations:products.banner.text')} />
-            <Introduction />
+
+            {productsIntroduction && (
+                <Introduction
+                    onUpdateIntroduction={(body) => onUpdateIntroduction(body)}
+                    productsIntroduction={productsIntroduction?.fr}
+                    isFetching={isFetching}
+                    partnerUniq={user.partnerUniq}
+                />
+            )}
 
             {products &&
                 products.map((product) => {

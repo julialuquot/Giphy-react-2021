@@ -1,14 +1,14 @@
-@import '../../../../assets/styles/colors';
-@import '../../../../assets/styles/mixins';
-@import '../../../../assets/styles/typography';
-@import '../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
+@import '../../../../../assets/styles/fonts';
 
 .introduction {
   position: relative;
   display: flex;
   flex-direction: column;
   width: 855px;
-  height: 192px;
+  min-height: 192px;
   margin-top: 30px;
   padding: 36px 48px 48px 36px;
   border-radius: 8px;
@@ -35,10 +35,11 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    @include transition;
 
     &:hover {
+      @include transition;
       background-color: $ui-quaternary;
+
     }
 
     &__editing {
@@ -55,3 +56,43 @@
 
 
 }
+
+
+.form {
+  display: flex;
+
+
+  &__content {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__input {
+    margin: 0 0 21px 0;
+  }
+
+
+  &__btn {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__reset {
+    position: absolute;
+    bottom: 48px;
+    left: 48px;
+    font-family: $primary-medium;
+    font-size: 14px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.71;
+    letter-spacing: normal;
+    color: $ui-secondary;
+    cursor: pointer;
+
+  }
+}
+

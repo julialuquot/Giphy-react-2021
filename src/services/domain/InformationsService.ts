@@ -15,6 +15,11 @@ const getProducts = (partnerUniq) => axiosClient().get(`${API.INFORMATIONS.GET_P
 const updateProduct = (body) => axiosClient().put(API.INFORMATIONS.UPDATE_PRODUCT, JSON.stringify(body));
 const resetProduct = (body) => axiosClient().put(API.INFORMATIONS.RESET_PRODUCT, JSON.stringify(body));
 
+const getProductsIntroduction = (partnerUniq) =>
+    axiosClient().get(`${API.INFORMATIONS.GET_PRODUCTS_INTRODUCTION}${partnerUniq}&productsIntroduction=true`);
+const updateProductsIntroduction = (body) =>
+    axiosClient().put(API.INFORMATIONS.UPDATE_PRODUCTS_INTRODUCTION, JSON.stringify(body));
+
 const goOnLine = (body) => axiosClient().put(API.PARTNER.GO_ONLINE, JSON.stringify(body));
 
 const informationsService = {
@@ -28,6 +33,8 @@ const informationsService = {
     getProducts,
     updateProduct,
     resetProduct,
+    getProductsIntroduction,
+    updateProductsIntroduction,
     goOnLine,
 };
 

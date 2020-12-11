@@ -16,6 +16,8 @@ const API = {
         GET_PRODUCTS: `${apiURL}/products?partnerUniq=`,
         UPDATE_PRODUCT: `${apiURL}/products`,
         RESET_PRODUCT: `${apiURL}/products`,
+        GET_PRODUCTS_INTRODUCTION: `${apiURL}/partners?partnerUniq=`,
+        UPDATE_PRODUCTS_INTRODUCTION: `${apiURL}/partners`,
     },
     PARTNER: {
         GO_ONLINE: `${apiURL}/partners`,

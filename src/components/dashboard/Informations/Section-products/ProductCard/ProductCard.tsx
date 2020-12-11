@@ -173,12 +173,13 @@ const ProductCard = ({
                                         }}
                                     />
                                     <div className={css.product__content__informations}>
-                                        <h5>{title}</h5>
+                                        <h5>{title || t('dashboard-informations:products.product.title')}</h5>
                                         <Text variant={'caption_00'} color={'ui-secondary'}>
-                                            {description}
+                                            {description || t('dashboard-informations:products.product.desc')}
                                         </Text>
                                         <span>
-                                            {price} {t('dashboard-informations:products.product.euro')}
+                                            {price || t('dashboard-informations:products.product.price')}
+                                            {t('dashboard-informations:products.product.euro')}
                                         </span>
                                     </div>
                                 </div>

@@ -14,6 +14,7 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         brand: {},
         tutorial: [],
         products: [],
+        productsIntroduction: {},
         showNotificationSuccess: false,
     };
 
@@ -82,6 +83,26 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         }
     }, []);
 
+    const getProductsIntroduction = useCallback(async (partnerUniq) => {
+        try {
+            dispatch({ type: 'FETCH_START' });
+            const data = await InformationsService.getProductsIntroduction(partnerUniq);
+            dispatch({ type: 'GET_PRODUCTS_INTRODUCTION_SUCCESS', payload: data.data.productsIntroductionPreview });
+        } catch (err) {
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
+        }
+    }, []);
+
+    const updateProductsIntroduction = useCallback(async (body) => {
+        try {
+            dispatch({ type: 'FETCH_START' });
+            const data = await InformationsService.updateProductsIntroduction(body);
+            data && dispatch({ type: 'UPDATE_PRODUCTS_INTRODUCTION_SUCCESS', payload: body.productsIntroduction });
+        } catch (err) {
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
+        }
+    }, []);
+
     return (
         <InformationsContext.Provider
             value={{
@@ -91,12 +112,15 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
                 tutorial: state.tutorial,
                 products: state.products,
                 showNotificationSuccess: state.showNotificationSuccess,
+                productsIntroduction: state.productsIntroduction,
                 getBrand,
                 getTutorial,
                 getProducts,
                 updateBrand,
                 updateTutorial,
                 updateProduct,
+                getProductsIntroduction,
+                updateProductsIntroduction,
             }}
         >
             {children}

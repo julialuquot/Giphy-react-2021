@@ -85,14 +85,12 @@
     width: 360px;
     padding: 16px;
     background-color: $white;
-    font-family: $primary-reg;
-    font-weight: 600;
 
 
     & > h5 {
       color: $ui-primary;
     }
-    
+
 
     &__eye {
       position: absolute;

@@ -67,9 +67,9 @@
     background-repeat: no-repeat;
     background-position: center;
     cursor: pointer;
-    @include transition;
 
     &:hover {
+      @include transition;
       background-color: $ui-quaternary;
     }
 

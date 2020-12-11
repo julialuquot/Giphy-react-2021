@@ -60,6 +60,21 @@ const InformationsReducer = (state, action) => {
                 error: null,
                 showNotificationSuccess: true,
             };
+        case 'GET_PRODUCTS_INTRODUCTION_SUCCESS':
+            return {
+                ...state,
+                isFetching: false,
+                productsIntroduction: action.payload,
+                error: null,
+            };
+        case 'UPDATE_PRODUCTS_INTRODUCTION_SUCCESS':
+            return {
+                ...state,
+                isFetching: false,
+                productsIntroduction: action.payload,
+                error: null,
+                showNotificationSuccess: true,
+            };
         default:
             return state;
     }

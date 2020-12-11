@@ -170,9 +170,9 @@ const Step = ({
                         {!isEditing ? (
                             <>
                                 <h5> {t('dashboard-informations:tutorial.step.step', { order })}</h5>
-                                <h5>{title}</h5>
+                                <h5>{title || t('dashboard-informations:tutorial.step.title')}</h5>
                                 <Text variant={'body_01'} color={'ui-primary'}>
-                                    {description}
+                                    {description || t('dashboard-informations:tutorial.step.desc')}
                                 </Text>
                                 <div className={css.step__img}>
                                     <div
