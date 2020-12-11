@@ -15,7 +15,12 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         tutorial: [],
         products: [],
         productsIntroduction: {},
-        showNotificationSuccess: false,
+        showNotificationSuccess: {
+            updateBrand: false,
+            updateTutorial: false,
+            updateProduct: false,
+            updateProductsIntroduction: false,
+        },
     };
 
     const [state, dispatch] = useReducer(informationsReducer, initialState);

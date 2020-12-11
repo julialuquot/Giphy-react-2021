@@ -31,12 +31,12 @@ const Tutorial = ({ user }: TutorialProps) => {
     }, [addToast, error, t]);
 
     useEffect(() => {
-        showNotificationSuccess &&
+        showNotificationSuccess.updateTutorial &&
             addToast(t(`common:success.UPDATE_SUCCESS`), {
                 appearance: 'success',
                 autoDismiss: true,
             });
-    }, [addToast, error, showNotificationSuccess, t]);
+    }, [addToast, error, showNotificationSuccess.updateTutorial, t]);
 
     const onUpdateTutorial = (body) => {
         updateTutorial(body);

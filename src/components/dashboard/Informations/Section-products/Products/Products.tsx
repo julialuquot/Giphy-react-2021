@@ -37,9 +37,6 @@ const Products = ({ user }: ProductsProps) => {
         getProductsIntroduction(user.partnerUniq);
     }, [getProductsIntroduction, user.partnerUniq]);
 
-    // console.log('----->', products);
-    // console.log('----->', productsIntroduction);
-
     useEffect(() => {
         error &&
             addToast(t(`common:errors.${error}`), {
@@ -49,12 +46,20 @@ const Products = ({ user }: ProductsProps) => {
     }, [addToast, error, t]);
 
     useEffect(() => {
-        showNotificationSuccess &&
+        showNotificationSuccess.updateProduct &&
             addToast(t(`common:success.UPDATE_SUCCESS`), {
                 appearance: 'success',
                 autoDismiss: true,
             });
-    }, [addToast, error, showNotificationSuccess, t]);
+    }, [addToast, error, showNotificationSuccess.updateProduct, t]);
+
+    useEffect(() => {
+        showNotificationSuccess.updateProductsIntroduction &&
+            addToast(t(`common:success.UPDATE_SUCCESS`), {
+                appearance: 'success',
+                autoDismiss: true,
+            });
+    }, [addToast, error, showNotificationSuccess.updateProductsIntroduction, t]);
 
     const onUpdateProduct = (body) => {
         updateProduct(body);

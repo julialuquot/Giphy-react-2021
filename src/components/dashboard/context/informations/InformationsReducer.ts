@@ -7,7 +7,12 @@ const InformationsReducer = (state, action) => {
                 ...state,
                 isFetching: true,
                 error: null,
-                showNotificationSuccess: false,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: false,
+                    updateProduct: false,
+                    updateProductsIntroduction: false,
+                },
             };
         case 'FETCH_FAILURE':
             return {
@@ -28,7 +33,12 @@ const InformationsReducer = (state, action) => {
                 isFetching: false,
                 brand: action.payload,
                 error: null,
-                showNotificationSuccess: true,
+                showNotificationSuccess: {
+                    updateBrand: true,
+                    updateTutorial: false,
+                    updateProduct: false,
+                    updateProductsIntroduction: false,
+                },
             };
         case 'GET_TUTORIAL_SUCCESS':
             return {
@@ -43,7 +53,12 @@ const InformationsReducer = (state, action) => {
                 isFetching: false,
                 tutorial: updateItems(state.tutorial, action.payload),
                 error: null,
-                showNotificationSuccess: true,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: true,
+                    updateProduct: false,
+                    updateProductsIntroduction: false,
+                },
             };
         case 'GET_PRODUCTS_SUCCESS':
             return {
@@ -58,7 +73,12 @@ const InformationsReducer = (state, action) => {
                 isFetching: false,
                 products: updateItems(state.products, action.payload),
                 error: null,
-                showNotificationSuccess: true,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: false,
+                    updateProduct: true,
+                    updateProductsIntroduction: false,
+                },
             };
         case 'GET_PRODUCTS_INTRODUCTION_SUCCESS':
             return {
@@ -73,7 +93,12 @@ const InformationsReducer = (state, action) => {
                 isFetching: false,
                 productsIntroduction: action.payload,
                 error: null,
-                showNotificationSuccess: true,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: false,
+                    updateProduct: false,
+                    updateProductsIntroduction: true,
+                },
             };
         default:
             return state;

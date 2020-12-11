@@ -29,12 +29,12 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
     }, [addToast, error, t]);
 
     useEffect(() => {
-        showNotificationSuccess &&
+        showNotificationSuccess.updateBrand &&
             addToast(t(`common:success.UPDATE_SUCCESS`), {
                 appearance: 'success',
                 autoDismiss: true,
             });
-    }, [addToast, error, showNotificationSuccess, t]);
+    }, [addToast, error, showNotificationSuccess.updateBrand, t]);
 
     const onUpdateBrand = (body) => {
         updateBrand(body);
