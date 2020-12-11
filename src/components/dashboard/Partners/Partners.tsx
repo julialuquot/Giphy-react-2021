@@ -1,81 +1,74 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import css from './Partners.module.scss';
 import PartnerCard from '@components/dashboard/Administrator/PartnerCard';
 import { useTranslation } from '@i18n';
 import ConfirmGoOnLine from '@components/common/Modals/ConfirmGoOnLine/ConfirmGoOnLine';
-import PartnersService from '@services/domain/PartnersService';
 import { useToasts } from 'react-toast-notifications';
+import PartnersContext from '@components/dashboard/context/partners/PartnersContext';
 
 const Partners = () => {
     const { t } = useTranslation('dashboard-partners');
     const { addToast } = useToasts();
 
+    const partnersContext = useContext(PartnersContext);
+    const {
+        getAllPartners,
+        suspendPartner,
+        activatePartner,
+        partners,
+        isFetching,
+        error,
+        showNotificationSuccess,
+    } = partnersContext;
+
     const [open, setOpen] = useState(false);
     const [selectedPartner, setSelectedPartner] = useState({ uniq: '', active: null });
-    const [partnersList, setPartnersList] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
 
-    useEffect(() => {
-        setIsLoading(true);
-        PartnersService.getAllPartners()
-            .then((res) => setPartnersList(res.data))
-            .then(() => setIsLoading(false))
-            .catch((error) =>
-                addToast(t(`common:errors.${error}`), {
-                    appearance: 'error',
-                    autoDismiss: true,
-                }),
-            );
-    }, [addToast, t]);
-
-    const onsuspend = () => {
+    const onsuspend = async () => {
         const body = {
             partnerUniq: selectedPartner.uniq,
             suspend: selectedPartner.active,
         };
-
-        setIsLoading(true);
-
-        PartnersService.suspendPartner(body)
-            .then((res) =>
-                addToast(t(`common:success.${res.data}`), {
-                    appearance: 'success',
-                    autoDismiss: true,
-                }),
-            )
-            .then(() => setIsLoading(false))
-            .catch((error) =>
-                addToast(t(`common:errors.${error.message}`), {
-                    appearance: 'error',
-                    autoDismiss: true,
-                }),
-            )
-            .finally(() => setOpen(false));
+        await suspendPartner(body);
+        await setOpen(false);
     };
 
-    const onReactive = () => {
+    const onReactive = async () => {
         const body = {
             partnerUniq: selectedPartner.uniq,
             activate: !selectedPartner.active,
         };
-
-        setIsLoading(true);
-        PartnersService.activatePartner(body)
-            .then((res) =>
-                addToast(t(`common:success.${res.data}`), {
-                    appearance: 'success',
-                    autoDismiss: true,
-                }),
-            )
-            .then(() => setIsLoading(false))
-            .catch((error) =>
-                addToast(t(`common:errors.${error.message}`), {
-                    appearance: 'error',
-                    autoDismiss: true,
-                }),
-            )
-            .finally(() => setOpen(false));
+        await activatePartner(body);
+        await setOpen(false);
     };
+
+    useEffect(() => {
+        getAllPartners();
+    }, [getAllPartners]);
+
+    useEffect(() => {
+        error &&
+            addToast(t(`common:errors.${error}`), {
+                appearance: 'error',
+                autoDismiss: true,
+            });
+    }, [addToast, error, t]);
+
+    useEffect(() => {
+        showNotificationSuccess.suspendPartner &&
+            addToast(t(`common:success.PARTNER_SUSPEND`), {
+                appearance: 'success',
+                autoDismiss: true,
+            });
+    }, [addToast, showNotificationSuccess.suspendPartner, t]);
+
+    useEffect(() => {
+        showNotificationSuccess.activatePartner &&
+            addToast(t(`common:success.PARTNER_ACTIVATED`), {
+                appearance: 'success',
+                autoDismiss: true,
+            });
+    }, [addToast, showNotificationSuccess.activatePartner, t]);
 
     return (
         <div className={css.partners}>
@@ -95,7 +88,7 @@ const Partners = () => {
                         : t('dashboard-partners:modal.reactivate')
                 }
                 cancelLabel={t('dashboard-partners:modal.cancel')}
-                isLoading={isLoading}
+                isLoading={isFetching}
             />
             {/* TODO just for testing purpose , must be in preview page */}
             {/* <ConfirmModification */}
@@ -110,31 +103,57 @@ const Partners = () => {
 
             <h3>{t('dashboard-partners:checking-partner')}</h3>
             <div className={css.partners__grid}>
-                {partnersList
-                    .filter((partner) => partner.verificationStatus === 0)
-                    .map((partner) => (
-                        <>
-                            <PartnerCard
-                                key={partner.uniq}
-                                uniq={partner.uniq}
-                                name={partner.name}
-                                lastModification={partner.lastModification}
-                                color={partner.color}
-                                logo={partner.logo}
-                                verificationStatus={partner.verificationStatus}
-                                verificationResponsible={partner.verificationResponsible}
-                                onOpenModal={(value) => setOpen(value)}
-                                onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
-                                active={partner.active}
-                            />
-                        </>
-                    ))}
+                {partners &&
+                    partners.length > 0 &&
+                    partners
+                        .filter((partner) => partner.verificationStatus === 0)
+                        .map((partner) => (
+                            <>
+                                <PartnerCard
+                                    key={partner.uniq}
+                                    uniq={partner.uniq}
+                                    name={partner.name}
+                                    lastModification={partner.lastModification}
+                                    color={partner.color}
+                                    logo={partner.logo}
+                                    verificationStatus={partner.verificationStatus}
+                                    verificationResponsible={partner.verificationResponsible}
+                                    onOpenModal={(value) => setOpen(value)}
+                                    onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
+                                    active={partner.active}
+                                />
+                            </>
+                        ))}
             </div>
             <h3>{t('dashboard-partners:pending-partner')}</h3>
             <div className={css.partners__grid}>
-                {partnersList
-                    .filter((partner) => partner.verificationStatus === 1)
-                    .map((partner) => (
+                {partners &&
+                    partners.length > 0 &&
+                    partners
+                        .filter((partner) => partner.verificationStatus === 1)
+                        .map((partner) => (
+                            <>
+                                <PartnerCard
+                                    key={partner.name}
+                                    uniq={partner.uniq}
+                                    name={partner.name}
+                                    lastModification={partner.lastModification}
+                                    color={partner.color}
+                                    logo={partner.logo}
+                                    verificationStatus={partner.verificationStatus}
+                                    verificationResponsible={partner.verificationResponsible}
+                                    onOpenModal={(value) => setOpen(value)}
+                                    onSelectPartner={(uniq, active) => setSelectedPartner(uniq, active)}
+                                    active={partner.active}
+                                />
+                            </>
+                        ))}
+            </div>
+            <h3>{t('dashboard-partners:list-partner')}</h3>
+            <div className={css.partners__grid}>
+                {partners &&
+                    partners.length > 0 &&
+                    partners.map((partner) => (
                         <>
                             <PartnerCard
                                 key={partner.name}
@@ -151,26 +170,6 @@ const Partners = () => {
                             />
                         </>
                     ))}
-            </div>
-            <h3>{t('dashboard-partners:list-partner')}</h3>
-            <div className={css.partners__grid}>
-                {partnersList.map((partner) => (
-                    <>
-                        <PartnerCard
-                            key={partner.name}
-                            uniq={partner.uniq}
-                            name={partner.name}
-                            lastModification={partner.lastModification}
-                            color={partner.color}
-                            logo={partner.logo}
-                            verificationStatus={partner.verificationStatus}
-                            verificationResponsible={partner.verificationResponsible}
-                            onOpenModal={(value) => setOpen(value)}
-                            onSelectPartner={(uniq, active) => setSelectedPartner(uniq, active)}
-                            active={partner.active}
-                        />
-                    </>
-                ))}
             </div>
         </div>
     );

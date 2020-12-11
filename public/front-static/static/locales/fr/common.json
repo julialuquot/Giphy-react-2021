@@ -31,7 +31,7 @@
         "GO_ONLINE_SUCCESS": "Vos modifications sont maintenant en ligne !",
         "UPDATE_SUCCESS": "Vos modifications ont bien été enregistrées !",
         "products introduction updated": "Vos modifications ont bien été enregistrées !",
-        "partner suspended": "Le partenaire est suspendu !",
-        "partner activated": "Le partenaire est activé !"
+        "PARTNER_SUSPEND": "Le partenaire est suspendu !",
+        "PARTNER_ACTIVATED": "Le partenaire est activé !"
     }
 }
