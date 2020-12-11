@@ -9,7 +9,7 @@ import { useToasts } from 'react-toast-notifications';
 
 type SideNavigationProps = {
     onStepChange: (number) => void;
-    user: object;
+    user: { partnerUniq: string };
 };
 
 const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {

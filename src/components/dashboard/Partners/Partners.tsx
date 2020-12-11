@@ -134,7 +134,7 @@ const Partners = () => {
                         .map((partner) => (
                             <>
                                 <PartnerCard
-                                    key={partner.name}
+                                    key={partner.uniq}
                                     uniq={partner.uniq}
                                     name={partner.name}
                                     lastModification={partner.lastModification}
@@ -143,7 +143,7 @@ const Partners = () => {
                                     verificationStatus={partner.verificationStatus}
                                     verificationResponsible={partner.verificationResponsible}
                                     onOpenModal={(value) => setOpen(value)}
-                                    onSelectPartner={(uniq, active) => setSelectedPartner(uniq, active)}
+                                    onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
                                     active={partner.active}
                                 />
                             </>
@@ -156,7 +156,7 @@ const Partners = () => {
                     partners.map((partner) => (
                         <>
                             <PartnerCard
-                                key={partner.name}
+                                key={partner.uniq}
                                 uniq={partner.uniq}
                                 name={partner.name}
                                 lastModification={partner.lastModification}
@@ -165,7 +165,7 @@ const Partners = () => {
                                 verificationStatus={partner.verificationStatus}
                                 verificationResponsible={partner.verificationResponsible}
                                 onOpenModal={(value) => setOpen(value)}
-                                onSelectPartner={(uniq, active) => setSelectedPartner(uniq, active)}
+                                onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
                                 active={partner.active}
                             />
                         </>

@@ -14,7 +14,7 @@ type PartnerCardProps = {
     verificationStatus: string;
     verificationResponsible: string;
     onOpenModal: (boolean) => void;
-    onSelectPartner: (string, boolean) => void;
+    onSelectPartner: (uniq: string, active: boolean) => void;
     active: boolean;
     uniq: string;
 };

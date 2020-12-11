@@ -5,6 +5,7 @@
         "Request failed with status code 404": "Oops! Quelque chose s'est mal passé.",
         "Request failed with status code 500": "Oops! Quelque chose s'est mal passé.",
         "Request failed with status code 400": "Oops! Quelque chose s'est mal passé.",
+        "Request failed with status code 401": "Oops! Vous n'êtes pas autorisé à accéder à cette page.",
         "REQUIRED": "Ce champs est obligatoire",
         "INVALID_email": "Email invalide",
         "MAX_LENGTH_email": "Le nombre de caractères est dépassé",

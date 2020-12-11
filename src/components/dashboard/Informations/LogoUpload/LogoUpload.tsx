@@ -68,6 +68,7 @@ const LogoUpload = ({
         };
 
         getImageDimension(file).then((res) => {
+            // @ts-ignore
             if (res.width > fileWidthLimit || res.height > fileHeightLimit) {
                 addToast(t(`common:errors.WRONG_FORMAT_IMG`), {
                     appearance: 'error',
