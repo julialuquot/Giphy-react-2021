@@ -18,7 +18,7 @@ const SignInForm = () => {
     const router = useRouter();
     const { t } = useTranslation('authentication');
     const { addToast } = useToasts();
-    const { userSignIn, isFetching, user, error } = authContext;
+    const { userSignIn, isFetching, user, error, isLoggedIn, setUser } = authContext;
 
     const initialValues = {
         email: 'merchandclass1@yopmail.com',
@@ -38,10 +38,13 @@ const SignInForm = () => {
             });
     }, [addToast, error, t]);
 
-    // useEffect(() => {
-    //     const route = user && getRoute(ROUTE.DASHBOARD.WORKSPACE, { partnerUniq: user.partnerUniq });
-    //     user && router.push(route);
-    // }, [router, user]);
+    useEffect(() => {
+        isLoggedIn && setUser();
+    }, [isLoggedIn, setUser]);
+
+    useEffect(() => {
+        user && router.push(getRoute(ROUTE.DASHBOARD.WORKSPACE, user.partnerUniq));
+    }, [router, user]);
 
     return (
         <Formik validationSchema={signIn} initialValues={initialValues} onSubmit={(values) => onSubmit(values)}>

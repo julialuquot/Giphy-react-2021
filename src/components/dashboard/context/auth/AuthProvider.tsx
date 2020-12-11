@@ -12,6 +12,7 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         isFetching: false,
         error: null,
         stayConnected: null,
+        isLoggedIn: false,
         user: null,
     };
 
@@ -37,15 +38,27 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         }
     }, []);
 
+    const setUser = useCallback(async () => {
+        try {
+            dispatch({ type: 'START' });
+            const data = await AuthService.decodeAuthCookie();
+            dispatch({ type: 'SET_USER_SUCCESS', payload: data });
+        } catch (err) {
+            dispatch({ type: 'FAILURE', payload: err });
+        }
+    }, []);
+
     return (
         <AuthContext.Provider
             value={{
                 responseStatus: state.responseStatus,
                 isFetching: state.isFetching,
                 error: state.error,
+                isLoggedIn: state.isLoggedIn,
                 user: state.user,
                 userSignIn,
                 userSignOut,
+                setUser,
             }}
         >
             {children}

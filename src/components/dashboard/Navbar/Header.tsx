@@ -5,14 +5,19 @@ import AuthContext from '@components/dashboard/context/auth/AuthContext';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import Profil from '@components/dashboard/Navbar/Profil';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
+import { getRoute, ROUTE } from '@services/http/Route';
+import { useRouter } from 'next/router';
+import AuthService from '@services/domain/AuthService';
 
 const Header = () => {
-    const authContext = useContext(AuthContext);
-    const { user, userSignOut } = authContext;
-
+    const router = useRouter();
     const informationsContext = useContext(InformationsContext);
     const { getBrand, brand } = informationsContext;
 
+    const authContext = useContext(AuthContext);
+    const { userSignOut } = authContext;
+
+    const [user, setUser] = useState(null);
     const [isProfilOpen, setIsProfilOpen] = useState(false);
 
     const avatarRef = useRef();
@@ -21,6 +26,16 @@ const Header = () => {
     useEffect(() => {
         user && getBrand(user.partnerUniq);
     }, [getBrand, user]);
+
+    useEffect(() => {
+        setUser(AuthService.decodeAuthCookie());
+    }, [setUser]);
+
+    const onSignOut = async () => {
+        await userSignOut();
+        await router.push(getRoute(ROUTE.DASHBOARD.SIGN_IN, null));
+        setIsProfilOpen(false);
+    };
 
     const getInitial = () => {
         if (brand && brand.name && brand.name !== '') {
@@ -51,10 +66,6 @@ const Header = () => {
 
     const onToggleProfil = () => {
         setIsProfilOpen(!isProfilOpen);
-    };
-
-    const onSignOut = () => {
-        userSignOut();
     };
 
     return (
