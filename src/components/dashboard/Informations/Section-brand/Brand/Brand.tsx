@@ -21,6 +21,11 @@ type BrandProps = {
     isFetching: boolean;
 };
 
+type FormProps = {
+    handleReset: () => void;
+    values: { color: string };
+};
+
 const Brand = ({
     name,
     logo,
@@ -36,6 +41,7 @@ const Brand = ({
     const { t } = useTranslation('dashboard-informations');
 
     const [logoUrl, setLogoUrl] = useState('');
+    const [newColor, setNewColor] = useState('');
 
     const getInitialValues = () => {
         return {
@@ -71,8 +77,8 @@ const Brand = ({
         onResetBrand(body);
     };
 
-    // eslint-disable-next-line react/prop-types
-    const renderBrandForm = ({ handleReset }) => {
+    const renderBrandForm = ({ handleReset, values }: FormProps) => {
+        setNewColor(values.color);
         return (
             <Form className={css.brand__card__form}>
                 <LogoUpload
@@ -153,7 +159,7 @@ const Brand = ({
         backgroundImage: `url(${logoUrl || logo})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        backgroundColor: color,
+        backgroundColor: newColor || color,
     };
     return (
         <div className={css.brand}>
