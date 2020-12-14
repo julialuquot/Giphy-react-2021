@@ -5,7 +5,7 @@ import css from './Button.module.scss';
 type ButtonProps = {
     onClick?: (event: React.MouseEvent<HTMLElement>) => void;
     children: React.ReactNode;
-    type?: 'button' | 'submit';
+    type?: 'button' | 'submit' | 'reset';
     isDisabled?: boolean;
     isLoading?: boolean;
     customClass?: string;
@@ -15,6 +15,7 @@ type ButtonProps = {
     margin?: string;
     width?: string;
     height?: string;
+    icon?: string;
 };
 
 const Button = ({
@@ -30,6 +31,7 @@ const Button = ({
     margin,
     width,
     height,
+    icon,
 }: ButtonProps) => {
     const buttonStyle = () => {
         let className = '';
@@ -55,8 +57,11 @@ const Button = ({
             className={`${buttonStyle()} ${customClass || ''}`}
             onClick={onClick}
         >
-            {children}
-            {isLoading && <Spinner customClass={css.spinner} margin={'0 0 0 10px'} />}
+            <div className={isLoading ? css.loading : ''}>
+                {icon && <img className={css.icon} src={icon} alt={icon} />}
+                {children}
+            </div>
+            {isLoading && <Spinner customClass={css.spinner} />}
         </button>
     );
 };

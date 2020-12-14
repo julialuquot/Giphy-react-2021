@@ -6,79 +6,99 @@ const InformationsReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: true,
+                error: null,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: false,
+                    updateProduct: false,
+                    updateProductsIntroduction: false,
+                },
+            };
+        case 'FETCH_FAILURE':
+            return {
+                ...state,
+                isFetching: false,
+                error: action.payload,
             };
         case 'GET_BRAND_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
                 brand: action.payload,
-            };
-        case 'GET_BRAND_FAILURE':
-            return {
-                ...state,
-                isFetching: false,
-                error: action.payload,
+                error: null,
             };
         case 'UPDATE_BRAND_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
                 brand: action.payload,
-            };
-        case 'UPDATE_BRAND_FAILURE':
-            return {
-                ...state,
-                isFetching: false,
-                error: action.payload,
+                error: null,
+                showNotificationSuccess: {
+                    updateBrand: true,
+                    updateTutorial: false,
+                    updateProduct: false,
+                    updateProductsIntroduction: false,
+                },
             };
         case 'GET_TUTORIAL_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
                 tutorial: action.payload,
-            };
-        case 'GET_TUTORIAL_FAILURE':
-            return {
-                ...state,
-                isFetching: false,
-                error: action.payload,
+                error: null,
             };
         case 'UPDATE_TUTORIAL_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
-                tutorial: updateItems(state.products, action.payload),
+                tutorial: updateItems(state.tutorial, action.payload),
+                error: null,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: true,
+                    updateProduct: false,
+                    updateProductsIntroduction: false,
+                },
             };
-        case 'UPDATE_TUTORIAL_FAILURE':
-            return {
-                ...state,
-                isFetching: false,
-                error: action.payload,
-            };
-
         case 'GET_PRODUCTS_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
                 products: action.payload,
-            };
-        case 'GET_PRODUCTS_FAILURE':
-            return {
-                ...state,
-                isFetching: false,
-                error: action.payload,
+                error: null,
             };
         case 'UPDATE_PRODUCT_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
                 products: updateItems(state.products, action.payload),
+                error: null,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: false,
+                    updateProduct: true,
+                    updateProductsIntroduction: false,
+                },
             };
-        case 'UPDATE_PRODUCT_FAILURE':
+        case 'GET_PRODUCTS_INTRODUCTION_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
-                error: action.payload,
+                productsIntroduction: action.payload,
+                error: null,
+            };
+        case 'UPDATE_PRODUCTS_INTRODUCTION_SUCCESS':
+            return {
+                ...state,
+                isFetching: false,
+                productsIntroduction: action.payload,
+                error: null,
+                showNotificationSuccess: {
+                    updateBrand: false,
+                    updateTutorial: false,
+                    updateProduct: false,
+                    updateProductsIntroduction: true,
+                },
             };
         default:
             return state;

@@ -1,0 +1,77 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/fonts';
+
+
+.brand {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &__card {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    width: 855px;
+    min-height: 933px;
+    height: fit-content;
+    padding: 48px;
+    border-radius: 8px;
+    box-shadow: 12px 12px 48px 0 $box-shadow;
+    border: solid 2px $ui-quaternary;
+    background-color: $white;
+
+    &__logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 255px;
+      height: 142px;
+      margin: 0 40px 0 0;
+      border-radius: 6px;
+      background-color: $background-light-grey;
+
+
+      &__placeholder {
+        font-family: $primary-bold;
+        font-size: 32px;
+        line-height: 1.19;
+        letter-spacing: normal;
+        text-align: center;
+        color: $ui-primary;
+        text-transform: uppercase;
+      }
+    }
+
+    &__form {
+      width: 60%;
+
+      &__input {
+        margin: 21px 0 21px 0;
+      }
+
+      &__btn {
+        display: flex;
+        justify-content: flex-end;
+      }
+
+      &__reset {
+        position: absolute;
+        bottom: 48px;
+        left: 48px;
+        font-family: $primary-medium;
+        font-size: 14px;
+        font-weight: 500;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.71;
+        letter-spacing: normal;
+        color: $ui-secondary;
+        cursor: pointer;
+
+      }
+    }
+  }
+}
+

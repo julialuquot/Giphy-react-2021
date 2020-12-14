@@ -14,18 +14,25 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
         brand: {},
         tutorial: [],
         products: [],
+        productsIntroduction: {},
+        showNotificationSuccess: {
+            updateBrand: false,
+            updateTutorial: false,
+            updateProduct: false,
+            updateProductsIntroduction: false,
+        },
     };
 
     const [state, dispatch] = useReducer(informationsReducer, initialState);
 
     /* BRAND */
-    const getBrand = useCallback(async (merchantUniq) => {
+    const getBrand = useCallback(async (partnerUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
-            const data = await InformationsService.getBrand(merchantUniq);
+            const data = await InformationsService.getBrand(partnerUniq);
             dispatch({ type: 'GET_BRAND_SUCCESS', payload: data.data });
         } catch (err) {
-            dispatch({ type: 'GET_BRAND_FAILURE', payload: err.message });
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
         }
     }, []);
 
@@ -35,18 +42,18 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
             const data = await InformationsService.updateBrand(body);
             dispatch({ type: 'UPDATE_BRAND_SUCCESS', payload: data.data });
         } catch (err) {
-            dispatch({ type: 'UPDATE_BRAND_FAILURE', payload: err.message });
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
         }
     }, []);
 
     /* TUTORIAL */
-    const getTutorial = useCallback(async (merchantUniq) => {
+    const getTutorial = useCallback(async (partnerUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
-            const data = await InformationsService.getTutorial(merchantUniq);
+            const data = await InformationsService.getTutorial(partnerUniq);
             dispatch({ type: 'GET_TUTORIAL_SUCCESS', payload: data.data });
         } catch (err) {
-            dispatch({ type: 'GET_TUTORIAL_FAILURE', payload: err.message });
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
         }
     }, []);
 
@@ -56,18 +63,18 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
             const data = await InformationsService.updateTutorial(body);
             dispatch({ type: 'UPDATE_TUTORIAL_SUCCESS', payload: data.data });
         } catch (err) {
-            dispatch({ type: 'UPDATE_TUTORIAL_FAILURE', payload: err.message });
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
         }
     }, []);
 
     /* PRODUCTS */
-    const getProducts = useCallback(async (merchantUniq) => {
+    const getProducts = useCallback(async (partnerUniq) => {
         try {
             dispatch({ type: 'FETCH_START' });
-            const data = await InformationsService.getProducts(merchantUniq);
+            const data = await InformationsService.getProducts(partnerUniq);
             dispatch({ type: 'GET_PRODUCTS_SUCCESS', payload: data.data });
         } catch (err) {
-            dispatch({ type: 'GET_PRODUCTS_FAILURE', payload: err.message });
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
         }
     }, []);
 
@@ -77,7 +84,27 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
             const data = await InformationsService.updateProduct(body);
             dispatch({ type: 'UPDATE_PRODUCT_SUCCESS', payload: data.data });
         } catch (err) {
-            dispatch({ type: 'UPDATE_PRODUCT_FAILURE', payload: err.message });
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
+        }
+    }, []);
+
+    const getProductsIntroduction = useCallback(async (partnerUniq) => {
+        try {
+            dispatch({ type: 'FETCH_START' });
+            const data = await InformationsService.getProductsIntroduction(partnerUniq);
+            dispatch({ type: 'GET_PRODUCTS_INTRODUCTION_SUCCESS', payload: data.data.productsIntroductionPreview });
+        } catch (err) {
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
+        }
+    }, []);
+
+    const updateProductsIntroduction = useCallback(async (body) => {
+        try {
+            dispatch({ type: 'FETCH_START' });
+            const data = await InformationsService.updateProductsIntroduction(body);
+            data && dispatch({ type: 'UPDATE_PRODUCTS_INTRODUCTION_SUCCESS', payload: body.productsIntroduction });
+        } catch (err) {
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
         }
     }, []);
 
@@ -89,12 +116,16 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
                 brand: state.brand,
                 tutorial: state.tutorial,
                 products: state.products,
+                showNotificationSuccess: state.showNotificationSuccess,
+                productsIntroduction: state.productsIntroduction,
                 getBrand,
                 getTutorial,
                 getProducts,
                 updateBrand,
                 updateTutorial,
                 updateProduct,
+                getProductsIntroduction,
+                updateProductsIntroduction,
             }}
         >
             {children}

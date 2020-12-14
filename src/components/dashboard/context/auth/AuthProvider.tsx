@@ -1,4 +1,4 @@
-import React, { useReducer, useEffect } from 'react';
+import React, { useReducer, useCallback } from 'react';
 import AuthContext from './AuthContext';
 import authReducer from './AuthReducer';
 import AuthService from '@services/domain/AuthService';
@@ -12,41 +12,41 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
         isFetching: false,
         error: null,
         stayConnected: null,
+        isLoggedIn: false,
         user: null,
     };
 
-    let localState = null;
-    if (typeof localStorage !== 'undefined' && localStorage.getItem('userInfo')) {
-        localState = JSON.parse(localStorage.getItem('userInfo') || '');
-    }
+    const [state, dispatch] = useReducer(authReducer, initialState);
 
-    const [state, dispatch] = useReducer(authReducer, localState || initialState);
-
-    useEffect(() => {
-        if (typeof localStorage !== 'undefined') {
-            localStorage.setItem('userInfo', JSON.stringify(state));
-        }
-    }, [state]);
-
-    const userSignIn = async (body) => {
+    const userSignIn = useCallback(async (body) => {
         try {
             dispatch({ type: 'START' });
             const data = await AuthService.signIn(body);
             dispatch({ type: 'USER_SIGN_IN_SUCCESS', payload: data });
         } catch (err) {
-            dispatch({ type: 'FAILURE', payload: err });
+            dispatch({ type: 'FAILURE', payload: err.message });
         }
-    };
+    }, []);
 
-    const userSignOut = async () => {
+    const userSignOut = useCallback(async () => {
         try {
             dispatch({ type: 'START' });
             const data = await AuthService.signOut();
             dispatch({ type: 'USER_SIGN_OUT_SUCCESS', payload: data });
         } catch (err) {
+            dispatch({ type: 'FAILURE', payload: err.message });
+        }
+    }, []);
+
+    const getUser = useCallback(async () => {
+        try {
+            dispatch({ type: 'START' });
+            const data = await AuthService.decodeAuthCookie();
+            dispatch({ type: 'GET_USER_SUCCESS', payload: data });
+        } catch (err) {
             dispatch({ type: 'FAILURE', payload: err });
         }
-    };
+    }, []);
 
     return (
         <AuthContext.Provider
@@ -54,9 +54,11 @@ const AuthProvider = ({ children }: AuthProviderProps) => {
                 responseStatus: state.responseStatus,
                 isFetching: state.isFetching,
                 error: state.error,
+                isLoggedIn: state.isLoggedIn,
                 user: state.user,
                 userSignIn,
                 userSignOut,
+                getUser,
             }}
         >
             {children}

@@ -5,15 +5,17 @@
     "pending-partner": "En attente du partenaire",
     "list-partner": "Liste des partenaires",
     "card": {
-        "edit-on": "Modifié le 19",
+        "edit-on": "Modifié le",
         "edit": "Modifier",
         "suspend-partner": "Suspendre le partenaire",
         "reactivate-partner": "Réactiver le partenaire"
     },
     "modal": {
-        "confirm": "Suspendre",
+        "suspend": "Suspendre",
+        "reactivate": "Réactiver",
         "cancel": "Retour à la liste",
-        "title": " Suspendre le partenaire ?",
+        "title-suspend": " Suspendre le partenaire ?",
+        "title-reactivate": " Réactiver le partenaire ?",
         "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras commodo gravida neque sed porttitor."
     },
     "modal-modification": {

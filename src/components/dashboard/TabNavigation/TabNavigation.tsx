@@ -1,31 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import css from './TabNavigation.module.scss';
+import Link from 'next/link';
+import { getRoute, ROUTE } from '@services//http/Route';
 
 type TabNavigation = {
-    onTabChange: (string) => void;
     tabTitle0: string;
     tabTitle1: string;
+    partnerRef: string;
+    activeTab: string;
 };
 
-const TabNavigation = ({ onTabChange, tabTitle0, tabTitle1 }: TabNavigation) => {
-    const [activeTab, setActiveTab] = useState(0);
-
-    const handleClick = (tab) => {
-        setActiveTab(tab);
-    };
-
-    useEffect(() => {
-        onTabChange(activeTab);
-    }, [activeTab, onTabChange]);
-
+const TabNavigation = ({ activeTab, tabTitle0, tabTitle1, partnerRef }: TabNavigation) => {
     return (
         <div className={css.navigation}>
-            <span className={`${css.tab} ${activeTab === 0 && css.tab__selected}`} onClick={() => handleClick(0)}>
-                {tabTitle0}
-            </span>
-            <span className={`${css.tab} ${activeTab === 1 && css.tab__selected}`} onClick={() => handleClick(1)}>
-                {tabTitle1}
-            </span>
+            <Link href={getRoute(ROUTE.DASHBOARD.STATS, partnerRef)}>
+                <a className={`${css.tab} ${activeTab === 'STATS' && css.tab__selected}`}>{tabTitle0}</a>
+            </Link>
+            <Link href={getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerRef)}>
+                <a className={`${css.tab} ${activeTab === 'INFORMATIONS' && css.tab__selected}`}>{tabTitle1}</a>
+            </Link>
         </div>
     );
 };

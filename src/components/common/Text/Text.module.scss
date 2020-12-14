@@ -8,27 +8,59 @@
 
 .body_00 {
   font-family: $primary-reg;
-  font-size: $level3;
+  font-size: $level4;
 }
 
 .body_01 {
-  font-family: $primary-medium;
-  font-size: $level6;
-  @include media(m-device) {
-    font-size: $level3;
-  }
+  font-family: $primary-reg;
+  font-size: $level3;
 }
 
 .body_02 {
+  font-family: $primary-reg;
+  font-size: $level2;
+}
+
+.caption_00 {
   font-family: $primary-medium;
   font-size: $level3;
+}
+
+.caption_01 {
+  font-family: $primary-medium;
+  font-size: $level2;
+}
+
+.caption_02 {
+  font-family: $primary-medium;
+  font-size: $level1;
+}
+
+.footnote {
+  font-family: $primary-reg;
+  font-size: $level1;
+}
+
+.tagline {
+  font-family: $primary-SemiBold;
+  font-size: $level4;
   @include media(m-device) {
-    font-size: $level3-mobile;
+    font-size: $level2;
   }
 }
 
-.button {
-  font-family: $primary-SemiBold;
+.button_small {
+  font-family: $primary-medium;
+  font-size: $level2;
+}
+
+.button_default {
+  font-family: $primary-medium;
+  font-size: $level3;
+}
+
+.button_large {
+  font-family: $primary-medium;
   font-size: $level4;
 }
 
@@ -37,16 +69,6 @@
   font-size: $level3;
 }
 
-.tagline {
-  font-family: $primary-bold;
-  font-size: $level3;
-  text-transform: uppercase;
-}
-
-.caption {
-  font-family: $primary-SemiBold;
-  font-size: $level2;
-}
 
 .hint {
   font-family: $primary-medium;

@@ -1,5 +1,6 @@
 import React from 'react';
 import css from './InputField.module.scss';
+import Text from '@components/common/Text/Text';
 
 type InputFieldProps = {
     id: string;
@@ -68,7 +69,9 @@ const InputField = ({
         <div className={css.wrapper}>
             {label && (
                 <label htmlFor={id} className={css.label}>
-                    {label}
+                    <Text variant={'caption_01'} color={'ui-primary'}>
+                        {label}
+                    </Text>
                 </label>
             )}
             <div className={css.input__wrapper}>

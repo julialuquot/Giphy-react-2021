@@ -13,7 +13,7 @@
   padding: 12px 0 12px 0;
   border: none;
   @include border-radius(6px);
-  font-family: $primary-SemiBold;
+  font-family: $primary-medium;
   font-size: $level3;
   color: $white;
   cursor: pointer;
@@ -107,6 +107,25 @@
 .disabled {
   @extend %button-shared;
   cursor: default;
+}
+
+.loading {
+  opacity: 0.5;
+}
+
+
+.spinner {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+
+.icon {
+  vertical-align: middle;
+  margin-right: 4px;
+
 }
 
 

@@ -301,7 +301,11 @@ exports[`Storyshots Button Primary 1`] = `
         }
       }
     >
-      Small
+      <div
+        className=""
+      >
+        Small
+      </div>
     </button>
     <button
       className=" primary medium "
@@ -314,7 +318,11 @@ exports[`Storyshots Button Primary 1`] = `
         }
       }
     >
-      Medium
+      <div
+        className=""
+      >
+        Medium
+      </div>
     </button>
     <button
       className=" primary large "
@@ -327,7 +335,11 @@ exports[`Storyshots Button Primary 1`] = `
         }
       }
     >
-      Large
+      <div
+        className=""
+      >
+        Large
+      </div>
     </button>
     <button
       className=" primary large disabled "
@@ -341,7 +353,11 @@ exports[`Storyshots Button Primary 1`] = `
         }
       }
     >
-      Disabled
+      <div
+        className=""
+      >
+        Disabled
+      </div>
     </button>
   </div>
 </div>
@@ -381,7 +397,11 @@ exports[`Storyshots Button Secondary 1`] = `
         }
       }
     >
-      Small
+      <div
+        className=""
+      >
+        Small
+      </div>
     </button>
     <button
       className=" secondary medium "
@@ -394,7 +414,11 @@ exports[`Storyshots Button Secondary 1`] = `
         }
       }
     >
-      Medium
+      <div
+        className=""
+      >
+        Medium
+      </div>
     </button>
     <button
       className=" secondary large "
@@ -407,7 +431,11 @@ exports[`Storyshots Button Secondary 1`] = `
         }
       }
     >
-      Large
+      <div
+        className=""
+      >
+        Large
+      </div>
     </button>
     <button
       className=" secondary large disabled "
@@ -421,7 +449,11 @@ exports[`Storyshots Button Secondary 1`] = `
         }
       }
     >
-      Disabled
+      <div
+        className=""
+      >
+        Disabled
+      </div>
     </button>
   </div>
 </div>
@@ -461,7 +493,11 @@ exports[`Storyshots Button With Loading 1`] = `
         }
       }
     >
-      Primary Small
+      <div
+        className="loading"
+      >
+        Primary Small
+      </div>
       <img
         alt="Loading..."
         className="spinner spinner   "
@@ -469,7 +505,7 @@ exports[`Storyshots Button With Loading 1`] = `
         style={
           Object {
             "height": undefined,
-            "margin": "0 0 0 10px",
+            "margin": undefined,
             "width": undefined,
           }
         }
@@ -486,7 +522,11 @@ exports[`Storyshots Button With Loading 1`] = `
         }
       }
     >
-      Primary Medium
+      <div
+        className="loading"
+      >
+        Primary Medium
+      </div>
       <img
         alt="Loading..."
         className="spinner spinner   "
@@ -494,7 +534,7 @@ exports[`Storyshots Button With Loading 1`] = `
         style={
           Object {
             "height": undefined,
-            "margin": "0 0 0 10px",
+            "margin": undefined,
             "width": undefined,
           }
         }
@@ -511,7 +551,11 @@ exports[`Storyshots Button With Loading 1`] = `
         }
       }
     >
-      Primary Medium
+      <div
+        className="loading"
+      >
+        Primary Medium
+      </div>
       <img
         alt="Loading..."
         className="spinner spinner   "
@@ -519,7 +563,7 @@ exports[`Storyshots Button With Loading 1`] = `
         style={
           Object {
             "height": undefined,
-            "margin": "0 0 0 10px",
+            "margin": undefined,
             "width": undefined,
           }
         }
@@ -549,7 +593,11 @@ exports[`Storyshots Button With Loading 1`] = `
         }
       }
     >
-      Secondary
+      <div
+        className="loading"
+      >
+        Secondary
+      </div>
       <img
         alt="Loading..."
         className="spinner spinner   "
@@ -557,7 +605,7 @@ exports[`Storyshots Button With Loading 1`] = `
         style={
           Object {
             "height": undefined,
-            "margin": "0 0 0 10px",
+            "margin": undefined,
             "width": undefined,
           }
         }
@@ -574,7 +622,11 @@ exports[`Storyshots Button With Loading 1`] = `
         }
       }
     >
-      Secondary Small
+      <div
+        className="loading"
+      >
+        Secondary Small
+      </div>
       <img
         alt="Loading..."
         className="spinner spinner   "
@@ -582,7 +634,7 @@ exports[`Storyshots Button With Loading 1`] = `
         style={
           Object {
             "height": undefined,
-            "margin": "0 0 0 10px",
+            "margin": undefined,
             "width": undefined,
           }
         }
@@ -599,7 +651,11 @@ exports[`Storyshots Button With Loading 1`] = `
         }
       }
     >
-      Secondary Large
+      <div
+        className="loading"
+      >
+        Secondary Large
+      </div>
       <img
         alt="Loading..."
         className="spinner spinner   "
@@ -607,7 +663,7 @@ exports[`Storyshots Button With Loading 1`] = `
         style={
           Object {
             "height": undefined,
-            "margin": "0 0 0 10px",
+            "margin": undefined,
             "width": undefined,
           }
         }
@@ -708,7 +764,7 @@ exports[`Storyshots Checkbox Default 1`] = `
         className="checkmark"
       />
       <p
-        className=" body_02 "
+        className=" ui-primary button_small "
       />
     </label>
     <label
@@ -721,7 +777,7 @@ exports[`Storyshots Checkbox Default 1`] = `
         className="checkmark"
       />
       <p
-        className=" body_02 "
+        className=" ui-primary button_small "
       >
         With Label
       </p>
@@ -737,7 +793,7 @@ exports[`Storyshots Checkbox Default 1`] = `
         className="checkmark checkmark__disabled"
       />
       <p
-        className=" body_02 "
+        className=" ui-primary button_small "
       >
         Disabled
       </p>
@@ -752,7 +808,7 @@ exports[`Storyshots Checkbox Default 1`] = `
         className="checkmark"
       />
       <p
-        className=" body_02 "
+        className=" ui-primary button_small "
       >
         Success
       </p>
@@ -767,7 +823,7 @@ exports[`Storyshots Checkbox Default 1`] = `
         className="checkmark checkmark__error"
       />
       <p
-        className=" body_02 "
+        className=" ui-primary button_small "
       >
         Error
       </p>
@@ -1027,7 +1083,11 @@ exports[`Storyshots Input field Default 1`] = `
       <label
         className="label"
       >
-        Name
+        <p
+          className=" ui-primary caption_01 "
+        >
+          Name
+        </p>
       </label>
       <div
         className="input__wrapper"
@@ -1044,7 +1104,11 @@ exports[`Storyshots Input field Default 1`] = `
       <label
         className="label"
       >
-        Name
+        <p
+          className=" ui-primary caption_01 "
+        >
+          Name
+        </p>
       </label>
       <div
         className="input__wrapper"
@@ -1061,7 +1125,11 @@ exports[`Storyshots Input field Default 1`] = `
       <label
         className="label"
       >
-        Name
+        <p
+          className=" ui-primary caption_01 "
+        >
+          Name
+        </p>
       </label>
       <div
         className="input__wrapper"
@@ -1091,7 +1159,11 @@ exports[`Storyshots Input field Default 1`] = `
       <label
         className="label"
       >
-        Name
+        <p
+          className=" ui-primary caption_01 "
+        >
+          Name
+        </p>
       </label>
       <div
         className="input__wrapper"
@@ -1116,7 +1188,11 @@ exports[`Storyshots Input field Default 1`] = `
       <label
         className="label"
       >
-        Name
+        <p
+          className=" ui-primary caption_01 "
+        >
+          Name
+        </p>
       </label>
       <div
         className="input__wrapper"
@@ -1141,7 +1217,11 @@ exports[`Storyshots Input field Default 1`] = `
       <label
         className="label"
       >
-        Name
+        <p
+          className=" ui-primary caption_01 "
+        >
+          Name
+        </p>
       </label>
       <div
         className="input__wrapper"
@@ -1189,7 +1269,7 @@ exports[`Storyshots Text Default 1`] = `
   </p>
   <br />
   <p
-    className=" brand-secondary button "
+    className=" brand-secondary "
   >
     Button
   </p>
@@ -1207,7 +1287,7 @@ exports[`Storyshots Text Default 1`] = `
   </p>
   <br />
   <p
-    className=" caption "
+    className=" caption_00 "
   >
     Caption
   </p>

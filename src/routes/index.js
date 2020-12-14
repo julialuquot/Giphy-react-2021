@@ -36,14 +36,40 @@ const routes = require('next-routes')()
         page: 'dashboard/sign-in-page',
     })
     .add({
-        name: 'dashboard-workspace',
-        pattern: '/dashboard/workspace',
-        page: 'dashboard/workspace-page',
+        name: 'dashboard-stats',
+        pattern: '/dashboard/stats/:reference',
+        page: 'dashboard/stats-page/[reference]',
+    })
+
+    .add({
+        name: 'dashboard-informations',
+        pattern: '/dashboard/informations/:reference',
+        page: 'dashboard/informations-page/[reference]',
     })
     .add({
-        name: 'dashboard-parnters',
-        pattern: '/dashboard/partners',
+        name: 'dashboard-preview',
+        pattern: '/dashboard/preview/:reference',
+        page: 'dashboard/preview-page/[reference]',
+    })
+    .add({
+        name: 'dashboard-admin-informations',
+        pattern: '/dashboard/admin/informations/:reference',
+        page: 'dashboard/informations-page/[reference]',
+    })
+    .add({
+        name: 'dashboard-partners',
+        pattern: '/dashboard/admin/partners',
         page: 'dashboard/partners-page',
+    })
+    .add({
+        name: 'dashboard-admin-stats',
+        pattern: '/dashboard/admin/stats/:reference',
+        page: 'dashboard/stats-page/[reference]',
+    })
+    .add({
+        name: 'dashboard-preview-admin',
+        pattern: '/dashboard/admin/preview/:reference',
+        page: 'dashboard/preview-page/[reference]',
     });
 
 module.exports = routes;

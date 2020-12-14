@@ -91,6 +91,7 @@ pipeline{
                         NODE_ENV="integration"
                         DOCKER_FILE="DockerfileInt"
                     }
+                    sh "echo $NODE_ENV"
                     sh "docker build --force-rm --build-arg env_name=$NODE_ENV -f $DOCKER_FILE -t $IMAGE_NAME:${VERSION}-snapshot ."
                     sh "ls -la"
                     // if (env.BRANCH_NAME.replaceAll( '/', '-' ) == 'develop') {

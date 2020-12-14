@@ -3,16 +3,20 @@ import css from './SideNavigation.module.scss';
 import { useTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
 import Switch from '@components/common/Switch/Switch';
-import ConfirmGoOnLine from '@components/common/Modals/ConfirmGoOnLine/ConfirmGoOnLine';
+import ConfirmModal from '@components/common/Modals/ConfirmModal/ConfirmModal';
 import InformationsService from '@services/domain/InformationsService';
+import { useToasts } from 'react-toast-notifications';
+import Link from 'next/link';
+import { getRoute, ROUTE } from '@services/http/Route';
 
 type SideNavigationProps = {
     onStepChange: (number) => void;
-    user: object;
+    user: { partnerUniq: string };
 };
 
 const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
     const { t } = useTranslation('dashboard-informations');
+    const { addToast } = useToasts();
 
     const [activeStep, setActiveStep] = useState(0);
     const [, setIsSwitchActive] = useState(false);
@@ -28,20 +32,30 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
     }, [activeStep, onStepChange]);
 
     const onConfirm = () => {
-        // TODO connect to webservice
-        // eslint-disable-next-line no-console
-        // @ts-ignore
-        const body = { merchantUniq: user.merchantUniq, goOnline: true };
+        const body = { partnerUniq: user.partnerUniq, goOnline: true };
         setIsLoading(true);
         InformationsService.goOnLine(body)
-            .then((res) => res)
-            .catch((err) => err)
-            .finally(() => setIsLoading(false));
+            .then(
+                (res) =>
+                    res.status === 200 &&
+                    addToast(t(`common:success.GO_ONLINE_SUCCESS`), {
+                        appearance: 'success',
+                        autoDismiss: true,
+                    }),
+            )
+            .then(() => setIsLoading(false))
+            .catch((error) =>
+                addToast(t(`common:errors.${error}`), {
+                    appearance: 'error',
+                    autoDismiss: true,
+                }),
+            )
+            .finally(() => setOpen(false));
     };
 
     return (
         <>
-            <ConfirmGoOnLine
+            <ConfirmModal
                 isVisible={open}
                 onHide={() => setOpen(false)}
                 onConfirm={() => onConfirm()}
@@ -49,6 +63,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
                 text={t('dashboard-informations:modal.text')}
                 confirmLabel={t('dashboard-informations:btn.confirm')}
                 cancelLabel={t('dashboard-informations:btn.cancel')}
+                isLoading={isLoading}
             />
 
             <div className={css.side}>
@@ -79,16 +94,19 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
                 </div>
 
                 <div className={css.side__btn}>
-                    <Button variant="secondary" size="medium" type={'button'} isLoading={isLoading}>
-                        {t('dashboard-informations:btn.preview')}
-                    </Button>
+                    <Link href={getRoute(ROUTE.DASHBOARD.PREVIEW, user.partnerUniq)}>
+                        <a>
+                            <Button variant="secondary" size="medium" type={'button'}>
+                                {t('dashboard-informations:btn.preview')}
+                            </Button>
+                        </a>
+                    </Link>
                     <Button
                         onClick={() => setOpen(true)}
                         margin={'10px 0 16px 0'}
                         variant="primary"
                         size="medium"
                         type="submit"
-                        isLoading={isLoading}
                     >
                         {t('dashboard-informations:btn.upload')}
                     </Button>

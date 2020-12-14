@@ -8,11 +8,12 @@
   font-size: 16px;
 }
 
+
 h1 {
   font-family: $primary-bold;
   font-size: $level12;
   @include media(m-device) {
-    font-size: $level12-mobile;
+    font-size: $level8;
   }
 }
 
@@ -28,27 +29,25 @@ h3 {
   font-family: $primary-bold;
   font-size: $level8;
   @include media(m-device) {
-    font-size: $level5;
+    font-size: $level6;
   }
+
 }
 
 h4 {
   font-family: $primary-SemiBold;
   font-size: $level7;
-
-}
-
-h5 {
-  font-family: $primary-SemiBold;
-  font-size: $level6;
   @include media(m-device) {
     font-size: $level4;
   }
 }
 
-h6 {
+h5 {
   font-family: $primary-SemiBold;
-  font-size: $level4;
+  font-size: $level5;
+  @include media(m-device) {
+    font-size: $level3;
+  }
 }
 
 a {

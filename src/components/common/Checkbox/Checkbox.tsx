@@ -29,7 +29,9 @@ const Checkbox = ({ children, disabled, error, success, onChange, value, name }:
         <label className={css.container}>
             <input onChange={onChange} name={name} value={value} checked={value} type="checkbox" disabled={disabled} />
             <span className={checkmarkStyle()} />
-            <Text variant="body_02">{children}</Text>
+            <Text variant="button_small" color={'ui-primary'}>
+                {children}
+            </Text>
         </label>
     );
 };

@@ -22,7 +22,7 @@ const SelectNavBar = ({ t }: SelectNavBarProps) => {
         return (
             <Link key={label.title} href={label.link}>
                 <a className={css.customLabel}>
-                    <Text variant="caption">{label.tag}</Text>
+                    <Text variant="caption_00">{label.tag}</Text>
                     <Text customClass={css.customLabel__filter} variant="button">
                         {label.title}
                     </Text>

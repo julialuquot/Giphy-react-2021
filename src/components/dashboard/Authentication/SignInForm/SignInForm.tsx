@@ -11,13 +11,14 @@ import Text from '@components/common/Text/Text';
 import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Button from '@components/common/Button/Button';
 import { getRoute, ROUTE } from '@services//http/Route';
+import { useToasts } from 'react-toast-notifications';
 
 const SignInForm = () => {
-    const { t } = useTranslation('authentication');
-    const router = useRouter();
-
     const authContext = useContext(AuthContext);
-    const { userSignIn, isFetching, user } = authContext;
+    const router = useRouter();
+    const { t } = useTranslation('authentication');
+    const { addToast } = useToasts();
+    const { userSignIn, isFetching, getUser, user, error } = authContext;
 
     const initialValues = {
         email: 'merchandclass1@yopmail.com',
@@ -26,12 +27,24 @@ const SignInForm = () => {
     };
 
     const onSubmit = async (values) => {
-        userSignIn(values);
+        await userSignIn(values);
+        await getUser();
     };
 
     useEffect(() => {
-        const route = user && getRoute(ROUTE.DASHBOARD.WORKSPACE, { merchantUniq: user.merchantUniq });
-        user && router.push(route);
+        error &&
+            addToast(t(`common:errors.${error}`), {
+                appearance: 'error',
+                autoDismiss: true,
+            });
+    }, [addToast, error, t]);
+
+    useEffect(() => {
+        getUser();
+    }, [getUser]);
+
+    useEffect(() => {
+        user && router.push(getRoute(ROUTE.DASHBOARD.STATS, user.partnerUniq));
     }, [router, user]);
 
     return (
@@ -56,7 +69,7 @@ const SignInForm = () => {
                         />
 
                         <div className={css['lost-password']}>
-                            <Text variant="caption" color="ui-secondary">
+                            <Text variant="caption_02" color="ui-secondary">
                                 {t('authentication:login.lost-password')}
                             </Text>
                         </div>

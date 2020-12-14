@@ -8,7 +8,7 @@ const SignIn = () => {
     return (
         <div className={css.signIn__wrapper}>
             <div className={css.login}>
-                <h3>{t('authentication:login.title')}</h3>
+                <h3>{t('authentication:login.title-dashboard')}</h3>
                 <SignInForm />
             </div>
         </div>

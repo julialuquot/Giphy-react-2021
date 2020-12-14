@@ -1,12 +1,11 @@
-import jwtDecode from 'jwt-decode';
-import Cookies from 'js-cookie';
-
 const AuthReducer = (state, action) => {
     switch (action.type) {
         case 'START':
             return {
                 ...state,
                 isFetching: true,
+                error: null,
+                isLoggedIn: false,
             };
         case 'FAILURE':
             return {
@@ -18,23 +17,25 @@ const AuthReducer = (state, action) => {
             return {
                 ...state,
                 isFetching: false,
-                user: getUserInformations(action.payload.status),
+                error: null,
+                isLoggedIn: true,
             };
         case 'USER_SIGN_OUT_SUCCESS':
             return {
                 ...state,
                 isFetching: false,
-                user: getUserInformations(action.payload.status),
+                user: null,
+                error: null,
+                isLoggedIn: false,
+            };
+        case 'GET_USER_SUCCESS':
+            return {
+                ...state,
+                isFetching: false,
+                user: action.payload,
             };
         default:
             return state;
-    }
-};
-
-const getUserInformations = (status) => {
-    if (status === 200) {
-        const token = Cookies.get('merchantDashboardToken');
-        return token !== undefined && jwtDecode(token);
     }
 };
 
