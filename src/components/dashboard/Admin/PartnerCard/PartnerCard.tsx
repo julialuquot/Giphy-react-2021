@@ -1,10 +1,12 @@
 import React, { useRef, useState } from 'react';
 import css from './PartnerCard.module.scss';
-import CardPopUp from '@components/dashboard/Administrator/CardPopUp';
+import CardPopUp from '@components/dashboard/Admin/CardPopUp/CardPopUp';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
 import { useTranslation } from '@i18n';
 import { formatDate } from '@services/utils/DateService';
 import Text from '@components/common/Text/Text';
+import Link from 'next/link';
+import { getRoute, ROUTE } from '@services//http/Route';
 
 type PartnerCardProps = {
     logo: string;
@@ -84,9 +86,11 @@ const PartnerCard = ({
                         {t('dashboard-partners:card.edit-on')} {formatDate(lastModification)} (
                         {verificationResponsible || 'ND'})
                     </Text>
-                    <div className={css.card__footer__eye}>
-                        <img src="/front-static/icons/show-eye.svg" alt="show" />
-                    </div>
+                    <Link href={getRoute(ROUTE.DASHBOARD.ADMIN.PREVIEW, name)}>
+                        <a className={css.card__footer__eye}>
+                            <img src="/front-static/icons/show-eye.svg" alt="show" />
+                        </a>
+                    </Link>
                 </div>
             </div>
 

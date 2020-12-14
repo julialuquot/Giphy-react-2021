@@ -1,7 +1,7 @@
 import React from 'react';
 import css from './Profil.module.scss';
 import { useTranslation } from '@i18n';
-import Avatar from '@components/dashboard/Navbar/Avatar';
+import Avatar from '@components/dashboard/Header/Avatar/Avatar';
 import Link from 'next/link';
 
 type ProfilProps = {

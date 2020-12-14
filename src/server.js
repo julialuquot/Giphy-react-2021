@@ -6,6 +6,7 @@ const routes = require('./routes/index.js');
 const port = process.env.PORT || 3000;
 const app = next({ dev: process.env.NODE_ENV === 'development' });
 const handle = routes.getRequestHandler(app);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars,no-unused-vars
 const dev = process.env.NODE_ENV === 'development';
 
 (async () => {

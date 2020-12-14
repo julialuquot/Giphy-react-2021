@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from 'react';
 import css from './Partners.module.scss';
-import PartnerCard from '@components/dashboard/Administrator/PartnerCard';
+import PartnerCard from '@components/dashboard/Admin/PartnerCard/PartnerCard';
 import { useTranslation } from '@i18n';
-import ConfirmGoOnLine from '@components/common/Modals/ConfirmGoOnLine/ConfirmGoOnLine';
+import ConfirmModal from '@components/common/Modals/ConfirmModal/ConfirmModal';
 import { useToasts } from 'react-toast-notifications';
 import PartnersContext from '@components/dashboard/context/partners/PartnersContext';
 
@@ -72,7 +72,7 @@ const Partners = () => {
 
     return (
         <div className={css.partners}>
-            <ConfirmGoOnLine
+            <ConfirmModal
                 isVisible={open}
                 onHide={() => setOpen(false)}
                 onConfirm={() => (selectedPartner?.active ? onsuspend() : onReactive())}
@@ -89,17 +89,8 @@ const Partners = () => {
                 }
                 cancelLabel={t('dashboard-partners:modal.cancel')}
                 isLoading={isFetching}
+                customConfirmButton={selectedPartner?.active ? css.customSuspendButton : css.customActiveButton}
             />
-            {/* TODO just for testing purpose , must be in preview page */}
-            {/* <ConfirmModification */}
-            {/*    isVisible={open} */}
-            {/*    onHide={() => setOpen(false)} */}
-            {/*    onConfirm={() => onConfirm()} */}
-            {/*    title={t('dashboard-partners:modal-modification-confirmation.title')} */}
-            {/*    text={t('dashboard-partners:modal-modification-confirmation.text')} */}
-            {/*    confirmLabel={t('dashboard-partners:modal-modification-confirmation.confirm')} */}
-            {/*    cancelLabel={t('dashboard-partners:modal-modification-confirmation.cancel')} */}
-            {/* /> */}
 
             <h3>{t('dashboard-partners:checking-partner')}</h3>
             <div className={css.partners__grid}>

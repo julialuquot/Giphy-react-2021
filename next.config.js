@@ -24,6 +24,11 @@ module.exports = withBundleAnalyzer(
 
                 config.plugins.push(new webpack.DefinePlugin(envKeys));
 
+                config.module.rules.push({
+                    test: /\.svg$/,
+                    use: ['@svgr/webpack'],
+                });
+
                 config.resolve.alias['@components'] = path.join(__dirname, '/src/components');
                 config.resolve.alias['@assets'] = path.join(__dirname, '/src/assets');
                 config.resolve.alias['@validations'] = path.join(__dirname, '/src/validations');

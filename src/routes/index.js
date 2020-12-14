@@ -44,6 +44,11 @@ const routes = require('next-routes')()
         name: 'dashboard-partners',
         pattern: '/dashboard/admin/partners',
         page: 'dashboard/partners-page',
+    })
+    .add({
+        name: 'dashboard-preview-admin',
+        pattern: '/dashboard/admin/preview/:reference',
+        page: 'dashboard/preview-page/[reference]',
     });
 
 module.exports = routes;

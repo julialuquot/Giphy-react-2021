@@ -41,15 +41,6 @@
   &__btn__container {
     display: flex;
     flex-direction: column;
-
-    &__primary {
-      background-color: $ui-error-lighten;
-
-      &:hover {
-        color: $ui-error;
-        background-color: $ui-error-lighten;
-      }
-    }
   }
 
 }

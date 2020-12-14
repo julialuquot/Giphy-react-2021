@@ -4,9 +4,7 @@
 @import '../../../assets/styles/fonts';
 
 .layout {
-  @include media(m-device) {
-    padding: 24px;
-  }
+
 
   &__main {
     margin-top: 86px;

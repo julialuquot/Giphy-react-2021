@@ -15,6 +15,7 @@ type ButtonProps = {
     margin?: string;
     width?: string;
     height?: string;
+    icon?: string;
 };
 
 const Button = ({
@@ -30,6 +31,7 @@ const Button = ({
     margin,
     width,
     height,
+    icon,
 }: ButtonProps) => {
     const buttonStyle = () => {
         let className = '';
@@ -55,7 +57,10 @@ const Button = ({
             className={`${buttonStyle()} ${customClass || ''}`}
             onClick={onClick}
         >
-            <div className={isLoading ? css.loading : ''}>{children}</div>
+            <div className={isLoading ? css.loading : ''}>
+                {icon && <img className={css.icon} src={icon} alt={icon} />}
+                {children}
+            </div>
             {isLoading && <Spinner customClass={css.spinner} />}
         </button>
     );

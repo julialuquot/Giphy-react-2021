@@ -1,5 +1,8 @@
 {
     "settings": "Paramètres",
     "logout": "Se déconnecter",
-    "lpc-website": "Site lepotcommun.fr"
+    "lpc-website": "Site lepotcommun.fr",
+    "edit": "Modifier",
+    "edit-on": "Modifier le",
+    "finalize": "Finaliser"
 }

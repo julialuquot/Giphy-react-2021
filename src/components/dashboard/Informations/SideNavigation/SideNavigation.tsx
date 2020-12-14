@@ -3,7 +3,7 @@ import css from './SideNavigation.module.scss';
 import { useTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
 import Switch from '@components/common/Switch/Switch';
-import ConfirmGoOnLine from '@components/common/Modals/ConfirmGoOnLine/ConfirmGoOnLine';
+import ConfirmModal from '@components/common/Modals/ConfirmModal/ConfirmModal';
 import InformationsService from '@services/domain/InformationsService';
 import { useToasts } from 'react-toast-notifications';
 
@@ -53,7 +53,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
 
     return (
         <>
-            <ConfirmGoOnLine
+            <ConfirmModal
                 isVisible={open}
                 onHide={() => setOpen(false)}
                 onConfirm={() => onConfirm()}

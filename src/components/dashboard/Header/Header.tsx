@@ -1,9 +1,9 @@
 import React, { useContext, useEffect, useRef, useState } from 'react';
 import css from './Header.module.scss';
-import Avatar from '@components/dashboard/Navbar/Avatar';
+import Avatar from '@components/dashboard/Header/Avatar/Avatar';
 import AuthContext from '@components/dashboard/context/auth/AuthContext';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
-import Profil from '@components/dashboard/Navbar/Profil';
+import Profil from '@components/dashboard/Header/Profil/Profil';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
 import { getRoute, ROUTE } from '@services/http/Route';
 import { useRouter } from 'next/router';

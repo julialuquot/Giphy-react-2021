@@ -1,0 +1,81 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+@import '../../../../assets/styles/fonts';
+
+
+.navbar {
+  z-index: 999;
+  position: fixed;
+  display: flex;
+  justify-content: space-between;
+  height: 96px;
+  max-width: 100vw;
+  width: 100%;
+  align-items: center;
+  padding: 0 32px 0 0;
+  background-color: $white;
+
+  .left {
+    display: flex;
+    height: 96px;
+
+  }
+
+  &__back {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 102px;
+    height: 100%;
+    margin-right: 48px;
+    border-right: solid 1px $ui-quaternary;
+  }
+
+  &__informations {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    & > img {
+      position: absolute;
+      right: -0px;
+      bottom: 18px;
+      cursor: pointer;
+
+    }
+
+  }
+
+  &__view {
+    display: flex;
+
+    &__icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 4px;
+      width: 48px;
+      height: 48px;
+      border-radius: 8px;
+      border: solid 2px $ui-quaternary;
+      cursor: pointer;
+
+      &__active {
+        background-color: $ui-primary;
+        border: solid 2px $ui-primary;
+
+      }
+    }
+  }
+
+  &__btn {
+    display: flex;
+
+
+  }
+}
+
+
+

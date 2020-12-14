@@ -1,7 +1,7 @@
 import React from 'react';
 import Modal from '@components/common/Modals/Modal/Modal';
 import Button from '@components/common/Button/Button';
-import css from './ConfirmGoOnLine.module.scss';
+import css from './ConfirmModal.module.scss';
 import Text from '@components/common/Text/Text';
 
 type ConfirmModalProps = {
@@ -14,9 +14,11 @@ type ConfirmModalProps = {
     isLoading?: boolean;
     onHide: () => void;
     onConfirm: () => void;
+    customConfirmButton?: string;
+    customCancelButton?: string;
 };
 
-const ConfirmGoOnLine = ({
+const ConfirmModal = ({
     isVisible,
     title,
     text,
@@ -25,6 +27,8 @@ const ConfirmGoOnLine = ({
     onHide,
     onConfirm,
     isLoading,
+    customConfirmButton,
+    customCancelButton,
 }: ConfirmModalProps) => {
     return (
         <Modal visible={isVisible} onHide={onHide} customClass={css.custom}>
@@ -41,13 +45,13 @@ const ConfirmGoOnLine = ({
                             variant={'primary'}
                             isLoading={isLoading}
                             onClick={() => onConfirm()}
-                            customClass={css.modal__btn__container__primary}
+                            customClass={customConfirmButton || ''}
                         >
                             {confirmLabel}
                         </Button>
                     )}
                     {cancelLabel && (
-                        <Button variant={'secondary'} onClick={() => onHide()}>
+                        <Button customClass={customCancelButton || ''} variant={'secondary'} onClick={() => onHide()}>
                             {cancelLabel}
                         </Button>
                     )}
@@ -57,4 +61,4 @@ const ConfirmGoOnLine = ({
     );
 };
 
-export default ConfirmGoOnLine;
+export default ConfirmModal;
