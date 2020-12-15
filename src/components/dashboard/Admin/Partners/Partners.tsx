@@ -5,6 +5,7 @@ import { useTranslation } from '@i18n';
 import ConfirmModal from '@components/common/Modals/ConfirmModal/ConfirmModal';
 import { useToasts } from 'react-toast-notifications';
 import PartnersContext from '@components/dashboard/context/partners/PartnersContext';
+import Spinner from '@components/common/Spinner/Spinner';
 
 const Partners = () => {
     const { t } = useTranslation('dashboard-partners');
@@ -92,76 +93,82 @@ const Partners = () => {
                 customConfirmButton={selectedPartner?.active ? css.customSuspendButton : css.customActiveButton}
             />
 
-            <h3>{t('dashboard-partners:checking-partner')}</h3>
-            <div className={css.partners__grid}>
-                {partners &&
-                    partners.length > 0 &&
-                    partners
-                        .filter((partner) => partner.verificationStatus === 0)
-                        .map((partner) => (
-                            <>
-                                <PartnerCard
-                                    key={partner.uniq}
-                                    uniq={partner.uniq}
-                                    name={partner.name}
-                                    lastModification={partner.lastModification}
-                                    color={partner.color}
-                                    logo={partner.logo}
-                                    verificationStatus={partner.verificationStatus}
-                                    verificationResponsible={partner.verificationResponsible}
-                                    onOpenModal={(value) => setOpen(value)}
-                                    onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
-                                    active={partner.active}
-                                />
-                            </>
-                        ))}
-            </div>
-            <h3>{t('dashboard-partners:pending-partner')}</h3>
-            <div className={css.partners__grid}>
-                {partners &&
-                    partners.length > 0 &&
-                    partners
-                        .filter((partner) => partner.verificationStatus === 1)
-                        .map((partner) => (
-                            <>
-                                <PartnerCard
-                                    key={partner.uniq}
-                                    uniq={partner.uniq}
-                                    name={partner.name}
-                                    lastModification={partner.lastModification}
-                                    color={partner.color}
-                                    logo={partner.logo}
-                                    verificationStatus={partner.verificationStatus}
-                                    verificationResponsible={partner.verificationResponsible}
-                                    onOpenModal={(value) => setOpen(value)}
-                                    onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
-                                    active={partner.active}
-                                />
-                            </>
-                        ))}
-            </div>
-            <h3>{t('dashboard-partners:list-partner')}</h3>
-            <div className={css.partners__grid}>
-                {partners &&
-                    partners.length > 0 &&
-                    partners.map((partner) => (
-                        <>
-                            <PartnerCard
-                                key={partner.uniq}
-                                uniq={partner.uniq}
-                                name={partner.name}
-                                lastModification={partner.lastModification}
-                                color={partner.color}
-                                logo={partner.logo}
-                                verificationStatus={partner.verificationStatus}
-                                verificationResponsible={partner.verificationResponsible}
-                                onOpenModal={(value) => setOpen(value)}
-                                onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
-                                active={partner.active}
-                            />
-                        </>
-                    ))}
-            </div>
+            {isFetching ? (
+                <Spinner width={' 50px'} height={'50px'} margin={'150px auto 0 auto '} />
+            ) : (
+                <>
+                    <h3>{t('dashboard-partners:checking-partner')}</h3>
+                    <div className={css.partners__grid}>
+                        {partners &&
+                            partners.length > 0 &&
+                            partners
+                                .filter((partner) => partner.verificationStatus === 0)
+                                .map((partner) => (
+                                    <>
+                                        <PartnerCard
+                                            key={partner.uniq}
+                                            uniq={partner.uniq}
+                                            name={partner.name}
+                                            lastModification={partner.lastModification}
+                                            color={partner.color}
+                                            logo={partner.logo}
+                                            verificationStatus={partner.verificationStatus}
+                                            verificationResponsible={partner.verificationResponsible}
+                                            onOpenModal={(value) => setOpen(value)}
+                                            onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
+                                            active={partner.active}
+                                        />
+                                    </>
+                                ))}
+                    </div>
+                    <h3>{t('dashboard-partners:pending-partner')}</h3>
+                    <div className={css.partners__grid}>
+                        {partners &&
+                            partners.length > 0 &&
+                            partners
+                                .filter((partner) => partner.verificationStatus === 1)
+                                .map((partner) => (
+                                    <>
+                                        <PartnerCard
+                                            key={partner.uniq}
+                                            uniq={partner.uniq}
+                                            name={partner.name}
+                                            lastModification={partner.lastModification}
+                                            color={partner.color}
+                                            logo={partner.logo}
+                                            verificationStatus={partner.verificationStatus}
+                                            verificationResponsible={partner.verificationResponsible}
+                                            onOpenModal={(value) => setOpen(value)}
+                                            onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
+                                            active={partner.active}
+                                        />
+                                    </>
+                                ))}
+                    </div>
+                    <h3>{t('dashboard-partners:list-partner')}</h3>
+                    <div className={css.partners__grid}>
+                        {partners &&
+                            partners.length > 0 &&
+                            partners.map((partner) => (
+                                <>
+                                    <PartnerCard
+                                        key={partner.uniq}
+                                        uniq={partner.uniq}
+                                        name={partner.name}
+                                        lastModification={partner.lastModification}
+                                        color={partner.color}
+                                        logo={partner.logo}
+                                        verificationStatus={partner.verificationStatus}
+                                        verificationResponsible={partner.verificationResponsible}
+                                        onOpenModal={(value) => setOpen(value)}
+                                        onSelectPartner={(uniq, active) => setSelectedPartner({ uniq, active })}
+                                        active={partner.active}
+                                    />
+                                </>
+                            ))}
+                    </div>
+                </>
+            )}
         </div>
     );
 };
