@@ -6,17 +6,17 @@ import { getRoute, ROUTE } from '@services//http/Route';
 type TabNavigation = {
     tabTitle0: string;
     tabTitle1: string;
-    partnerRef: string;
+    partnerUniq: string;
     activeTab: string;
 };
 
-const TabNavigation = ({ activeTab, tabTitle0, tabTitle1, partnerRef }: TabNavigation) => {
+const TabNavigation = ({ activeTab, tabTitle0, tabTitle1, partnerUniq }: TabNavigation) => {
     return (
         <div className={css.navigation}>
-            <Link href={getRoute(ROUTE.DASHBOARD.STATS, partnerRef)}>
+            <Link href={getRoute(ROUTE.DASHBOARD.STATS, partnerUniq)}>
                 <a className={`${css.tab} ${activeTab === 'STATS' && css.tab__selected}`}>{tabTitle0}</a>
             </Link>
-            <Link href={getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerRef)}>
+            <Link href={getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)}>
                 <a className={`${css.tab} ${activeTab === 'INFORMATIONS' && css.tab__selected}`}>{tabTitle1}</a>
             </Link>
         </div>

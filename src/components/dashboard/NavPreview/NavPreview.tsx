@@ -14,9 +14,14 @@ type SvgProps = {
     color: string;
 };
 
-const NavPreview = () => {
+type NavPreviewProps = {
+    partnerUniq: string;
+};
+
+const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
     const { t } = useTranslation('dashboard-header');
     const router = useRouter();
+
     const informationsContext = useContext(InformationsContext);
     const { getBrand, brand } = informationsContext;
 
@@ -24,7 +29,6 @@ const NavPreview = () => {
     const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
     const [openModificationModal, setOpenModificationModal] = useState(false);
     const [modificationList] = useState(' •  Descriptif\n' + ' •  URL site internet\n' + ' •  Produit n3');
-    const [merchantUniq, setMerchantUniq] = useState(null);
     const [isAdminRoute, setIsAdminRoute] = useState(null);
 
     const onChangeTab = (tab) => {
@@ -54,12 +58,6 @@ const NavPreview = () => {
         );
     };
 
-    useEffect(() => {
-        const uniq = router.query.reference;
-        setMerchantUniq(uniq);
-        merchantUniq && getBrand(merchantUniq);
-    }, [getBrand, merchantUniq, router.query.reference]);
-
     const onConfirm = () => {
         setOpenConfirmationModal(false);
     };
@@ -68,7 +66,11 @@ const NavPreview = () => {
         const asPath = router.asPath;
         const isAdminPath = asPath.includes('admin');
         setIsAdminRoute(isAdminPath);
-    });
+    }, [router.asPath]);
+
+    useEffect(() => {
+        getBrand(partnerUniq);
+    }, [getBrand, partnerUniq]);
 
     return (
         <>
@@ -93,7 +95,13 @@ const NavPreview = () => {
 
             <nav className={css.navbar}>
                 <div className={css.left}>
-                    <Link href={getRoute(ROUTE.DASHBOARD.ADMIN.PARTNERS, null)}>
+                    <Link
+                        href={
+                            isAdminRoute
+                                ? getRoute(ROUTE.DASHBOARD.ADMIN.PARTNERS, null)
+                                : getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)
+                        }
+                    >
                         <a className={css.navbar__back}>
                             <img src="/front-static/icons/chevron-left.svg" alt={'go back'} />
                         </a>
@@ -121,8 +129,14 @@ const NavPreview = () => {
                         <MobileIcon color={activeTab === 1 ? '#ffffff' : '#111e3d'} />
                     </div>
                 </div>
-                <div className={`${css.navbar__btn} ${!isAdminRoute ? css.navbar__btn__hide : ''} `}>
-                    <Link href={getRoute(ROUTE.DASHBOARD.ADMIN.INFORMATIONS, merchantUniq)}>
+                <div className={css.navbar__btn}>
+                    <Link
+                        href={
+                            isAdminRoute
+                                ? getRoute(ROUTE.DASHBOARD.ADMIN.INFORMATIONS, partnerUniq)
+                                : getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)
+                        }
+                    >
                         <a>
                             <Button
                                 icon={'/front-static/icons/edit.svg'}
@@ -134,9 +148,11 @@ const NavPreview = () => {
                             </Button>
                         </a>
                     </Link>
-                    <Button onClick={() => setOpenConfirmationModal(true)} width={'125px'} variant={'primary'}>
-                        {t('dashboard-header:finalize')}
-                    </Button>
+                    {isAdminRoute && (
+                        <Button onClick={() => setOpenConfirmationModal(true)} width={'125px'} variant={'primary'}>
+                            {t('dashboard-header:finalize')}
+                        </Button>
+                    )}
                 </div>
             </nav>
         </>

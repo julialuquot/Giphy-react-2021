@@ -10,10 +10,10 @@ import { getRoute, ROUTE } from '@services//http/Route';
 
 type InformationsPageProps = {
     principal: any;
-    partnerRef: string;
+    partnerUniq: string;
 };
 
-const InformationsPage = ({ principal, partnerRef }: InformationsPageProps) => {
+const InformationsPage = ({ partnerUniq }: InformationsPageProps) => {
     const { t } = useTranslation();
 
     return (
@@ -21,12 +21,12 @@ const InformationsPage = ({ principal, partnerRef }: InformationsPageProps) => {
             <div className={css.informationsPageWrapper}>
                 <Heading title={t('dashboard-informations:title')} subtitle={t('dashboard-informations:sub-title')} />
                 <TabNavigation
-                    partnerRef={partnerRef}
+                    partnerUniq={partnerUniq}
                     activeTab={'INFORMATIONS'}
                     tabTitle0={t('dashboard-stats:stats')}
                     tabTitle1={t('dashboard-informations:informations')}
                 />
-                <Informations principal={principal} />
+                <Informations partnerUniq={partnerUniq} />
             </div>
         </Layout>
     );
@@ -34,10 +34,11 @@ const InformationsPage = ({ principal, partnerRef }: InformationsPageProps) => {
 
 InformationsPage.getInitialProps = async (ctx) => {
     const principal = await AuthService.getUser(ctx);
-    const partnerRef = await ctx.query.reference;
+    const partnerUniq = await ctx.query.reference;
+    const userRole = await AuthService.getUserRole(principal);
 
     // @ts-ignore
-    if (!principal) {
+    if (!principal || (userRole !== 'ADMIN' && principal.partnerUniq !== partnerUniq)) {
         ctx.res.writeHead(302, {
             Location: getRoute(ROUTE.DASHBOARD.SIGN_IN, null),
         });
@@ -45,7 +46,7 @@ InformationsPage.getInitialProps = async (ctx) => {
         return;
     }
 
-    return { principal, partnerRef };
+    return { principal, partnerUniq };
 };
 
 export default InformationsPage;

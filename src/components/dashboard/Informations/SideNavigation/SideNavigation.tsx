@@ -11,10 +11,10 @@ import { getRoute, ROUTE } from '@services/http/Route';
 
 type SideNavigationProps = {
     onStepChange: (number) => void;
-    user: { partnerUniq: string };
+    partnerUniq: string;
 };
 
-const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
+const SideNavigation = ({ onStepChange, partnerUniq }: SideNavigationProps) => {
     const { t } = useTranslation('dashboard-informations');
     const { addToast } = useToasts();
 
@@ -32,7 +32,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
     }, [activeStep, onStepChange]);
 
     const onConfirm = () => {
-        const body = { partnerUniq: user.partnerUniq, goOnline: true };
+        const body = { partnerUniq: partnerUniq, goOnline: true };
         setIsLoading(true);
         InformationsService.goOnLine(body)
             .then(
@@ -94,7 +94,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
                 </div>
 
                 <div className={css.side__btn}>
-                    <Link href={getRoute(ROUTE.DASHBOARD.PREVIEW, user.partnerUniq)}>
+                    <Link href={getRoute(ROUTE.DASHBOARD.PREVIEW, partnerUniq)}>
                         <a>
                             <Button variant="secondary" size="medium" type={'button'}>
                                 {t('dashboard-informations:btn.preview')}

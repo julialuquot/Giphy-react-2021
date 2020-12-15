@@ -9,10 +9,10 @@ import AuthService from '@services/domain/AuthService';
 import { getRoute, ROUTE } from '@services/http/Route';
 
 type StatsPageProps = {
-    partnerRef: string;
+    partnerUniq: string;
 };
 
-const StatsPage = ({ partnerRef }: StatsPageProps) => {
+const StatsPage = ({ partnerUniq }: StatsPageProps) => {
     const { t } = useTranslation();
 
     return (
@@ -20,7 +20,7 @@ const StatsPage = ({ partnerRef }: StatsPageProps) => {
             <div className={css.statsPageWrapper}>
                 <Heading title={t('dashboard-informations:title')} subtitle={t('dashboard-informations:sub-title')} />
                 <TabNavigation
-                    partnerRef={partnerRef}
+                    partnerUniq={partnerUniq}
                     activeTab={'STATS'}
                     tabTitle0={t('dashboard-stats:stats')}
                     tabTitle1={t('dashboard-informations:informations')}
@@ -33,12 +33,11 @@ const StatsPage = ({ partnerRef }: StatsPageProps) => {
 
 StatsPage.getInitialProps = async (ctx) => {
     const principal = await AuthService.getUser(ctx);
-    const queryReference = await ctx.query.reference;
-    const partnerRef = await ctx.query.reference;
+    const partnerUniq = await ctx.query.reference;
     const userRole = await AuthService.getUserRole(principal);
 
     // @ts-ignore
-    if (!principal || (userRole !== 'ADMIN' && principal.partnerUniq !== queryReference)) {
+    if (!principal || (userRole !== 'ADMIN' && principal.partnerUniq !== partnerUniq)) {
         ctx.res.writeHead(302, {
             Location: getRoute(ROUTE.DASHBOARD.SIGN_IN, null),
         });
@@ -46,7 +45,7 @@ StatsPage.getInitialProps = async (ctx) => {
         return;
     }
 
-    return { principal, partnerRef };
+    return { principal, partnerUniq };
 };
 
 export default StatsPage;
