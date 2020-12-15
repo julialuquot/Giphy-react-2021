@@ -35,6 +35,7 @@ const StatsPage = ({ partnerUniq, userRole }: StatsPageProps) => {
                 )}
 
                 <TabNavigation
+                    userRole={userRole}
                     partnerUniq={partnerUniq}
                     activeTab={'STATS'}
                     tabTitle0={t('dashboard-stats:stats')}
@@ -48,14 +49,22 @@ const StatsPage = ({ partnerUniq, userRole }: StatsPageProps) => {
 
 StatsPage.getInitialProps = async (ctx) => {
     const principal = await AuthService.getUser(ctx);
+    const userRole = (await principal) && AuthService.getUserRole(principal);
     const partnerUniq = await ctx.query.reference;
-    const userRole = await AuthService.getUserRole(principal);
-    // const brand = await InformationsService.getBrand(partnerUniq);
+    const isAdminPath = await ctx.asPath.includes('admin');
+
+    if (isAdminPath && userRole !== 'ADMIN') {
+        ctx.res.writeHead(302, {
+            Location: getRoute(ROUTE.DASHBOARD.SIGN_IN, null),
+        });
+        ctx.res.end();
+        return;
+    }
 
     // @ts-ignore
     if (!principal || (userRole !== 'ADMIN' && principal.partnerUniq !== partnerUniq)) {
         ctx.res.writeHead(302, {
-            Location: getRoute(ROUTE.DASHBOARD.INFORMATIONS, null),
+            Location: getRoute(ROUTE.DASHBOARD.SIGN_IN, null),
         });
         ctx.res.end();
         return;

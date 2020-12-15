@@ -23,8 +23,9 @@ const PartnersPage = () => {
 PartnersPage.getInitialProps = async (ctx) => {
     const principal = await AuthService.getUser(ctx);
     const partnerRef = await ctx.query.reference;
+    const userRole = (await principal) && AuthService.getUserRole(principal);
 
-    if (!principal) {
+    if (!principal || userRole !== 'ADMIN') {
         ctx.res.writeHead(302, {
             Location: getRoute(ROUTE.DASHBOARD.SIGN_IN, null),
         });

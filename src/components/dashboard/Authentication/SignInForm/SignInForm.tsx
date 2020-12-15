@@ -2,6 +2,7 @@ import React, { useContext, useEffect } from 'react';
 import { useTranslation } from '@i18n';
 import { Form, Formik } from 'formik';
 import { useRouter } from 'next/router';
+import { useToasts } from 'react-toast-notifications';
 import { signIn } from '@validations/user';
 import css from '@components/dashboard/Authentication/Authentication.scss';
 import AuthContext from '@components/dashboard/context/auth/AuthContext';
@@ -11,7 +12,7 @@ import Text from '@components/common/Text/Text';
 import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Button from '@components/common/Button/Button';
 import { getRoute, ROUTE } from '@services//http/Route';
-import { useToasts } from 'react-toast-notifications';
+import AuthService from '@services/domain/AuthService';
 
 const SignInForm = () => {
     const authContext = useContext(AuthContext);
@@ -44,7 +45,13 @@ const SignInForm = () => {
     }, [getUser]);
 
     useEffect(() => {
-        user && router.push(getRoute(ROUTE.DASHBOARD.STATS, user.partnerUniq));
+        if (user) {
+            const userRole = user && AuthService.getUserRole(user);
+
+            userRole === 'ADMIN'
+                ? router.push(getRoute(ROUTE.DASHBOARD.ADMIN.PARTNERS, null))
+                : router.push(getRoute(ROUTE.DASHBOARD.STATS, user.partnerUniq));
+        }
     }, [router, user]);
 
     return (

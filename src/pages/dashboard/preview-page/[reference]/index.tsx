@@ -7,12 +7,13 @@ import { getRoute, ROUTE } from '@services/http/Route';
 
 type PreviewPageProps = {
     partnerUniq: string;
+    userRole: string;
 };
 
-const PreviewPage = ({ partnerUniq }: PreviewPageProps) => {
+const PreviewPage = ({ partnerUniq, userRole }: PreviewPageProps) => {
     return (
         <Layout hideNavbar>
-            <NavPreview partnerUniq={partnerUniq} />
+            <NavPreview userRole={userRole} partnerUniq={partnerUniq} />
             <div className={css.previewWrapper}>I am a preview</div>
         </Layout>
     );
@@ -20,7 +21,17 @@ const PreviewPage = ({ partnerUniq }: PreviewPageProps) => {
 
 PreviewPage.getInitialProps = async (ctx) => {
     const principal = await AuthService.getUser(ctx);
+    const userRole = (await principal) && AuthService.getUserRole(principal);
     const partnerUniq = await ctx.query.reference;
+    const isAdminPath = await ctx.asPath.includes('admin');
+
+    if (isAdminPath && userRole !== 'ADMIN') {
+        ctx.res.writeHead(302, {
+            Location: getRoute(ROUTE.DASHBOARD.SIGN_IN, null),
+        });
+        ctx.res.end();
+        return;
+    }
 
     // @ts-ignore
     if (!principal) {
@@ -31,6 +42,6 @@ PreviewPage.getInitialProps = async (ctx) => {
         return;
     }
 
-    return { principal, partnerUniq };
+    return { principal, partnerUniq, userRole };
 };
 export default PreviewPage;

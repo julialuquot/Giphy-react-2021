@@ -11,9 +11,10 @@ import { getRoute, ROUTE } from '@services//http/Route';
 type InformationsPageProps = {
     principal: any;
     partnerUniq: string;
+    userRole: string;
 };
 
-const InformationsPage = ({ partnerUniq }: InformationsPageProps) => {
+const InformationsPage = ({ partnerUniq, userRole }: InformationsPageProps) => {
     const { t } = useTranslation();
 
     return (
@@ -21,6 +22,7 @@ const InformationsPage = ({ partnerUniq }: InformationsPageProps) => {
             <div className={css.informationsPageWrapper}>
                 <Heading title={t('dashboard-informations:title')} subtitle={t('dashboard-informations:sub-title')} />
                 <TabNavigation
+                    userRole={userRole}
                     partnerUniq={partnerUniq}
                     activeTab={'INFORMATIONS'}
                     tabTitle0={t('dashboard-stats:stats')}
@@ -46,7 +48,7 @@ InformationsPage.getInitialProps = async (ctx) => {
         return;
     }
 
-    return { principal, partnerUniq };
+    return { principal, partnerUniq, userRole };
 };
 
 export default InformationsPage;

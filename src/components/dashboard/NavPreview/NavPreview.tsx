@@ -2,7 +2,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import css from './NavPreview.module.scss';
 import Link from 'next/link';
 import { useTranslation } from '@i18n';
-import { useRouter } from 'next/router';
 import Button from '@components/common/Button/Button';
 import { getRoute, ROUTE } from '@services//http/Route';
 import Text from '@components/common/Text/Text';
@@ -16,11 +15,11 @@ type SvgProps = {
 
 type NavPreviewProps = {
     partnerUniq: string;
+    userRole: string;
 };
 
-const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
+const NavPreview = ({ partnerUniq, userRole }: NavPreviewProps) => {
     const { t } = useTranslation('dashboard-header');
-    const router = useRouter();
 
     const informationsContext = useContext(InformationsContext);
     const { getBrand, brand } = informationsContext;
@@ -29,7 +28,6 @@ const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
     const [openConfirmationModal, setOpenConfirmationModal] = useState(false);
     const [openModificationModal, setOpenModificationModal] = useState(false);
     const [modificationList] = useState(' •  Descriptif\n' + ' •  URL site internet\n' + ' •  Produit n3');
-    const [isAdminRoute, setIsAdminRoute] = useState(null);
 
     const onChangeTab = (tab) => {
         setActiveTab(tab);
@@ -63,12 +61,6 @@ const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
     };
 
     useEffect(() => {
-        const asPath = router.asPath;
-        const isAdminPath = asPath.includes('admin');
-        setIsAdminRoute(isAdminPath);
-    }, [router.asPath]);
-
-    useEffect(() => {
         getBrand(partnerUniq);
     }, [getBrand, partnerUniq]);
 
@@ -97,7 +89,7 @@ const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
                 <div className={css.left}>
                     <Link
                         href={
-                            isAdminRoute
+                            userRole === 'ADMIN'
                                 ? getRoute(ROUTE.DASHBOARD.ADMIN.PARTNERS, null)
                                 : getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)
                         }
@@ -112,7 +104,7 @@ const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
                         <Text color={'ui-secondary'} variant={'caption_00'}>
                             {t('dashboard-header:edit-on')}
                         </Text>
-                        {isAdminRoute && <img src="/front-static/icons/help.svg" alt={'help'} />}
+                        {userRole === 'ADMIN' && <img src="/front-static/icons/help.svg" alt={'help'} />}
                     </div>
                 </div>
                 <div className={css.navbar__view}>
@@ -132,7 +124,7 @@ const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
                 <div className={css.navbar__btn}>
                     <Link
                         href={
-                            isAdminRoute
+                            userRole === 'ADMIN'
                                 ? getRoute(ROUTE.DASHBOARD.ADMIN.INFORMATIONS, partnerUniq)
                                 : getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)
                         }
@@ -148,7 +140,7 @@ const NavPreview = ({ partnerUniq }: NavPreviewProps) => {
                             </Button>
                         </a>
                     </Link>
-                    {isAdminRoute && (
+                    {userRole === 'ADMIN' && (
                         <Button onClick={() => setOpenConfirmationModal(true)} width={'125px'} variant={'primary'}>
                             {t('dashboard-header:finalize')}
                         </Button>

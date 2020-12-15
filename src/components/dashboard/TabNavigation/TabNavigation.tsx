@@ -8,15 +8,28 @@ type TabNavigation = {
     tabTitle1: string;
     partnerUniq: string;
     activeTab: string;
+    userRole: string;
 };
 
-const TabNavigation = ({ activeTab, tabTitle0, tabTitle1, partnerUniq }: TabNavigation) => {
+const TabNavigation = ({ activeTab, tabTitle0, tabTitle1, partnerUniq, userRole }: TabNavigation) => {
     return (
         <div className={css.navigation}>
-            <Link href={getRoute(ROUTE.DASHBOARD.STATS, partnerUniq)}>
+            <Link
+                href={
+                    userRole === 'ADMIN'
+                        ? getRoute(ROUTE.DASHBOARD.ADMIN.STATS, partnerUniq)
+                        : getRoute(ROUTE.DASHBOARD.STATS, partnerUniq)
+                }
+            >
                 <a className={`${css.tab} ${activeTab === 'STATS' && css.tab__selected}`}>{tabTitle0}</a>
             </Link>
-            <Link href={getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)}>
+            <Link
+                href={
+                    userRole === 'ADMIN'
+                        ? getRoute(ROUTE.DASHBOARD.ADMIN.INFORMATIONS, partnerUniq)
+                        : getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)
+                }
+            >
                 <a className={`${css.tab} ${activeTab === 'INFORMATIONS' && css.tab__selected}`}>{tabTitle1}</a>
             </Link>
         </div>
