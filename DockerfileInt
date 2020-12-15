@@ -12,7 +12,7 @@ COPY . .
 RUN npm install
 
 # Build react next app 
-RUN NODE_ENV=${env_name} && npm run build
+#RUN NODE_ENV=${env_name} && npm run build
 
 # Install PM2 
 RUN npm install pm2 -g
