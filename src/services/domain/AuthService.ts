@@ -27,6 +27,10 @@ const getUser = (ctx) => {
 };
 
 const getUserRole = (user) => {
+    if (!user) {
+        return;
+    }
+
     const admin = user.roles.find((role) => role === 'admin');
     const merchant = user.roles.find((role) => role === 'merchant');
 

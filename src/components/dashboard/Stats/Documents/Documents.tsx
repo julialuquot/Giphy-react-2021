@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import css from './Documents.module.scss';
 import { useTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
+import AddPdf from '@components/dashboard/Admin/AddPdf/AddPdf';
 
 type DocumentsProps = {
     files: { id: number; title: string }[];
+    userRole: string;
 };
 
-const Documents = ({ files }: DocumentsProps) => {
+const Documents = ({ files, userRole }: DocumentsProps) => {
     const { t } = useTranslation('dashboard-stats');
 
     const [start, setStart] = useState(0);
@@ -38,6 +40,8 @@ const Documents = ({ files }: DocumentsProps) => {
         <div className={css.documents}>
             <h3>{t('dashboard-stats:documents.title')}</h3>
             <p className={css.documents__desc}>{t('dashboard-stats:documents.desc')}</p>
+
+            {userRole === 'ADMIN' && <AddPdf />}
 
             {renderFiles()}
 

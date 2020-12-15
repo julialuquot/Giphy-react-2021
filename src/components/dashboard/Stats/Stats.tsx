@@ -1,17 +1,17 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import css from './Stats.module.scss';
-import AuthContext from '@components/dashboard/context/auth/AuthContext';
 import moment from 'moment';
 import CardStats from '@components/dashboard/Stats/CardStats/CardStats';
 import { useTranslation } from '@i18n';
 import Documents from '@components/dashboard/Stats/Documents/Documents';
 import BusinessBanner from '@components/common/BuisinessBanner/BusinessBanner';
 
-const Stats = () => {
-    const { t } = useTranslation('dashboard-stats');
+type StatsProps = {
+    userRole: string;
+};
 
-    const authContext = useContext(AuthContext);
-    const { user, isFetching } = authContext;
+const Stats = ({ userRole }: StatsProps) => {
+    const { t } = useTranslation('dashboard-stats');
 
     const [currentMonth, setCurrentMonth] = useState({ startOfMonth: '', endOfMonth: '' });
 
@@ -73,7 +73,6 @@ const Stats = () => {
             title: "Droits d'entrées au réseau d'affiliation 12",
         },
     ];
-
     const mockStats = [
         {
             title: t('dashboard-stats:card.transactions'),
@@ -86,27 +85,25 @@ const Stats = () => {
 
     return (
         <div className={css.stats}>
-            {!isFetching && user && (
-                <div className={css.stats__content}>
-                    <p className={css.stats__content__date}>
-                        {t('dashboard-stats:period-from')} {currentMonth.startOfMonth} {t('dashboard-stats:to')}{' '}
-                        {currentMonth.endOfMonth}
-                    </p>
-                    <div className={css.stats__content__grid}>
-                        {mockStats.map((stat) => (
-                            <CardStats key={stat.title} title={stat.title} stats={stat.stats} imgScr={stat.imgSrc} />
-                        ))}
-                    </div>
-
-                    <Documents files={mockFiles} />
-
-                    <BusinessBanner
-                        title={t('footer:banner.title')}
-                        description={t('footer:banner.text')}
-                        buttonLabel={t('footer:banner.btn')}
-                    />
+            <div className={css.stats__content}>
+                <p className={css.stats__content__date}>
+                    {t('dashboard-stats:period-from')} {currentMonth.startOfMonth} {t('dashboard-stats:to')}{' '}
+                    {currentMonth.endOfMonth}
+                </p>
+                <div className={css.stats__content__grid}>
+                    {mockStats.map((stat) => (
+                        <CardStats key={stat.title} title={stat.title} stats={stat.stats} imgScr={stat.imgSrc} />
+                    ))}
                 </div>
-            )}
+
+                <Documents userRole={userRole} files={mockFiles} />
+
+                <BusinessBanner
+                    title={t('footer:banner.title')}
+                    description={t('footer:banner.text')}
+                    buttonLabel={t('footer:banner.btn')}
+                />
+            </div>
         </div>
     );
 };

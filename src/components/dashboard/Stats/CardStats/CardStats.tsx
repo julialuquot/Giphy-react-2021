@@ -15,7 +15,7 @@ const CardStats = ({ title, imgScr, stats }: CardsStatsProps) => {
                 <img src={imgScr} alt={title} />
             </div>
 
-            <h6>{title}</h6>
+            <h5>{title}</h5>
         </div>
     );
 };
