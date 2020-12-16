@@ -2,16 +2,15 @@ import React, { useContext, useEffect, useRef, useState } from 'react';
 import css from './Header.module.scss';
 import Avatar from '@components/dashboard/Header/Avatar/Avatar';
 import AuthContext from '@components/dashboard/context/auth/AuthContext';
-import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import Profil from '@components/dashboard/Header/Profil/Profil';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
 import { getRoute, ROUTE } from '@services/http/Route';
 import { useRouter } from 'next/router';
+import InformationsService from '@services/domain/InformationsService';
 
 const Header = () => {
     const router = useRouter();
-    const informationsContext = useContext(InformationsContext);
-    const { getBrand, brand } = informationsContext;
+    const [brand, setBrand] = useState(null);
 
     const authContext = useContext(AuthContext);
     const { userSignOut, isFetching, getUser, user } = authContext;
@@ -22,12 +21,12 @@ const Header = () => {
     useOnClickOutside(avatarRef, () => setIsProfilOpen(false));
 
     useEffect(() => {
-        user && getBrand(user.partnerUniq);
-    }, [getBrand, user]);
-
-    useEffect(() => {
         getUser();
     }, [getUser]);
+
+    useEffect(() => {
+        user && InformationsService.getBrand(user.partnerUniq).then((res) => setBrand(res.data));
+    }, [user]);
 
     const onSignOut = async () => {
         await userSignOut();
