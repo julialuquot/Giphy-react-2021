@@ -1,10 +1,12 @@
 import React from 'react';
 import css from './CardPopUp.module.scss';
 import { useTranslation } from '@i18n';
+import Link from 'next/link';
+import { getRoute, ROUTE } from '@services/http/Route';
 
-type CardPopupProps = { isOpen: boolean; active: boolean; onOpenModal: (boolean) => void };
+type CardPopupProps = { isOpen: boolean; active: boolean; onOpenModal: (boolean) => void; uniq: string };
 
-const CardPopUp = ({ isOpen, active, onOpenModal }: CardPopupProps) => {
+const CardPopUp = ({ isOpen, active, onOpenModal, uniq }: CardPopupProps) => {
     const { t } = useTranslation('dashboard-partners');
 
     return (
@@ -21,10 +23,12 @@ const CardPopUp = ({ isOpen, active, onOpenModal }: CardPopupProps) => {
                 )}
             </span>
 
-            <span className={`${css.cta} ${css.cta__edit}`}>
-                <img src="/front-static/icons/edit.svg" alt="edit" />
-                <p>{t('dashboard-partners:card.edit')}</p>
-            </span>
+            <Link href={getRoute(ROUTE.DASHBOARD.ADMIN.INFORMATIONS, uniq)}>
+                <a className={`${css.cta} ${css.cta__edit}`}>
+                    <img src="/front-static/icons/edit.svg" alt="edit" />
+                    <p>{t('dashboard-partners:card.edit')}</p>
+                </a>
+            </Link>
         </div>
     );
 };

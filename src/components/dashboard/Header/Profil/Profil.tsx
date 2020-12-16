@@ -3,6 +3,7 @@ import css from './Profil.module.scss';
 import { useTranslation } from '@i18n';
 import Avatar from '@components/dashboard/Header/Avatar/Avatar';
 import Link from 'next/link';
+import { getRoute, ROUTE } from '@services/http/Route';
 
 type ProfilProps = {
     initial: string;
@@ -19,7 +20,7 @@ const Profil = ({ onSignOut, initial, name, color, isOpen }: ProfilProps) => {
         <div className={`${css.profil} ${isOpen && css.profil__open}`}>
             <Avatar width={'48px'} height={'48px'} color={color} name={name} initial={initial} settings={true} />
             <span className={css.divider} />
-            <Link href={'#'}>
+            <Link href={getRoute(ROUTE.LPC.HOME, null)}>
                 <a className={css.cta}>
                     <img src="/front-static/icons/external-link.svg" alt="link" />
                     <p>{t('dashboard-header:lpc-website')}</p>

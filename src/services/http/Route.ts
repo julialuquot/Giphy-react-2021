@@ -6,6 +6,9 @@ export const getRoute = (route, params) => {
 };
 
 export const ROUTE = {
+    LPC: {
+        HOME: '/',
+    },
     DASHBOARD: {
         SIGN_IN: '/dashboard/connexion',
         STATS: '/dashboard/stats',

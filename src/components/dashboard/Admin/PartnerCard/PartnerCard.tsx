@@ -94,7 +94,7 @@ const PartnerCard = ({
                 </div>
             </div>
 
-            <CardPopUp onOpenModal={(value) => onOpenModal(value)} isOpen={isPopUpOpen} active={active} />
+            <CardPopUp uniq={uniq} onOpenModal={(value) => onOpenModal(value)} isOpen={isPopUpOpen} active={active} />
         </div>
     );
 };
