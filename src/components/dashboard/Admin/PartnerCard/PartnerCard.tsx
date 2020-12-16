@@ -13,7 +13,7 @@ type PartnerCardProps = {
     color: string;
     name: string;
     lastModification: string;
-    verificationStatus: string;
+    verificationStatus: number;
     verificationResponsible: string;
     onOpenModal: (boolean) => void;
     onSelectPartner: (uniq: string, active: boolean) => void;
@@ -28,6 +28,7 @@ const PartnerCard = ({
     lastModification,
     onOpenModal,
     onSelectPartner,
+    verificationStatus,
     verificationResponsible,
     active,
     uniq,
@@ -83,8 +84,10 @@ const PartnerCard = ({
                 <div className={css.card__footer}>
                     <h5>{name}</h5>
                     <Text variant={'caption_00'} color={'ui-secondary'}>
-                        {t('dashboard-partners:card.edit-on')} {formatDate(lastModification)} (
-                        {verificationResponsible || 'ND'})
+                        {verificationStatus === 0
+                            ? t('dashboard-partners:card.edit-on')
+                            : t('dashboard-partners:card.checked-on')}
+                        {formatDate(lastModification)} ({verificationResponsible || 'ND'})
                     </Text>
                     <Link href={getRoute(ROUTE.DASHBOARD.ADMIN.PREVIEW, uniq)}>
                         <a className={css.card__footer__eye}>

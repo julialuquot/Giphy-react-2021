@@ -5,7 +5,7 @@
 
 
 .partners {
-  padding: 0 150px 0 150px;
+  padding: 0 100px 0 100px;
 
   & > h3 {
     color: $ui-primary;
@@ -14,11 +14,10 @@
 
   &__grid {
     display: grid;
+    justify-content: center;
     grid-template-columns: repeat(auto-fit, 360px);
     grid-gap: 30px;
     margin: 0 auto 80px auto;
-
-
   }
 }
 

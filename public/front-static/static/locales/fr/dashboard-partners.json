@@ -6,6 +6,7 @@
     "list-partner": "Liste des partenaires",
     "card": {
         "edit-on": "Modifié le",
+        "checked-on": "Vérifié le",
         "edit": "Modifier",
         "suspend-partner": "Suspendre le partenaire",
         "reactivate-partner": "Réactiver le partenaire"
