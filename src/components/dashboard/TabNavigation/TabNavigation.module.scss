@@ -30,11 +30,6 @@
     cursor: pointer;
     @include transition;
 
-    &:hover {
-      background-color: $brand-primary;
-      color: $white;
-    }
-
     &__selected {
       background-color: $brand-primary;
       color: $white;
