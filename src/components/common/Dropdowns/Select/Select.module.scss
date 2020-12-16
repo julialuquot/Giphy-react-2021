@@ -53,13 +53,13 @@
   &__placeholder {
     display: flex;
     align-items: center;
-    height: 60px;
+    height: 64px;
     padding-left: 20px;
   }
 
   &__control {
     width: 438px;
-    height: 60px;
+    height: 64px;
     background-color: white;
     border: 2px solid $ui-tertiary;
     @include border-radius(8px);
