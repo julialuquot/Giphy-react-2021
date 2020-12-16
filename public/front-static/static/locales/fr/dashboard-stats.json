@@ -1,3 +1,22 @@
 {
-    "stats": "Statistiques"
+    "stats": "Statistiques",
+    "period-from": "Période du",
+    "to": "au",
+    "btn": {
+        "load-next": "Charger les suivants",
+        "load-previous": "Charger les précédents",
+        "add": "Ajouter"
+    },
+    "card": {
+        "transactions": "Transactions",
+        "expenses": "Dépenses brut",
+        "top": "top"
+    },
+    "documents": {
+        "title": "Documents",
+        "desc": "Vous retrouverez ici l'ensemble de vos factures et documents relatifs aux transactions",
+        "pdf": "PDF",
+        "pdf-label": "Ajouter le document Droits d'entrées au réseau d'affiliation",
+        "pdf-format": "Type PDF | Taille max 1 Mo"
+    }
 }

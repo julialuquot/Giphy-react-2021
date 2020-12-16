@@ -9,10 +9,10 @@ import InformationsService from '@services/domain/InformationsService';
 import { useToasts } from 'react-toast-notifications';
 
 type ProductsProps = {
-    user: { partnerUniq: string };
+    partnerUniq: string;
 };
 
-const Products = ({ user }: ProductsProps) => {
+const Products = ({ partnerUniq }: ProductsProps) => {
     const { t } = useTranslation('dashboard-informations');
     const { addToast } = useToasts();
 
@@ -30,12 +30,12 @@ const Products = ({ user }: ProductsProps) => {
     } = informationsContext;
 
     useEffect(() => {
-        getProducts(user.partnerUniq);
-    }, [getProducts, user.partnerUniq]);
+        getProducts(partnerUniq);
+    }, [getProducts, partnerUniq]);
 
     useEffect(() => {
-        getProductsIntroduction(user.partnerUniq);
-    }, [getProductsIntroduction, user.partnerUniq]);
+        getProductsIntroduction(partnerUniq);
+    }, [getProductsIntroduction, partnerUniq]);
 
     useEffect(() => {
         error &&
@@ -71,7 +71,7 @@ const Products = ({ user }: ProductsProps) => {
 
     const onResetProduct = (body) => {
         InformationsService.resetProduct(body)
-            .then(() => getProducts(user.partnerUniq))
+            .then(() => getProducts(partnerUniq))
             .catch((err) => err);
     };
 
@@ -84,7 +84,7 @@ const Products = ({ user }: ProductsProps) => {
                     onUpdateIntroduction={(body) => onUpdateIntroduction(body)}
                     productsIntroduction={productsIntroduction?.fr}
                     isFetching={isFetching}
-                    partnerUniq={user.partnerUniq}
+                    partnerUniq={partnerUniq}
                 />
             )}
 
@@ -100,7 +100,7 @@ const Products = ({ user }: ProductsProps) => {
                             image={product.image}
                             onUpdateProduct={(body) => onUpdateProduct(body)}
                             onResetProduct={(body) => onResetProduct(body)}
-                            partnerUniq={user.partnerUniq}
+                            partnerUniq={partnerUniq}
                             isFetching={isFetching}
                         />
                     );

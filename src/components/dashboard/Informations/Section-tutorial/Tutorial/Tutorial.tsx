@@ -8,10 +8,10 @@ import InformationsService from '@services/domain/InformationsService';
 import { useToasts } from 'react-toast-notifications';
 
 type TutorialProps = {
-    user: { partnerUniq: string };
+    partnerUniq: string;
 };
 
-const Tutorial = ({ user }: TutorialProps) => {
+const Tutorial = ({ partnerUniq }: TutorialProps) => {
     const { t } = useTranslation('informations');
     const { addToast } = useToasts();
 
@@ -19,8 +19,8 @@ const Tutorial = ({ user }: TutorialProps) => {
     const { getTutorial, updateTutorial, tutorial, isFetching, error, showNotificationSuccess } = informationsContext;
 
     useEffect(() => {
-        getTutorial(user.partnerUniq);
-    }, [getTutorial, user.partnerUniq]);
+        getTutorial(partnerUniq);
+    }, [getTutorial, partnerUniq]);
 
     useEffect(() => {
         error &&
@@ -44,7 +44,7 @@ const Tutorial = ({ user }: TutorialProps) => {
 
     const onResetTutorial = (body) => {
         InformationsService.resetTutorial(body)
-            .then(() => getTutorial(user.partnerUniq))
+            .then(() => getTutorial(partnerUniq))
             .catch((err) => err);
     };
 
@@ -63,7 +63,7 @@ const Tutorial = ({ user }: TutorialProps) => {
                         imageMobile={tutorial.imageMobile}
                         onUpdateTutorial={(body) => onUpdateTutorial(body)}
                         onResetTutorial={(body) => onResetTutorial(body)}
-                        partnerUniq={user.partnerUniq}
+                        partnerUniq={partnerUniq}
                         isFetching={isFetching}
                     />
                 ))}

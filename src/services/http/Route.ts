@@ -6,8 +6,19 @@ export const getRoute = (route, params) => {
 };
 
 export const ROUTE = {
+    LPC: {
+        HOME: '/',
+    },
     DASHBOARD: {
-        WORKSPACE: '/dashboard/workspace',
         SIGN_IN: '/dashboard/connexion',
+        STATS: '/dashboard/stats',
+        INFORMATIONS: '/dashboard/informations',
+        PREVIEW: '/dashboard/preview',
+        ADMIN: {
+            PARTNERS: '/dashboard/admin/partners',
+            PREVIEW: '/dashboard/admin/preview',
+            INFORMATIONS: '/dashboard/admin/informations',
+            STATS: '/dashboard/admin/stats',
+        },
     },
 };

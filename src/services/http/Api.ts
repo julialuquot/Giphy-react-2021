@@ -25,6 +25,12 @@ const API = {
         SUSPEND: `${apiURL}/partners`,
         ACTIVATE: `${apiURL}/partners`,
     },
+    MERCHANT: {
+        GO_ONLINE: `${apiURL}/merchants`,
+        GET_ALL: `${apiURL}/merchants`,
+        SUSPEND: `${apiURL}/merchants`,
+        ACTIVATE: `${apiURL}/merchants`,
+    },
 };
 
 export default API;

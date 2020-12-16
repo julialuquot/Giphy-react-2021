@@ -6,10 +6,10 @@ import { useTranslation } from '@i18n';
 import { useToasts } from 'react-toast-notifications';
 
 type BrandContainerProps = {
-    user: { partnerUniq: string };
+    partnerUniq: string;
 };
 
-const BrandContainer = ({ user }: BrandContainerProps) => {
+const BrandContainer = ({ partnerUniq }: BrandContainerProps) => {
     const { addToast } = useToasts();
     const { t } = useTranslation('common');
 
@@ -17,8 +17,8 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
     const { getBrand, updateBrand, brand, isFetching, error, showNotificationSuccess } = informationsContext;
 
     useEffect(() => {
-        getBrand(user.partnerUniq);
-    }, [getBrand, user.partnerUniq]);
+        getBrand(partnerUniq);
+    }, [getBrand, partnerUniq]);
 
     useEffect(() => {
         error &&
@@ -42,7 +42,7 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
 
     const onResetBrand = (body) => {
         InformationsService.resetBrand(body)
-            .then(() => getBrand(user.partnerUniq))
+            .then(() => getBrand(partnerUniq))
             .catch((err) => err);
     };
 
@@ -58,7 +58,7 @@ const BrandContainer = ({ user }: BrandContainerProps) => {
                     mentions={brand.mentions?.fr}
                     onUpdateBrand={(body) => onUpdateBrand(body)}
                     onResetBrand={(body) => onResetBrand(body)}
-                    partnerUniq={user.partnerUniq}
+                    partnerUniq={partnerUniq}
                     isFetching={isFetching}
                 />
             )}

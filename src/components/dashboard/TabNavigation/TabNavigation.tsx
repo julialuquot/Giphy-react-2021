@@ -1,31 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import css from './TabNavigation.module.scss';
+import Link from 'next/link';
+import { getRoute, ROUTE } from '@services//http/Route';
 
 type TabNavigation = {
-    onTabChange: (string) => void;
     tabTitle0: string;
     tabTitle1: string;
+    partnerUniq: string;
+    activeTab: string;
+    userRole: string;
 };
 
-const TabNavigation = ({ onTabChange, tabTitle0, tabTitle1 }: TabNavigation) => {
-    const [activeTab, setActiveTab] = useState(0);
-
-    const handleClick = (tab) => {
-        setActiveTab(tab);
-    };
-
-    useEffect(() => {
-        onTabChange(activeTab);
-    }, [activeTab, onTabChange]);
-
+const TabNavigation = ({ activeTab, tabTitle0, tabTitle1, partnerUniq, userRole }: TabNavigation) => {
     return (
         <div className={css.navigation}>
-            <span className={`${css.tab} ${activeTab === 0 && css.tab__selected}`} onClick={() => handleClick(0)}>
-                {tabTitle0}
-            </span>
-            <span className={`${css.tab} ${activeTab === 1 && css.tab__selected}`} onClick={() => handleClick(1)}>
-                {tabTitle1}
-            </span>
+            <Link
+                href={
+                    userRole === 'ADMIN'
+                        ? getRoute(ROUTE.DASHBOARD.ADMIN.STATS, partnerUniq)
+                        : getRoute(ROUTE.DASHBOARD.STATS, partnerUniq)
+                }
+            >
+                <a className={`${css.tab} ${activeTab === 'STATS' && css.tab__selected}`}>{tabTitle0}</a>
+            </Link>
+            <Link
+                href={
+                    userRole === 'ADMIN'
+                        ? getRoute(ROUTE.DASHBOARD.ADMIN.INFORMATIONS, partnerUniq)
+                        : getRoute(ROUTE.DASHBOARD.INFORMATIONS, partnerUniq)
+                }
+            >
+                <a className={`${css.tab} ${activeTab === 'INFORMATIONS' && css.tab__selected}`}>{tabTitle1}</a>
+            </Link>
         </div>
     );
 };

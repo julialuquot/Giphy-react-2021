@@ -6,18 +6,18 @@ import Products from '@components/dashboard/Informations/Section-products/Produc
 import BrandContainer from '@components/dashboard/Informations/Section-brand/BrandContainer/BrandContainer';
 
 type InformationsProps = {
-    principal: any;
+    partnerUniq: string;
 };
 
-const Informations = ({ principal }: InformationsProps) => {
+const Informations = ({ partnerUniq }: InformationsProps) => {
     const [activeStep, setActiveStep] = useState(0);
 
     return (
         <div className={css.informations}>
-            <SideNavigation user={principal} onStepChange={(step) => setActiveStep(step)} />
-            {activeStep === 0 && <BrandContainer user={principal} />}
-            {activeStep === 1 && <Tutorial user={principal} />}
-            {activeStep === 2 && <Products user={principal} />}
+            <SideNavigation partnerUniq={partnerUniq} onStepChange={(step) => setActiveStep(step)} />
+            {activeStep === 0 && <BrandContainer partnerUniq={partnerUniq} />}
+            {activeStep === 1 && <Tutorial partnerUniq={partnerUniq} />}
+            {activeStep === 2 && <Products partnerUniq={partnerUniq} />}
         </div>
     );
 };

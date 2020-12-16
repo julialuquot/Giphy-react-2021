@@ -47,7 +47,7 @@ const ConfirmGoOnLine = ({
                         </Button>
                     )}
                     {cancelLabel && (
-                        <Button variant={'secondary'} onClick={() => onHide()}>
+                        <Button variant={'secondary'} isLoading={isLoading} onClick={() => onHide()}>
                             {cancelLabel}
                         </Button>
                     )}

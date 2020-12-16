@@ -1,5 +1,5 @@
 import React from 'react';
-import Header from '@components/dashboard/Navbar/Header';
+import Header from '@components/dashboard/Header/Header';
 import css from './Layout.module.scss';
 import AuthProvider from '@components/dashboard/context/auth/AuthProvider';
 import InformationsProvider from '@components/dashboard/context/informations/InformationsProvider';

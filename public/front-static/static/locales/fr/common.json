@@ -26,7 +26,8 @@
         "EMOTES_NOT_SUPPORTED": "Les emojies ne sont pas supportés",
         "MUST_BE_NUMBER_price": "Doit être un nombre",
         "ACCESS_DENIED": "Vous n'êtes pas autorisé à accéder à cette page",
-        "WRONG_FORMAT_IMG": "Le format de l'image n'est pas respecté"
+        "WRONG_FORMAT_IMG": "Le format de l'image n'est pas respecté",
+        "WRONG_FILE_FORMAT": "Le format du fichier n'est pas respecté"
     },
     "success": {
         "GO_ONLINE_SUCCESS": "Vos modifications sont maintenant en ligne !",

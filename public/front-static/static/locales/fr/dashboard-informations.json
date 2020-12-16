@@ -1,5 +1,6 @@
 {
     "title": "Bienvenue",
+    "title-admin": "Espace partenaire",
     "sub-title": "dans votre espace",
     "informations": "Informations",
     "btn": {
@@ -60,11 +61,11 @@
     "products": {
         "banner": {
             "title": "Comment ça marche ?",
-            "text": "Cet espace vous offre la possibilité de personnaliser votre parcours de dépense en 3 étapes. L’objectif est d’aider les utilisateurs, une fois sur votre page partenaire, à mieux comprendre la manière dont ils peuvent dépenser leur cagnotte chez vous."
+            "text": "Pour projetter davantage nos utilisateurs sur votre marque, nous vous proposont un espace « produits » pour mettre en avant une sélection de 4 produits."
         },
         "introduction": {
             "title": "Texte d'introduction",
-            "desc": "Pour que nos utilisateurs puissent se projeter d’avantage sur votre marque, nous vous proposons de mettre en avant une sélection de 4 produits."
+            "desc": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo, orci sit amet laoreet cursus, eros leo."
         },
         "product": {
             "product": "Produit {{order}}",

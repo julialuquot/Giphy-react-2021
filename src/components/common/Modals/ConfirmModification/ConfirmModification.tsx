@@ -61,11 +61,11 @@ const ConfirmModification = ({
             <Form className={css.modal__form}>
                 <div onChange={(e) => onChangeRadioValue(e)}>
                     <label className={css.modal__form__radio}>
-                        <input type="radio" value="yes" name="gender" checked={radio === 'yes'} />
+                        <input readOnly={true} type="radio" value="yes" name="gender" checked={radio === 'yes'} />
                         {t('dashboard-partners:modal-modification-confirmation.yes')}
                     </label>
                     <label className={css.modal__form__radio}>
-                        <input type="radio" value="no" name="gender" checked={radio === 'no'} />
+                        <input readOnly={true} type="radio" value="no" name="gender" checked={radio === 'no'} />
                         {t('dashboard-partners:modal-modification-confirmation.no')}
                     </label>
                 </div>

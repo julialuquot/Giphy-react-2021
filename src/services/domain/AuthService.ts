@@ -26,6 +26,25 @@ const getUser = (ctx) => {
     return null;
 };
 
-const authService = { signIn, signOut, getUser, decodeAuthCookie };
+const getUserRole = (user) => {
+    if (!user) {
+        return;
+    }
+
+    const admin = user.roles.find((role) => role === 'admin');
+    const merchant = user.roles.find((role) => role === 'merchant');
+
+    if (admin) {
+        return 'ADMIN';
+    }
+
+    if (merchant) {
+        return 'MERCHANT';
+    }
+
+    return 'UNAUTHORIZED';
+};
+
+const authService = { signIn, signOut, getUser, getUserRole, decodeAuthCookie };
 
 export default authService;

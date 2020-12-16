@@ -3,16 +3,18 @@ import css from './SideNavigation.module.scss';
 import { useTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
 import Switch from '@components/common/Switch/Switch';
-import ConfirmGoOnLine from '@components/common/Modals/ConfirmGoOnLine/ConfirmGoOnLine';
+import ConfirmModal from '@components/common/Modals/ConfirmModal/ConfirmModal';
 import InformationsService from '@services/domain/InformationsService';
 import { useToasts } from 'react-toast-notifications';
+import Link from 'next/link';
+import { getRoute, ROUTE } from '@services/http/Route';
 
 type SideNavigationProps = {
     onStepChange: (number) => void;
-    user: { partnerUniq: string };
+    partnerUniq: string;
 };
 
-const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
+const SideNavigation = ({ onStepChange, partnerUniq }: SideNavigationProps) => {
     const { t } = useTranslation('dashboard-informations');
     const { addToast } = useToasts();
 
@@ -30,7 +32,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
     }, [activeStep, onStepChange]);
 
     const onConfirm = () => {
-        const body = { partnerUniq: user.partnerUniq, goOnline: true };
+        const body = { partnerUniq: partnerUniq, goOnline: true };
         setIsLoading(true);
         InformationsService.goOnLine(body)
             .then(
@@ -53,7 +55,7 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
 
     return (
         <>
-            <ConfirmGoOnLine
+            <ConfirmModal
                 isVisible={open}
                 onHide={() => setOpen(false)}
                 onConfirm={() => onConfirm()}
@@ -92,9 +94,13 @@ const SideNavigation = ({ onStepChange, user }: SideNavigationProps) => {
                 </div>
 
                 <div className={css.side__btn}>
-                    <Button variant="secondary" size="medium" type={'button'}>
-                        {t('dashboard-informations:btn.preview')}
-                    </Button>
+                    <Link href={getRoute(ROUTE.DASHBOARD.PREVIEW, partnerUniq)}>
+                        <a>
+                            <Button variant="secondary" size="medium" type={'button'}>
+                                {t('dashboard-informations:btn.preview')}
+                            </Button>
+                        </a>
+                    </Link>
                     <Button
                         onClick={() => setOpen(true)}
                         margin={'10px 0 16px 0'}
