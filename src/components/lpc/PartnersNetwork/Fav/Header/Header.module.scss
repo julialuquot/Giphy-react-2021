@@ -1,0 +1,42 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
+@import '../../../../../assets/styles/fonts';
+
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 945px;
+  height: 88px;
+  margin: -40px auto 129px auto;
+  padding: 32px 48px;
+  border-radius: 12px;
+  box-shadow: 12px 12px 48px 0 $box-shadow;
+  border: solid 2px $ui-quaternary;
+  background-color: $white;
+
+  @include media(m-device) {
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    width: 100%;
+    min-height: 136px;
+    height: fit-content;
+    margin: -65px 0 57px 0;
+    padding: 16px;
+
+  }
+
+  &__tag {
+    display: flex;
+    justify-items: center;
+
+    & > img {
+      width: 24px;
+      margin-right: 8px;
+    }
+
+  }
+}

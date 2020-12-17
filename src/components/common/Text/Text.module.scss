@@ -9,11 +9,17 @@
 .body_00 {
   font-family: $primary-reg;
   font-size: $level4;
+  @include media(m-device) {
+    font-size: $level2;
+  }
 }
 
 .body_01 {
   font-family: $primary-reg;
   font-size: $level3;
+  @include media(m-device) {
+    font-size: $level2;
+  }
 }
 
 .body_02 {
@@ -24,6 +30,9 @@
 .caption_00 {
   font-family: $primary-medium;
   font-size: $level3;
+  @include media(m-device) {
+    font-size: $level2;
+  }
 }
 
 .caption_01 {

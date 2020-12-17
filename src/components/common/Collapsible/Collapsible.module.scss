@@ -19,7 +19,9 @@
     top: -16px;
   }
 
+
 }
+
 
 %shared-icon {
   content: "";
@@ -48,7 +50,12 @@
 
 
 .trigger {
+  &:first-child::before {
+    display: none;
+  }
+
   @extend %shared-trigger;
+
 
   &:after {
     @extend %shared-icon;

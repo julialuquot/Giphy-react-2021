@@ -56,6 +56,26 @@
   }
 }
 
+.primary_muted {
+  @extend %button-shared;
+  @include transition;
+  color: $brand-primary;
+  background-color: $brand-primary-muted;
+
+
+  &:hover {
+    background-color: darken($color: $brand-primary-muted, $amount: 10%);
+  }
+
+  &:active {
+    background-color: darken($color: $brand-primary-muted, $amount: 10%);
+  }
+
+  &:disabled {
+    background-color: lighten($color: $brand-primary-muted, $amount: 15%);
+  }
+}
+
 .secondary {
   @extend %button-shared;
   @include transition;

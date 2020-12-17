@@ -1,0 +1,136 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/mixins';
+
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding-top: 182px;
+  min-height: 100vh;
+  width: 100vw;
+  @include media(m-device) {
+    width: 90vw;
+    padding: 94px 0 94px 0;
+  }
+
+  &__wallet {
+    position: relative;
+    margin-top: 350px;
+    @include media(m-device) {
+      margin-top: 200px;
+
+    }
+
+    & > img {
+      z-index: 40;
+      position: absolute;
+      width: 360px;
+      height: 354px;
+      top: -240px;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      animation: translateUp 2000ms cubic-bezier(0.280, 0.840, 0.420, 1) forwards;
+      @include media(m-device) {
+        width: 220px;
+        height: 180px;
+        top: -120px
+      }
+    }
+
+    &__circle {
+      position: absolute;
+      z-index: 30;
+      left: 0;
+      right: 0;
+      margin-left: auto;
+      margin-right: auto;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: $brand-secondary-muted;
+      height: 400px;
+      width: 800px;
+      border-radius: 600px 600px 0 0;
+      @include media(m-device) {
+        bottom: 200px;
+        height: 200px;
+        width: 100%;
+        border-radius: 200px 200px 0 0;
+
+
+      }
+
+    }
+
+    &__banner {
+      position: relative;
+      z-index: 50;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 auto;
+      width: 1140px;
+      height: 190px;
+      padding: 24px;
+      border-radius: 12px;
+      box-shadow: 12px 12px 48px 0 $box-shadow;
+      border: solid 2px $ui-quaternary;
+      background-color: $white;
+      @include media(m-device) {
+        width: 90vw;
+        flex-direction: column;
+        height: 316px;
+      }
+
+      &__bloc {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        height: 142px;
+        padding: 32px 0;
+        border-radius: 12px;
+        @include transition();
+        cursor: pointer;
+        color: $txt-primary;
+
+        @include media(m-device) {
+          padding: 0;
+        }
+
+        & > p {
+          margin: 8px 0 0 0;
+          font-family: $primary-reg;
+          font-size: 18px;
+          text-align: center;
+          @include media(m-device) {
+            font-size: 14px;
+          }
+        }
+
+        &:hover {
+          background-color: $brand-primary;
+          color: $white;
+
+        }
+      }
+    }
+  }
+
+
+}
+
+
+@keyframes translateUp {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(-10px);
+  }
+}

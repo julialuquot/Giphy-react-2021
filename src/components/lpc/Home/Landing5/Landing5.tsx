@@ -27,7 +27,7 @@ const Landing5 = ({ t }: Landing5Props) => {
             </div>
 
             <div className={css.icon}>
-                <img className={css.icon__torus} src="/front-static/images/torus.png" alt={'torus'} />
+                <img className={css.icon__torus} src="/images/old/torus.png" alt={'torus'} />
                 <img className={css.icon__sphere_green} src="/front-static/images/sphere-green.png" alt={'sphere'} />
                 <img className={css.icon__sphere_blue} src="/front-static/images/sphere-blue.png" alt={'sphere'} />
             </div>

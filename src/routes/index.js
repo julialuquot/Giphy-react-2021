@@ -13,6 +13,26 @@ const routes = require('next-routes')()
         page: 'lpc/authentication',
     })
     .add({
+        name: 'partners-page',
+        pattern: '/notre-reseau-partenaires',
+        page: 'lpc/partners-network-page',
+    })
+    .add({
+        name: 'gift-card-page',
+        pattern: '/cado-carte',
+        page: 'lpc/gift-card-page',
+    })
+    .add({
+        name: 'bank-transfer-page',
+        pattern: '/virement-bancaire',
+        page: 'lpc/bank-transfer-page',
+    })
+    .add({
+        name: 'faq-page',
+        pattern: '/faq',
+        page: 'lpc/faq',
+    })
+    .add({
         name: 'terms',
         pattern: '/conditions-generales-utilisation',
         page: 'lpc/terms',

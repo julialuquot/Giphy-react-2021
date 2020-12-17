@@ -1,0 +1,39 @@
+{
+    "title": "Virement bancaire",
+    "subtitle": "Frais de service de 1% à 4%",
+    "description": "Effectuez un virement directement sur votre compte bancaire et disposez de la somme collectée librement.",
+    "meta-title": "Virement bancaire",
+    "wallet": {
+        "comm-0": "1%",
+        "desc-0": "Pot supérieur à 10 000 €",
+        "comm-1": "2.9%",
+        "desc-1": "Pot supérieur à 2 000 €",
+        "comm-2": "4%",
+        "desc-2": "Montant du pot inférieur à 2 000 €"
+    },
+    "comm": {
+        "title": "Une commission pour",
+        "subtitle": "un meilleur service.",
+        "articles": {
+            "title-0": "Un SAV à l’écoute et réactif",
+            "desc-0": "Le contact avec nos utilisateurs est essentiel et primordial. Notre équipe SAV est joignable toute la semaine du lundi au vendredi par mail ou directement par téléphone pour répondre au plus vite à toutes vos questions et vous aider dans chacune de vos démarches.0,",
+            "title-1": "100%  french touch",
+            "desc-1": "Le pot commun est une entreprise 100% française, fondée il y a maintenant 10 ans par 3 cousins germains qui ont toujours eu à coeur de s'entourer de collaborateurs passionnés pour développer et faire grandir leur projet. \nC'est aujourd'hui plus de 40 personnes en CDI qui travaillent ensemble à la gestion, l'optimisation et l'amélioration de nos services depuis nos locaux parisiens.",
+            "title-2": "Des frais bancaires à chaque opération",
+            "desc-2": "Nous sommes soumis pour chacune des opérations financières effectuées sur notre plateforme (participation à un compte commun, virement vers un compte bancaire) à des frais bancaires auquel nous ne pouvons déroger.\nEn revanche, vous pouvez choisir de dépenser votre cagnotte chez l’une de nos enseignes partenaires ou d’opter pour notre Cado Carte de manière totalement gratuite.",
+            "title-3": "Vous n'êtes pas le produit",
+            "desc-3": "“Quand c’est gratuit c’est que le produit c’est vous”. En prenant un commission nous avons fait le choix d’un modèle économique qui ne repose pas sur vos données, sur votre vie privée et sur la publicité. \nDe plus, la protection de vos données personnelles est l'une de nos priorités. Nous nous engageons à assurer le meilleur niveau de protection de ces données en conformité avec la loi Informatique et Libertés."
+        }
+    },
+    "faq": {
+        "title": "Question fréquentes",
+        "subtitle": "Certe, inquam, pertinax non quo enim ad modum, quaeso, interpretaris?",
+        "cta": "Visiter la FAQ",
+        "question-0": "Quand vais-je recevoir mon virement ?",
+        "answer-0": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis, elit sit amet placerat viverra.",
+        "question-1": "Peut-on effectuer plusieurs virements bancaires depuis mon pot commun ?",
+        "answer-1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis, elit sit amet placerat viverra.",
+        "question-2": "Vers quels pays puis-je faire un virement ?",
+        "answer-2": "La Cado Carte Le Pot Commun est sécurisée par un dispositif d'activation. Pour activer votre Cado Carte Le Pot Commun, le bénéficiaire devra se connecter au site www.cadostore.com, se rendre sur la page \"Activer ma CADO Carte\" (https://www.cadostore.com/card-activation-1/classic/ ) en suivant les instructions."
+    }
+}

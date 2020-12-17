@@ -1,0 +1,75 @@
+@import '../../../../../../assets/styles/colors';
+@import '../../../../../../assets/styles/fonts';
+@import '../../../../../../assets/styles/mixins';
+@import '../../../../../../assets/styles/typography';
+
+.brands {
+  width: 650px;
+  height: 906px;
+  @include media(m-device) {
+    height: 216px;
+    width: auto;
+  }
+
+
+  &__grid {
+    display: flex;
+    min-width: 640px;
+    justify-content: center;
+    @include media(m-device) {
+      flex-direction: column;
+    }
+
+    &__row {
+      display: flex;
+      flex-direction: column;
+      transition: transform .2s linear;
+
+      &:nth-of-type(odd) {
+        margin: -20% 0 0 0;
+        @include media(m-device) {
+          margin: 0 0 0 0;
+        }
+      }
+
+      &:nth-of-type(even) {
+        margin: 0 0 -5% 0;
+        @include media(m-device) {
+          margin: 0 0 0 40px;
+        }
+      }
+
+      @include media(m-device) {
+        flex-direction: row;
+      }
+
+      &__brand {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 152px;
+        width: 270px;
+        margin: 32px;
+        background-color: $white;
+        border-radius: 8px;
+        box-shadow: 8px 8px 32px 0 $box-shadow;
+        overflow: hidden;
+        background-size: cover;
+
+        @include media(m-device) {
+          height: 80px;
+          width: 140px;
+          margin: 16px;
+          flex-direction: row;
+
+        }
+
+      }
+    }
+
+
+  }
+
+
+}
+

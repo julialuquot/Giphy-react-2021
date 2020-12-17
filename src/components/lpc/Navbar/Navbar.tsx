@@ -27,7 +27,7 @@ const Navbar = ({ t }: NavBarProps) => {
                         {t('navbar:create-pot')}
                     </Button>
 
-                    <Link href={getRoute(ROUTE.LPC.SIGN_IN, namespacesRequired)}>
+                    <Link href={getRoute(ROUTE.LPC.SIGN_IN, null)}>
                         <a>
                             <Button variant={'secondary'} height={'38px'} width={'120px'} margin={'0 0 0 16px'}>
                                 {t('navbar:sign-in')}

@@ -5,7 +5,7 @@ import css from './Collapsible.module.scss';
 
 type CustomCollapsibleProps = {
     trigger: string;
-    content: any[];
+    content: { row: string; link: string }[];
 };
 
 const CustomCollapsible = ({ trigger, content }: CustomCollapsibleProps) => {
