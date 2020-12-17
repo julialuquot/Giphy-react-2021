@@ -13,6 +13,11 @@ const routes = require('next-routes')()
         page: 'lpc/authentication',
     })
     .add({
+        name: 'partners-page',
+        pattern: '/notre-reseau-partenaires',
+        page: 'lpc/partners-network-page',
+    })
+    .add({
         name: 'terms',
         pattern: '/conditions-generales-utilisation',
         page: 'lpc/terms',
