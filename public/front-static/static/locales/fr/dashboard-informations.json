@@ -69,14 +69,10 @@
         },
         "product": {
             "product": "Produit {{order}}",
-            "product-one": "Produit 1",
-            "product-two": "Produit 2",
-            "product-three": "Produit 3",
-            "product-four": "Produit 4",
-            "title": "Titre du produit générique",
-            "desc": "Descriptif générique",
-            "price": "Prix générique",
-            "euro": "€"
+            "title": "Titre du produit",
+            "desc": "Descriptif",
+            "price": "Prix",
+            "euro": " €"
         },
         "title-label": "Titre du produit",
         "title-placeholder": "Converse special heart edition",

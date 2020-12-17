@@ -179,7 +179,7 @@ const ProductCard = ({
                                         </Text>
                                         <span>
                                             {price || t('dashboard-informations:products.product.price')}
-                                            {t('dashboard-informations:products.product.euro')}
+                                            {price && t('dashboard-informations:products.product.euro')}
                                         </span>
                                     </div>
                                 </div>

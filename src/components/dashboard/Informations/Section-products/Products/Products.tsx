@@ -79,14 +79,12 @@ const Products = ({ partnerUniq }: ProductsProps) => {
         <div className={css.tutorial}>
             <Banner text={t('dashboard-informations:products.banner.text')} />
 
-            {productsIntroduction && (
-                <Introduction
-                    onUpdateIntroduction={(body) => onUpdateIntroduction(body)}
-                    productsIntroduction={productsIntroduction?.fr}
-                    isFetching={isFetching}
-                    partnerUniq={partnerUniq}
-                />
-            )}
+            <Introduction
+                onUpdateIntroduction={(body) => onUpdateIntroduction(body)}
+                productsIntroduction={productsIntroduction?.fr}
+                isFetching={isFetching}
+                partnerUniq={partnerUniq}
+            />
 
             {products &&
                 products.map((product) => {
