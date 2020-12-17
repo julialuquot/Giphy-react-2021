@@ -3,9 +3,9 @@ const routes = require('next-routes')()
    LPC ROUTES
    */
     .add({
-        name: 'home',
+        name: 'home-page',
         pattern: '/',
-        page: 'lpc/home',
+        page: 'lpc/home-page',
     })
     .add({
         name: 'connexion',

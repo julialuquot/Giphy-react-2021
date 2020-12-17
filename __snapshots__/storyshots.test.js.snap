@@ -947,14 +947,12 @@ exports[`Storyshots Dropdowns Default 1`] = `
       }
     }
   >
-    <div
-      className="input__wrapper  }"
-    >
+    <div>
       <label
         className="label"
       />
       <div
-        className="Dropdown-root select"
+        className="Dropdown-root select "
       >
         <div
           aria-haspopup="listbox"

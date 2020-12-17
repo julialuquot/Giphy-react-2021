@@ -6,11 +6,11 @@ import useOnClickOutside from '../../hooks/useOnClickOutside';
 type DropdownProps = {
     options: { value: string; label: string }[];
     label?: string;
-    customClass?: string;
+    customSelect?: string;
     placeholder?: string;
 };
 
-const Select = ({ options, customClass, label, placeholder }: DropdownProps) => {
+const Select = ({ options, customSelect, label, placeholder }: DropdownProps) => {
     const [selectedOption, setSelectedOption] = useState('');
     const [isOptionSelected, setIsOptionSelected] = useState(true);
     const [isOpen, setIsOpen] = useState(false);
@@ -49,7 +49,7 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
     );
 
     return (
-        <div ref={ref} className={`${css.input__wrapper}  ${customClass || ''}}`}>
+        <div ref={ref}>
             <label className={css.label}>{label}</label>
             <Dropdown
                 options={options}
@@ -57,7 +57,7 @@ const Select = ({ options, customClass, label, placeholder }: DropdownProps) => 
                 onChange={handleChange}
                 value={selectedOption}
                 placeholder={placeholder || options[0].label}
-                className={css.select}
+                className={`${css.select} ${customSelect || ''}`}
                 controlClassName={`${css.select__control} ${
                     isOpen && isOptionSelected && css.select__control__is_open
                 }`}

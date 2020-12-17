@@ -7,14 +7,14 @@
 .navbar {
   z-index: 999;
   position: fixed;
+  height: 105px;
+  width: 100vw;
   display: flex;
-  height: 113px;
-  max-width: 100vw;
-  width: 100%;
   align-items: center;
   justify-content: space-between;
-  padding-left: 32px;
+  padding: 32px;
   background-color: $white;
+
   @include media(s-device) {
     height: 56px;
     padding-left: 24px;
@@ -23,26 +23,27 @@
 
   &__left {
     display: flex;
-  }
+    align-items: center;
 
-  &__logo {
-    margin-right: 10px;
-    vertical-align: middle;
-  }
-
-  &__txt {
-    margin-right: 12px;
-    margin-top: 5px;
+    &__logo {
+      margin-right: 10px;
+      vertical-align: middle;
+    }
   }
 
 
   &__right {
     display: flex;
-    justify-content: space-between;
-    width: 350px;
-    margin-right: 32px;
+    align-items: center;
 
+
+    &__btn {
+      display: flex;
+      height: 105px;
+      align-items: center;
+    }
   }
+
 
 }
 

@@ -1,7 +1,7 @@
 {
     "landing": {
-        "main-title": "Créer un pot commun",
-        "button--create-pot": "Créer mon pot"
+        "main-title": "Créer un pot commun pour",
+        "create": "Créer"
     },
     "landing-2": {
         "main-title-1": "Plaisir d'offir",
