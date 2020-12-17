@@ -1,9 +1,8 @@
 import React from 'react';
-import css from './Landing.module.scss';
 import { useTranslation, withTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
 import Select from '@components/common/Dropdowns/Select/Select';
-import Image from 'next/image';
+import css from './Landing.module.scss';
 
 const namespacesRequired = ['home-page'];
 
@@ -29,21 +28,19 @@ const Landing = () => {
         <div className={css.landing}>
             <h1>{t('lpc-home:landing.main-title')}</h1>
 
-            <div className={css.landing__action}>
+            <div className={css.landing__main}>
                 <Select options={options} />
                 <Button
+                    customClass={css.landing__main__primary}
                     mobileFullWidth
                     onClick={() => handleClick()}
                     variant={'primary'}
-                    height={'64px'}
-                    width={'114px'}
-                    margin={'0 0 0 8px'}
                 >
                     {t('lpc-home:landing.create')}
                 </Button>
             </div>
-            <div className={css.landing__gift}>
-                <Image src="/front-static/images/home/gift.png" alt="alert" width="359" height="255" />
+            <div className={`${css.landing__gift} ${css.bounce}`}>
+                <img src="/front-static/images/home/gift.png" alt="gift" />
             </div>
         </div>
     );

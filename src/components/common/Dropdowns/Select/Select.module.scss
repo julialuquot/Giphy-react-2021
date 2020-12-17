@@ -3,8 +3,12 @@
 @import '../../../../assets/styles/mixins';
 @import '../../../../assets/styles/typography';
 
+$height: 64px;
+$height-m: 48px;
 
-%shared-select {
+
+.select {
+
   z-index: 9;
   position: relative;
   width: 438px;
@@ -20,32 +24,35 @@
   @include transition;
 
   @include media(m-device) {
-    width: 264px;
+    width: calc(100vw - 80px);
   }
 
-}
-
-
-.select {
-
-  @extend %shared-select;
-
   &__arrow {
+    position: relative;
 
     &_closed {
+      display: flex;
+      align-items: center;
       position: absolute;
       top: 20px;
       right: 20px;
       @include transition;
-
+      @include media(m-device) {
+        top: 12px;
+      }
     }
 
     &_open {
+      display: flex;
+      align-items: center;
       position: absolute;
-      top: 15px;
+      top: 20px;
       right: 20px;
       transform: rotateZ(180deg);
       @include transition;
+      @include media(m-device) {
+        top: 12px;
+      }
     }
 
   }
@@ -53,11 +60,13 @@
   &__placeholder {
     display: flex;
     align-items: center;
-    height: 64px;
+    height: 100%;
     padding-left: 20px;
   }
 
   &__control {
+    display: flex;
+    align-items: center;
     width: 438px;
     height: 64px;
     background-color: white;
@@ -67,6 +76,8 @@
 
     @include media(m-device) {
       width: 100%;
+      height: $height-m;
+
     }
 
     &:hover {
