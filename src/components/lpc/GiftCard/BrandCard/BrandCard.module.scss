@@ -1,0 +1,14 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+
+.brandCard {
+  width: 270px;
+  height: 152px;
+  border-radius: 8px;
+  box-shadow: 8px 8px 32px 0 $box-shadow;
+  border: solid 2px $ui-quaternary;
+  background-color: $white;
+}
+

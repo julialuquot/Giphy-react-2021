@@ -1,6 +1,6 @@
 import React from 'react';
 import Avatar from '../src/components/common/Avatar/Avatar';
-import avatarImage from '../public/front-static/images/no-avatar.png';
+import avatarImage from '../public/front-static/images/old/no-avatar.png';
 
 export default {
     title: 'Avatar',

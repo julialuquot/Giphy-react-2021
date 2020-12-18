@@ -9,6 +9,9 @@
 .body_00 {
   font-family: $primary-reg;
   font-size: $level4;
+  @include media(m-device) {
+    font-size: $level2;
+  }
 }
 
 .body_01 {

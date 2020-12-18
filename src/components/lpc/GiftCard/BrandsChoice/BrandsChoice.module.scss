@@ -1,0 +1,76 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+
+.brands {
+  display: flex;
+  justify-content: center;
+  height: 906px;
+  width: 100vw;
+  background-color: $background-light-grey;
+  @include media(m-device) {
+    height: fit-content;
+  }
+
+  &__container {
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80vw;
+    @include media(m-device) {
+      flex-direction: column;
+      align-items: center;
+      height: fit-content;
+      width: 100vw;
+      padding: 56px 0 56px 0;
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 0 150px 0 150px;
+      width: 50%;
+      @include media(m-device) {
+        margin-bottom: 32px;
+      }
+
+      &__txt {
+        margin: 16px 0 16px 0;
+        @include media(m-device) {
+          text-align: center;
+        }
+      }
+
+      & > h2 {
+        color: $txt-primary;
+        @include media(m-device) {
+          text-align: center;
+        }
+      }
+
+      @include media(m-device) {
+        width: 100vw;
+        padding: 0;
+        align-items: center;
+      }
+
+    }
+
+    &__right {
+      display: flex;
+      justify-content: center;
+      width: 50%;
+      @include media(m-device) {
+        width: fit-content;
+      }
+
+    }
+  }
+
+
+}
+
+

@@ -18,6 +18,11 @@ const routes = require('next-routes')()
         page: 'lpc/partners-network-page',
     })
     .add({
+        name: 'gift-card-page',
+        pattern: '/cado-carte',
+        page: 'lpc/gift-card-page',
+    })
+    .add({
         name: 'terms',
         pattern: '/conditions-generales-utilisation',
         page: 'lpc/terms',
