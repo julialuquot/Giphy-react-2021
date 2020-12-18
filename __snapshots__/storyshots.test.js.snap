@@ -694,11 +694,19 @@ exports[`Storyshots Card Partner 1`] = `
       }
     }
   >
-    <div
+    <a
       className="card"
+      href="/#"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
     >
       <div
-        className="card__header brand-primary"
+        className="card__header"
+        style={
+          Object {
+            "backgroundColor": "brand-primary",
+          }
+        }
       >
         <img
           alt="Zalando"
@@ -715,17 +723,19 @@ exports[`Storyshots Card Partner 1`] = `
           <h5>
             Zalando
           </h5>
-          <h6>
+          <p
+            className=" ui-secondary "
+          >
             Prêt à porter
-          </h6>
+          </p>
         </div>
         <p
-          className=" ui-primary body_00 card__footer__text"
+          className=" txt-primary body_00 card__footer__text"
         >
           Créez un chèque-cadeau Amazon du montant de votre choix utilisable parmi des millions de produits en stock. Livres, jeux vidéos, high-tech, jouets, chaussures, vêtements, sport et plus encore ! sport et plus encore !sport et plus encore !
         </p>
       </div>
-    </div>
+    </a>
   </div>
    
 </div>
