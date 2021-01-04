@@ -22,7 +22,7 @@ const BrandsGrid = ({ brandsList }: BrandsGridProps) => {
     };
 
     const handleScroll = useCallback(() => {
-        if (!gridRef || !gridRef.current || window.scrollY === undefined) {
+        if (!gridRef || !gridRef.current || window.scrollY === undefined || window.innerWidth <= 875) {
             return;
         }
 
@@ -44,9 +44,7 @@ const BrandsGrid = ({ brandsList }: BrandsGridProps) => {
     }, [gridRef]);
 
     useEffect(() => {
-        if (window.innerWidth >= 875) {
-            window.addEventListener('scroll', () => handleScroll());
-        }
+        window.addEventListener('scroll', () => handleScroll());
     }, [handleScroll]);
 
     return (

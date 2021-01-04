@@ -9,6 +9,7 @@ export const ROUTE = {
     LPC: {
         HOME: '/',
         SIGN_IN: '/connexion',
+        FAQ: '/faq',
     },
     DASHBOARD: {
         SIGN_IN: '/dashboard/connexion',

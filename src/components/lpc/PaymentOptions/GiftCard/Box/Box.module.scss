@@ -1,7 +1,7 @@
-@import '../../../../assets/styles/colors';
-@import '../../../../assets/styles/fonts';
-@import '../../../../assets/styles/mixins';
-@import '../../../../assets/styles/typography';
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
 
 .box {
   display: flex;
@@ -69,6 +69,8 @@
     width: 50%;
     @include media(m-device) {
       align-items: center;
+      width: 70vw;
+
     }
 
     &__txt {

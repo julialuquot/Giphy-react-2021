@@ -23,6 +23,11 @@ const routes = require('next-routes')()
         page: 'lpc/gift-card-page',
     })
     .add({
+        name: 'faq-page',
+        pattern: '/faq',
+        page: 'lpc/faq',
+    })
+    .add({
         name: 'terms',
         pattern: '/conditions-generales-utilisation',
         page: 'lpc/terms',

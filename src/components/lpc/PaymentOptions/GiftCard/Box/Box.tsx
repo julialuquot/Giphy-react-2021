@@ -23,14 +23,14 @@ const Box = () => {
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
                         className={css.box__left__images__box}
-                        src="/front-static/images/card/gift-box.png"
+                        src="front-static/images/card/gift-box.png"
                         alt="gift-box"
                     />
                     <img
                         className={`${css.box__left__images__card} ${
                             isHover ? css.box__left__images__card__active : ''
                         } `}
-                        src="/front-static/images/card/gift-card.svg"
+                        src="front-static/images/card/gift-card.svg"
                         alt="gift-card"
                     />
                 </div>

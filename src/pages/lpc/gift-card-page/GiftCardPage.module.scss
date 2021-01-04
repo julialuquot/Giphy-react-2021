@@ -20,6 +20,8 @@ body {
   width: 100vw;
   @include media(m-device) {
     width: calc(100vw - 80px);
+    padding-top: 94px;
+
   }
 }
 

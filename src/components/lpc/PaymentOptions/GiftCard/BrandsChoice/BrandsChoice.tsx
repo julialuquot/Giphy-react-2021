@@ -17,7 +17,7 @@ const BrandsChoice = () => {
                     <Text customClass={css.brands__container__left__txt} variant={'body_00'} color={'txt-primary'}>
                         {t('lpc-gift-card:brands.description')}
                     </Text>
-                    <Button variant={'primary'} size={'medium'}>
+                    <Button mobileFullWidth={true} variant={'primary'} size={'medium'}>
                         {t('lpc-gift-card:brands.see-list')}
                     </Button>
                 </div>

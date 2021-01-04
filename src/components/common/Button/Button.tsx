@@ -1,5 +1,6 @@
 import React from 'react';
 import Spinner from '@components/common/Spinner/Spinner';
+import useWindowSize from '@components/common/hooks/useWindowSize';
 import css from './Button.module.scss';
 
 type ButtonProps = {
@@ -33,6 +34,8 @@ const Button = ({
     height,
     icon,
 }: ButtonProps) => {
+    const windowSize = useWindowSize();
+
     const buttonStyle = () => {
         let className = '';
         className += ' ' + css[variant];
@@ -45,7 +48,7 @@ const Button = ({
 
     const style = {
         margin: margin,
-        width: width,
+        width: windowSize.width < 875 && mobileFullWidth ? '80vw' : width,
         height: height,
     };
 
