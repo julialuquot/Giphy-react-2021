@@ -24,7 +24,7 @@ $height-m: 48px;
   @include transition;
 
   @include media(m-device) {
-    width: calc(100vw - 80px);
+    width: 90vw;
   }
 
   &__arrow {

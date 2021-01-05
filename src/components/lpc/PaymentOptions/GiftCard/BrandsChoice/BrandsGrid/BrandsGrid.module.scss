@@ -6,13 +6,9 @@
 .brands {
   width: 650px;
   height: 906px;
-  overflow: hidden;
   @include media(m-device) {
     height: 216px;
     width: auto;
-    overflow: hidden;
-
-
   }
 
 

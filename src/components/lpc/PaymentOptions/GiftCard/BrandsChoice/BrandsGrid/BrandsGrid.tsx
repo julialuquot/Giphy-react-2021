@@ -12,7 +12,7 @@ const BrandsGrid = ({ brandsList }: BrandsGridProps) => {
     const gridRef = useRef();
 
     const head = brandsList.slice(0, 5);
-    const tail = brandsList.slice(5, 10);
+    const tail = brandsList.slice(5, 11);
 
     const offset = (el) => {
         const rect = el.getBoundingClientRect();

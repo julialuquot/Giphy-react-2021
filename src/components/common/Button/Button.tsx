@@ -41,14 +41,14 @@ const Button = ({
         className += ' ' + css[variant];
         className += ' ' + css[size];
         isDisabled && (className += ' ' + css.disabled);
-        mobileFullWidth && (className += ' ' + css.mobile_full_width);
+        mobileFullWidth && windowSize.width < 875 && (className += ' ' + css.mobile_full_width);
 
         return className;
     };
 
     const style = {
         margin: margin,
-        width: windowSize.width < 875 && mobileFullWidth ? '80vw' : width,
+        width: windowSize.width < 875 && mobileFullWidth ? '90vw' : width,
         height: height,
     };
 

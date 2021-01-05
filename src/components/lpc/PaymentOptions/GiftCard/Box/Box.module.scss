@@ -10,7 +10,7 @@
   width: 80vw;
   height: 512px;
   margin: 128px auto 128px auto;
-  padding: 80px;
+  padding: 5%;
   border-radius: 24px;
   background-color: $brand-secondary-muted;
   @include media(m-device) {
@@ -52,7 +52,7 @@
 
         &__active {
           transition: all 1000ms ease-in-out;
-          transform: translateX(80px);
+          transform: translateX(30px);
         }
 
       }
