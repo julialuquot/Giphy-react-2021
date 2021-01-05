@@ -10,6 +10,7 @@ export const ROUTE = {
         HOME: '/',
         SIGN_IN: '/connexion',
         FAQ: '/faq',
+        PARTNERS: '/notre-reseau-partenaires',
     },
     DASHBOARD: {
         SIGN_IN: '/dashboard/connexion',

@@ -14,6 +14,12 @@
   box-shadow: 12px 12px 48px 0 $box-shadow;
   border: solid 1px $ui-quaternary;
   cursor: pointer;
+  @include transition();
+
+  &:hover {
+    transform: translateY(8px);
+    box-shadow: 12px 12px 48px 0 rgba(0, 0, 0, 0.125);
+  }
 
 
   &__header {
@@ -35,10 +41,9 @@
     display: flex;
     flex-direction: column;
     height: 264px;
-    width: 360px;
-    max-width: 360px;
+    width: 100%;
     padding: 8px 16px 8px 16px;
-    background-color: $background-2;
+    background-color: $white;
     font-family: $primary-reg;
     @include transform(0, 190px);
     transition: transform 1s cubic-bezier(.31, 1.21, .64, 1.02);

@@ -8,15 +8,18 @@ import { getRoute, ROUTE } from '@services/http/Route';
 
 type CustomCollapsibleProps = {
     content: { question: string; answer: string }[];
+    title: string;
+    subtitle: string;
+    cta: string;
 };
 
-const FaqCollapsible = ({ content }: CustomCollapsibleProps) => {
+const FaqCollapsible = ({ content, title, subtitle, cta }: CustomCollapsibleProps) => {
     return (
         <div className={css.wrapper}>
             <div className={css.wrapper__content}>
-                <h2>Questions frequentes</h2>
+                <h2>{title}</h2>
                 <Text customClass={css.wrapper__content__txt} variant={'body_00'} color={'txt-primary'}>
-                    Certe, inquam, pertinax non quo enim ad modum, quaeso, interpretaris?{' '}
+                    {subtitle}
                 </Text>
                 <div className={css.container}>
                     {content.map((item) => {
@@ -42,7 +45,7 @@ const FaqCollapsible = ({ content }: CustomCollapsibleProps) => {
                 <Link href={getRoute(ROUTE.LPC.FAQ, null)}>
                     <a>
                         <Button variant={'primary'} width={'150px'} mobileFullWidth={true}>
-                            Voir la Faq
+                            {cta}
                         </Button>
                     </a>
                 </Link>

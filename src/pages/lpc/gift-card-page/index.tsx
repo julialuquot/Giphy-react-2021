@@ -28,19 +28,16 @@ const GiftCardPage = () => {
 
     const faq = [
         {
-            question: 'Sous quel délai vais-je recevoir ma Cado Carte Le Pot Commun ?',
-            answer:
-                'La Cado Carte Le Pot Commun est sécurisée par un dispositif d\'activation. Pour activer votre Cado Carte Le Pot Commun, le bénéficiaire devra se connecter au site www.cadostore.com, se rendre sur la page "Activer ma CADO Carte" (https://www.cadostore.com/card-activation-1/classic/ ) en suivant les instructions. ',
+            question: t('lpc-gift-card:faq.question_0'),
+            answer: t('lpc-gift-card:faq.answer_0'),
         },
         {
-            question: 'Puis-je recharger la Cado Carte Le Pot Commun ?',
-            answer:
-                'La Cado Carte Le Pot Commun est sécurisée par un dispositif d\'activation. Pour activer votre Cado Carte Le Pot Commun, le bénéficiaire devra se connecter au site www.cadostore.com, se rendre sur la page "Activer ma CADO Carte" (https://www.cadostore.com/card-activation-1/classic/ ) en suivant les instructions. ',
+            question: t('lpc-gift-card:faq.question_1'),
+            answer: t('lpc-gift-card:faq.answer_1'),
         },
         {
-            question: 'Comment activer la Cado Carte Le Pot Commun ?',
-            answer:
-                'La Cado Carte Le Pot Commun est sécurisée par un dispositif d\'activation. Pour activer votre Cado Carte Le Pot Commun, le bénéficiaire devra se connecter au site www.cadostore.com, se rendre sur la page "Activer ma CADO Carte" (https://www.cadostore.com/card-activation-1/classic/ ) en suivant les instructions. ',
+            question: t('lpc-gift-card:faq.question_2'),
+            answer: t('lpc-gift-card:faq.answer_2'),
         },
     ];
 
@@ -64,7 +61,12 @@ const GiftCardPage = () => {
                 </div>
                 <BrandsChoice />
                 <Box />
-                <FaqCollapsible content={faq} />
+                <FaqCollapsible
+                    title={t('lpc-gift-card:faq.title')}
+                    subtitle={t('lpc-gift-card:faq.subtitle')}
+                    cta={t('lpc-gift-card:faq.cta')}
+                    content={faq}
+                />
             </div>
         </Layout>
     );
