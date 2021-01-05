@@ -16,6 +16,8 @@
   @include media(m-device) {
     flex-direction: column;
     justify-content: space-evenly;
+    width: 90vw;
+
   }
 
   &__left {
@@ -51,6 +53,7 @@
         }
 
         &__active {
+          will-change: transform;
           transition: all 1000ms ease-in-out;
           transform: translateX(30px);
         }

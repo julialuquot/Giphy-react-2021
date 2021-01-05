@@ -37,7 +37,8 @@ body {
   margin: 108px auto 0 auto;
   border-radius: 32px;
   box-shadow: 12px 12px 48px 0 rgba(163, 175, 194, 1);
-  background-image: url("/front-static/images/card/gift-card.svg");
+  background-image: url("/front-static/images/card/gift-card.png");
+  background-size: cover;
   @include media(m-device) {
     width: 223px;
     height: 140px;

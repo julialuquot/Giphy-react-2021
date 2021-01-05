@@ -23,6 +23,11 @@ const routes = require('next-routes')()
         page: 'lpc/gift-card-page',
     })
     .add({
+        name: 'bank-transfer-page',
+        pattern: '/virement-bancaire',
+        page: 'lpc/bank-transfer-page',
+    })
+    .add({
         name: 'faq-page',
         pattern: '/faq',
         page: 'lpc/faq',

@@ -30,7 +30,7 @@ const Box = () => {
                         className={`${css.box__left__images__card} ${
                             isHover ? css.box__left__images__card__active : ''
                         } `}
-                        src="front-static/images/card/gift-card.svg"
+                        src="front-static/images/card/gift-card.png"
                         alt="gift-card"
                     />
                 </div>

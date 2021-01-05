@@ -10,7 +10,7 @@
   width: 100vw;
   background-color: $background-light-grey;
   @include media(m-device) {
-    height: fit-content;
+    height: 560px;
   }
 
   &__container {
@@ -22,7 +22,7 @@
     @include media(m-device) {
       flex-direction: column;
       align-items: center;
-      height: fit-content;
+      height: 560px;
       width: 100vw;
       padding: 56px 0 56px 0;
     }

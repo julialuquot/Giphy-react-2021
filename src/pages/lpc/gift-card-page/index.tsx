@@ -25,7 +25,6 @@ const GiftCardPage = () => {
     };
 
     // TODO remove fake data
-
     const faq = [
         {
             question: t('lpc-gift-card:faq.question_0'),

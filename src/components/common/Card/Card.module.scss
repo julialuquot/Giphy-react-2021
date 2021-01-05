@@ -17,8 +17,7 @@
   @include transition();
 
   &:hover {
-    transform: translateY(8px);
-    box-shadow: 12px 12px 48px 0 rgba(0, 0, 0, 0.125);
+    box-shadow: 12px 12px 48px 0 rgba(0, 0, 0, 0.150);
   }
 
 
