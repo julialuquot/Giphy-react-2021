@@ -80,7 +80,7 @@
   @extend %button-shared;
   @include transition;
   background-color: $ui-quaternary;
-  color: $black;
+  color: $txt-primary;
 
   &:hover {
     background-color: darken($color: $ui-quaternary, $amount: 5%);

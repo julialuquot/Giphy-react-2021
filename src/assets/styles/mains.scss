@@ -12,6 +12,7 @@
 h1 {
   font-family: $primary-bold;
   font-size: $level12;
+  color: $txt-primary;
   @include media(m-device) {
     font-size: $level8;
   }
@@ -20,6 +21,8 @@ h1 {
 h2 {
   font-family: $primary-bold;
   font-size: $level11;
+  color: $txt-primary;
+
   @include media(m-device) {
     font-size: $level7;
   }
@@ -28,6 +31,8 @@ h2 {
 h3 {
   font-family: $primary-bold;
   font-size: $level8;
+  color: $txt-primary;
+
   @include media(m-device) {
     font-size: $level6;
   }
@@ -36,6 +41,7 @@ h3 {
 
 h4 {
   font-family: $primary-SemiBold;
+  color: $txt-primary;
   font-size: $level7;
   @include media(m-device) {
     font-size: $level4;
@@ -45,6 +51,8 @@ h4 {
 h5 {
   font-family: $primary-SemiBold;
   font-size: $level5;
+  color: $txt-primary;
+
   @include media(m-device) {
     font-size: $level3;
   }

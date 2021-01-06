@@ -16,6 +16,11 @@
   cursor: pointer;
   @include transition();
 
+  @include media(m-device) {
+    width: 90vw;
+    margin: 0 auto;
+  }
+
   &:hover {
     box-shadow: 12px 12px 48px 0 rgba(0, 0, 0, 0.150);
   }

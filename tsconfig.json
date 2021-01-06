@@ -1,47 +1,50 @@
 {
-  "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
+    "compilerOptions": {
+        "target": "es5",
+        "lib": [
+            "dom",
+            "dom.iterable",
+            "esnext"
+        ],
+        "allowJs": true,
+        "skipLibCheck": true,
+        "strict": false,
+        "forceConsistentCasingInFileNames": true,
+        "noEmit": true,
+        "esModuleInterop": true,
+        "module": "esnext",
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "isolatedModules": true,
+        "jsx": "preserve",
+        "baseUrl": "./src",
+        "paths": {
+            "@models/*": [
+                "models/*"
+            ],
+            "@services/*": [
+                "services/*"
+            ],
+            "@components/*": [
+                "components/*"
+            ],
+            "@validations/*": [
+                "validations/*"
+            ],
+            "@assets/*": [
+                "assets/*"
+            ],
+            "@i18n": [
+                "./i18n.js"
+            ]
+        }
+    },
+    "exclude": [
+        "node_modules"
     ],
-    "allowJs": true,
-    "skipLibCheck": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "noEmit": true,
-    "esModuleInterop": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "jsx": "preserve",
-    "baseUrl": "./src",
-    "paths": {
-      "@services/*": [
-        "services/*"
-      ],
-      "@components/*": [
-        "components/*"
-      ],
-      "@validations/*": [
-        "validations/*"
-      ],
-      "@assets/*": [
-        "assets/*"
-      ],
-      "@i18n": [
-        "./i18n.js"
-      ]
-    }
-  },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js"
-  ]
+    "include": [
+        "**/*.ts",
+        "**/*.tsx",
+        "**/*.js"
+    ]
 }

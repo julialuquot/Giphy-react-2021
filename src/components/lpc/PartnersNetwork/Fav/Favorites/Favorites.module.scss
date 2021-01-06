@@ -40,8 +40,15 @@
       grid-template-columns: repeat(auto-fit, 360px);
       grid-gap: 30px;
       margin: 0 auto 80px auto;
+      @include media(m-device) {
+        grid-template-columns: repeat(auto-fit, 90vw);
+
+      }
     }
+
   }
 
-
 }
+
+
+

@@ -4,11 +4,25 @@ import Head from 'next/head';
 import Layout from '@components/lpc/layout/Layout';
 import Favorites from '@components/lpc/PartnersNetwork/Fav/Favorites/Favorites';
 import MainHeading from '@components/common/Heading/MainHeading/MainHeading';
-import css from './PartnersNetworkPage.module.scss';
 import CurrentOffers from '@components/lpc/PartnersNetwork/Offers/CurrentOffers/CurrentOffers';
+import FaqCollapsible from '@components/common/FaqCollapsible/FaqCollapsible';
+import css from './PartnersNetworkPage.module.scss';
+import Partners from '@components/lpc/PartnersNetwork/Partners/Partners';
 
 const PartnersNetworkPage = () => {
     const { t } = useTranslation('lpc-partners-network');
+
+    // TODO remove fake data
+    const faq = [
+        {
+            question: t('lpc-partners-network:faq.question_0'),
+            answer: t('lpc-partners-network:faq.answer_0'),
+        },
+        {
+            question: t('lpc-partners-network:faq.question_1'),
+            answer: t('lpc-partners-network:faq.answer_1'),
+        },
+    ];
 
     return (
         <Layout>
@@ -21,6 +35,13 @@ const PartnersNetworkPage = () => {
                     <Favorites />
                     <CurrentOffers />
                 </div>
+                <Partners />
+                <FaqCollapsible
+                    title={t('lpc-partners-network:faq.title')}
+                    subtitle={t('lpc-partners-network:faq.subtitle')}
+                    cta={t('lpc-partners-network:faq.cta')}
+                    content={faq}
+                />
             </div>
         </Layout>
     );

@@ -15,5 +15,48 @@
         "title": "Les offres du moment",
         "subtitle": "Certe, inquam, pertinax non quo enim ad modum, quaeso, interpretaris?",
         "cta": "En savoir plus"
+    },
+    "faq": {
+        "title": "Question fréquentes",
+        "subtitle": "Certe, inquam, pertinax non quo enim ad modum, quaeso, interpretaris?",
+        "cta": "Visiter la FAQ",
+        "question_0": "Puis-je dépenser plus que le montant récolté sur un site partenaire ?",
+        "answer_0": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis, elit sit amet placerat viverra.",
+        "question_1": "Puis-je recharger la Cado Carte Le Pot Commun ?",
+        "answer_1": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum mollis, elit sit amet placerat viverra."
+    },
+    "partners": {
+        "title": "Tous nos partenaires",
+        "partner-available": "partenaire disponible",
+        "partner-available_plural": "partenaires disponibles",
+        "filter": {
+            "search-placeholder": "Effectuer une recherche",
+            "category-placeholder": "Catégories",
+            "purchasing-mode-placeholder": "Mode d'achat",
+            "sort-placeholder": "Trier par"
+        },
+        "cta": {
+            "load-previous": "Charger les précédents",
+            "load-next": "Charger les suivants"
+        },
+        "category": {
+            "0": "Coffrets cadeaux",
+            "1": "High Tech & Divertissements",
+            "2": "Mode, accessoires & bijoux",
+            "3": "Voyages",
+            "4": "Maison & bricolage",
+            "5": "Gastronomie",
+            "6": "Arts & Culture",
+            "7": "Fleurs",
+            "8": "Vin & Spiritueux",
+            "9": "Enfants et Bébé",
+            "10": "Sports & Loisirs",
+            "11": "Séance photo"
+        },
+        "purchasing-mode": {
+            "0": "Coffrets cadeaux",
+            "1": "Voucher",
+            "2": "Partenaire"
+        }
     }
 }

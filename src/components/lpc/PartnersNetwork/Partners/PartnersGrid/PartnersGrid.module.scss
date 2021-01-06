@@ -1,0 +1,35 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/mixins';
+@import '../../../../../assets/styles/typography';
+@import '../../../../../assets/styles/fonts';
+
+
+.grid {
+  width: 80vw;
+  max-width: 1140px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 360px);
+  grid-gap: 30px;
+  margin: 0 auto 80px auto;
+  @include media(m-device) {
+    grid-template-columns: repeat(auto-fit, 90vw);
+  }
+}
+
+
+.list {
+  width: 80vw;
+  max-width: 1140px;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 100%);
+  grid-gap: 30px;
+  margin: 0 auto 80px auto;
+}
+
+.btn__container {
+  display: flex;
+  justify-content: center;
+
+}

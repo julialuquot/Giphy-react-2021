@@ -4,9 +4,13 @@ import { useTranslation } from '@i18n';
 import Card from '@components/common/Card/Card';
 import Header from '@components/lpc/PartnersNetwork/Fav/Header/Header';
 
+import Slider from 'react-slick';
+import useWindowSize from '@components/common/hooks/useWindowSize';
+import { M_DEVICE } from '@components/lpc/Constants';
+
 const Favorites = () => {
     const { t } = useTranslation('lpc-partners-network');
-
+    const { width } = useWindowSize();
     const [favoritesPartners, setFavoritesPartners] = useState([]);
 
     const mockFavoritePartners = [
@@ -40,6 +44,20 @@ const Favorites = () => {
         setFavoritesPartners(mockFavoritePartners);
     }, []);
 
+    const settings = {
+        className: css.slider,
+        autoplay: true,
+        focusOnSelect: false,
+        dots: false,
+        infinite: true,
+        speed: 500,
+        autoplaySpeed: 3500,
+        swipeToSlide: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+    };
+
     return (
         <div className={css.wrapper}>
             <div className={css.favorites}>
@@ -48,8 +66,10 @@ const Favorites = () => {
                 </div>
                 <div className={css.favorites__card}>
                     <h3> {t('lpc-partners-network:favorites.title')}</h3>
+
                     <div className={css.favorites__card__grid}>
-                        {favoritesPartners.length > 0 &&
+                        {width > M_DEVICE ? (
+                            favoritesPartners.length > 0 &&
                             favoritesPartners.map((partner) => (
                                 <Card
                                     uniq={partner.uniq}
@@ -60,7 +80,22 @@ const Favorites = () => {
                                     cardSubtitle={partner.category}
                                     cardText={partner.description}
                                 />
-                            ))}
+                            ))
+                        ) : (
+                            <Slider {...settings}>
+                                {favoritesPartners.map((partner) => (
+                                    <Card
+                                        uniq={partner.uniq}
+                                        key={partner.uniq}
+                                        cardImg={partner.img}
+                                        cardColor={partner.color}
+                                        cardTitle={partner.name}
+                                        cardSubtitle={partner.category}
+                                        cardText={partner.description}
+                                    />
+                                ))}
+                            </Slider>
+                        )}
                     </div>
                 </div>
             </div>

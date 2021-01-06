@@ -1,0 +1,131 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+@import '../../../../assets/styles/fonts';
+
+.wrapper {
+  padding: 128px 0 128px 0;
+  width: 80vw;
+  max-width: 1140px;
+
+}
+
+.count {
+  display: flex;
+  margin-bottom: 22px;
+
+  & > span {
+    margin: 0 4px 0 0;
+    font-family: $primary-medium;
+    font-size: $level3;
+    font-weight: 500;
+    color: $brand-primary;
+    @include media(m-device) {
+      font-size: $level2;
+    }
+  }
+
+}
+
+.filter__bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 32px 0 64px 0;
+  @include media(m-device) {
+    flex-direction: column;
+  }
+
+  &:after {
+    position: absolute;
+    width: 100%;
+    content: '';
+    bottom: -32px;
+    left: 0;
+    border: 1px solid $ui-quaternary;
+  }
+
+  &__left {
+    display: flex;
+    align-items: center;
+    @include media(m-device) {
+      flex-direction: column;
+    }
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+    @include media(m-device) {
+      flex-direction: column;
+    }
+  }
+}
+
+.select {
+
+  &__category {
+    width: 270px;
+    margin: 0 24px 0 24px;
+    @include media(m-device) {
+      width: 90vw;
+      margin: 16px 0 16px 0;
+
+    }
+
+    &__menu {
+      width: 270px;
+      height: 270px;
+      @include media(m-device) {
+        width: 90vw;
+      }
+    }
+
+    &__control {
+      height: 48px;
+    }
+  }
+
+  &__mode {
+    width: 163px;
+    @include media(m-device) {
+      width: 90vw;
+    }
+
+    &__menu {
+      width: 163px;
+      @include media(m-device) {
+        width: 90vw;
+      }
+    }
+
+    &__control {
+      height: 48px;
+
+    }
+  }
+
+  &__sort {
+    width: 120px;
+    @include media(m-device) {
+      width: 90vw;
+      margin: 16px 0 16px 0;
+
+    }
+
+    &__menu {
+      width: 120px;
+      @include media(m-device) {
+        width: 90vw;
+      }
+    }
+
+    &__control {
+      height: 48px;
+    }
+  }
+}
+
+
+
