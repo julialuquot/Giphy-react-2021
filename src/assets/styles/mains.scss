@@ -12,6 +12,7 @@
 h1 {
   font-family: $primary-bold;
   font-size: $level12;
+  color: $txt-primary;
   @include media(m-device) {
     font-size: $level8;
   }
@@ -20,6 +21,7 @@ h1 {
 h2 {
   font-family: $primary-bold;
   font-size: $level11;
+  color: $txt-primary;
   @include media(m-device) {
     font-size: $level7;
   }

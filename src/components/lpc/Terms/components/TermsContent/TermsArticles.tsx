@@ -16,7 +16,7 @@ const TermsArticles = () => {
             {articles.map((article) => {
                 return (
                     <div className={css.article} key={article.id}>
-                        <h5>{article.title}</h5>
+                        <h4>{article.title}</h4>
                         <p dangerouslySetInnerHTML={{ __html: article.content }} />
                     </div>
                 );
