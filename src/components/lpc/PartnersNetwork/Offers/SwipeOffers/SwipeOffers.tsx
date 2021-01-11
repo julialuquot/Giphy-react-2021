@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import css from './SwipeOffers.module.scss';
-import Slider from 'react-slick';
 import Text from '@components/common/Text/Text';
 import Button from '@components/common/Button/Button';
 import { useTranslation } from '@i18n';
+import CustomSlider from '@components/common/CustomSlider/CustomSlider';
 
 type SwipeOffersProps = {
     offers: { brand: string; category: string; desc: string; imgSrc: string }[];
@@ -12,57 +12,17 @@ type SwipeOffersProps = {
 const SwipeOffers = ({ offers }: SwipeOffersProps) => {
     const { t } = useTranslation('lpc-partners-network');
 
-    const [index, setIndex] = useState(0);
-
-    interface CustomArrowProps {
-        onClick?: React.MouseEventHandler<any>;
-    }
-
-    // eslint-disable-next-line react/prop-types
-    const SamplePrevArrow = ({ onClick }: CustomArrowProps) => {
-        return (
-            index !== 0 && (
-                <div className={css.slider__prev_arrow} onClick={onClick}>
-                    <img src="/front-static/icons/navigation/arrow-back.svg" alt="previous" />
-                </div>
-            )
-        );
-    };
-
-    // eslint-disable-next-line react/prop-types
-    const SampleNextArrow = ({ onClick }: CustomArrowProps) => {
-        return (
-            index !== 2 && (
-                <div className={css.slider__next_arrow} onClick={onClick}>
-                    <img src="/front-static/icons/navigation/arrow-forward.svg" alt="next" />
-                </div>
-            )
-        );
-    };
-
-    const afterChange = (index) => {
-        return setIndex(index);
-    };
-
-    const settings = {
-        className: css.slider,
-        autoplay: true,
-        focusOnSelect: false,
-        dots: false,
-        infinite: true,
-        speed: 500,
-        autoplaySpeed: 3500,
-        swipeToSlide: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        nextArrow: <SampleNextArrow />,
-        prevArrow: <SamplePrevArrow />,
-        afterChange: (index) => afterChange(index),
-    };
-
     return (
         <>
-            <Slider {...settings}>
+            <CustomSlider
+                sliderClass={css.slider}
+                nexArrowClass={css.slider__next_arrow}
+                prevArrowClass={css.slider__prev_arrow}
+                prevArrow={'/front-static/icons/navigation/arrow-back.svg'}
+                nextArrow={'/front-static/icons/navigation/arrow-forward.svg'}
+                autoplay={false}
+                customArrows={true}
+            >
                 {offers.map((item) => {
                     return (
                         <div key={item.brand} className={css.card}>
@@ -86,7 +46,7 @@ const SwipeOffers = ({ offers }: SwipeOffersProps) => {
                         </div>
                     );
                 })}
-            </Slider>
+            </CustomSlider>
         </>
     );
 };

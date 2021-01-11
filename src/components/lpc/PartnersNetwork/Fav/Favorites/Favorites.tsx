@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import css from './Favorites.module.scss';
 import { useTranslation } from '@i18n';
 import Card from '@components/common/Card/Card';
 import Header from '@components/lpc/PartnersNetwork/Fav/Header/Header';
-
-import Slider from 'react-slick';
 import useWindowSize from '@components/common/hooks/useWindowSize';
 import { M_DEVICE } from '@components/lpc/Constants';
+import CustomSlider from '@components/common/CustomSlider/CustomSlider';
+import css from './Favorites.module.scss';
 
 const Favorites = () => {
     const { t } = useTranslation('lpc-partners-network');
@@ -44,20 +43,6 @@ const Favorites = () => {
         setFavoritesPartners(mockFavoritePartners);
     }, []);
 
-    const settings = {
-        className: css.slider,
-        autoplay: true,
-        focusOnSelect: false,
-        dots: false,
-        infinite: true,
-        speed: 500,
-        autoplaySpeed: 3500,
-        swipeToSlide: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-    };
-
     return (
         <div className={css.wrapper}>
             <div className={css.favorites}>
@@ -67,22 +52,24 @@ const Favorites = () => {
                 <div className={css.favorites__card}>
                     <h3> {t('lpc-partners-network:favorites.title')}</h3>
 
-                    <div className={css.favorites__card__grid}>
-                        {width > M_DEVICE ? (
-                            favoritesPartners.length > 0 &&
-                            favoritesPartners.map((partner) => (
-                                <Card
-                                    uniq={partner.uniq}
-                                    key={partner.uniq}
-                                    cardImg={partner.img}
-                                    cardColor={partner.color}
-                                    cardTitle={partner.name}
-                                    cardSubtitle={partner.category}
-                                    cardText={partner.description}
-                                />
-                            ))
-                        ) : (
-                            <Slider {...settings}>
+                    {width > M_DEVICE ? (
+                        <div className={css.favorites__card__grid}>
+                            {favoritesPartners.length > 0 &&
+                                favoritesPartners.map((partner) => (
+                                    <Card
+                                        uniq={partner.uniq}
+                                        key={partner.uniq}
+                                        cardImg={partner.img}
+                                        cardColor={partner.color}
+                                        cardTitle={partner.name}
+                                        cardSubtitle={partner.category}
+                                        cardText={partner.description}
+                                    />
+                                ))}
+                        </div>
+                    ) : (
+                        <div className={css.favorites__card__slider}>
+                            <CustomSlider autoplay={false} sliderClass={css.slider}>
                                 {favoritesPartners.map((partner) => (
                                     <Card
                                         uniq={partner.uniq}
@@ -94,9 +81,9 @@ const Favorites = () => {
                                         cardText={partner.description}
                                     />
                                 ))}
-                            </Slider>
-                        )}
-                    </div>
+                            </CustomSlider>
+                        </div>
+                    )}
                 </div>
             </div>
         </div>

@@ -24,6 +24,9 @@
   &__card {
     width: 80%;
     margin: 0 auto;
+    @include media(m-device) {
+      width: 90vw;
+    }
 
 
     & > h3 {
@@ -40,14 +43,22 @@
       grid-template-columns: repeat(auto-fit, 360px);
       grid-gap: 30px;
       margin: 0 auto 80px auto;
-      @include media(m-device) {
-        grid-template-columns: repeat(auto-fit, 90vw);
+    }
 
-      }
+    &__slider {
+      display: flex;
+      justify-content: center;
     }
 
   }
 
+}
+
+.slider {
+  display: flex;
+  position: relative;
+  width: 100vw;
+  height: 394px;;
 }
 
 

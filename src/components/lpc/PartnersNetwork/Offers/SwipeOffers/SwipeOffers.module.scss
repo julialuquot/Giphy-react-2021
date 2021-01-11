@@ -26,6 +26,11 @@
   height: 420px;;
   max-width: 1140px;
 
+  @include media(s-device) {
+    width: 90vw;
+  }
+
+
   &__prev_arrow {
     @extend %shared-arrow;
     left: -7%;
@@ -35,10 +40,9 @@
   &__next_arrow {
     @extend %shared-arrow;
     right: -7%;
-
-
   }
 }
+
 
 .card {
   display: flex !important;
