@@ -8,14 +8,20 @@
   display: flex;
   flex-direction: column;
 
-  > h5 {
+  > h4 {
     margin-bottom: 16px;
+    color: $txt-primary;
+
   }
 
   > p {
-    font-family: $primary-medium;
-    font-size: $level3;
-    color: $ui-secondary;
+    font-size: $level4;
+    font-family: $primary-reg;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    color: $txt-primary;
     @include media(m-device) {
       font-size: $level2;
     }

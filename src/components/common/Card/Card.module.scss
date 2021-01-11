@@ -3,6 +3,15 @@
 @import '../../../assets/styles/mixins';
 @import '../../../assets/styles/typography';
 
+%shared-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 202px;
+  width: 100%;
+}
+
+@include render-background-color;
 
 .card {
   overflow: hidden;

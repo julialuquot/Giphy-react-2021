@@ -9,16 +9,28 @@
   flex-direction: column;
   align-items: center;
   margin: 142px 0 48px 0;
+  line-height: 1.17;
   @include media(m-device) {
     margin: 56px 0 56px 0;
+    line-height: 1.33;
   }
 
 
   &__title {
     color: $brand-primary;
+
+    &__inverse {
+      color: $ui-primary;
+
+    }
   }
 
   &__subtitle {
-    color: $ui-primary
+    color: $ui-primary;
+
+    &__inverse {
+      color: $brand-primary;
+
+    }
   }
 }

@@ -12,8 +12,7 @@ type CommProps = {
 const Comm = ({ articles, title, subtitle }: CommProps) => {
     return (
         <div className={css.comm}>
-            <Heading title={title} subtitle={subtitle} />
-
+            <Heading title={title} subtitle={subtitle} inverseColor />
             {articles.map((article) => {
                 return (
                     <div className={css.comm__articles} key={article.title}>

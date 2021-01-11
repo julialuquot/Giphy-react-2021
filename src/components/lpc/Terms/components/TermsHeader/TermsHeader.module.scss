@@ -10,7 +10,16 @@
   justify-content: center;
   height: 263px;
   width: 100%;
-  margin-bottom: 96px;
+  margin: 0 auto 96px auto;
+
+  & > p {
+    text-align: center;
+  }
+
+  & > h1 {
+    text-align: center;
+    margin-top: 5px;
+  }
 
   &:after {
     position: absolute;

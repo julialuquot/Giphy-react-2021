@@ -11,7 +11,7 @@ const TermsHeader = () => {
             <Text variant={'tagline'} color={'brand-primary'}>
                 {t('terms:title')}
             </Text>
-            <h2> {t('terms:subtitle')}</h2>
+            <h1> {t('terms:subtitle')}</h1>
         </div>
     );
 };

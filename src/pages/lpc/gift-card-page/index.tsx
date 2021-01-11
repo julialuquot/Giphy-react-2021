@@ -12,7 +12,7 @@ import css from './GiftCardPage.module.scss';
 const GiftCardPage = () => {
     const { t } = useTranslation('lpc-gift-card');
 
-    const options = {
+    const tiltOptions = {
         reverse: false, // reverse the tilt direction
         max: 25, // max tilt rotation (degrees)
         perspective: 1000, // Transform perspective, the lower the more extreme the tilt gets.
@@ -52,7 +52,7 @@ const GiftCardPage = () => {
                         subtitle={t('lpc-gift-card:subtitle')}
                         paragraph={t('lpc-gift-card:description')}
                     />
-                    <Tilt className={css.tilt} options={options}>
+                    <Tilt className={css.tilt} options={tiltOptions}>
                         <div className={css.tilt__lpc}>
                             <h1>LPC</h1>
                         </div>
