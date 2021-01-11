@@ -1,0 +1,23 @@
+{
+    "title": "Partenaire",
+    "type": {
+        "API_LPC": "En ligne",
+        "API_PARTNER": "Carte cadeaux",
+        "VOUCHER": "Voucher"
+    },
+    "brand": {
+        "cta": "Voir le site web"
+    },
+    "tutorial": {
+        "title": "Comment ça marche ?",
+        "subtitle": "Effectuez un virement directement sur votre compte bancaire et disposez de la somme collectée librement.",
+        "step": {
+            "0": "Rendez-vous sur le site partenaire",
+            "1": "Sélectionnez votre cadeau",
+            "2": "Dépensez"
+        }
+    },
+    "products": {
+        "title": "Les produits phares de"
+    }
+}

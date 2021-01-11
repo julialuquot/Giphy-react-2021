@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Slider from 'react-slick';
 import './CustomSlider.module.scss';
 
@@ -19,6 +19,8 @@ type CustomSliderProps = {
     infinite?: boolean;
     swipeToSlide?: number;
     slidesToScroll?: number;
+    customPaging?: (index: number) => void;
+    onActiveStep?: (index: number) => void;
 };
 
 const CustomSlider = ({
@@ -38,12 +40,18 @@ const CustomSlider = ({
     infinite,
     swipeToSlide,
     slidesToScroll,
+    customPaging,
+    onActiveStep,
 }: CustomSliderProps) => {
     const [index, setIndex] = useState(0);
 
     interface CustomArrowProps {
         onClick?: React.MouseEventHandler<any>;
     }
+
+    useEffect(() => {
+        onActiveStep(index);
+    }, [index, onActiveStep]);
 
     // eslint-disable-next-line react/prop-types
     const SamplePrevArrow = ({ onClick }: CustomArrowProps) => {
@@ -86,6 +94,7 @@ const CustomSlider = ({
         nextArrow: customArrows ? <SampleNextArrow /> : null,
         prevArrow: customArrows ? <SamplePrevArrow /> : null,
         afterChange: (index) => afterChange(index),
+        customPaging: (index) => customPaging(index),
     };
 
     return <Slider {...settings}>{children}</Slider>;
