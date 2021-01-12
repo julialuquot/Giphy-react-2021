@@ -12,14 +12,3 @@ export const partnerCategory = [
     { value: '10', label: 'SPORT' },
     { value: '11', label: 'PHOTO' },
 ];
-
-export const purchasingMode = [
-    { value: '0', label: 'GIFT_CARD' },
-    { value: '1', label: 'VOUCHER' },
-    { value: '2', label: 'PARTNER' },
-];
-
-export const sortBy = [
-    { value: '0', label: 'A_Z' },
-    { value: '1', label: 'Z_A' },
-];

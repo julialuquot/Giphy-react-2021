@@ -2,7 +2,9 @@ import React, { useEffect, useState } from 'react';
 import PartnersGrid from '@components/lpc/PartnersNetwork/Partners/PartnersGrid/PartnersGrid';
 import SearchInput from '@components/common/SearchInput/SearchInput';
 import { mockPartners } from './mockPartners';
-import { partnerCategory, purchasingMode, sortBy } from '@models/parternModel';
+import { partnerCategory } from '@models/PartnerModel/partnerCategory';
+import { partnerPurchasingType } from '@models/PartnerModel/partnerPurchasingType';
+import { partnerSort } from '@models/PartnerModel/partnerSort';
 import ToggleView from '@components/lpc/PartnersNetwork/Partners/ToggleView/ToggleView';
 import { useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
@@ -65,7 +67,7 @@ const Partners = () => {
                         customControl={css.select__category__control}
                     />
                     <SelectSecondary
-                        options={purchasingMode.map((item) => {
+                        options={partnerPurchasingType.map((item) => {
                             return {
                                 value: item.value,
                                 label: t(`lpc-partners-network:partners.purchasing-mode.${item.value}`),
@@ -82,7 +84,7 @@ const Partners = () => {
                 </div>
                 <div className={css.filter__bar__right}>
                     <SelectSecondary
-                        options={sortBy}
+                        options={partnerSort}
                         placeholder={t('lpc-partners-network:partners.filter.sort-placeholder')}
                         closedIcon={'/front-static/icons/navigation/caret-down.svg'}
                         openIcon={'/front-static/icons/navigation/caret-down.svg'}
