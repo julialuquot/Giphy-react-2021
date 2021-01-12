@@ -104,7 +104,8 @@ const NavPreview = ({ partnerUniq, userRole }: NavPreviewProps) => {
                         <Text color={'ui-secondary'} variant={'caption_00'}>
                             {t('dashboard-header:edit-on')}
                         </Text>
-                        {userRole === 'ADMIN' && <img src="/front-static/icons/help.svg" alt={'help'} />}
+                        {/* TODO feature in standy */}
+                        {/* {userRole === 'ADMIN' && <img src="/front-static/icons/help.svg" alt={'help'} />} */}
                     </div>
                 </div>
                 <div className={css.navbar__view}>
