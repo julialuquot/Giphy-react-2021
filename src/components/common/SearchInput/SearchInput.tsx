@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import css from './SearchInput.scss';
 
-type PartnersFilterProps = {
+type SearchInputProps = {
     onSearch: any;
     icon: string;
     placeholder: string;
     customClass?: string;
 };
 
-const SearchInput = ({ onSearch, icon, placeholder, customClass }: PartnersFilterProps) => {
+const SearchInput = ({ onSearch, icon, placeholder, customClass }: SearchInputProps) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const handleChange = (event) => {
