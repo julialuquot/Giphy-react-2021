@@ -42,7 +42,7 @@ const PartnerCard = ({
     useOnClickOutside(cardRef, () => setIsPopUpOpen(false));
 
     const headerStyle = {
-        backgroundColor: color || '#121922',
+        backgroundColor: color || '',
     };
 
     const onMouseEnter = () => {
@@ -71,15 +71,11 @@ const PartnerCard = ({
             >
                 <div className={css.card__header} style={headerStyle}>
                     <img className={css.card__header__logo} src={logo} alt={name} />
-                    <div onClick={() => onToggleProfil()} className={css.card__header__more}>
-                        <img
-                            className={`${css.card__header__more__icon} ${
-                                isHover && css.card__header__more__icon__visible
-                            }`}
-                            src="/front-static/icons/more-horizontal.svg"
-                            alt="more"
-                        />
-                    </div>
+                    <div
+                        onClick={() => onToggleProfil()}
+                        className={`${css.card__header__more} ${isHover && css.card__header__more__visible} `}
+                        style={{ backgroundImage: `url('/front-static/icons/action/more-horizontal.svg')` }}
+                    />
                 </div>
                 <div className={css.card__footer}>
                     <h5>{name}</h5>
