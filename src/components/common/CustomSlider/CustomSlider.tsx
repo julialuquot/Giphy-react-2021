@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, createRef, useEffect } from 'react';
 import Slider from 'react-slick';
 import './CustomSlider.module.scss';
 
@@ -40,6 +40,14 @@ const CustomSlider = ({
     slidesToScroll,
 }: CustomSliderProps) => {
     const [index, setIndex] = useState(0);
+    const [slideCount, setSlideCount] = useState(null);
+    const sliderRef = createRef();
+
+    useEffect(() => {
+        // eslint-disable-next-line
+        const innerSlider = sliderRef.current['innerSlider'];
+        setSlideCount(innerSlider.state.slideCount);
+    }, [sliderRef]);
 
     interface CustomArrowProps {
         onClick?: React.MouseEventHandler<any>;
@@ -59,7 +67,7 @@ const CustomSlider = ({
     // eslint-disable-next-line react/prop-types
     const SampleNextArrow = ({ onClick }: CustomArrowProps) => {
         return (
-            index !== 2 && (
+            index !== slideCount - 1 && (
                 <div className={nexArrowClass} onClick={onClick}>
                     <img src={nextArrow} alt="previous" />
                 </div>
@@ -88,7 +96,11 @@ const CustomSlider = ({
         afterChange: (index) => afterChange(index),
     };
 
-    return <Slider {...settings}>{children}</Slider>;
+    return (
+        <Slider ref={sliderRef} {...settings}>
+            {children}
+        </Slider>
+    );
 };
 
 export default CustomSlider;
