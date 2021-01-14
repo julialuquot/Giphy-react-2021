@@ -1,0 +1,112 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+
+
+.products {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 80vw;
+  max-width: 1140px;
+  overflow: hidden;
+  margin: 0 auto;
+  padding: 96px 0 96px 0;
+  @include media(m-device) {
+    width: 90vw;
+    padding: 48px 0 48px 0;
+
+  }
+}
+
+
+.grid {
+  width: 80vw;
+  max-width: 1140px;
+  margin: 66px auto 0 auto;
+  display: grid;
+  grid-gap: 30px;
+  grid-template-columns: repeat(auto-fit, 50%);
+  grid-template-rows: repeat(20, 50px);
+
+  @include media(m-device) {
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    margin: 32px auto 0 auto;
+
+
+  }
+
+  > div:nth-of-type(1) {
+    grid-row: 1 / 10;
+    background-color: #E22B76;
+    @include media(m-device) {
+      height: 333px;
+    }
+  }
+
+  > div:nth-of-type(2) {
+    grid-row: 1 / 11;
+    background-color: #2BE283;
+    @include media(m-device) {
+      height: 522px;
+    }
+  }
+
+  > div:nth-of-type(3) {
+    grid-row: 10 / 20;
+    background-color: #00A5E2;
+    @include hide-on-m-device;
+
+  }
+
+  > div:nth-of-type(4) {
+    grid-row: 11 / 21;
+    background-color: #3b5998;
+    @include hide-on-m-device;
+
+  }
+
+  &__product {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    border-radius: 8px;
+    padding-bottom: 24px;
+    background-size: cover;
+    background-position: center;
+    @include media(m-device) {
+      width: 100%;
+
+    }
+
+    &__details {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      height: 112px;
+      padding: 16px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 16px 0 $box-shadow;
+      border: solid 2px $ui-quaternary;
+      background-color: $white;
+
+      & > p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+
+
+      & > span {
+        margin-top: 8px;
+        font-family: $primary-medium;
+        font-size: 16px;
+        color: $orange;
+      }
+    }
+  }
+
+}
+

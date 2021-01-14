@@ -7,15 +7,16 @@ type HeadingProps = {
     subtitle?: string;
     paragraph?: string;
     margin?: string;
+    subtitleColor?: string;
 };
 
-const MainHeading = ({ title, subtitle, paragraph, margin }: HeadingProps) => {
+const MainHeading = ({ title, subtitle, paragraph, margin, subtitleColor }: HeadingProps) => {
     const style = {
         margin: margin,
     };
     return (
         <div className={css.heading} style={style}>
-            <Text variant={'tagline'} color={'brand-primary'}>
+            <Text variant={'tagline'} color={subtitleColor || 'brand-primary'}>
                 {subtitle}
             </Text>
             <h1>{title}</h1>

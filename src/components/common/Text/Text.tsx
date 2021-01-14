@@ -25,6 +25,8 @@ const Text = ({ variant, children, color, customClass, tag }: TextProps) => {
         variant === 'tagline' && (className += ' ' + css.tagline);
         variant === 'label' && (className += ' ' + css.label);
         variant === 'hint' && (className += ' ' + css.hint);
+        variant === 'footer' && (className += ' ' + css.footer);
+
         return className;
     };
     if (tag && tag === 'span') {
