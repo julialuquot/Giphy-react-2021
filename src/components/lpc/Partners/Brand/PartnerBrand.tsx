@@ -18,7 +18,7 @@ const PartnerBrand = ({ brand, partnerType }: PartnerBrandProps) => {
     return (
         <div className={css.brand} style={{ backgroundImage: `url('https://source.unsplash.com/random/500*500')` }}>
             <BrandCardDetails
-                cardText={brand.description.fr}
+                cardText={brand.description?.fr}
                 cardColor={brand.color}
                 cardImg={brand.logo}
                 cardSubtitle={brand.name}

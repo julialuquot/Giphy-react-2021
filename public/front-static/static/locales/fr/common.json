@@ -2,6 +2,8 @@
     "test": "Home page !",
     "errors": {
         "DEFAULT_ERROR_MESSAGE": "Oops! Quelque chose s'est mal passé.",
+        "NOT AUTHORIZED TO ACCESS THIS RESOURCE": "Oops! Vous n'avez pas les droits d'accès",
+        "CONNECT TO ACCESS THIS RESOURCE": "Oops! Vous devez vous connecter pour accéder à cette page",
         "Request failed with status code 404": "Oops! Quelque chose s'est mal passé.",
         "Request failed with status code 500": "Oops! Quelque chose s'est mal passé.",
         "Request failed with status code 400": "Oops! Quelque chose s'est mal passé.",

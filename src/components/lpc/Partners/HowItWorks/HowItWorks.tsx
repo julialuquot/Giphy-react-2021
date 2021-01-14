@@ -34,10 +34,11 @@ const HowItWorks = ({ tutorial }: HowItWorksProps) => {
                                 activeStep === index && css.slider__pages__indicator__active
                             } `}
                         />
-                        <h5>{t(`lpc-partner-details:tutorial.step.${index}`)}</h5>
+                        {/* eslint-disable-next-line react/prop-types */}
+                        <h5>{tutorial[index].title.fr}</h5>
                         <Text variant={'body_01'} color={'txt-primary'}>
                             {/* eslint-disable-next-line react/prop-types */}
-                            {tutorial[index].title.fr}
+                            {tutorial[index].description.fr}
                         </Text>
                     </div>
                 )}
@@ -65,7 +66,11 @@ const HowItWorks = ({ tutorial }: HowItWorksProps) => {
                             <div key={item.order} className={css.card}>
                                 <div
                                     className={css.card__img}
-                                    style={{ backgroundImage: `url('https://source.unsplash.com/random/500*500')` }}
+                                    style={{
+                                        backgroundImage: `url(${
+                                            width > M_DEVICE ? item.imageDesktop : item.imageMobile
+                                        })`,
+                                    }}
                                 />
                             </div>
                         );
