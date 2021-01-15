@@ -155,9 +155,10 @@ const Brand = ({
         );
     };
 
-    const style = {
+    const logoStyle = {
         backgroundImage: `url(${logoUrl || logo})`,
-        backgroundSize: 'cover',
+        backgroundSize: 'contain',
+        backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         backgroundColor: newColor || color,
     };
@@ -168,7 +169,7 @@ const Brand = ({
                     <Spinner height={'60px'} width={'60px'} />
                 ) : (
                     <>
-                        <div className={css.brand__card__logo} style={style}>
+                        <div className={css.brand__card__logo} style={logoStyle}>
                             {!logo && (
                                 <p className={css.brand__card__logo__placeholder}>
                                     {t('dashboard-informations:brand.logo')}
