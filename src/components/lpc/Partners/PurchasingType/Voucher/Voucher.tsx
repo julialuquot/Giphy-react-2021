@@ -1,11 +1,11 @@
 import React from 'react';
-import MainHeading from '@components/common/Heading/MainHeading/MainHeading';
+import CustomSlider from '@components/common/CustomSlider/CustomSlider';
+import useWindowSize from '@components/common/hooks/useWindowSize';
+import SecondaryHeading from '@components/common/Heading/SecondaryHeading/SecondaryHeading';
 import Text from '@components/common/Text/Text';
 import Button from '@components/common/Button/Button';
-import css from './Voucher.module.scss';
-import useWindowSize from '@components/common/hooks/useWindowSize';
 import { M_DEVICE } from '@components/lpc/Constants';
-import CustomSlider from '@components/common/CustomSlider/CustomSlider';
+import css from './Voucher.module.scss';
 
 type VoucherProps = {
     title: string;
@@ -22,14 +22,18 @@ type VoucherProps = {
 const Voucher = ({ title, subtitle, paragraph, cta, terms, offersValues }: VoucherProps) => {
     const { width } = useWindowSize();
 
+    const formatAmount = (amount) => {
+        return `${amount / 100} €`;
+    };
+
     return (
         <div className={css.voucher}>
-            <MainHeading title={title} subtitle={subtitle} subtitleColor={'orange'} paragraph={paragraph} />
+            <SecondaryHeading title={title} subtitle={subtitle} paragraph={paragraph} />
             {width > M_DEVICE ? (
                 <div className={css.voucher__content}>
                     {offersValues.map((offer) => (
                         <div key={offer.ordinalVPGC} className={css.voucher__content__card}>
-                            {offer.amountVPGC}
+                            <span>{formatAmount(offer.amountVPGC)}</span>
                         </div>
                     ))}
                 </div>
@@ -37,8 +41,8 @@ const Voucher = ({ title, subtitle, paragraph, cta, terms, offersValues }: Vouch
                 <div>
                     <CustomSlider autoplay={false} sliderClass={css.voucher__content__slider}>
                         {offersValues.map((offer) => (
-                            <div key={offer.ordinalVPGC} className={css.voucher__content__slider__card}>
-                                {offer.amountVPGC}
+                            <div key={offer.ordinalVPGC} className={css.voucher__content__card}>
+                                <span>{formatAmount(offer.amountVPGC)}</span>
                             </div>
                         ))}
                     </CustomSlider>

@@ -1,8 +1,9 @@
 import React from 'react';
-import css from './PurchasingType.module.scss';
 import { useTranslation } from '@i18n';
 import OnLine from '@components/lpc/Partners/PurchasingType/OnLine/OnLine';
 import Voucher from '@components/lpc/Partners/PurchasingType/Voucher/Voucher';
+import GiftCard from '@components/lpc/Partners/PurchasingType/GiftCard/GiftCard';
+import css from './PurchasingType.module.scss';
 
 type PurchasingTypeProps = {
     partnerType: any;
@@ -11,9 +12,11 @@ type PurchasingTypeProps = {
         ordinalVPGC: number;
         amountVPGC: number;
     }[];
+    brandLogo?: string;
+    brandColor?: string;
 };
 
-const PurchasingType = ({ partnerType, partnerLink, offersValues }: PurchasingTypeProps) => {
+const PurchasingType = ({ partnerType, partnerLink, offersValues, brandLogo, brandColor }: PurchasingTypeProps) => {
     const { t } = useTranslation('lpc-partner-details');
 
     return (
@@ -27,7 +30,7 @@ const PurchasingType = ({ partnerType, partnerLink, offersValues }: PurchasingTy
                     cta={t('lpc-partner-details:type.online.cta')}
                     partnerLink={partnerLink}
                 />
-            )}{' '}
+            )}
             {partnerType === 'VOUCHER' && (
                 <Voucher
                     title={t('lpc-partner-details:type.voucher.title')}
@@ -36,6 +39,18 @@ const PurchasingType = ({ partnerType, partnerLink, offersValues }: PurchasingTy
                     terms={t('lpc-partner-details:type.voucher.terms')}
                     cta={t('lpc-partner-details:type.voucher.cta')}
                     offersValues={offersValues}
+                />
+            )}
+            {partnerType === 'API_PARTNER' && (
+                <GiftCard
+                    title={t('lpc-partner-details:type.gift-card.title')}
+                    subtitle={t('lpc-partner-details:type.gift-card.subtitle')}
+                    paragraph={t('lpc-partner-details:type.gift-card.paragraph')}
+                    terms={t('lpc-partner-details:type.gift-card.terms')}
+                    cta={t('lpc-partner-details:type.gift-card.cta')}
+                    inputPlaceholder={t('lpc-partner-details:type.gift-card.input-placeholder')}
+                    brandLogo={brandLogo}
+                    brandColor={brandColor}
                 />
             )}
         </div>

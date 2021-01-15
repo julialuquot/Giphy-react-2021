@@ -1,8 +1,8 @@
 import React from 'react';
-import css from './OnLine.module.scss';
-import MainHeading from '@components/common/Heading/MainHeading/MainHeading';
+import SecondaryHeading from '@components/common/Heading/SecondaryHeading/SecondaryHeading';
 import Text from '@components/common/Text/Text';
 import Button from '@components/common/Button/Button';
+import css from './OnLine.module.scss';
 
 type OnLineProps = {
     title: string;
@@ -16,7 +16,7 @@ type OnLineProps = {
 const OnLine = ({ title, subtitle, paragraph, cta, terms, partnerLink }: OnLineProps) => {
     return (
         <div className={css.online}>
-            <MainHeading title={title} subtitle={subtitle} subtitleColor={'orange'} paragraph={paragraph} />
+            <SecondaryHeading title={title} subtitle={subtitle} paragraph={paragraph} />
             <div className={css.online__content}>
                 <div
                     className={css.online__content__bg}

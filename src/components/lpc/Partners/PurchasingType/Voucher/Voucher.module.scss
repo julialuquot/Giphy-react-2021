@@ -33,18 +33,12 @@
       display: flex;
       width: 80vw;
       height: 394px;
-
-      &__card {
-        height: 420px;
-        border-radius: 12px;
-        box-shadow: 12px 12px 48px 0 rgba(163, 175, 194, 0.18);
-        border: solid 2px $ui-quaternary;
-        background-color: $white;
-
-      }
     }
 
     &__card {
+      display: flex !important;
+      justify-content: center;
+      align-items: center;
       width: 229px;
       height: 341px;
       padding: 19px;
@@ -52,6 +46,16 @@
       box-shadow: 12px 12px 48px 0 rgba(163, 175, 194, 0.18);
       border: solid 2px $ui-quaternary;
       background-color: $white;
+
+      & > span {
+        font-family: $primary-medium;
+        font-size: 16px;
+        color: $orange;
+      }
+
+      @include media(m-device) {
+        height: 420px;
+      }
     }
 
 

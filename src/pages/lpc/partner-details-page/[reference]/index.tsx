@@ -41,17 +41,19 @@ const PartnerDetailsPage = ({ partnerRef }: PartnerDetailsPageProps) => {
             </Head>
             {!isFetchingPartnerDetails && partnerDetails && (
                 <div className={css.partnerDetailsPageWrapper}>
-                    {/* <PartnerBrand partnerType={partnerDetails?.typePartner} brand={partnerDetails?.brand} /> */}
-                    {/* <HowItWorks tutorial={partnerDetails?.howItWorks} /> */}
-                    {/* <Products */}
-                    {/*    brandName={partnerDetails?.brand.name} */}
-                    {/*    products={partnerDetails?.products} */}
-                    {/*    productsIntroduction={partnerDetails?.productsIntroduction} */}
-                    {/* /> */}
+                    <PartnerBrand partnerType={partnerDetails?.typePartner} brand={partnerDetails?.brand} />
+                    <HowItWorks tutorial={partnerDetails?.howItWorks} />
+                    <Products
+                        brandName={partnerDetails?.brand.name}
+                        products={partnerDetails?.products}
+                        productsIntroduction={partnerDetails?.productsIntroduction}
+                    />
                     <PurchasingType
                         partnerLink={partnerDetails?.brand.siteUrl}
                         partnerType={partnerDetails?.typePartner}
                         offersValues={partnerDetails?.OffersValues}
+                        brandLogo={partnerDetails?.brand.logo}
+                        brandColor={partnerDetails?.brand.color}
                     />
                 </div>
             )}
