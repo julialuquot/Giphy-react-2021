@@ -52,11 +52,7 @@ const GiftCardPage = () => {
                         subtitle={t('lpc-gift-card:subtitle')}
                         paragraph={t('lpc-gift-card:description')}
                     />
-                    <Tilt className={css.tilt} options={tiltOptions}>
-                        <div className={css.tilt__lpc}>
-                            <h1>LPC</h1>
-                        </div>
-                    </Tilt>
+                    <Tilt className={css.tilt} options={tiltOptions} />
                 </div>
                 <BrandsChoice />
                 <Box />
