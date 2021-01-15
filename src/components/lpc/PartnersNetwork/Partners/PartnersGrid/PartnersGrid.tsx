@@ -32,6 +32,10 @@ const PartnersGrid = ({ partners, activeView }: PartnersGridProps) => {
     const [endIndex, setEndIndex] = useState(null);
 
     useEffect(() => {
+        setCurrentPage(1);
+    }, [partners]);
+
+    useEffect(() => {
         setEndIndex(currentPage * itemPerPage);
     }, [currentPage, itemPerPage]);
 
