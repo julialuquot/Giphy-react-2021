@@ -27,6 +27,7 @@ const Products = ({ partnerUniq }: ProductsProps) => {
         isFetching,
         error,
         showNotificationSuccess,
+        getChanges,
     } = informationsContext;
 
     useEffect(() => {
@@ -61,12 +62,14 @@ const Products = ({ partnerUniq }: ProductsProps) => {
             });
     }, [addToast, error, showNotificationSuccess.updateProductsIntroduction, t]);
 
-    const onUpdateProduct = (body) => {
-        updateProduct(body);
+    const onUpdateProduct = async (body) => {
+        await updateProduct(body);
+        getChanges(body.partnerUniq);
     };
 
-    const onUpdateIntroduction = (body) => {
-        updateProductsIntroduction(body);
+    const onUpdateIntroduction = async (body) => {
+        await updateProductsIntroduction(body);
+        getChanges(body.partnerUniq);
     };
 
     const onResetProduct = (body) => {

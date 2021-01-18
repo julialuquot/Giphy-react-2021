@@ -100,6 +100,13 @@ const InformationsReducer = (state, action) => {
                     updateProductsIntroduction: true,
                 },
             };
+        case 'GET_CHANGES_SUCCESS':
+            return {
+                ...state,
+                isFetching: false,
+                hasChanges: action.payload,
+                error: null,
+            };
         default:
             return state;
     }

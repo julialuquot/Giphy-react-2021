@@ -14,7 +14,15 @@ const BrandContainer = ({ partnerUniq }: BrandContainerProps) => {
     const { t } = useTranslation('common');
 
     const informationsContext = useContext(InformationsContext);
-    const { getBrand, updateBrand, brand, isFetching, error, showNotificationSuccess } = informationsContext;
+    const {
+        getBrand,
+        updateBrand,
+        brand,
+        isFetching,
+        error,
+        showNotificationSuccess,
+        getChanges,
+    } = informationsContext;
 
     useEffect(() => {
         getBrand(partnerUniq);
@@ -36,8 +44,9 @@ const BrandContainer = ({ partnerUniq }: BrandContainerProps) => {
             });
     }, [addToast, error, showNotificationSuccess.updateBrand, t]);
 
-    const onUpdateBrand = (body) => {
-        updateBrand(body);
+    const onUpdateBrand = async (body) => {
+        await updateBrand(body);
+        getChanges(body.partnerUniq);
     };
 
     const onResetBrand = (body) => {

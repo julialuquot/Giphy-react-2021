@@ -12,11 +12,19 @@ type TutorialProps = {
 };
 
 const Tutorial = ({ partnerUniq }: TutorialProps) => {
-    const { t } = useTranslation('informations');
+    const { t } = useTranslation('dashboard-informations');
     const { addToast } = useToasts();
 
     const informationsContext = useContext(InformationsContext);
-    const { getTutorial, updateTutorial, tutorial, isFetching, error, showNotificationSuccess } = informationsContext;
+    const {
+        getTutorial,
+        updateTutorial,
+        tutorial,
+        isFetching,
+        error,
+        showNotificationSuccess,
+        getChanges,
+    } = informationsContext;
 
     useEffect(() => {
         getTutorial(partnerUniq);
@@ -38,8 +46,9 @@ const Tutorial = ({ partnerUniq }: TutorialProps) => {
             });
     }, [addToast, error, showNotificationSuccess.updateTutorial, t]);
 
-    const onUpdateTutorial = (body) => {
-        updateTutorial(body);
+    const onUpdateTutorial = async (body) => {
+        await updateTutorial(body);
+        getChanges(body.partnerUniq);
     };
 
     const onResetTutorial = (body) => {

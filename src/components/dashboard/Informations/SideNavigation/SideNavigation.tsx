@@ -1,13 +1,14 @@
-import React, { useState, useEffect } from 'react';
-import css from './SideNavigation.module.scss';
+import React, { useState, useEffect, useContext } from 'react';
+import Link from 'next/link';
+import { useToasts } from 'react-toast-notifications';
 import { useTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
 import Switch from '@components/common/Switch/Switch';
 import ConfirmModal from '@components/common/Modals/ConfirmModal/ConfirmModal';
-import InformationsService from '@services/domain/InformationsService';
-import { useToasts } from 'react-toast-notifications';
-import Link from 'next/link';
 import { getRoute, ROUTE } from '@services/http/Route';
+import InformationsService from '@services/domain/InformationsService';
+import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
+import css from './SideNavigation.module.scss';
 
 type SideNavigationProps = {
     onStepChange: (number) => void;
@@ -17,6 +18,9 @@ type SideNavigationProps = {
 const SideNavigation = ({ onStepChange, partnerUniq }: SideNavigationProps) => {
     const { t } = useTranslation('dashboard-informations');
     const { addToast } = useToasts();
+    const informationsContext = useContext(InformationsContext);
+
+    const { hasChanges, getChanges } = informationsContext;
 
     const [activeStep, setActiveStep] = useState(0);
     const [, setIsSwitchActive] = useState(false);
@@ -26,6 +30,10 @@ const SideNavigation = ({ onStepChange, partnerUniq }: SideNavigationProps) => {
     const onSetActiveStep = (step) => {
         setActiveStep(step);
     };
+
+    useEffect(() => {
+        getChanges(partnerUniq);
+    }, [getChanges, hasChanges, partnerUniq]);
 
     useEffect(() => {
         onStepChange(activeStep);
@@ -43,6 +51,7 @@ const SideNavigation = ({ onStepChange, partnerUniq }: SideNavigationProps) => {
                         autoDismiss: true,
                     }),
             )
+            .then(() => getChanges(partnerUniq))
             .then(() => setIsLoading(false))
             .catch((error) =>
                 addToast(t(`common:errors.${error}`), {
@@ -107,6 +116,7 @@ const SideNavigation = ({ onStepChange, partnerUniq }: SideNavigationProps) => {
                         variant="primary"
                         size="medium"
                         type="submit"
+                        customClass={!hasChanges ? css.customDisabled : ''}
                     >
                         {t('dashboard-informations:btn.upload')}
                     </Button>

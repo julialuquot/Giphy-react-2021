@@ -2,6 +2,7 @@ import React, { useCallback, useReducer } from 'react';
 import InformationsContext from './InformationsContext';
 import informationsReducer from './InformationsReducer';
 import InformationsService from '@services/domain/InformationsService';
+import PartnersService from '@services/domain/PartnersService';
 
 type InformationsProviderProps = {
     children: React.ReactNode;
@@ -21,6 +22,7 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
             updateProduct: false,
             updateProductsIntroduction: false,
         },
+        hasChanges: null,
     };
 
     const [state, dispatch] = useReducer(informationsReducer, initialState);
@@ -107,6 +109,15 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
             dispatch({ type: 'FETCH_FAILURE', payload: err.message });
         }
     }, []);
+    const getChanges = useCallback(async (partnerUniq) => {
+        try {
+            dispatch({ type: 'FETCH_START' });
+            const data = await PartnersService.getChanges(partnerUniq);
+            dispatch({ type: 'GET_CHANGES_SUCCESS', payload: data.data });
+        } catch (err) {
+            dispatch({ type: 'FETCH_FAILURE', payload: err.message });
+        }
+    }, []);
 
     return (
         <InformationsContext.Provider
@@ -118,6 +129,7 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
                 products: state.products,
                 showNotificationSuccess: state.showNotificationSuccess,
                 productsIntroduction: state.productsIntroduction,
+                hasChanges: state.hasChanges,
                 getBrand,
                 getTutorial,
                 getProducts,
@@ -126,6 +138,7 @@ const InformationsProvider = ({ children }: InformationsProviderProps) => {
                 updateProduct,
                 getProductsIntroduction,
                 updateProductsIntroduction,
+                getChanges,
             }}
         >
             {children}
