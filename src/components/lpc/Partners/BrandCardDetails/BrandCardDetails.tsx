@@ -8,7 +8,10 @@ type CardProps = {
     cardImg: string;
     cardColor: string;
     cardTitle: string;
-    cardSubtitle: string;
+    cardSubtitle: {
+        partnerCategoryID: number;
+        namePC: string;
+    }[];
     cardText: string;
     partnerType: string;
     siteUrl: string;
@@ -23,10 +26,11 @@ const BrandCardDetails = ({
     siteUrl,
     partnerType,
 }: CardProps) => {
+    const { t } = useTranslation('lpc-partner-details');
+
     const leftStyle = {
         backgroundColor: cardColor,
     };
-    const { t } = useTranslation('lpc-partner-details');
 
     return (
         <div className={css.card}>
@@ -45,9 +49,20 @@ const BrandCardDetails = ({
                 </a>
 
                 <h5>{cardTitle}</h5>
-                <Text variant={'caption__00'} color={'ui-secondary'}>
-                    {cardSubtitle}
-                </Text>
+                <div className={css.card__right__category}>
+                    {cardSubtitle.map((category) => (
+                        <div key={category.partnerCategoryID}>
+                            <Text
+                                variant={'caption__00'}
+                                color={'ui-secondary'}
+                                customClass={css.card__right__category__txt}
+                            >
+                                {category.namePC}
+                            </Text>
+                        </div>
+                    ))}
+                </div>
+
                 <div className={css.card__right__purchase}>
                     <span>
                         <p> {t(`lpc-partner-details:type.${partnerType}`)}</p>

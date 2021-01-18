@@ -62,6 +62,14 @@
       color: $ui-secondary;
     }
 
+    &__category {
+      display: flex;
+
+      &__txt {
+        margin-right: 5px;
+      }
+    }
+
     &__cta {
       position: absolute;
       right: 0;

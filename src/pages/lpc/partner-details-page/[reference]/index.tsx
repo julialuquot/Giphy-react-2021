@@ -41,7 +41,11 @@ const PartnerDetailsPage = ({ partnerRef }: PartnerDetailsPageProps) => {
             </Head>
             {!isFetchingPartnerDetails && partnerDetails && (
                 <div className={css.partnerDetailsPageWrapper}>
-                    <PartnerBrand partnerType={partnerDetails?.typePartner} brand={partnerDetails?.brand} />
+                    <PartnerBrand
+                        partnerType={partnerDetails?.typePartner}
+                        brand={partnerDetails?.brand}
+                        categories={partnerDetails?.categories}
+                    />
                     <HowItWorks tutorial={partnerDetails?.howItWorks} />
                     <Products
                         brandName={partnerDetails?.brand.name}
