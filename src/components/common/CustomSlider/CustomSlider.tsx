@@ -19,6 +19,8 @@ type CustomSliderProps = {
     infinite?: boolean;
     swipeToSlide?: number;
     slidesToScroll?: number;
+    customPaging?: (index: number) => void;
+    onActiveStep?: (index: number) => void;
 };
 
 const CustomSlider = ({
@@ -38,6 +40,8 @@ const CustomSlider = ({
     infinite,
     swipeToSlide,
     slidesToScroll,
+    customPaging,
+    onActiveStep,
 }: CustomSliderProps) => {
     const [index, setIndex] = useState(0);
     const [slideCount, setSlideCount] = useState(null);
@@ -52,6 +56,10 @@ const CustomSlider = ({
     interface CustomArrowProps {
         onClick?: React.MouseEventHandler<any>;
     }
+
+    useEffect(() => {
+        onActiveStep && onActiveStep(index);
+    }, [index, onActiveStep]);
 
     // eslint-disable-next-line react/prop-types
     const SamplePrevArrow = ({ onClick }: CustomArrowProps) => {
@@ -94,6 +102,7 @@ const CustomSlider = ({
         nextArrow: customArrows ? <SampleNextArrow /> : null,
         prevArrow: customArrows ? <SamplePrevArrow /> : null,
         afterChange: (index) => afterChange(index),
+        customPaging: (index) => customPaging(index),
     };
 
     return (

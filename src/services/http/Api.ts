@@ -25,6 +25,7 @@ const API = {
         SUSPEND: `${apiURL}/partners`,
         ACTIVATE: `${apiURL}/partners`,
         GET_CHANGES: `${apiURL}/changes?partnerUniq=`,
+        GET_DETAILS: `${apiURL}/partner?partnerUniq=`,
     },
     MERCHANT: {
         GO_ONLINE: `${apiURL}/merchants`,

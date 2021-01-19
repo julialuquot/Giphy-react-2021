@@ -1,0 +1,45 @@
+{
+    "title": "Partenaire",
+    "type": {
+        "API_LPC": "En ligne",
+        "API_PARTNER": "Carte cadeaux",
+        "VOUCHER": "Voucher",
+        "online": {
+            "title": "Dépensez sur le site de",
+            "subtitle": "Offre dépense sur site",
+            "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo, orci sit amet laoreet cursus, eros leo.",
+            "cta": "Acheter sur le site web",
+            "terms": "At vero eos censes aut fugiat aliquid, praeter voluptatem ut labore et quasi architecto beatae vitae dicta sunt, fecerint, virtutem iis per se esse vult, summumque malum dolorem, idque instituit docere sic: omne animal, simul atque natum sit."
+        },
+        "gift-card": {
+            "title": "Créditez une carte cadeau",
+            "subtitle": "Offre carte cadeau",
+            "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo, orci sit amet laoreet cursus, eros leo.",
+            "cta": "Créditer",
+            "input-placeholder": "Montant à créditer",
+            "terms": "At vero eos censes aut fugiat aliquid, praeter voluptatem ut labore et quasi architecto beatae vitae dicta sunt, fecerint, virtutem iis per se esse vult, summumque malum dolorem, idque instituit docere sic: omne animal, simul atque natum sit."
+        },
+        "voucher": {
+            "title": "Sélectionnez une offre",
+            "subtitle": "Offre voucher",
+            "paragraph": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam commodo, orci sit amet laoreet cursus, eros leo.",
+            "cta": "Continuer",
+            "terms": "At vero eos censes aut fugiat aliquid, praeter voluptatem ut labore et quasi architecto beatae vitae dicta sunt, fecerint, virtutem iis per se esse vult, summumque malum dolorem, idque instituit docere sic: omne animal, simul atque natum sit."
+        }
+    },
+    "brand": {
+        "cta": "Voir le site web"
+    },
+    "tutorial": {
+        "title": "Comment ça marche ?",
+        "subtitle": "Effectuez un virement directement sur votre compte bancaire et disposez de la somme collectée librement.",
+        "step": {
+            "0": "Rendez-vous sur le site partenaire",
+            "1": "Sélectionnez votre cadeau",
+            "2": "Dépensez"
+        }
+    },
+    "products": {
+        "title": "Les produits phares de"
+    }
+}

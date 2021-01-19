@@ -1,0 +1,81 @@
+@import '../../../../../assets/styles/colors';
+@import '../../../../../assets/styles/fonts';
+@import '../../../../../assets/styles/mixins';
+
+
+.online {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 80vw;
+  max-width: 1140px;
+  height: 810px;
+  margin: 0 auto;
+  padding: 96px 0 96px 0;
+  overflow: hidden;
+  @include media(m-device) {
+    width: 90vw;
+    padding: 48px 0 48px 0;
+    height: 749px;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 392px;
+    height: 236px;
+    border-radius: 12px;
+    background-color: $white;
+    @include media(m-device) {
+      width: 262px;
+      height: 156px;
+      margin: 32px 0 32px 0;
+    }
+
+    &__card {
+      width: 91%;
+      height: 86%;
+      border-radius: 16px;
+      background-color: rgba(0, 0, 0, 0.66);
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+    }
+  }
+
+  .form {
+    display: flex;
+    @include media(m-device) {
+      flex-direction: column;
+      width: 90vw
+    }
+
+    &__input {
+      width: 360px;
+      margin: 0 8px 0 0;
+      @include media(m-device) {
+        width: 100%;
+        margin: 0 0 17px 0;
+      }
+    }
+
+    &__cta {
+      background-color: $orange;
+      width: 112px;
+
+      @include media(m-device) {
+        width: 90vw;
+      }
+
+
+      &:hover {
+        background-color: lighten($color: $orange, $amount: 10%);
+      }
+    }
+  }
+
+
+}
