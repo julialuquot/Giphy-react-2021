@@ -2,7 +2,7 @@ import React from 'react';
 import css from './preview-page.module.scss';
 import Layout from '@components/dashboard/Layout/Layout';
 import NavPreview from '@components/dashboard/NavPreview/NavPreview';
-import AuthService from '@services/domain/AuthService';
+import AuthService from '@services/domain/Dashboard/AuthService';
 import { getRoute, ROUTE } from '@services/http/Route';
 
 type PreviewPageProps = {

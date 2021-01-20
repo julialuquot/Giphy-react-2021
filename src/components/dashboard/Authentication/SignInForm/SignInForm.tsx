@@ -12,7 +12,7 @@ import Text from '@components/common/Text/Text';
 import Checkbox from '@components/common/Formik/FormikCheckBox';
 import Button from '@components/common/Button/Button';
 import { getRoute, ROUTE } from '@services//http/Route';
-import AuthService from '@services/domain/AuthService';
+import AuthService from '@services/domain/Dashboard/AuthService';
 
 const SignInForm = () => {
     const authContext = useContext(AuthContext);

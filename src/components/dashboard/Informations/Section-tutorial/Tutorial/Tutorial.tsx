@@ -4,7 +4,7 @@ import Banner from '@components/dashboard/Informations/Banner/Banner';
 import Step from '@components/dashboard/Informations/Section-tutorial/Step/Step';
 import { useTranslation } from '@i18n';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
-import InformationsService from '@services/domain/InformationsService';
+import InformationsService from '@services/domain/Dashboard/InformationsService';
 import { useToasts } from 'react-toast-notifications';
 
 type TutorialProps = {

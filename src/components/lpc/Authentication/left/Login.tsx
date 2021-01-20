@@ -9,7 +9,7 @@ import { signIn } from '@validations/user';
 import css from '../Authentication.scss';
 import { useTranslation } from '@i18n';
 import Xconnect from '@components/common/Xconnect/Xconnect';
-import User from '@services/domain/User';
+import User from '@services/domain/Lpc/User';
 import AuthenticationPageContext from '@components/lpc/Authentication/AuthenticationPageContext';
 
 const LostPasswordLink: React.FC = () => {

@@ -1,7 +1,7 @@
 import React, { useCallback, useReducer } from 'react';
 import PartnersContext from './PartnersContext';
 import partnersReducer from './PartnersReducer';
-import PartnersService from '@services/domain/PartnersService';
+import PartnersService from '@services/domain/Dashboard/PartnersService';
 
 type PartnersProviderProps = {
     children: React.ReactNode;

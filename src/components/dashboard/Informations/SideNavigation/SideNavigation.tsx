@@ -6,7 +6,7 @@ import Button from '@components/common/Button/Button';
 import Switch from '@components/common/Switch/Switch';
 import ConfirmModal from '@components/common/Modals/ConfirmModal/ConfirmModal';
 import { getRoute, ROUTE } from '@services/http/Route';
-import InformationsService from '@services/domain/InformationsService';
+import InformationsService from '@services/domain/Dashboard/InformationsService';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 import css from './SideNavigation.module.scss';
 

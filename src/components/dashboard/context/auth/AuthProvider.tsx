@@ -1,7 +1,7 @@
 import React, { useReducer, useCallback } from 'react';
 import AuthContext from './AuthContext';
 import authReducer from './AuthReducer';
-import AuthService from '@services/domain/AuthService';
+import AuthService from '@services/domain/Dashboard/AuthService';
 
 type AuthProviderProps = {
     children: React.ReactNode;

@@ -5,8 +5,8 @@ import Stats from '@components/dashboard/Stats/Stats';
 import { useTranslation } from '@i18n';
 import TabNavigation from '@components/dashboard/TabNavigation/TabNavigation';
 import Heading from '@components/common/Heading/Heading';
-import AuthService from '@services/domain/AuthService';
-import InformationsService from '@services/domain/InformationsService';
+import AuthService from '@services/domain/Dashboard/AuthService';
+import InformationsService from '@services/domain/Dashboard/InformationsService';
 import { getRoute, ROUTE } from '@services/http/Route';
 
 type StatsPageProps = {

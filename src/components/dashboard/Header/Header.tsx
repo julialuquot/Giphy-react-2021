@@ -5,7 +5,7 @@ import AuthContext from '@components/dashboard/context/auth/AuthContext';
 import Profil from '@components/dashboard/Header/Profil/Profil';
 import useOnClickOutside from '@components/common/hooks/useOnClickOutside';
 import { getRoute, ROUTE } from '@services/http/Route';
-import AuthService from '@services/domain/AuthService';
+import AuthService from '@services/domain/Dashboard/AuthService';
 import css from './Header.module.scss';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
 

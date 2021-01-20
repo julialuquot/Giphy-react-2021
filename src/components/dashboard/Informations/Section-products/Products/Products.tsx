@@ -5,7 +5,7 @@ import { useTranslation } from '@i18n';
 import ProductCard from '@components/dashboard/Informations/Section-products/ProductCard/ProductCard';
 import Introduction from '@components/dashboard/Informations/Section-products/Introduction/Introduction';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
-import InformationsService from '@services/domain/InformationsService';
+import InformationsService from '@services/domain/Dashboard/InformationsService';
 import { useToasts } from 'react-toast-notifications';
 
 type ProductsProps = {

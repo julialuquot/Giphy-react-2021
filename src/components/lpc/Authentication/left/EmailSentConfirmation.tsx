@@ -3,7 +3,7 @@ import { useTranslation } from '@i18n';
 import css from '../Authentication.scss';
 import Text from '@components/common/Text/Text';
 import Button from '@components/common/Button/Button';
-import User from '@services/domain/User';
+import User from '@services/domain/Lpc/User';
 import AuthenticationPageContext from '@components/lpc/Authentication/AuthenticationPageContext';
 
 const EmailSentConfirmation: React.FC = () => {

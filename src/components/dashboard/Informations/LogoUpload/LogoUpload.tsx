@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field } from 'formik';
 import css from './LogoUpload.scss';
-import InformationsService from '@services/domain/InformationsService';
+import InformationsService from '@services/domain/Dashboard/InformationsService';
 import { useToasts } from 'react-toast-notifications';
 import { useTranslation } from '@i18n';
 

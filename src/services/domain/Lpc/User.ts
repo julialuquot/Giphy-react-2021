@@ -1,4 +1,4 @@
-import { axiosClient } from '../http/Http';
+import { axiosClient } from '../../http/Http';
 
 const login = (body) => axiosClient().post('/api/login', new URLSearchParams(body).toString());
 

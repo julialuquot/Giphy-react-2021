@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import Brand from '@components/dashboard/Informations/Section-brand/Brand/Brand';
 import InformationsContext from '@components/dashboard/context/informations/InformationsContext';
-import InformationsService from '@services/domain/InformationsService';
+import InformationsService from '@services/domain/Dashboard/InformationsService';
 import { useTranslation } from '@i18n';
 import { useToasts } from 'react-toast-notifications';
 

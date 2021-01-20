@@ -2,13 +2,13 @@ import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import { useTranslation } from '@i18n';
 import { useToasts } from 'react-toast-notifications';
-import PartnersService from '@services/domain/PartnersService';
+import PartnersService from '@services/domain/Lpc/PartnersService';
 import PartnerBrand from '@components/lpc/Partners/Brand/PartnerBrand';
 import Layout from '@components/lpc/layout/Layout';
 import HowItWorks from '@components/lpc/Partners/HowItWorks/HowItWorks';
 import Products from '@components/lpc/Partners/Products/Products';
-import css from './partner-details-page.module.scss';
 import PurchasingType from '@components/lpc/Partners/PurchasingType/PurchasingType';
+import css from './partner-details-page.module.scss';
 
 type PartnerDetailsPageProps = {
     partnerRef: string;
@@ -58,6 +58,7 @@ const PartnerDetailsPage = ({ partnerRef }: PartnerDetailsPageProps) => {
                         offersValues={partnerDetails?.OffersValues}
                         brandLogo={partnerDetails?.brand.logo}
                         brandColor={partnerDetails?.brand.color}
+                        brandBackground={partnerDetails?.brand.background}
                     />
                 </div>
             )}

@@ -5,7 +5,7 @@ import Layout from '@components/dashboard/Layout/Layout';
 import TabNavigation from '@components/dashboard/TabNavigation/TabNavigation';
 import Heading from '@components/common/Heading/Heading';
 import Informations from '@components/dashboard/Informations/Informations';
-import AuthService from '@services/domain/AuthService';
+import AuthService from '@services/domain/Dashboard/AuthService';
 import { getRoute, ROUTE } from '@services//http/Route';
 
 type InformationsPageProps = {

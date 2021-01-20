@@ -10,6 +10,7 @@ type PartnerBrandProps = {
         color: string;
         description: { fr: string; en: string };
         mentions: { fr: string; en: string };
+        background: string;
     };
     partnerType: string;
     categories: {
@@ -20,7 +21,7 @@ type PartnerBrandProps = {
 
 const PartnerBrand = ({ brand, partnerType, categories }: PartnerBrandProps) => {
     return (
-        <div className={css.brand} style={{ backgroundImage: `url('https://source.unsplash.com/random/500*500')` }}>
+        <div className={css.brand} style={{ backgroundImage: `url(${brand.background})` }}>
             <BrandCardDetails
                 cardText={brand.description?.fr}
                 cardColor={brand.color}

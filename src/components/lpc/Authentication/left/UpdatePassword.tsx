@@ -5,7 +5,7 @@ import { useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
 import Button from '@components/common/Button/Button';
 import css from '../Authentication.scss';
-import User from '@services/domain/User';
+import User from '@services/domain/Lpc/User';
 import { passwordForgottenSubmitNewPassword } from '@validations/user';
 
 type ChangePasswordprops = {

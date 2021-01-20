@@ -1,8 +1,8 @@
 import React, { useCallback, useReducer } from 'react';
 import InformationsContext from './InformationsContext';
 import informationsReducer from './InformationsReducer';
-import InformationsService from '@services/domain/InformationsService';
-import PartnersService from '@services/domain/PartnersService';
+import InformationsService from '@services/domain/Dashboard/InformationsService';
+import PartnersService from '@services/domain/Dashboard/PartnersService';
 
 type InformationsProviderProps = {
     children: React.ReactNode;

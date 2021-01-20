@@ -14,9 +14,17 @@ type PurchasingTypeProps = {
     }[];
     brandLogo?: string;
     brandColor?: string;
+    brandBackground?: string;
 };
 
-const PurchasingType = ({ partnerType, partnerLink, offersValues, brandLogo, brandColor }: PurchasingTypeProps) => {
+const PurchasingType = ({
+    partnerType,
+    partnerLink,
+    offersValues,
+    brandLogo,
+    brandColor,
+    brandBackground,
+}: PurchasingTypeProps) => {
     const { t } = useTranslation('lpc-partner-details');
 
     return (
@@ -29,6 +37,7 @@ const PurchasingType = ({ partnerType, partnerLink, offersValues, brandLogo, bra
                     terms={t('lpc-partner-details:type.online.terms')}
                     cta={t('lpc-partner-details:type.online.cta')}
                     partnerLink={partnerLink}
+                    brandBackground={brandBackground}
                 />
             )}
             {partnerType === 'VOUCHER' && (

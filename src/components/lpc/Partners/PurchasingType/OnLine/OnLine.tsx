@@ -11,17 +11,15 @@ type OnLineProps = {
     cta: string;
     terms: string;
     partnerLink: string;
+    brandBackground: string;
 };
 
-const OnLine = ({ title, subtitle, paragraph, cta, terms, partnerLink }: OnLineProps) => {
+const OnLine = ({ title, subtitle, paragraph, cta, terms, partnerLink, brandBackground }: OnLineProps) => {
     return (
         <div className={css.online}>
             <SecondaryHeading title={title} subtitle={subtitle} paragraph={paragraph} />
             <div className={css.online__content}>
-                <div
-                    className={css.online__content__bg}
-                    style={{ backgroundImage: `url('https://source.unsplash.com/random/500*500')` }}
-                />
+                <div className={css.online__content__bg} style={{ backgroundImage: `url(${brandBackground})` }} />
                 <a rel="noreferrer" target="_blank" href={partnerLink}>
                     <Button
                         customClass={css.online__content__cta}
