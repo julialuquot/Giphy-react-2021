@@ -7,6 +7,7 @@ import Input from '@components/common/Formik/FormikInputField';
 import Button from '@components/common/Button/Button';
 import LogoUpload from '@components/dashboard/Informations/LogoUpload/LogoUpload';
 import Spinner from '@components/common/Spinner/Spinner';
+import ImageUpload from '@components/dashboard/Informations/ImageUpload/ImageUpload';
 
 type BrandProps = {
     name: string;
@@ -19,6 +20,7 @@ type BrandProps = {
     onResetBrand: (body: object) => void;
     partnerUniq: string;
     isFetching: boolean;
+    background: string;
 };
 
 type FormProps = {
@@ -37,17 +39,20 @@ const Brand = ({
     onResetBrand,
     partnerUniq,
     isFetching,
+    background,
 }: BrandProps) => {
     const { t } = useTranslation('dashboard-informations');
 
     const [logoUrl, setLogoUrl] = useState('');
     const [newColor, setNewColor] = useState('');
+    const [newBackgroundUrl, setNewBackgroundUrl] = useState('');
 
     const getInitialValues = () => {
         return {
             name: name,
             logo: logo,
             color: color,
+            background: background,
             siteUrl: url,
             description: description,
             mentions: mentions,
@@ -59,6 +64,7 @@ const Brand = ({
         const body = {
             ...values,
             logo: logoUrl !== '' ? logoUrl : logo,
+            background: newBackgroundUrl !== '' ? newBackgroundUrl : background,
             description: {
                 fr: values.description,
                 en: values.description,
@@ -78,7 +84,8 @@ const Brand = ({
     };
 
     const renderBrandForm = ({ handleReset, values }: FormProps) => {
-        setNewColor(values.color);
+        setTimeout(() => setNewColor(values.color), 0); // Fix formik error (see official docs)
+
         return (
             <Form className={css.brand__card__form}>
                 <LogoUpload
@@ -108,6 +115,23 @@ const Brand = ({
                         placeholder={t('dashboard-informations:brand.color-placeholder')}
                     />
                 </div>
+
+                <div className={css.brand__card__form__input}>
+                    <ImageUpload
+                        cta={t('dashboard-informations:brand.add-visual')}
+                        inputName={'imageDesktop'}
+                        label={t('dashboard-informations:brand.visual-label')}
+                        format={t('dashboard-informations:brand.visual-format')}
+                        fileSizeLimit={1000000}
+                        fileWidthLimit={2880}
+                        fileHeightLimit={1024}
+                        imgUrl={newBackgroundUrl !== '' ? newBackgroundUrl : background}
+                        onUploadImg={(url) => setNewBackgroundUrl(url)}
+                        width={'463px'}
+                        height={'208px'}
+                    />
+                </div>
+
                 <div className={css.brand__card__form__input}>
                     <Input
                         name="siteUrl"

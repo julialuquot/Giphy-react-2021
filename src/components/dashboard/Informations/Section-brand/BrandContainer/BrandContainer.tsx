@@ -62,6 +62,7 @@ const BrandContainer = ({ partnerUniq }: BrandContainerProps) => {
                     name={brand.name}
                     logo={brand.logo}
                     color={brand.color}
+                    background={brand.background}
                     url={brand.siteUrl}
                     description={brand.description?.fr}
                     mentions={brand.mentions?.fr}
