@@ -8,9 +8,10 @@ import BrandsChoice from '@components/lpc/PaymentOptions/GiftCard/BrandsChoice/B
 import Box from '@components/lpc/PaymentOptions/GiftCard/Box/Box';
 import FaqCollapsible from '@components/common/FaqCollapsible/FaqCollapsible';
 import css from './GiftCardPage.module.scss';
+import BusinessBanner from '@components/common/BuisinessBanner/BusinessBanner';
 
 const GiftCardPage = () => {
-    const { t } = useTranslation('lpc-gift-card');
+    const { t } = useTranslation(['lpc-gift-card', 'lpc-footer']);
 
     const tiltOptions = {
         reverse: false, // reverse the tilt direction
@@ -61,6 +62,11 @@ const GiftCardPage = () => {
                     subtitle={t('lpc-gift-card:faq.subtitle')}
                     cta={t('lpc-gift-card:faq.cta')}
                     content={faq}
+                />
+                <BusinessBanner
+                    title={t('lpc-footer:banner.title')}
+                    description={t('lpc-footer:banner.text')}
+                    buttonLabel={t('lpc-footer:banner.btn')}
                 />
             </div>
         </Layout>

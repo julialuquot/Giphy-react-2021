@@ -1,8 +1,7 @@
 import React from 'react';
-import css from './BusinessBanner.module.scss';
 import Text from '@components/common/Text/Text';
 import Button from '@components/common/Button/Button';
-import Image from 'next/image';
+import css from './BusinessBanner.module.scss';
 
 type BusinessBannerProps = {
     title: string;
@@ -13,16 +12,15 @@ type BusinessBannerProps = {
 const BusinessBanner = ({ title, description, buttonLabel }: BusinessBannerProps) => {
     return (
         <div className={css.banner}>
-            <h5>{title}</h5>
-            <Text variant={'body_02'} color={'ui-secondary'}>
+            <h4>{title}</h4>
+            <Text variant={'body_01'} color={'ui-secondary'}>
                 {description}
             </Text>
-            <Button size={'medium'} variant={'primary'} width={'220px'} margin={'24px 0 0 0'}>
-                {buttonLabel}
-            </Button>
-            <div className={css.banner__img}>
-                <Image width={477} height={144} src="/front-static/images/hand-shake.png" alt="hand-shake" />
-            </div>
+            <a target="_blank" rel="noreferrer" href="https://business.lepotcommun.fr">
+                <Button customClass={css.banner__cta} size={'medium'} variant={'primary'} margin={'24px 0 0 0'}>
+                    {buttonLabel}
+                </Button>
+            </a>
         </div>
     );
 };

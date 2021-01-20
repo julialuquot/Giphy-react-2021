@@ -5,36 +5,57 @@
 
 
 .banner {
-  position: relative;
-  height: 243px;
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
-  width: 100%;
+  width: 80vw;
+  max-width: 1140px;
+  margin: 96px auto 0 auto;
+  height: 243px;
   padding: 48px 96px;
-  margin-bottom: 142px;
+  background-image: url("/front-static/images/footer/hand-shake.png");
+  background-repeat: no-repeat;
+  background-position: top -80px right -80px;
+
   background-color: $ui-primary;
   @include border-radius(12px);
   @include media(m-device) {
-    height: 264px;
-    padding: 32px;
+    width: 90vw;
+    align-items: center;
+    justify-content: flex-end;
+    height: 414px;
+    margin: 64px auto 0 auto;
+
+    padding: 24px;
+    background-position: top -10px center;
+    background-size: 100%;
   }
 
-  > h5 {
+
+  > h4 {
     color: $white;
     margin-bottom: 8px;
+    @include media(m-device) {
+      text-align: center;
+    }
   }
 
   > p {
     max-width: 640px;
+
+    @include media(m-device) {
+      text-align: center;
+    }
   }
 
-  &__img {
-    position: absolute;
-    top: 0;
-    right: 0;
+  &__cta {
+    width: 220px;
+    @include media(m-device) {
+      width: 80vw;
+    }
   }
-
 
 }
+
+
