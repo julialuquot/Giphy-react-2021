@@ -1,4 +1,4 @@
-const DASHBOARD_API_URL = process.env.BACKEND_DASHBOARD_API_URL;
+const DASHBOARD_API_URL = `${process.env.BACKEND_API_URL}/merchant-dashboard`;
 
 const ApiDashboard = {
     AUTH: {
