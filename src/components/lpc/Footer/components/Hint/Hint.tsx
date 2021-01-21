@@ -1,23 +1,19 @@
 import React from 'react';
 import css from './Hint.module.scss';
-import { withTranslation } from '@i18n';
+import { useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
 
-const namespacesRequired = ['footer'];
+const Hint = () => {
+    const { t } = useTranslation('lpc-footer');
 
-type HintProps = {
-    t: (string) => string;
-};
-
-const Hint = ({ t }: HintProps) => {
     return (
         <div className={css.hint}>
-            <Text variant={'hint'} color={'ui-secondary'}>
-                {t('footer:hint')}
+            <Text variant={'footer'} color={'txt-secondary'}>
+                {t('lpc-footer:hint')}
             </Text>
-            <img src="/front-static/icons/logo-natixis.svg" alt={'natixis'} />
+            <img src="/front-static/icons/footer/logo-natixis.svg" alt={'natixis'} />
         </div>
     );
 };
 
-export default withTranslation(namespacesRequired)(Hint);
+export default Hint;

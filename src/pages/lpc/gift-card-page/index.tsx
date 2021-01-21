@@ -6,7 +6,7 @@ import Layout from '@components/lpc/layout/Layout';
 import MainHeading from '@components/common/Heading/MainHeading/MainHeading';
 import BrandsChoice from '@components/lpc/PaymentOptions/GiftCard/BrandsChoice/BrandsChoice';
 import Box from '@components/lpc/PaymentOptions/GiftCard/Box/Box';
-import FaqCollapsible from '@components/common/FaqCollapsible/FaqCollapsible';
+import FaqCollapsible from '@components/common/Collapsible/FaqCollapsible/FaqCollapsible';
 import css from './GiftCardPage.module.scss';
 import BusinessBanner from '@components/common/BuisinessBanner/BusinessBanner';
 

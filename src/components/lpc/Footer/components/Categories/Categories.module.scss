@@ -15,12 +15,19 @@
     flex-direction: column;
     justify-content: flex-start;
 
-    > h6 {
-      margin-bottom: 26px;
+    &__title {
+      margin-bottom: 16px;
+    }
+
+    &__icon {
+      margin-left: 5px;
+      width: 16px;
     }
 
     > a {
-      margin-bottom: 24px;
+      margin-bottom: 6px;
+
+
     }
 
 

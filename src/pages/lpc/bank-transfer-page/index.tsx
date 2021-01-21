@@ -5,7 +5,7 @@ import Layout from '@components/lpc/layout/Layout';
 import { useTranslation } from '@i18n';
 import Header from '@components/lpc/PaymentOptions/BankTransfer/Header/Header';
 import Comm from '@components/lpc/PaymentOptions/BankTransfer/Comm/Comm';
-import FaqCollapsible from '@components/common/FaqCollapsible/FaqCollapsible';
+import FaqCollapsible from '@components/common/Collapsible/FaqCollapsible/FaqCollapsible';
 
 const BankTransferPage = () => {
     const { t } = useTranslation('lpc-bank-transfer');

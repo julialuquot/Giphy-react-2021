@@ -5,7 +5,7 @@ import Layout from '@components/lpc/layout/Layout';
 import Favorites from '@components/lpc/PartnersNetwork/Fav/Favorites/Favorites';
 import MainHeading from '@components/common/Heading/MainHeading/MainHeading';
 import CurrentOffers from '@components/lpc/PartnersNetwork/Offers/CurrentOffers/CurrentOffers';
-import FaqCollapsible from '@components/common/FaqCollapsible/FaqCollapsible';
+import FaqCollapsible from '@components/common/Collapsible/FaqCollapsible/FaqCollapsible';
 import css from './PartnersNetworkPage.module.scss';
 import Partners from '@components/lpc/PartnersNetwork/Partners/Partners';
 import BusinessBanner from '@components/common/BuisinessBanner/BusinessBanner';

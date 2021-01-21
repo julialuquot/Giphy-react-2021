@@ -30,9 +30,15 @@
         "col-4": {
             "title": "Légal",
             "row-1": "Politique des cookies",
-            "row-2": "CGU & Mentions légales",
-            "row-3": "Sécurité"
+            "row-2": "Politique de confidentialité",
+            "row-3": "CGU & Mentions Légale",
+            "row-4": "Sécurité"
         }
     },
-    "hint": "Cagnotte en ligne • Collecte d’argent en ligne • Cagnotte pot de départ • Créer une billetterie en ligne • Cagnotte anniversaire • Pourquoi ?Copyright 2011-2020 LAKOOZ. Tous droits réservés. Le Pot Commun est une fintech de Natixis Payments. Building better payments every day."
+    "app-store-title": "Retrouvez nos applications iOS & Android",
+    "hint": "Cagnotte en ligne • Collecte d’argent en ligne • Cagnotte pot de départ • Créer une billetterie en ligne • Cagnotte anniversaire • Pourquoi ?\nLe Pot Commun est une fintech de Natixis Payments. Building better payments every day.  Copyright 2011-2020 LAKOOZ. Tous droits réservés.",
+    "language": {
+        "0": "Français",
+        "1": "Anglais"
+    }
 }

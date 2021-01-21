@@ -1,95 +1,113 @@
 import React from 'react';
-import css from './Categories.module.scss';
-import Text from '@components/common/Text/Text';
-import { withTranslation } from '@i18n';
 import Link from 'next/link';
-import CustomCollapsible from '@components/common/Collapsible/Collapsible';
-import useWindowSize from '../../../../common/hooks/useWindowSize';
+import { useTranslation } from '@i18n';
+import Text from '@components/common/Text/Text';
+import FooterCollapsible from '@components/common/Collapsible/FooterCollapsible/FooterCollapsible';
+import useWindowSize from '@components/common/hooks/useWindowSize';
 import { M_DEVICE } from '@components/lpc/Constants';
+import css from './Categories.module.scss';
 
-const namespacesRequired = ['footer'];
+const Categories = () => {
+    const { t } = useTranslation('lpc-footer');
 
-type GridProps = { t: (string) => string };
-
-const Categories = ({ t }: GridProps) => {
     const categories = [
         {
-            title: t('footer:categories.col-1.title'),
+            title: t('lpc-footer:categories.col-1.title'),
             rows: [
                 {
-                    row: t('footer:categories.col-1.row-1'),
+                    row: t('lpc-footer:categories.col-1.row-1'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-1.row-2'),
+                    row: t('lpc-footer:categories.col-1.row-2'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-1.row-3'),
+                    row: t('lpc-footer:categories.col-1.row-3'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-1.row-4'),
+                    row: t('lpc-footer:categories.col-1.row-4'),
                     link: '#',
+                    icon: '',
                 },
             ],
         },
         {
-            title: t('footer:categories.col-2.title'),
+            title: t('lpc-footer:categories.col-2.title'),
             rows: [
                 {
-                    row: t('footer:categories.col-2.row-1'),
+                    row: t('lpc-footer:categories.col-2.row-1'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-2.row-2'),
+                    row: t('lpc-footer:categories.col-2.row-2'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-2.row-3'),
+                    row: t('lpc-footer:categories.col-2.row-3'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-2.row-4'),
+                    row: t('lpc-footer:categories.col-2.row-4'),
                     link: '#',
+                    icon: '',
                 },
             ],
         },
         {
-            title: t('footer:categories.col-3.title'),
+            title: t('lpc-footer:categories.col-3.title'),
             rows: [
                 {
-                    row: t('footer:categories.col-3.row-1'),
+                    row: t('lpc-footer:categories.col-3.row-1'),
                     link: '#',
+                    icon: '/front-static/icons/action/link.svg',
                 },
                 {
-                    row: t('footer:categories.col-3.row-2'),
+                    row: t('lpc-footer:categories.col-3.row-2'),
                     link: '#',
+                    icon: '/front-static/icons/action/link.svg',
                 },
                 {
-                    row: t('footer:categories.col-3.row-3'),
+                    row: t('lpc-footer:categories.col-3.row-3'),
                     link: '#',
+                    icon: '/front-static/icons/action/link.svg',
                 },
                 {
-                    row: t('footer:categories.col-3.row-4'),
+                    row: t('lpc-footer:categories.col-3.row-4'),
                     link: '#',
+                    icon: '/front-static/icons/action/link.svg',
                 },
             ],
         },
         {
-            title: t('footer:categories.col-4.title'),
+            title: t('lpc-footer:categories.col-4.title'),
             rows: [
                 {
-                    row: t('footer:categories.col-4.row-1'),
+                    row: t('lpc-footer:categories.col-4.row-1'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-4.row-2'),
+                    row: t('lpc-footer:categories.col-4.row-2'),
                     link: '#',
+                    icon: '',
                 },
                 {
-                    row: t('footer:categories.col-4.row-3'),
+                    row: t('lpc-footer:categories.col-4.row-3'),
                     link: '#',
+                    icon: '',
+                },
+                {
+                    row: t('lpc-footer:categories.col-4.row-4'),
+                    link: '#',
+                    icon: '',
                 },
             ],
         },
@@ -102,12 +120,17 @@ const Categories = ({ t }: GridProps) => {
                 <div className={css.container}>
                     {categories.map((category) => (
                         <div key={category.title} className={css.container__col}>
-                            <h6>{category.title}</h6>
+                            <Text customClass={css.container__col__title} variant={'caption_00'} color={'txt-primary'}>
+                                {category.title}
+                            </Text>
                             {category.rows.map((row, index) => (
                                 <Link key={index} href={row.link}>
                                     <a>
-                                        <Text variant={'body_02'} color={'ui-primary'}>
+                                        <Text variant={'body_02'} color={'txt-secondary'}>
                                             {row.row}
+                                            {row.icon && (
+                                                <img className={css.container__col__icon} src={row.icon} alt="link" />
+                                            )}
                                         </Text>
                                     </a>
                                 </Link>
@@ -117,7 +140,7 @@ const Categories = ({ t }: GridProps) => {
                 </div>
             ) : (
                 categories.map((category) => (
-                    <CustomCollapsible
+                    <FooterCollapsible
                         key={category.title}
                         trigger={category.title}
                         content={category.rows.map((row) => row)}
@@ -128,4 +151,4 @@ const Categories = ({ t }: GridProps) => {
     );
 };
 
-export default withTranslation(namespacesRequired)(Categories);
+export default Categories;
