@@ -7,13 +7,15 @@ type DropdownProps = {
     options: { value: string; label: string }[];
     label?: string;
     customSelect?: string;
-    placeholder?: string;
+    placeholder?: any;
     closedIcon: string;
     openIcon: string;
     onSelect: (string) => void;
     customMenu?: string;
     customWidth?: string;
     customControl?: string;
+    leftIcon?: string;
+    customWrapper?: string;
 };
 
 const SelectSecondary = ({
@@ -26,6 +28,8 @@ const SelectSecondary = ({
     onSelect,
     customMenu,
     customControl,
+    leftIcon,
+    customWrapper,
 }: DropdownProps) => {
     const [selectedOption, setSelectedOption] = useState('');
     const [isOptionSelected, setIsOptionSelected] = useState(true);
@@ -62,8 +66,10 @@ const SelectSecondary = ({
 
     return (
         // @ts-ignore
-        <div ref={ref}>
+        <div className={`${css.wrapper} ${customWrapper || ''}`} ref={ref}>
             <label className={css.label}>{label}</label>
+            {leftIcon && <img className={css.left__icon} src={leftIcon} alt="input icon" />}
+
             <Dropdown
                 options={options}
                 onFocus={handleFocus}
@@ -73,7 +79,7 @@ const SelectSecondary = ({
                 controlClassName={`${css.select__control} ${
                     isOpen && isOptionSelected && css.select__control__is_open
                 } ${customControl || ''}`}
-                placeholderClassName={css.select__placeholder}
+                placeholderClassName={`${css.select__placeholder} ${leftIcon && css.select__placeholder__position}`}
                 className={`${css.select} ${customSelect || ''}`}
                 menuClassName={`${css.select__menu} ${customMenu || ''}`}
                 arrowClassName={css.select__arrow}

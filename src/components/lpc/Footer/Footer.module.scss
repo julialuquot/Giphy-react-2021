@@ -1,8 +1,41 @@
+@import '../../../assets/styles/mixins';
+
+
 .footer {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  width: 80vw;
   max-width: 1140px;
-  height: 800px;
-  margin: 200px auto 0 auto;
+  margin: 76px auto 148px auto;
+  @include media(m-device) {
+    width: 90vw;
+  }
 }
+
+.select {
+
+  &__custom__wrapper {
+    @include media(m-device) {
+      margin: 32px 0 48px 0;
+    }
+  }
+
+  &__control {
+    height: 38px;
+    width: 141px;
+  }
+
+  &__menu {
+    width: 141px;
+
+    > div {
+      height: 38px;
+
+
+    }
+  }
+}
+
+
+

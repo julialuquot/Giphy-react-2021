@@ -1,14 +1,8 @@
 import React from 'react';
-import { useTranslation, withTranslation } from '@i18n';
+import { useTranslation } from '@i18n';
 import Button from '@components/common/Button/Button';
 import Select from '@components/common/Dropdowns/Select/Select';
 import css from './Landing.module.scss';
-
-const namespacesRequired = ['home-page'];
-
-type LandingProps = {
-    t: (string) => string;
-};
 
 // TODO remove fake data
 const options = [
@@ -46,4 +40,4 @@ const Landing = () => {
     );
 };
 
-export default withTranslation(namespacesRequired)(Landing);
+export default Landing;

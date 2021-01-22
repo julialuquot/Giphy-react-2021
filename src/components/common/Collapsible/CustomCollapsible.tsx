@@ -1,7 +1,7 @@
 import React from 'react';
 import Collapsible from 'react-collapsible';
 import Link from 'next/link';
-import css from './Collapsible.module.scss';
+import css from './CustomCollapsible.module.scss';
 
 type CustomCollapsibleProps = {
     trigger: string;

@@ -1,7 +1,7 @@
-@import '../../../assets/styles/colors';
-@import '../../../assets/styles/fonts';
-@import '../../../assets/styles/mixins';
-@import '../../../assets/styles/typography';
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
 
 %shared-trigger {
   width: 100%;
@@ -16,9 +16,8 @@
     width: 100%;
     content: '';
     border-top: 1px solid $background-2;
-    top: -16px;
+    bottom: -16px;
   }
-
 
 }
 
@@ -29,7 +28,7 @@
   left: 95%;
   width: 20px;
   height: 20px;
-  background-image: url("/front-static/icons/chevron-down-grey-small.svg");
+  background-image: url("/front-static/icons/navigation/chevron-right.svg");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: cover;
@@ -39,7 +38,7 @@
 
 .collapsible {
   width: 100%;
-  margin-bottom: 16px;
+  margin: 16px auto 16px auto;
 
   &:before {
     position: absolute;
@@ -50,9 +49,7 @@
 
 
 .trigger {
-  &:first-child::before {
-    display: none;
-  }
+
 
   @extend %shared-trigger;
 
@@ -66,12 +63,13 @@
 
     &:after {
       @extend %shared-icon;
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
   }
 }
 
 .content {
+
 
   &__inner {
     display: flex;
@@ -80,7 +78,7 @@
     font-family: $primary-reg;
     font-size: $level3;
     color: $ui-secondary;
-    padding-bottom: 16px;
+    padding: 10px 0 10px 0;
   }
 
   &__outer {

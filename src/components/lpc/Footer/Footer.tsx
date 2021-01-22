@@ -1,22 +1,39 @@
-import React from 'react';
-import css from './Footer.module.scss';
-import { withTranslation } from '@i18n';
-import Banner from '@components/lpc/Footer/components/Banner/Banner';
-import Grid from '@components/lpc/Footer/components/Categories/Categories';
+import React, { useState } from 'react';
+import { useTranslation } from '@i18n';
+import Categories from '@components/lpc/Footer/components/Categories/Categories';
 import Hint from '@components/lpc/Footer/components/Hint/Hint';
-import Divider from '@components/lpc/Footer/components/Divider/Divider';
-
-const namespacesRequired = ['footer'];
+import AppStore from '@components/lpc/Footer/components/AppStore/AppStore';
+import SelectSecondary from '@components/common/Dropdowns/SelectSecondary/SelectSecondary';
+import { languageModel } from '@models/ViewModel/languageModel';
+import css from './Footer.module.scss';
 
 const Footer = () => {
+    const { t } = useTranslation('lpc-footer');
+
+    const [, setSelectedLanguageLanguage] = useState('initState');
+
     return (
         <footer className={css.footer}>
-            <Banner />
-            <Grid />
-            <Divider />
+            <Categories />
+            <AppStore />
+            <SelectSecondary
+                options={languageModel.map((item) => {
+                    return {
+                        value: item.value,
+                        label: t(`lpc-footer:language.${item.value}`),
+                    };
+                })}
+                onSelect={(value) => setSelectedLanguageLanguage(value)}
+                customMenu={css.select__menu}
+                customControl={css.select__control}
+                customWrapper={css.select__custom__wrapper}
+                openIcon={'/front-static/icons/navigation/caret-down.svg'}
+                closedIcon={'/front-static/icons/navigation/caret-down.svg'}
+                leftIcon={'/front-static/icons/display/language.svg'}
+            />
             <Hint />
         </footer>
     );
 };
 
-export default withTranslation(namespacesRequired)(Footer);
+export default Footer;

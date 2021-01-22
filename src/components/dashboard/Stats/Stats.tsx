@@ -11,7 +11,7 @@ type StatsProps = {
 };
 
 const Stats = ({ userRole }: StatsProps) => {
-    const { t } = useTranslation('dashboard-stats');
+    const { t } = useTranslation(['dashboard-stats', 'lpc-footer']);
 
     const [currentMonth, setCurrentMonth] = useState({ startOfMonth: '', endOfMonth: '' });
 
@@ -99,9 +99,9 @@ const Stats = ({ userRole }: StatsProps) => {
                 <Documents userRole={userRole} files={mockFiles} />
 
                 <BusinessBanner
-                    title={t('footer:banner.title')}
-                    description={t('footer:banner.text')}
-                    buttonLabel={t('footer:banner.btn')}
+                    title={t('lpc-footer:banner.title')}
+                    description={t('lpc-footer:banner.text')}
+                    buttonLabel={t('lpc-footer:banner.btn')}
                 />
             </div>
         </div>
