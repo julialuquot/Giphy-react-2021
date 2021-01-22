@@ -78,11 +78,16 @@
     font-family: $primary-reg;
     font-size: $level3;
     color: $ui-secondary;
-    padding: 10px 0 10px 0;
+    padding: 8px 0 8px 0;
   }
 
   &__outer {
     margin-top: 16px;
+  }
+
+  &__icon {
+    margin-left: 5px;
+    width: 16px;
   }
 
 

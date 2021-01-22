@@ -1,6 +1,7 @@
 import React from 'react';
 import Collapsible from 'react-collapsible';
 import Link from 'next/link';
+import Text from '@components/common/Text/Text';
 import css from './FooterCollapsible.module.scss';
 
 type CustomCollapsibleProps = {
@@ -22,7 +23,12 @@ const FooterCollapsible = ({ trigger, content }: CustomCollapsibleProps) => {
         >
             {content.map((item) => (
                 <Link key={item.row} href={item.link}>
-                    <a className={css.content__inner}>{item.row}</a>
+                    <a className={css.content__inner}>
+                        <Text variant={'body_02'} color={'txt-secondary'}>
+                            {item.row}
+                            {item.icon && <img className={css.content__icon} src={item.icon} alt="link" />}
+                        </Text>
+                    </a>
                 </Link>
             ))}
         </Collapsible>
