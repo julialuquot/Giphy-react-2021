@@ -1,6 +1,6 @@
 import React from 'react';
-import css from './PartnerBrand.module.scss';
 import BrandCardDetails from '@components/lpc/Partners/BrandCardDetails/BrandCardDetails';
+import css from './PartnerBrand.module.scss';
 
 type PartnerBrandProps = {
     brand: {

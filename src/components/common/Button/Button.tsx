@@ -17,6 +17,7 @@ type ButtonProps = {
     width?: string;
     height?: string;
     icon?: string;
+    customStyle?: any;
 };
 
 const Button = ({
@@ -33,6 +34,7 @@ const Button = ({
     width,
     height,
     icon,
+    customStyle,
 }: ButtonProps) => {
     const windowSize = useWindowSize();
 
@@ -54,7 +56,7 @@ const Button = ({
 
     return (
         <button
-            style={style}
+            style={customStyle || style}
             type={type}
             disabled={isDisabled}
             className={`${buttonStyle()} ${customClass || ''}`}

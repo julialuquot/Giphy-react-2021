@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import Text from '@components/common/Text/Text';
 import { useTranslation } from '@i18n';
+import Text from '@components/common/Text/Text';
 import CustomSlider from '@components/common/CustomSlider/CustomSlider';
 import useWindowSize from '@components/common/hooks/useWindowSize';
 import { M_DEVICE } from '@components/lpc/Constants';

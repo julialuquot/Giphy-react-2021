@@ -51,6 +51,7 @@ const PartnerDetailsPage = ({ partnerRef }: PartnerDetailsPageProps) => {
                         brandName={partnerDetails?.brand.name}
                         products={partnerDetails?.products}
                         productsIntroduction={partnerDetails?.productsIntroduction}
+                        brandColor={partnerDetails?.brand.color}
                     />
                     <PurchasingType
                         partnerLink={partnerDetails?.brand.siteUrl}

@@ -1,7 +1,7 @@
 import React from 'react';
+import { useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
 import Button from '@components/common/Button/Button';
-import { useTranslation } from '@i18n';
 import css from './BrandCardDetails.module.scss';
 
 type CardProps = {

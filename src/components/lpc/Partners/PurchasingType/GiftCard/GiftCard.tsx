@@ -39,7 +39,14 @@ const GiftCard = ({ title, subtitle, paragraph, cta, terms, brandLogo, brandColo
                 <div className={css.form__input}>
                     <Input name="amount" type="text" placeholder={inputPlaceholder} />
                 </div>
-                <Button customClass={css.form__cta} variant="primary" size="small" type="submit">
+                <Button
+                    customStyle={{
+                        backgroundColor: brandColor,
+                    }}
+                    customClass={css.form__cta}
+                    variant="primary"
+                    type="submit"
+                >
                     {cta}
                 </Button>
             </Form>
@@ -48,7 +55,7 @@ const GiftCard = ({ title, subtitle, paragraph, cta, terms, brandLogo, brandColo
 
     return (
         <div className={css.online}>
-            <SecondaryHeading title={title} subtitle={subtitle} paragraph={paragraph} />
+            <SecondaryHeading title={title} subtitle={subtitle} subtitleColor={brandColor} paragraph={paragraph} />
             <div className={css.online__content}>
                 <div className={css.online__content__card} style={cardStyle} />
             </div>

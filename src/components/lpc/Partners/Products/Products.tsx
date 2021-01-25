@@ -1,7 +1,7 @@
 import React from 'react';
-import css from './Products.module.scss';
-import Text from '@components/common/Text/Text';
 import { useTranslation } from '@i18n';
+import Text from '@components/common/Text/Text';
+import css from './Products.module.scss';
 
 type ProductsProps = {
     products: {
@@ -13,9 +13,10 @@ type ProductsProps = {
     }[];
     productsIntroduction?: { fr: string; en: string };
     brandName: string;
+    brandColor: string;
 };
 
-const Products = ({ products, productsIntroduction, brandName }: ProductsProps) => {
+const Products = ({ products, productsIntroduction, brandName, brandColor }: ProductsProps) => {
     const { t } = useTranslation('lpc-partner-details');
 
     return (
@@ -40,7 +41,7 @@ const Products = ({ products, productsIntroduction, brandName }: ProductsProps) 
                             <Text variant={'caption_00'} color={'txt-secondary'}>
                                 {item.description?.fr}
                             </Text>
-                            <span>{item.price} €</span>
+                            <span style={{ color: brandColor }}>{item.price} €</span>
                         </div>
                     </div>
                 ))}
