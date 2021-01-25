@@ -99,7 +99,7 @@ const Partners = () => {
             <div className={css.count}>
                 <span>{partnersCount}</span>
                 <Text variant={'caption_00'}>
-                    {partnersCount === 0
+                    {partnersCount <= 1
                         ? t('lpc-partners-network:partners.partner-available')
                         : t('lpc-partners-network:partners.partner-available_plural')}
                 </Text>
