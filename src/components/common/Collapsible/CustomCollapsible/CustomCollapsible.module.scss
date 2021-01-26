@@ -1,14 +1,14 @@
-@import '../../../assets/styles/colors';
-@import '../../../assets/styles/fonts';
-@import '../../../assets/styles/mixins';
-@import '../../../assets/styles/typography';
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
 
 %shared-trigger {
   width: 100%;
   position: relative;
   font-family: $primary-SemiBold;
   font-size: $level3;
-  color: $ui-primary;
+  color: $txt-primary;
   cursor: pointer;
 
   &:before {
@@ -19,7 +19,6 @@
     bottom: -16px;
   }
 
-
 }
 
 
@@ -29,7 +28,7 @@
   left: 95%;
   width: 20px;
   height: 20px;
-  background-image: url("/front-static/icons/chevron-down-grey-small.svg");
+  background-image: url("/front-static/icons/navigation/chevron-right.svg");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: cover;
@@ -39,7 +38,7 @@
 
 .collapsible {
   width: 100%;
-  margin-bottom: 16px;
+  margin: 16px auto 16px auto;
 
   &:before {
     position: absolute;
@@ -64,7 +63,7 @@
 
     &:after {
       @extend %shared-icon;
-      transform: rotate(180deg);
+      transform: rotate(90deg);
     }
   }
 }
@@ -79,11 +78,16 @@
     font-family: $primary-reg;
     font-size: $level3;
     color: $ui-secondary;
-    padding: 10px 0 10px 0;
+    padding: 8px 0 8px 0;
   }
 
   &__outer {
     margin-top: 16px;
+  }
+
+  &__icon {
+    margin-left: 5px;
+    width: 16px;
   }
 
 

@@ -11,6 +11,11 @@ export const ROUTE = {
         SIGN_IN: '/connexion',
         FAQ: '/faq',
         PARTNERS: '/notre-reseau-partenaires',
+        PURCHASING_TYPE: {
+            PARTNERS_NETWORKS: '/notre-reseau-partenaires',
+            GIFT_CARD: '/cado-carte',
+            BANK_TRANSFER: '/virement-bancaire',
+        },
     },
     DASHBOARD: {
         SIGN_IN: '/dashboard/connexion',
