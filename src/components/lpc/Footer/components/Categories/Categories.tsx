@@ -5,6 +5,7 @@ import Text from '@components/common/Text/Text';
 import FooterCollapsible from '@components/common/Collapsible/FooterCollapsible/FooterCollapsible';
 import useWindowSize from '@components/common/hooks/useWindowSize';
 import { M_DEVICE } from '@components/lpc/Constants';
+import { getRoute, ROUTE } from '@services/http/Route';
 import css from './Categories.module.scss';
 
 const Categories = () => {
@@ -51,12 +52,12 @@ const Categories = () => {
                 },
                 {
                     row: t('lpc-footer:categories.col-2.row-3'),
-                    link: '#',
+                    link: 'https://www.cityvent.com/',
                     icon: '',
                 },
                 {
                     row: t('lpc-footer:categories.col-2.row-4'),
-                    link: '#',
+                    link: 'https://business.lepotcommun.fr/',
                     icon: '',
                 },
             ],
@@ -66,22 +67,22 @@ const Categories = () => {
             rows: [
                 {
                     row: t('lpc-footer:categories.col-3.row-1'),
-                    link: '#',
+                    link: 'https://www.facebook.com/Lepotcommun.fr',
                     icon: '/front-static/icons/action/link.svg',
                 },
                 {
                     row: t('lpc-footer:categories.col-3.row-2'),
-                    link: '#',
+                    link: 'https://www.instagram.com/le_pot_commun.fr/',
                     icon: '/front-static/icons/action/link.svg',
                 },
                 {
                     row: t('lpc-footer:categories.col-3.row-3'),
-                    link: '#',
+                    link: 'https://twitter.com/lepotcommun',
                     icon: '/front-static/icons/action/link.svg',
                 },
                 {
                     row: t('lpc-footer:categories.col-3.row-4'),
-                    link: '#',
+                    link: 'https://www.linkedin.com/company/le-pot-commun/?originalSubdomain=fr',
                     icon: '/front-static/icons/action/link.svg',
                 },
             ],
@@ -101,7 +102,7 @@ const Categories = () => {
                 },
                 {
                     row: t('lpc-footer:categories.col-4.row-3'),
-                    link: '#',
+                    link: getRoute(ROUTE.LPC.CGU, null),
                     icon: '',
                 },
                 {

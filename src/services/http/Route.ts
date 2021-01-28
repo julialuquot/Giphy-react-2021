@@ -11,6 +11,7 @@ export const ROUTE = {
         SIGN_IN: '/connexion',
         FAQ: '/faq',
         PARTNERS: '/notre-reseau-partenaires',
+        CGU: '/conditions-generales-utilisation',
     },
     DASHBOARD: {
         SIGN_IN: '/dashboard/connexion',
