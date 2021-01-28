@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import css from './BankTransferPage.scss';
-import Layout from '@components/lpc/layout/Layout';
+import Layout from '@components/lpc/Layout/Layout';
 import { useTranslation } from '@i18n';
 import Header from '@components/lpc/PaymentOptions/BankTransfer/Header/Header';
 import Comm from '@components/lpc/PaymentOptions/BankTransfer/Comm/Comm';
