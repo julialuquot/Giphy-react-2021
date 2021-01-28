@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
-import css from './SelectSecondary.module.scss';
 import Dropdown from 'react-dropdown';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
+import css from './SelectSecondary.module.scss';
 
 type DropdownProps = {
-    options: { value: string; label: string }[];
-    label?: string;
+    options: { value: string; label: any }[];
     customSelect?: string;
     placeholder?: any;
-    closedIcon: string;
-    openIcon: string;
-    onSelect: (string) => void;
+    closedIcon?: string;
+    openIcon?: string;
+    label?: string;
+    onSelect?: (string) => void;
     customMenu?: string;
     customWidth?: string;
     customControl?: string;
@@ -49,23 +49,22 @@ const SelectSecondary = ({
     };
 
     useEffect(() => {
-        onSelect(selectedOption);
+        onSelect && onSelect(selectedOption);
     }, [onSelect, selectedOption]);
 
     const arrowClosed = (
         <span className={css.select__arrow_closed}>
-            <img src={closedIcon} alt="open" />
+            <img src={closedIcon || '/front-static/icons/navigation/caret-down.svg'} alt="open" />
         </span>
     );
 
     const arrowOpen = (
         <span className={css.select__arrow_open}>
-            <img src={openIcon} alt="close" />
+            <img src={openIcon || '/front-static/icons/navigation/caret-down.svg'} alt="close" />
         </span>
     );
 
     return (
-        // @ts-ignore
         <div className={`${css.wrapper} ${customWrapper || ''}`} ref={ref}>
             <label className={css.label}>{label}</label>
             {leftIcon && <img className={css.left__icon} src={leftIcon} alt="input icon" />}

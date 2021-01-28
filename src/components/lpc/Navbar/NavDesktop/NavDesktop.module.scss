@@ -1,0 +1,95 @@
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
+
+
+.navbar {
+  z-index: 999;
+  position: fixed;
+  height: 105px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px;
+  background-color: $white;
+
+  &:after {
+    position: absolute;
+    content: '';
+    border-bottom: 1px solid $ui-quaternary;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+
+  &__left {
+    display: flex;
+    align-items: center;
+
+    &__logo {
+      margin-right: 10px;
+      vertical-align: middle;
+      cursor: pointer;
+    }
+  }
+
+
+  &__right {
+    display: flex;
+    align-items: center;
+
+
+    &__btn {
+      height: 38px;
+      width: 120px;
+      margin-left: 8px;
+    }
+  }
+
+}
+
+
+.customLabel {
+  display: flex;
+  flex-direction: column;
+
+
+}
+
+.select {
+
+  &__wrapper {
+    margin-right: 52px;
+  }
+
+  &__control {
+    height: 38px;
+    width: 250px;
+    border: none;
+    background: none;
+
+    &:hover {
+      border: none;
+    }
+  }
+
+  &__menu {
+    width: 250px;
+
+    > div {
+      height: 58px;
+
+      &:hover {
+        color: $white;
+      }
+    }
+  }
+}
+
+
+
+
+

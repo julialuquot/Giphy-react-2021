@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import css from './index.scss';
-import Layout from '@components/lpc/layout/Layout';
+import Layout from '@components/lpc/Layout/Layout';
 import LeftSide from '@components/lpc/Authentication/left/LeftSide';
 import RightSide from '@components/lpc/Authentication/right/RightSide';
 import LoginLeft from '@components/lpc/Authentication/left/Login';

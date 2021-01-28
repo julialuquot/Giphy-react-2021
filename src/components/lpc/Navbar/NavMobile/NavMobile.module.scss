@@ -81,8 +81,13 @@
 
 
   &__btn {
-    width: 295px;
-    height: 48px;
+    margin-top: 34px;
+
+    &__cta {
+      margin-bottom: 8px;
+      width: 295px;
+      height: 48px;
+    }
   }
 
 }
@@ -90,14 +95,20 @@
 
 .collapsible {
 
-  margin: 0;
+  margin: 20px 0 -40px 0;
 
 
   &__trigger {
     display: flex;
     align-items: center;
-    font-family: $primary-medium;
+    height: 56px;
     padding: 0 40px 0 40px;
+    font-family: $primary-medium;
+
+    &:before {
+      bottom: 0;
+      left: 0;
+    }
 
     &:after {
       left: unset;
@@ -109,7 +120,13 @@
       display: flex;
       align-items: center;
       background-color: $ui-quaternary;
+      height: 56px;
       padding: 0 40px 0 40px;
+
+
+      &:before {
+        bottom: 50px !important;
+      }
 
       &:after {
         left: unset;
@@ -127,6 +144,13 @@
     color: $txt-primary;
     font-family: $primary-medium;
     font-size: $level3;
+  }
+
+  &__inner {
+  }
+
+  &__outer {
+
   }
 
 

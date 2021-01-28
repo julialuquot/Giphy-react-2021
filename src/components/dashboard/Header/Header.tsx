@@ -74,7 +74,7 @@ const Header = () => {
     return (
         <nav className={css.navbar}>
             <div className={css.navbar__left}>
-                <img className={css.navbar__logo} src="/front-static/icons/logo-lpc.svg" alt={'logo lpc'} />
+                <img className={css.navbar__logo} src="/front-static/icons/logo/lpc-with-txt.svg" alt={'logo lpc'} />
             </div>
             {!isFetching && (merchantInfos?.initial || adminInfos?.initial) && (
                 <div ref={avatarRef}>

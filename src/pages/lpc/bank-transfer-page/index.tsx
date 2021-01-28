@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
-import css from './BankTransferPage.scss';
-import Layout from '@components/lpc/layout/Layout';
+import Layout from '@components/lpc/Layout/Layout';
 import { useTranslation } from '@i18n';
 import Header from '@components/lpc/PaymentOptions/BankTransfer/Header/Header';
 import Comm from '@components/lpc/PaymentOptions/BankTransfer/Comm/Comm';
 import FaqCollapsible from '@components/common/Collapsible/FaqCollapsible/FaqCollapsible';
+import css from './BankTransferPage.scss';
 
 const BankTransferPage = () => {
     const { t } = useTranslation('lpc-bank-transfer');

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from '@i18n';
 import Head from 'next/head';
-import Layout from '@components/lpc/layout/Layout';
+import Layout from '@components/lpc/Layout/Layout';
 import Favorites from '@components/lpc/PartnersNetwork/Fav/Favorites/Favorites';
 import MainHeading from '@components/common/Heading/MainHeading/MainHeading';
 import CurrentOffers from '@components/lpc/PartnersNetwork/Offers/CurrentOffers/CurrentOffers';

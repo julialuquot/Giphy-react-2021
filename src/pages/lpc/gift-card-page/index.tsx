@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Tilt from 'react-tilt';
 import { useTranslation } from '@i18n';
-import Layout from '@components/lpc/layout/Layout';
+import Layout from '@components/lpc/Layout/Layout';
 import MainHeading from '@components/common/Heading/MainHeading/MainHeading';
 import BrandsChoice from '@components/lpc/PaymentOptions/GiftCard/BrandsChoice/BrandsChoice';
 import Box from '@components/lpc/PaymentOptions/GiftCard/Box/Box';

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useTranslation } from '@i18n';
 import PartnersService from '@services/domain/Lpc/PartnersService';
 import PartnerBrand from '@components/lpc/Partners/Brand/PartnerBrand';
-import Layout from '@components/lpc/layout/Layout';
+import Layout from '@components/lpc/Layout/Layout';
 import HowItWorks from '@components/lpc/Partners/HowItWorks/HowItWorks';
 import Products from '@components/lpc/Partners/Products/Products';
 import PurchasingType from '@components/lpc/Partners/PurchasingType/PurchasingType';

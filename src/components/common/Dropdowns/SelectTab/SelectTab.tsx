@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
-import css from './SelectTab.module.scss';
 import Dropdown from 'react-dropdown';
 import useOnClickOutside from '../../hooks/useOnClickOutside';
+import css from './SelectTab.module.scss';
 
 type DropdownProps = {
     options: { value: string; label: JSX.Element }[];

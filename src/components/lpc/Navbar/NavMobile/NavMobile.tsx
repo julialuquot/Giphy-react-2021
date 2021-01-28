@@ -85,23 +85,27 @@ const NavMobile = () => {
                         customTrigger={css.collapsible__trigger}
                         customTriggerOpened={css.collapsible__trigger__opened}
                         customText={css.collapsible__text}
+                        customTriggerOuter={css.collapsible__outer}
+                        customTriggerInner={css.collapsible__inner}
                     />
                 ))}
 
-                <Link href={getRoute(ROUTE.LPC.SIGN_IN, null)}>
-                    <a>
-                        <Button customClass={css.sidebar__btn} variant={'primary'}>
-                            {t('lpc-navbar:create-pot')}
-                        </Button>
-                    </a>
-                </Link>
-                <Link href={getRoute(ROUTE.LPC.SIGN_IN, null)}>
-                    <a>
-                        <Button customClass={css.sidebar__btn} variant={'secondary'}>
-                            {t('lpc-navbar:sign-in')}
-                        </Button>
-                    </a>
-                </Link>
+                <div className={css.sidebar__btn}>
+                    <Link href={getRoute(ROUTE.LPC.SIGN_IN, null)}>
+                        <a>
+                            <Button customClass={css.sidebar__btn__cta} variant={'primary'}>
+                                {t('lpc-navbar:create-pot')}
+                            </Button>
+                        </a>
+                    </Link>
+                    <Link href={getRoute(ROUTE.LPC.SIGN_IN, null)}>
+                        <a>
+                            <Button customClass={css.sidebar__btn__cta} variant={'secondary'}>
+                                {t('lpc-navbar:sign-in')}
+                            </Button>
+                        </a>
+                    </Link>
+                </div>
             </section>
         </div>
     );

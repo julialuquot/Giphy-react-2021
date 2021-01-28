@@ -2,10 +2,17 @@
     "sign-in": "Connexion",
     "create-pot": "Créer un pot",
     "select": {
+        "placeholder": "Les moyens de dépense",
         "free": "Gratuit",
         "partners": "Nos partenaires",
         "gift-card": "Carte cadeau",
         "bank-transfer": "Virement bancaire",
         "commission": "Commission de 1,9 à 4%"
+    },
+    "account": {
+        "placeholder": "Mon compte",
+        "dashboard": "Dashboard",
+        "settings": "Paramètres",
+        "logout": "Se déconnecter"
     }
 }
