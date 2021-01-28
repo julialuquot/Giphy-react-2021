@@ -36,6 +36,9 @@
             ],
             "@i18n": [
                 "./i18n.js"
+            ],
+            "@propTypes/*": [
+                "propTypes/*"
             ]
         }
     },

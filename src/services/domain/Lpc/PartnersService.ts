@@ -1,7 +1,10 @@
 import { axiosClient } from '@services/http/Http';
 import ApiLpc from '@services/http/ApiLpc';
 
-const getPartnerDetails = (partnerUniq) => axiosClient().get(`${ApiLpc.PARTNER.GET_DETAILS}${partnerUniq}`);
+const getPartnerDetails = (partnerUniq: string) =>
+    axiosClient()
+        .get(`${ApiLpc.PARTNER.GET_DETAILS}${partnerUniq}`, {})
+        .then((res) => res.data);
 
 const partnersService = {
     getPartnerDetails,

@@ -1,19 +1,14 @@
 import React from 'react';
 import { useTranslation } from '@i18n';
 import Text from '@components/common/Text/Text';
+import { brand, products, productIntroduction } from '../../../../propTypes/partnerDetailsTypes';
 import css from './Products.module.scss';
 
 type ProductsProps = {
-    products: {
-        description?: { fr: string; en: string };
-        title?: { fr: string; en: string };
-        image?: string;
-        price?: number;
-        order: number;
-    }[];
-    productsIntroduction?: { fr: string; en: string };
-    brandName: string;
-    brandColor: string;
+    products: products[];
+    productsIntroduction?: productIntroduction;
+    brandName: brand['name'];
+    brandColor: brand['color'];
 };
 
 const Products = ({ products, productsIntroduction, brandName, brandColor }: ProductsProps) => {

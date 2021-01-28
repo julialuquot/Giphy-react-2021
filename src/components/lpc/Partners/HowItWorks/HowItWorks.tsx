@@ -4,16 +4,11 @@ import Text from '@components/common/Text/Text';
 import CustomSlider from '@components/common/CustomSlider/CustomSlider';
 import useWindowSize from '@components/common/hooks/useWindowSize';
 import { M_DEVICE } from '@components/lpc/Constants';
+import { howItWorks } from '../../../../propTypes/partnerDetailsTypes';
 import css from './HowItWorks.module.scss';
 
 type HowItWorksProps = {
-    tutorial: {
-        title: { fr: string; en: string };
-        description: { fr: string; en: string };
-        order: number;
-        imageDesktop?: string;
-        imageMobile?: string;
-    }[];
+    tutorial: howItWorks[];
 };
 
 const HowItWorks = ({ tutorial }: HowItWorksProps) => {

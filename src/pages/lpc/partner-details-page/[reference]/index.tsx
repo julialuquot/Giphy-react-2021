@@ -1,45 +1,43 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import { useTranslation } from '@i18n';
-import { useToasts } from 'react-toast-notifications';
 import PartnersService from '@services/domain/Lpc/PartnersService';
 import PartnerBrand from '@components/lpc/Partners/Brand/PartnerBrand';
 import Layout from '@components/lpc/layout/Layout';
 import HowItWorks from '@components/lpc/Partners/HowItWorks/HowItWorks';
 import Products from '@components/lpc/Partners/Products/Products';
 import PurchasingType from '@components/lpc/Partners/PurchasingType/PurchasingType';
+import {
+    brand,
+    howItWorks,
+    categories,
+    products,
+    productIntroduction,
+    offerValues,
+} from '../../../../propTypes/partnerDetailsTypes';
 import css from './partner-details-page.module.scss';
 
 type PartnerDetailsPageProps = {
-    partnerRef: string;
+    partnerDetails: {
+        brand: brand;
+        howItWorks: howItWorks[];
+        products: products[];
+        categories: categories[];
+        productsIntroduction?: productIntroduction;
+        OffersValues?: offerValues[];
+        typePartner: string;
+    };
 };
 
-const PartnerDetailsPage = ({ partnerRef }: PartnerDetailsPageProps) => {
+const PartnerDetailsPage = ({ partnerDetails }: PartnerDetailsPageProps) => {
     const { t } = useTranslation('lpc-partner-details');
-    const { addToast } = useToasts();
-
-    const [partnerDetails, setPartnerDetails] = useState(null);
-    const [isFetchingPartnerDetails, setIsFetchingPartnerDetails] = useState(false);
-
-    useEffect(() => {
-        setIsFetchingPartnerDetails(true);
-        PartnersService.getPartnerDetails(partnerRef)
-            .then((res) => setPartnerDetails(res.data))
-            .catch((err) =>
-                addToast(t(`common:errors.${err.message}`), {
-                    appearance: 'error',
-                    autoDismiss: true,
-                }),
-            )
-            .finally(() => setIsFetchingPartnerDetails(false));
-    }, [partnerRef]);
 
     return (
         <Layout>
             <Head>
                 <title>{t('lpc-partners-network:meta-title')}</title>
             </Head>
-            {!isFetchingPartnerDetails && partnerDetails && (
+            {partnerDetails && (
                 <div className={css.partnerDetailsPageWrapper}>
                     <PartnerBrand
                         partnerType={partnerDetails?.typePartner}
@@ -67,10 +65,15 @@ const PartnerDetailsPage = ({ partnerRef }: PartnerDetailsPageProps) => {
     );
 };
 
-PartnerDetailsPage.getInitialProps = async (ctx) => {
-    const partnerRef = await ctx.query.reference;
-
-    return { partnerRef };
-};
-
 export default PartnerDetailsPage;
+
+export const getServerSideProps = async (ctx) => {
+    const partnerRef = await ctx.query.reference;
+    const partnerDetails = await PartnersService.getPartnerDetails(partnerRef);
+
+    return {
+        props: {
+            partnerDetails,
+        },
+    };
+};

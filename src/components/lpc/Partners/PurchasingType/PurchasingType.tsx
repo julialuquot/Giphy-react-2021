@@ -3,18 +3,17 @@ import { useTranslation } from '@i18n';
 import OnLine from '@components/lpc/Partners/PurchasingType/OnLine/OnLine';
 import Voucher from '@components/lpc/Partners/PurchasingType/Voucher/Voucher';
 import GiftCard from '@components/lpc/Partners/PurchasingType/GiftCard/GiftCard';
+import { brand, offerValues } from '../../../../propTypes/partnerDetailsTypes';
+
 import css from './PurchasingType.module.scss';
 
 type PurchasingTypeProps = {
-    partnerType: any;
+    partnerType: string;
     partnerLink: string;
-    offersValues?: {
-        ordinalVPGC: number;
-        amountVPGC: number;
-    }[];
-    brandLogo?: string;
-    brandColor?: string;
-    brandBackground?: string;
+    offersValues?: offerValues[];
+    brandLogo?: brand['logo'];
+    brandColor?: brand['color'];
+    brandBackground?: brand['background'];
 };
 
 const PurchasingType = ({

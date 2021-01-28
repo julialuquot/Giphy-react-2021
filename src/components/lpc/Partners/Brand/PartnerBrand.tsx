@@ -1,22 +1,12 @@
 import React from 'react';
 import BrandCardDetails from '@components/lpc/Partners/BrandCardDetails/BrandCardDetails';
+import { brand, categories } from '../../../../propTypes/partnerDetailsTypes';
 import css from './PartnerBrand.module.scss';
 
 type PartnerBrandProps = {
-    brand: {
-        name: string;
-        logo: string;
-        siteUrl: string;
-        color: string;
-        description: { fr: string; en: string };
-        mentions: { fr: string; en: string };
-        background: string;
-    };
+    brand: brand;
+    categories: categories[];
     partnerType: string;
-    categories: {
-        partnerCategoryID: number;
-        namePC: string;
-    }[];
 };
 
 const PartnerBrand = ({ brand, partnerType, categories }: PartnerBrandProps) => {

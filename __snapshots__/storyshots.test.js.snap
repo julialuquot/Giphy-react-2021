@@ -870,7 +870,7 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
       className="collapsible"
     >
       <div
-        className="collapsible__trigger is-closed  trigger"
+        className="collapsible __trigger is-closed  trigger"
         onClick={[Function]}
         onKeyPress={[Function]}
         style={null}
@@ -879,7 +879,7 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
         Mon titre
       </div>
       <div
-        className="collapsible__contentOuter content__outer"
+        className="collapsible __contentOuter content__outer"
         onTransitionEnd={[Function]}
         style={
           Object {
@@ -892,7 +892,7 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
         }
       >
         <div
-          className="collapsible__contentInner content__inner"
+          className="collapsible __contentInner content__inner"
         >
           <a
             className="content__inner"
@@ -900,7 +900,11 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Item 1
+            <p
+              className=" txt-secondary body_02 "
+            >
+              Item 1
+            </p>
           </a>
           <a
             className="content__inner"
@@ -908,7 +912,11 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Item 2
+            <p
+              className=" txt-secondary body_02 "
+            >
+              Item 2
+            </p>
           </a>
           <a
             className="content__inner"
@@ -916,7 +924,11 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Item 3
+            <p
+              className=" txt-secondary body_02 "
+            >
+              Item 3
+            </p>
           </a>
           <a
             className="content__inner"
@@ -924,7 +936,11 @@ exports[`Storyshots Dropdowns Collapsible 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            Item 4
+            <p
+              className=" txt-secondary body_02 "
+            >
+              Item 4
+            </p>
           </a>
         </div>
       </div>

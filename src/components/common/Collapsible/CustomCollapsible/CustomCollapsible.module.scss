@@ -1,7 +1,7 @@
-@import '../../../assets/styles/colors';
-@import '../../../assets/styles/fonts';
-@import '../../../assets/styles/mixins';
-@import '../../../assets/styles/typography';
+@import '../../../../assets/styles/colors';
+@import '../../../../assets/styles/fonts';
+@import '../../../../assets/styles/mixins';
+@import '../../../../assets/styles/typography';
 
 %shared-trigger {
   width: 100%;
@@ -29,7 +29,7 @@
   left: 95%;
   width: 20px;
   height: 20px;
-  background-image: url("/front-static/icons/chevron-down-grey-small.svg");
+  background-image: url("/icons/chevron-down-grey-small.svg");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: cover;
