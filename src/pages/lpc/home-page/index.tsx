@@ -1,10 +1,9 @@
 import React from 'react';
+import Layout from '@components/lpc/Layout/Layout';
+import { useTranslation } from '@i18n';
 import Landing1 from '@components/lpc/Home/01-Landing/Landing';
 import BusinessBanner from '@components/common/BuisinessBanner/BusinessBanner';
 import css from './HomePage.module.scss';
-
-import Layout from '@components/lpc/Layout/Layout';
-import { useTranslation } from '@i18n';
 
 const HomePage = () => {
     const { t } = useTranslation('lpc-footer');
