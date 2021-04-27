@@ -1,0 +1,9 @@
+{
+  "julia-user": {
+    "title": "user profile",
+    "id": "id",
+    "name": "name",
+    "email": "email",
+    "phone": "phone"
+  }
+}

@@ -1,0 +1,74 @@
+
+
+.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+
+.giphy {
+  h1 {
+    margin: 0 auto;
+  }
+
+  &__search {
+    position: relative;
+    max-width: 600px;
+    display: flex;
+    margin: 0 auto;
+
+    & > input {
+      width: 400px;
+      height: 50px;
+      padding: 12px;
+      border-radius: 6px;
+      border: solid 2px pink;
+      background-color: white;
+
+      &:hover {
+        border: 2px solid pink;
+      }
+
+      &::placeholder {
+        color: grey;
+        font-family: pink;
+        font-size:14px;
+
+      }
+
+      &:focus {
+        outline: none;
+        border-color: lightseagreen;
+        background-color: lightseagreen;
+      }
+
+
+    }
+
+    &_btn {
+      top: 30%;
+      right: 31%;
+      color: white;
+      font-family: Arial;
+      background-color: pink;
+      padding: 14px;
+      border-radius: 7px;
+    }
+  }
+
+  &__main {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+
+
+
+

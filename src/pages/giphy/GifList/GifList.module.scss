@@ -1,0 +1,17 @@
+
+
+.gifList{
+  padding: 24px 0 0;
+  border-radius: 8px;
+  box-shadow: 12px 12px 48px 0 rgba(163, 175, 194, 0.18);
+  border: solid 1px var(--user-interface-04-ui-quartenery);
+  background-color: #ffffff;
+  &__ul {
+    display: flex;
+  }
+}
+.items {
+  &__favorite {
+    display: flex;
+  }
+}
