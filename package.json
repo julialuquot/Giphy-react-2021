@@ -52,6 +52,7 @@
     "react-dom": "16.13.1",
     "react-dropdown": "^1.7.0",
     "react-i18next": "^11.7.0",
+    "react-icons": "^4.2.0",
     "react-intersection-observer": "^8.29.1",
     "react-lottie": "^1.2.3",
     "react-responsive-modal": "^4.0.1",
@@ -106,7 +107,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged && npm test && npm run build"
+      "pre-commit": "npm run build"
     }
   },
   "lint-staged": {
