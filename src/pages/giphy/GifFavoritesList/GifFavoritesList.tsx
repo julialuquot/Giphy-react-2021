@@ -1,8 +1,11 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import GifFavoriteCard from './GifFavoriteCard/GifFavoriteCard';
 import css from './GifBasket.module.scss';
-
-const GifFavoritesList = ({ favoriteList, isItemIsFavorite }) => {
+type GifFavoritesListProps = {
+    favoriteList;
+    isItemIsFavorite;
+};
+const GifFavoritesList = ({ favoriteList, isItemIsFavorite }: GifFavoritesListProps) => {
     return (
         favoriteList?.length > 0 && (
             <div className={css.gifpanier}>

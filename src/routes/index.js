@@ -14,7 +14,6 @@ const routes = require('next-routes')()
         name: 'gifCard',
         pattern: '/giphy/:[reference]',
         page: 'giphy/GifList/[[reference]]',
-    })
-
+    });
 
 module.exports = routes;

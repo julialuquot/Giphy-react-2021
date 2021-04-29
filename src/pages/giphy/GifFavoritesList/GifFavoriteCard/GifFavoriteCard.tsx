@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import css from '../GifBasket.module.scss';
 
 type GifFavoriteCardProps = {
@@ -23,7 +23,7 @@ const GifFavoriteCard = ({ title, id, key, isFavorite, isItemIsFavorite }: GifFa
         favorite && (
             <li key={key} onChange={isItemIsFavorite} className={css.gifpanier_td}>
                 <p className={css.gifpanier_tr}>
-                    <span>{id} </span>
+                    <span>{id}</span>
                     <span>{title}</span>
                 </p>
             </li>

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { IoIosHeart, IoIosHeartEmpty } from 'react-icons/io';
 import css from './GifCard.module.scss';
 
@@ -7,10 +7,8 @@ type GifCardProps = {
     key: string;
     src: string;
     title: string;
-    url: string;
     isFavorite: boolean;
-    favoriteList: object;
-    isItemIsFavorite: (favoriteList: object) => void;
+    isItemIsFavorite: (id: string) => void;
     onSelectedGif: (id: string, title: string) => void;
     removeDuplicateIdOfList: (id: string) => void;
 };
@@ -20,9 +18,7 @@ const GifCard = ({
     key,
     src,
     title,
-    url,
     isFavorite,
-    favoriteList,
     isItemIsFavorite,
     onSelectedGif,
     removeDuplicateIdOfList,
@@ -31,7 +27,7 @@ const GifCard = ({
         if (isFavorite) {
             return <IoIosHeart />;
         } else {
-            return <IoIosHeartEmpty style={{ color: 'back' }} />;
+            return <IoIosHeartEmpty />;
         }
     };
 
@@ -41,7 +37,7 @@ const GifCard = ({
                 key={key}
                 onClick={() => {
                     onSelectedGif(id, title);
-                    isItemIsFavorite(favoriteList);
+                    isItemIsFavorite(id);
                     removeDuplicateIdOfList(id);
                 }}
             >
@@ -52,21 +48,5 @@ const GifCard = ({
         </div>
     );
 };
-
-/*// This gets called on every request
-export const getServerSideProps = async (ctx) => {
-    // Fetch data from external API
-    const id = await ctx.query.reference;
-    console.log('query', ctx.query);
-    const url = await fetch(`https://api.giphy.com/v1/gifs/${id}`).then((res) => res.json());
-    console.log('url', url);
-
-    // Pass data to the page via props
-    return {
-        props: {
-            url,
-        },
-    };
-};*/
 
 export default GifCard;
