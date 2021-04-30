@@ -1,5 +1,5 @@
-import React from 'react';
-import { IoIosHeart, IoIosHeartEmpty } from 'react-icons/io';
+import React, {useEffect, useState} from 'react';
+import {IoIosHeart, IoIosHeartEmpty} from 'react-icons/io';
 import css from './GifCard.module.scss';
 
 type GifCardProps = {
@@ -7,42 +7,52 @@ type GifCardProps = {
     key: string;
     src: string;
     title: string;
-    isFavorite: boolean;
-    isItemIsFavorite: (id: string) => void;
-    onSelectedGif: (id: string, title: string) => void;
-    removeDuplicateIdOfList: (id: string) => void;
+    favorite: boolean;
+    favoriteItem: { id: string, title: string };
+    isItemIsFavorite: (favoriteItem: object) => void;
+    onSelectedGif: (id: string, title: string) => void
 };
 
 const GifCard = ({
-    id,
-    key,
-    src,
-    title,
-    isFavorite,
-    isItemIsFavorite,
-    onSelectedGif,
-    removeDuplicateIdOfList,
-}: GifCardProps) => {
+                     id,
+                     key,
+                     src,
+                     title,
+                     favoriteItem,
+                     isItemIsFavorite,
+                     onSelectedGif,
+                 }: GifCardProps) => {
+
     const FavoriteIcon = () => {
         if (isFavorite) {
-            return <IoIosHeart />;
+            return <IoIosHeart style={{color: 'red'}}/>;
         } else {
-            return <IoIosHeartEmpty />;
+            return <IoIosHeartEmpty/>;
         }
     };
+    const [isFavorite, setIsFavorite] = useState(false);
+//function qui va récupérer depuis le localstorage si c'est favoris ou pas
+    const handleFavorite = () => {
+        if (!isFavorite) {
+            return setIsFavorite(true)
+        } else {
+            return setIsFavorite(false);
 
+        }
+    }
+    console.log('isFavorite', isFavorite);
     return (
         <div className={css.gifcard}>
             <li
                 key={key}
                 onClick={() => {
                     onSelectedGif(id, title);
-                    isItemIsFavorite(id);
-                    removeDuplicateIdOfList(id);
+                    isItemIsFavorite(favoriteItem);
+                    handleFavorite();
                 }}
             >
-                <img id={id} src={src} alt={title} />
-                <FavoriteIcon />
+                <img id={id} src={src} alt={title}/>
+                <FavoriteIcon/>
                 <p>{title}</p>
             </li>
         </div>

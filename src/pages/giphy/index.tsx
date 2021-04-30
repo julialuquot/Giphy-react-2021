@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import css from './Giphy.module.scss';
 import { Form, Formik } from 'formik';
 import GifList from './GifList/Giflist';
@@ -17,18 +17,24 @@ const Giphy = () => {
         setSelectedGif({ id: id, title: title });
     };
 
-    const isItemIsFavorite = (id) => {
+    const isItemIsFavorite = (selectedGif) => {
         // check if item is in favoriteList
         if (favoriteList.some((item) => item.id === selectedGif.id)) {
-            onDeleteItem(id);
+            onDeleteItem(selectedGif.id);
         } else {
             return onAddItem(selectedGif);
         }
     };
 
+
     const onAddItem = (selectedGif) => {
         // add item in farivoriteList
-        setFavoriteList([...favoriteList, selectedGif]);
+     setFavoriteList([...favoriteList, selectedGif]);
+        setFavoriteList((favoriteList) => {
+            const newItems = [...favoriteList, { selectedGif }];
+            window.localStorage.setItem("FavoriteList", JSON.stringify(newItems));
+            return newItems;
+        });
     };
 
     const onDeleteItem = (id) => {
@@ -91,10 +97,10 @@ const Giphy = () => {
             <main className={css.giphy__main}>
                 <GifList
                     list={gifList}
-                    isItemIsFavorite={(id) => isItemIsFavorite(id)}
+                    isItemIsFavorite={(item) => isItemIsFavorite(item)}
                     onSelectedGif={(id, title) => handleSelectedGif(id, title)}
                 />
-                <GifFavoritesList isItemIsFavorite={(id) => isItemIsFavorite(id)} favoriteList={favoriteList} />
+                <GifFavoritesList  favoriteList={favoriteList} />
             </main>
         </section>
     );

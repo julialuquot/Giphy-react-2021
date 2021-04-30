@@ -3,9 +3,8 @@ import GifFavoriteCard from './GifFavoriteCard/GifFavoriteCard';
 import css from './GifBasket.module.scss';
 type GifFavoritesListProps = {
     favoriteList;
-    isItemIsFavorite;
 };
-const GifFavoritesList = ({ favoriteList, isItemIsFavorite }: GifFavoritesListProps) => {
+const GifFavoritesList = ({ favoriteList }: GifFavoritesListProps) => {
     return (
         favoriteList?.length > 0 && (
             <div className={css.gifpanier}>
@@ -17,7 +16,6 @@ const GifFavoritesList = ({ favoriteList, isItemIsFavorite }: GifFavoritesListPr
                                 return (
                                     <GifFavoriteCard
                                         key={gif.id}
-                                        isItemIsFavorite={isItemIsFavorite}
                                         isFavorite={gif.isFavorite}
                                         id={gif.id}
                                         title={gif.title}

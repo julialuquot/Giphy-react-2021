@@ -6,9 +6,9 @@ type GifFavoriteCardProps = {
     key: string;
     isFavorite: boolean;
     title: string;
-    isItemIsFavorite: (favoriteList: object) => void;
+
 };
-const GifFavoriteCard = ({ title, id, key, isFavorite, isItemIsFavorite }: GifFavoriteCardProps) => {
+const GifFavoriteCard = ({ title, id, key, isFavorite }: GifFavoriteCardProps) => {
     const [initFavorite, setInitFavorite] = useState(isFavorite);
     const [favorite, setFavorite] = useState([title, id]);
 
@@ -21,7 +21,7 @@ const GifFavoriteCard = ({ title, id, key, isFavorite, isItemIsFavorite }: GifFa
 
     return (
         favorite && (
-            <li key={key} onChange={isItemIsFavorite} className={css.gifpanier_td}>
+            <li key={key} className={css.gifpanier_td}>
                 <p className={css.gifpanier_tr}>
                     <span>{id}</span>
                     <span>{title}</span>

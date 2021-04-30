@@ -7,9 +7,7 @@ import { ToastProvider } from 'react-toast-notifications';
 import '@assets/styles/mains.scss';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-    return (
-            <Component {...pageProps} />
-    );
+    return <Component {...pageProps} />;
 };
 MyApp.getInitialProps = async (appContext) => {
     // calls page's `getInitialProps` and fills `appProps.pageProps`
