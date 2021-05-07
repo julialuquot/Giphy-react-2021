@@ -1,20 +1,24 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import css from './Giphy.module.scss';
-import { Form, Formik } from 'formik';
-import GifList from './GifList/Giflist';
-import GifFavoritesList from './GifFavoritesList/GifFavoritesList';
+import {Form, Formik} from 'formik';
+import GifList from '../../assets/components/giphy/GifList/Giflist';
+import GifFavoritesList from '../../assets/components/giphy/GifFavoritesList/GifFavoritesList';
+import {gifDetails} from './[reference]';
 
-const Giphy = () => {
+type GiphyProps = {
+    gifDetails: gifDetails;
+}
+const Giphy = ({gifDetails}: GiphyProps) => {
     const [searchTerm, setSearchTerm] = useState('');
 
     const [gifList, setGifList] = useState([]);
 
     const [favoriteList, setFavoriteList] = useState([]);
 
-    const [selectedGif, setSelectedGif] = useState({ id: '', title: '' });
+    const [selectedGif, setSelectedGif] = useState({id: '', title: ''});
 
     const handleSelectedGif = (id, title) => {
-        setSelectedGif({ id: id, title: title });
+        setSelectedGif({id: id, title: title});
     };
 
     const isItemIsFavorite = (selectedGif) => {
@@ -23,17 +27,21 @@ const Giphy = () => {
             onDeleteItem(selectedGif.id);
         } else {
             return onAddItem(selectedGif);
+
         }
     };
 
-
     const onAddItem = (selectedGif) => {
         // add item in farivoriteList
-     setFavoriteList([...favoriteList, selectedGif]);
+        setFavoriteList([...favoriteList, selectedGif]);
         setFavoriteList((favoriteList) => {
-            const newItems = [...favoriteList, { selectedGif }];
-            window.localStorage.setItem("FavoriteList", JSON.stringify(newItems));
+            const newItems = [...favoriteList];
+            window.localStorage.setItem("array", JSON.stringify(newItems));
             return newItems;
+            let storage = window.localStorage.getItem('selectedGif' + (selectedGif.id) || 'O');
+            if (storage !== null) {
+                window.localStorage.setItem('storage', JSON.stringify(storage));
+            }
         });
     };
 
@@ -56,8 +64,7 @@ const Giphy = () => {
         limit: '&limit=10',
     };
 
-    const URL = [API.base, API.key, API.q, API.limit].join('');
-
+    const URL = `${API.base}${API.key}${API.q}${API.limit}`;
     const handleSubmit = () => {
         fetch(URL)
             .then((response) => response.json())
@@ -65,7 +72,8 @@ const Giphy = () => {
                 setGifList(list.data);
                 setSearchTerm(list);
             })
-            .then(() => {})
+            .then(() => {
+            })
             .catch((err) => err);
     };
 
@@ -87,7 +95,7 @@ const Giphy = () => {
                     render={() => {
                         return (
                             <Form className={css.giphy__search}>
-                                <input id="searchTerm" name="searchTerm" onChange={handleChange} />
+                                <input id="searchTerm" name="searchTerm" onChange={handleChange}/>
                                 <button type="submit">submit</button>
                             </Form>
                         );
@@ -100,9 +108,11 @@ const Giphy = () => {
                     isItemIsFavorite={(item) => isItemIsFavorite(item)}
                     onSelectedGif={(id, title) => handleSelectedGif(id, title)}
                 />
-                <GifFavoritesList  favoriteList={favoriteList} />
+                <GifFavoritesList favoriteList={favoriteList}/>
+
             </main>
         </section>
     );
 };
 export default Giphy;
+

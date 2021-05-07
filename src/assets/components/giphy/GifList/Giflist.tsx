@@ -2,11 +2,11 @@ import React, {useEffect, useState} from 'react';
 import GifCard from './GifCard/index';
 import css from './GifList.module.scss';
 type GifListProps = {
-    list;
-    onSelectedGif;
-    isItemIsFavorite;
+    list,
+    onSelectedGif,
+    isItemIsFavorite,
 };
-const GifList = ({ list, onSelectedGif, isItemIsFavorite }: GifListProps) => {
+const GifList = ({ list, onSelectedGif,isItemIsFavorite}: GifListProps) => {
 
     return (
         <div className={css.gifList__contain}>
@@ -15,6 +15,7 @@ const GifList = ({ list, onSelectedGif, isItemIsFavorite }: GifListProps) => {
                     {list.map((selectedGif) => {
                         return (
                             <GifCard
+                                gifDetails={selectedGif}
                                 favorite={selectedGif.isFavorite}
                                 favoriteItem={selectedGif}
                                 key={selectedGif.id}
@@ -22,8 +23,7 @@ const GifList = ({ list, onSelectedGif, isItemIsFavorite }: GifListProps) => {
                                 isItemIsFavorite={isItemIsFavorite}
                                 title={selectedGif.title}
                                 id={selectedGif.id}
-                                src={selectedGif.images.downsized.url}
-                            />
+                                src={selectedGif.images.downsized.url}/>
                         );
                     })}
                 </ul>

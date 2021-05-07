@@ -2,8 +2,8 @@ const routes = require('next-routes')()
 
     .add({
         name: 'user-details-page',
-        pattern: '/julia/:[reference]',
-        page: 'julia/[[reference]]',
+        pattern: '/julia/:GifCard',
+        page: 'julia/[GifCard]',
     })
     .add({
         name: 'giphy',
@@ -11,9 +11,9 @@ const routes = require('next-routes')()
         page: 'giphy',
     })
     .add({
-        name: 'gifCard',
-        pattern: '/giphy/:[reference]',
-        page: 'giphy/GifList/[[reference]]',
+        name: 'gif-details-page',
+        pattern: '/giphy/:reference',
+        page: 'giphy/[reference]',
     });
 
 module.exports = routes;

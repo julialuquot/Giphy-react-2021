@@ -1,27 +1,35 @@
 import React, {useEffect, useState} from 'react';
 import {IoIosHeart, IoIosHeartEmpty} from 'react-icons/io';
 import css from './GifCard.module.scss';
+import { getRoute, ROUTE } from '@services/route/Route';
+
 
 type GifCardProps = {
-    id: string;
-    key: string;
-    src: string;
-    title: string;
     favorite: boolean;
+    id: string;
+    title: string;
+    key: string;
+    gifDetails: {id:string,title:string,src:string}
+    src: string;
     favoriteItem: { id: string, title: string };
     isItemIsFavorite: (favoriteItem: object) => void;
-    onSelectedGif: (id: string, title: string) => void
+    onSelectedGif: (id: string, title: string) => void;
+
 };
 
-const GifCard = ({
-                     id,
-                     key,
-                     src,
-                     title,
-                     favoriteItem,
-                     isItemIsFavorite,
-                     onSelectedGif,
-                 }: GifCardProps) => {
+const GifCard = ({id, title, onSelectedGif, key, src, isItemIsFavorite, favoriteItem}: GifCardProps) => {
+
+    const [isFavorite, setIsFavorite] = useState(false);
+
+    const handleFavorite = () => {
+        if (!isFavorite) {
+            return setIsFavorite(true)
+        } else {
+            return setIsFavorite(false);
+
+        }
+
+    }
 
     const FavoriteIcon = () => {
         if (isFavorite) {
@@ -30,21 +38,10 @@ const GifCard = ({
             return <IoIosHeartEmpty/>;
         }
     };
-    const [isFavorite, setIsFavorite] = useState(false);
-//function qui va récupérer depuis le localstorage si c'est favoris ou pas
-    const handleFavorite = () => {
-        if (!isFavorite) {
-            return setIsFavorite(true)
-        } else {
-            return setIsFavorite(false);
 
-        }
-    }
-    console.log('isFavorite', isFavorite);
     return (
         <div className={css.gifcard}>
-            <li
-                key={key}
+            <li key={key}
                 onClick={() => {
                     onSelectedGif(id, title);
                     isItemIsFavorite(favoriteItem);
@@ -52,11 +49,15 @@ const GifCard = ({
                 }}
             >
                 <img id={id} src={src} alt={title}/>
-                <FavoriteIcon/>
+                <a href={getRoute(ROUTE.GIPHY, id)} target='_blank'>
+                <FavoriteIcon />
+                </a>
                 <p>{title}</p>
             </li>
+
         </div>
     );
 };
 
 export default GifCard;
+
