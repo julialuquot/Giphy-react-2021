@@ -7,18 +7,17 @@ type GifListProps = {
     isItemIsFavorite,
 };
 const GifList = ({ list, onSelectedGif,isItemIsFavorite}: GifListProps) => {
-
     return (
         <div className={css.gifList__contain}>
             <div className={css.gifList}>
                 <ul className={css.items_list}>
-                    {list.map((selectedGif) => {
+                    {list.map((selectedGif,i) => {
                         return (
                             <GifCard
                                 gifDetails={selectedGif}
                                 favorite={selectedGif.isFavorite}
                                 favoriteItem={selectedGif}
-                                key={selectedGif.id}
+                                key={i}
                                 onSelectedGif={onSelectedGif}
                                 isItemIsFavorite={isItemIsFavorite}
                                 title={selectedGif.title}

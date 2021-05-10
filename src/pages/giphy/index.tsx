@@ -16,38 +16,37 @@ const Giphy = ({gifDetails}: GiphyProps) => {
     const [favoriteList, setFavoriteList] = useState([]);
 
     const [selectedGif, setSelectedGif] = useState({id: '', title: ''});
-
     const handleSelectedGif = (id, title) => {
         setSelectedGif({id: id, title: title});
     };
 
     const isItemIsFavorite = (selectedGif) => {
         // check if item is in favoriteList
-        if (favoriteList.some((item) => item.id === selectedGif.id)) {
+        if (favoriteList.some((item) => item.id === (selectedGif.id))) {
             onDeleteItem(selectedGif.id);
         } else {
             return onAddItem(selectedGif);
-
         }
     };
 
     const onAddItem = (selectedGif) => {
-        // add item in farivoriteList
         setFavoriteList([...favoriteList, selectedGif]);
-        setFavoriteList((favoriteList) => {
-            const newItems = [...favoriteList];
-            window.localStorage.setItem("array", JSON.stringify(newItems));
-            return newItems;
-            let storage = window.localStorage.getItem('selectedGif' + (selectedGif.id) || 'O');
-            if (storage !== null) {
-                window.localStorage.setItem('storage', JSON.stringify(storage));
-            }
-        });
     };
 
+    useEffect(()=>{
+        const data = localStorage.getItem('data')
+        if(data){
+            setFavoriteList(JSON.parse(data))
+        }
+    },[])
+
+    useEffect(()=>{
+        localStorage.setItem('data',JSON.stringify(favoriteList))
+    })
+
     const onDeleteItem = (id) => {
-        // remove item in farivoriteList
         const newListOfFavorites = favoriteList.filter((item) => item.id !== id);
+
         return setFavoriteList(newListOfFavorites);
     };
 

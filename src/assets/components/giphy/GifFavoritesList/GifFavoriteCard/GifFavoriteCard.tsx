@@ -3,7 +3,7 @@ import css from '../GifBasket.module.scss';
 
 type GifFavoriteCardProps = {
     id: string;
-    key: string;
+    key: number;
     isFavorite: boolean;
     title: string;
 
@@ -11,7 +11,6 @@ type GifFavoriteCardProps = {
 const GifFavoriteCard = ({ title, id, key, isFavorite }: GifFavoriteCardProps) => {
     const [initFavorite, setInitFavorite] = useState(isFavorite);
     const [favorite, setFavorite] = useState([title, id]);
-
     useEffect(() => {
         setInitFavorite(initFavorite);
         if (initFavorite) {

@@ -8,17 +8,15 @@ type GifCardProps = {
     favorite: boolean;
     id: string;
     title: string;
-    key: string;
+    key: number;
     gifDetails: {id:string,title:string,src:string}
     src: string;
     favoriteItem: { id: string, title: string };
     isItemIsFavorite: (favoriteItem: object) => void;
     onSelectedGif: (id: string, title: string) => void;
-
 };
 
 const GifCard = ({id, title, onSelectedGif, key, src, isItemIsFavorite, favoriteItem}: GifCardProps) => {
-
     const [isFavorite, setIsFavorite] = useState(false);
 
     const handleFavorite = () => {
@@ -26,9 +24,7 @@ const GifCard = ({id, title, onSelectedGif, key, src, isItemIsFavorite, favorite
             return setIsFavorite(true)
         } else {
             return setIsFavorite(false);
-
         }
-
     }
 
     const FavoriteIcon = () => {

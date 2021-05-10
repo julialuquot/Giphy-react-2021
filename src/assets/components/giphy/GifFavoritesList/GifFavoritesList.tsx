@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import GifFavoriteCard from './GifFavoriteCard/GifFavoriteCard';
 import css from './GifBasket.module.scss';
 type GifFavoritesListProps = {
     favoriteList;
 };
+
 const GifFavoritesList = ({ favoriteList }: GifFavoritesListProps) => {
+
+
     return (
         favoriteList?.length > 0 && (
             <div className={css.gifpanier}>
@@ -12,10 +15,10 @@ const GifFavoritesList = ({ favoriteList }: GifFavoritesListProps) => {
                 <div className={css.gifbasket_table}>
                     <ul>
                         {favoriteList &&
-                            favoriteList.map((gif) => {
+                            favoriteList.map((gif,key) => {
                                 return (
                                     <GifFavoriteCard
-                                        key={gif.id}
+                                        key={key}
                                         isFavorite={gif.isFavorite}
                                         id={gif.id}
                                         title={gif.title}
